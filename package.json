@@ -13,7 +13,8 @@
     "react-scripts": "^5.0.1",
     "sass": "^1.80.5",
     "tescucsd.org": "file:",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.96.1"
   },
   "scripts": {
     "start": "react-scripts start",
