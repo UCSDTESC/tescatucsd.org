@@ -1,0 +1,28 @@
+.nav__items{
+    font-size: 26px;
+    font-weight:500;
+}
+
+.navbar-custom {
+    background-color: #1c2e4a;
+}
+
+.nav__logo{
+    height: 80px;
+}
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-text{
+    color: #dbdada;
+}
+
+.navbar {
+    display: flex; 
+    align-items: center; 
+    height: 150px;
+}
