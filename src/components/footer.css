@@ -1,0 +1,39 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: #1c2e4a;
+    position: fixed;
+    padding: 45px 10px 45px 60px;
+}
+
+.footer-text{
+    color: #dbdada;
+}
+
+.footer_items{
+    font-size: 26px;
+    font-weight:500;
+    list-style: none;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    text-align: left;
+}
+
+.contact-icon{
+    color: #fff;
+    padding-right: 25px;
+}
+
+.contact-icons {
+    margin: 0;
+    padding: 0;
+}
+
+.footer_items a{
+    text-decoration: none;
+}
