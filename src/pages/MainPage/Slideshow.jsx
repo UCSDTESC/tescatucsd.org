@@ -31,29 +31,34 @@ const Slideshow = () => {
   };
 
   return (
-    <div className="slideshow-container">
-      <button className="arrow left-arrow" onClick={goToPrevSlide}>
-        &lt;
-      </button>
-      <div className="slide">
-        <img
-          src={slides[currentIndex].image}
-          alt={`Slide ${currentIndex + 1}`}
-          className="slide-image"
-        />
-        <p className="caption">{slides[currentIndex].caption}</p>
+    <div>
+      <div className="slideshow-container">
+        <div className="slide">
+          <img
+            src={slides[currentIndex].image}
+            alt={`Slide ${currentIndex + 1}`}
+            className="slide-image"
+          />
+          <p className="caption">{slides[currentIndex].caption}</p>
+        </div>
       </div>
-      <button className="arrow right-arrow" onClick={goToNextSlide}>
-        &gt;
-      </button>
-      <div className="dots">
-        {slides.map((_, index) => (
-          <span
-            key={index}
-            className={`dot ${index === currentIndex ? "active" : ""}`}
-            onClick={() => setCurrentIndex(index)}
-          ></span>
-        ))}
+
+      <div className="slideshow-container">
+        <button className="arrow left-arrow" onClick={goToPrevSlide}>
+          &lt;
+        </button>
+        <button className="arrow right-arrow" onClick={goToNextSlide}>
+          &gt;
+        </button>
+        <div className="dots">
+          {slides.map((_, index) => (
+            <span
+              key={index}
+              className={`dot ${index === currentIndex ? "active" : ""}`}
+              onClick={() => setCurrentIndex(index)}
+            ></span>
+          ))}
+        </div>
       </div>
     </div>
   );
