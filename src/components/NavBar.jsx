@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import "./navbar.css";
 const NavBar = () => {
   const pages = (
@@ -15,7 +15,7 @@ const NavBar = () => {
         </NavLink>
       </li>
       <li className="nav__items nav-item text-center px-4">
-        <NavLink className="nav-link" to="/">
+        <NavLink className="nav-link" to="/council-members">
           <span className="nav-text">Council Members</span>
         </NavLink>
       </li>
@@ -44,6 +44,7 @@ const NavBar = () => {
           </div>
         </div>
       </nav>
+      <Outlet />
     </>
   );
 };
