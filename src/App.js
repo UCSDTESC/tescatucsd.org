@@ -13,7 +13,7 @@ function App() {
           <Route path="/" element={<NavBar />} />
         </Routes>
       </Router>
-      <HomePageEvents/>
+      {/* <HomePageEvents/> */}
       <Footer />
     </>
   );
