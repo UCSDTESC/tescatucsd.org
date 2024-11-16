@@ -6,6 +6,7 @@ const Events = () => {
     "/event-logos/decaf-event-fa23.svg",
     "/event-logos/decaf-event-fa23.svg",
   ];
+  const upcomingEventLinks = ["https://decafucsd.com", "https://decafucsd.com"];
   const pastEventLogos = [
     "/event-logos/decaf-event-fa23.svg",
     "/event-logos/sd-hacks-event-wi21.png",
@@ -16,7 +17,16 @@ const Events = () => {
     "/event-logos/destress-event-fa20.svg",
     "/event-logos/eotg-event-fa20.svg",
   ];
-
+  const pastEventLinks = [
+    "https://decafucsd.com",
+    "https://www.eotgucsd.com",
+    "https://decafucsd.com",
+    "https://www.eotgucsd.com",
+    "https://decafucsd.com",
+    "https://www.eotgucsd.com",
+    "https://decafucsd.com",
+    "https://www.eotgucsd.com",
+  ];
   return (
     <>
       <div className="container mb-5 mt-4">
@@ -27,7 +37,15 @@ const Events = () => {
               key={index}
               className="col-6 col-sm-6 col-lg-3 d-flex justify-content-center align-items-center"
             >
-              <img className="event-logo img-fluid" src={logo} alt=""></img>
+              <img
+                className="event-logo img-fluid"
+                src={logo}
+                alt=""
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  window.location.href = upcomingEventLinks[index];
+                }}
+              ></img>
             </div>
           ))}
         </div>
@@ -41,7 +59,15 @@ const Events = () => {
               key={index}
               className="col-6 col-sm-6 col-lg-3 d-flex justify-content-center align-items-center"
             >
-              <img className="event-logo img-fluid" src={logo} alt=""></img>
+              <img
+                className="event-logo img-fluid"
+                src={logo}
+                alt=""
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  window.location.href = pastEventLinks[index];
+                }}
+              ></img>
             </div>
           ))}
         </div>
