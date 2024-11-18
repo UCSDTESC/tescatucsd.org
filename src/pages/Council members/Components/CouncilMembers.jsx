@@ -7,7 +7,7 @@ const AIRTABLEURL =
 const CouncilMembers = () => {
   const { width, height } = useWindowDimensions();
   return (
-    <div className="">
+    <div className="Council-Members">
       <div className="button-container">
         <button>
           <a href="link" className="join-button-text">

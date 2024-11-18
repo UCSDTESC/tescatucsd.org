@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./navbar.css";
 const NavBar = () => {
   const pages = (
@@ -44,7 +44,6 @@ const NavBar = () => {
           </div>
         </div>
       </nav>
-      <Outlet />
     </>
   );
 };

@@ -20,3 +20,7 @@
   display: flex;
   justify-content: center;
 }
+
+.Council-Members {
+  min-height: fit-content;
+}
