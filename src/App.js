@@ -3,7 +3,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CouncilMembers from "./pages/Council members/CouncilMembers";
+import CouncilMembers from "./pages/Council members/Components/CouncilMembers";
 function App() {
   return (
     <>
