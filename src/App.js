@@ -18,8 +18,8 @@ function App() {
           </Route>
         </Routes>
       </Router>
-      <Events />
-      <Footer />
+      {/* <Events /> */}
+      {/* <Footer /> */}
     </>
   );
 }

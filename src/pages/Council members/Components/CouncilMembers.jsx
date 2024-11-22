@@ -8,13 +8,13 @@ const CouncilMembers = () => {
   const { width, height } = useWindowDimensions();
   return (
     <div className="Council-Members">
-      <div className="button-container">
+      {/* <div className="button-container">
         <button>
           <a href="link" className="join-button-text">
             JOIN TESC AS AN ORGANIZATION
           </a>
         </button>
-      </div>
+      </div> */}
       <div className="Airtable">
         <iframe
           src={AIRTABLEURL}
