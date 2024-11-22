@@ -54,7 +54,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="footer d-flex justify-content-between fixed-bottom w-100">
+      <footer className="footer d-flex justify-content-between w-100">
         <div className="footer-left">
           <p className="footer-text footer_items">Contact Us</p>
           {contactIcons}

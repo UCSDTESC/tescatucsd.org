@@ -1,0 +1,10 @@
+.event-logo{
+    height: 300px;
+    width: auto;
+}
+
+.event-type{
+    font-size: 25px;
+    font-weight:600;
+    color: #1c2e4a;
+}
