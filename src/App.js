@@ -1,5 +1,8 @@
 import React from "react";
 import "./App.css";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+import Events from "./pages/Events/Events";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CouncilMembers from "./pages/Council members/Components/CouncilMembers";
@@ -15,6 +18,8 @@ function App() {
           </Route>
         </Routes>
       </Router>
+      <Events />
+      <Footer />
     </>
   );
 }
