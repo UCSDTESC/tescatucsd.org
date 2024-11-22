@@ -1,0 +1,27 @@
+.button-container button {
+  background-color: transparent;
+  border: 2px #00488e solid;
+  border-radius: 0.25rem;
+}
+.button-container {
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.join-button-text {
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  color: #00488e;
+}
+.Airtable {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.Council-Members {
+  min-height: fit-content;
+}
