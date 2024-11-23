@@ -1,4 +1,5 @@
 import React from "react";
+import "./HomePageEvents.css";
 
 const HomePageEvents = () => {
   const EventsSection = (
