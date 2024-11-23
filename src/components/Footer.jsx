@@ -2,25 +2,26 @@ import React from "react";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 import "./footer.css";
 
 const Footer = () => {
   const pages = (
     <ul className="d-flex">
       <li className="footer_items text-center px-4">
-        <a href="/">
-          <span className="footer-text">About Us </span>
-        </a>
+        <NavLink className="nav-link" to="/">
+          <span className="nav-text">About Us </span>
+        </NavLink>
       </li>
       <li className="footer_items text-center px-4">
-        <a href="/">
-          <span className="footer-text">Events</span>
-        </a>
+        <NavLink className="nav-link" to="/events">
+          <span className="nav-text">Events</span>
+        </NavLink>
       </li>
       <li className="footer_items text-center px-4">
-        <a href="/">
-          <span className="footer-text">Council Members</span>
-        </a>
+        <NavLink className="nav-link" to="/council-members">
+          <span className="nav-text">Council Members</span>
+        </NavLink>
       </li>
     </ul>
   );
