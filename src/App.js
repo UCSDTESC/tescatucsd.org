@@ -15,11 +15,10 @@ function App() {
           <Route element={<Page />}>
             <Route path="/" />
             <Route path="/council-members" element={<CouncilMembers />} />
+            <Route path="/events" element={<Events />} />
           </Route>
         </Routes>
       </Router>
-      {/* <Events /> */}
-      {/* <Footer /> */}
     </>
   );
 }
