@@ -1,19 +1,19 @@
 import React from "react";
 import "./App.css";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
 import Events from "./pages/Events/Events";
-
+import Main from "./pages/MainPage/Main";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CouncilMembers from "./pages/Council members/Components/CouncilMembers";
+import CouncilMembers from "./pages/CouncilMembersPage/CouncilMembers";
 import Page from "./components/Page";
+
 function App() {
   return (
     <>
       <Router>
         <Routes>
           <Route element={<Page />}>
-            <Route path="/" />
+            <Route path="/" element={<Main />} />
+            <Route path="/events" element={<Events />} />
             <Route path="/council-members" element={<CouncilMembers />} />
             <Route path="/events" element={<Events />} />
           </Route>
