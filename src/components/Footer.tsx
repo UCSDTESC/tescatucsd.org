@@ -8,7 +8,7 @@ const Footer = () => {
   const pages = (
     <ul className="d-flex">
       <li className="footer_items text-center px-4">
-        <NavLink className="nav-link" to="/">
+        <NavLink className="nav-link" to="/about-us">
           <span className="nav-text">About Us </span>
         </NavLink>
       </li>
