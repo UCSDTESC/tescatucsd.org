@@ -1,4 +1,3 @@
-import React from "react";
 import "./Sponsors.css";
 
 const sponsors = [
