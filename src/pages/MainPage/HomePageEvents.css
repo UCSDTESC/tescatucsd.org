@@ -18,3 +18,9 @@
   left: 50%;
   margin-left: -50%;
 }
+a:link,
+a:visited {
+  background-color: white;
+  color: black;
+  margin-left: 0.5rem;
+}
