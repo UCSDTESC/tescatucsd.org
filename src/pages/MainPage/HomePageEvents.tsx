@@ -2,38 +2,40 @@ import "./HomePageEvents.css";
 
 const HomePageEvents = () => {
   const EventsSection = (
-    <div class="container">
+    <div className="container mt-5">
       <h1>Events</h1>
 
       <div>
         <h3>
-          {" "}
           <a href="https://google.com" title="Events">
-            {" "}
-            See all events →{" "}
-          </a>{" "}
+            See all events →
+          </a>
         </h3>
       </div>
 
-      <div class="row justify-content-center">
-        <div class="col-xs-6 col-md-4 center-block text-center">
+      <div className="row justify-content-center h-auto gap-5">
+        <div className="col center-block text-center rounded-5 position-relative p-5">
           <img
             src="upcoming-event.jpg"
-            class="img-home-page-events"
+            className="img-home-page-events"
             alt="Upcoming Event"
           />
-          <h4>Upcoming Event</h4>
-          <p>A description of the upcoming event.</p>
+          <div className="position-absolute bottom-0 w-100 text-center">
+            <h4>Upcoming Event</h4>
+            <p>A description of the upcoming event.</p>
+          </div>
         </div>
 
-        <div class="col-xs-6 col-md-4 center-block text-center">
+        <div className="col center-block text-center rounded-5 position-relative p-5">
           <img
             src="previous-event.jpg"
-            class="img-home-page-events"
+            className="img-home-page-events"
             alt="Previous Event"
           />
-          <h4>Previous Event</h4>
-          <p>A description of the previous event.</p>
+          <div className="position-absolute bottom-0 w-100 text-center ">
+            <h4>Previous Event</h4>
+            <p>A description of the previous event.</p>
+          </div>
         </div>
       </div>
     </div>

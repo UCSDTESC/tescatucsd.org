@@ -31,7 +31,7 @@ const Slideshow = () => {
   };
 
   return (
-    <div>
+    <div className="mt-5">
       <div className="slideshow-container d-flex align-content-center justify-content-center position-relative">
         <div className="slide">
           <img

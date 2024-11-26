@@ -5,20 +5,20 @@ const sponsors = [
   {
     id: 2,
     logo: "/logos/Dynovas Matrix Logo (Final).jpg",
-    alt: "Dynovas",
+    alt: "Dynovas"
   },
   { id: 3, logo: "/logos/LLNLlogoBLACK.jpg", alt: "LLNL" },
   {
     id: 4,
     logo: "/logos/Viasat_2018_Gradient_Web (1).jpg",
-    alt: "Viasat",
+    alt: "Viasat"
   },
-  { id: 5, logo: "/logos/LANL_Logo_Temp.png", alt: "LANL" },
+  { id: 5, logo: "/logos/LANL_Logo_Temp.png", alt: "LANL" }
 ];
 
 const Sponsors = () => {
   const SponsorsSection = (
-    <div class="container">
+    <div className="container mb-5">
       <h1>Sponsors</h1>
 
       <div>
