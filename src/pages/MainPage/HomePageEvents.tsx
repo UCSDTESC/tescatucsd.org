@@ -1,7 +1,7 @@
 import "./HomePageEvents.css";
 
 const HomePageEvents = () => {
-  const EventsSection = (
+  return (
     <div className="container mt-5">
       <h1>Events</h1>
 
@@ -40,8 +40,6 @@ const HomePageEvents = () => {
       </div>
     </div>
   );
-
-  return EventsSection;
 };
 
 export default HomePageEvents;
