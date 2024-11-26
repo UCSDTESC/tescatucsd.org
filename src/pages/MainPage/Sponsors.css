@@ -29,9 +29,11 @@
 
 /* Responsive grid layout */
 .sponsors-grid {
+  margin-top: 1rem;
   display: grid;
+  gap: 1rem;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust size */
+  grid-template-columns: repeat(3, minmax(120px, 1fr)); /* Adjust size */
   justify-content: center;
 }
 
