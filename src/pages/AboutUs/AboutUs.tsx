@@ -2,6 +2,7 @@ import "./about-us.css";
 import data from "./member-info.json";
 const AboutUs = () => {
   const members = data.members;
+  //[name, role/committee, major, image]
   return (
     <>
       <img className="header-image" src="events-page-image.png" alt=""></img>
@@ -22,7 +23,7 @@ const AboutUs = () => {
             >
               <img
                 className="member-image img-fluid"
-                src={"event-logos/eotg-event-wi21.svg"}
+                src={member[3]}
                 alt=""
                 style={{ cursor: "pointer" }}
                 onClick={() => {}}
