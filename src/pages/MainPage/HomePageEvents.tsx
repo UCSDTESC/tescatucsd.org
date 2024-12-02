@@ -7,7 +7,7 @@ const HomePageEvents = () => {
 
       <div>
         <h3>
-          <a href="https://google.com" title="Events">
+          <a href="https://google.com" className="no_underline" title="Events">
             See all events →
           </a>
         </h3>

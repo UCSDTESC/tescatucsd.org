@@ -1,0 +1,11 @@
+.divider {
+  padding: 3rem 1.5rem; /* Adjusts top/bottom and left/right padding */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.divider p {
+  margin: 0;
+  line-height: 1.5; /* Improves readability */
+  font-size: 1.25rem; /* Adjust text size */
+}

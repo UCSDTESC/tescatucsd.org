@@ -18,6 +18,11 @@
   left: 50%;
   margin-left: -50%;
 }
+
+.no_underline {
+  text-decoration: none;
+}
+
 a:link,
 a:visited {
   color: black;
