@@ -5,7 +5,11 @@ const AboutUs = () => {
   //[name, role/committee, major, image]
   return (
     <>
-      <img className="header-image" src="events-page-image.png" alt=""></img>
+      <img
+        className="header-image object-fit-cover"
+        src="events-page-image.png"
+        alt=""
+      ></img>
       <div className="divider d-flex justify-content-center align-items-center text-light">
         <p className="text-center">
           The Triton Engineering Student Council (TESC), empowers UC San Diego's
@@ -22,7 +26,7 @@ const AboutUs = () => {
               className="col-6 col-sm-6 col-lg-3 d-flex flex-column justify-content-center align-items-center mb-3"
             >
               <img
-                className="member-image img-fluid"
+                className="member-image object-fit-cover rounded"
                 src={member[3]}
                 alt=""
                 style={{ cursor: "pointer" }}
