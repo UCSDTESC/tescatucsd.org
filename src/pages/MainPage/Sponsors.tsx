@@ -18,13 +18,17 @@ const sponsors = [
 
 const Sponsors = () => {
   const SponsorsSection = (
-    <div class="container">
+    <div className="container spacer">
       <h1>Sponsors</h1>
 
       <div>
         <h3>
           {" "}
-          <a href="https://google.com" title="Sponsors">
+          <a
+            href="https://google.com"
+            className="no_underline"
+            title="Sponsors"
+          >
             {" "}
             See all sponsors →{" "}
           </a>{" "}

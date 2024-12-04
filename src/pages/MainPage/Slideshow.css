@@ -1,16 +1,14 @@
 /* Slideshow.css */
 .slideshow-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
   max-width: 80%;
   margin: 0 auto;
   padding: 20px 0;
 }
 
 .slide {
-  width: 400px;
+  position: relative;
+  width: 30vw;
+  height: 20vw;
   text-align: center;
   background-color: #f3f8ff;
   padding: 20px;
@@ -28,6 +26,8 @@
   margin-top: 10px;
   font-size: 14px;
   color: #333;
+  position: absolute;
+  bottom: 1rem;
 }
 
 .arrow {
@@ -39,7 +39,7 @@
   padding: 0 15px;
 }
 
-.left-arrow {
+/* .left-arrow {
   position: absolute;
   left: 20px;
 }
@@ -47,7 +47,7 @@
 .right-arrow {
   position: absolute;
   right: 20px;
-}
+} */
 
 .dots {
   display: flex;
