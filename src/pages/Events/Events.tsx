@@ -1,12 +1,11 @@
 import "./events.css";
 
 const Events = () => {
-  const upcomingEventLogos = [
-    "/event-logos/decaf-event-fa23.svg",
-    "/event-logos/decaf-event-fa23.svg",
-  ];
-  const upcomingEventLinks = ["https://decafucsd.com", "https://decafucsd.com"];
+  const upcomingEventLogos = ["/event-logos/eotg-event-wi25.png"];
+  const upcomingEventLinks = ["https://tescucsd.org/eotg"];
   const pastEventLogos = [
+    "/event-logos/decaf-event-fa24.jpg",
+    "/event-logos/eotg-event-fa24.jpg",
     "/event-logos/decaf-event-fa23.svg",
     "/event-logos/sd-hacks-event-wi21.png",
     "/event-logos/decaf-event-wi21.svg",
@@ -17,6 +16,8 @@ const Events = () => {
     "/event-logos/eotg-event-fa20.svg",
   ];
   const pastEventLinks = [
+    "https://tescucsd.org/decaf-fa24",
+    "https://tescucsd.org/eotg-fa24",
     "https://decafucsd.com",
     "https://www.eotgucsd.com",
     "https://decafucsd.com",
@@ -43,15 +44,17 @@ const Events = () => {
               key={index}
               className="col-6 col-sm-6 col-lg-3 d-flex justify-content-center align-items-center mb-4"
             >
-              <img
-                className="event-logo img-fluid"
-                src={logo}
-                alt=""
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  window.location.href = upcomingEventLinks[index];
-                }}
-              ></img>
+              <div className="container event-logo-container">
+                <img
+                  className="event-logo object-fit-cover rounded-5"
+                  src={logo}
+                  alt=""
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    window.location.href = upcomingEventLinks[index];
+                  }}
+                ></img>
+              </div>
             </div>
           ))}
         </div>
@@ -65,15 +68,17 @@ const Events = () => {
               key={index}
               className="col-6 col-sm-6 col-lg-3 d-flex justify-content-center align-items-center mb-4"
             >
-              <img
-                className="event-logo img-fluid"
-                src={logo}
-                alt=""
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  window.location.href = pastEventLinks[index];
-                }}
-              ></img>
+              <div className="container event-logo-container">
+                <img
+                  className="event-logo object-fit-cover rounded-5"
+                  src={logo}
+                  alt=""
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    window.location.href = pastEventLinks[index];
+                  }}
+                ></img>
+              </div>
             </div>
           ))}
         </div>
