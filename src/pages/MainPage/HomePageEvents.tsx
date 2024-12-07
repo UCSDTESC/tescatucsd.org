@@ -7,7 +7,7 @@ const HomePageEvents = () => {
 
       <div>
         <h3>
-          <a href="https://google.com" className="no_underline" title="Events">
+          <a href="https://www.tescucsd.org/events" className="no_underline" title="Events">
             See all events →
           </a>
         </h3>
@@ -32,7 +32,7 @@ const HomePageEvents = () => {
             className="img-home-page-events"
             alt="Previous Event"
           />
-          <div className="text-center ">
+          <div className="text-center">
             <h4>Previous Event</h4>
             <p>A description of the previous event.</p>
           </div>
