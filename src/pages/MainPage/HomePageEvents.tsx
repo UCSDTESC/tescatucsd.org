@@ -16,11 +16,11 @@ const HomePageEvents = () => {
       <div className="row justify-content-center h-auto gap-5">
         <div className="col center-block text-center rounded-5 position-relative p-5">
           <img
-            src="upcoming-event.jpg"
+            src="/public/event-logos/eotg-event-wi25.png"
             className="img-home-page-events"
             alt="Upcoming Event"
           />
-          <div className="position-absolute bottom-0 w-100 text-center">
+          <div className="text-center">
             <h4>Upcoming Event</h4>
             <p>A description of the upcoming event.</p>
           </div>
@@ -28,11 +28,11 @@ const HomePageEvents = () => {
 
         <div className="col center-block text-center rounded-5 position-relative p-5">
           <img
-            src="previous-event.jpg"
+            src="/public/event-logos/decaf-event-fa24.jpg"
             className="img-home-page-events"
             alt="Previous Event"
           />
-          <div className="position-absolute bottom-0 w-100 text-center ">
+          <div className="text-center ">
             <h4>Previous Event</h4>
             <p>A description of the previous event.</p>
           </div>
