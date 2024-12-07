@@ -1,5 +1,5 @@
 // Slideshow.jsx
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Slideshow.css";
 
 const Slideshow = () => {
@@ -8,16 +8,16 @@ const Slideshow = () => {
     {
       image: "/images/slide1.jpg",
       caption:
-        "Mini information about image and other things related and correlating to the image",
+        "Mini information about image and other things related and correlating to the image"
     },
     {
       image: "/images/slide2.jpg",
-      caption: "Another slide with some description here.",
+      caption: "Another slide with some description here."
     },
     {
       image: "/images/slide3.jpg",
-      caption: "More details about another event or council meeting.",
-    },
+      caption: "More details about another event or council meeting."
+    }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,8 +31,8 @@ const Slideshow = () => {
   };
 
   return (
-    <div>
-      <div className="slideshow-container">
+    <div className="mt-5">
+      <div className="slideshow-container d-flex align-content-center justify-content-center position-relative">
         <div className="slide">
           <img
             src={slides[currentIndex].image}
@@ -43,13 +43,11 @@ const Slideshow = () => {
         </div>
       </div>
 
-      <div className="slideshow-container">
+      <div className="slideshow-container d-flex align-content-center justify-content-center position-relative">
         <button className="arrow left-arrow" onClick={goToPrevSlide}>
           &lt;
         </button>
-        <button className="arrow right-arrow" onClick={goToNextSlide}>
-          &gt;
-        </button>
+
         <div className="dots">
           {slides.map((_, index) => (
             <span
@@ -59,6 +57,9 @@ const Slideshow = () => {
             ></span>
           ))}
         </div>
+        <button className="arrow right-arrow" onClick={goToNextSlide}>
+          &gt;
+        </button>
       </div>
     </div>
   );
