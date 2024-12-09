@@ -1,0 +1,119 @@
+.eotg-attending-orgs {
+  background: #71c167; /* $eotg-green */
+}
+
+.eotg-attending-orgs__header {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  padding-top: 4rem;
+  color: white;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.eotg-attending-orgs__blurb {
+  font-size: 1.5rem;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.eotg-attending-orgs__day {
+  padding: 1.5rem 0;
+  font-size: 1.2rem;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.eotg-attending-orgs__tabs {
+  border: none;
+}
+
+.eotg-attending-orgs__tabs li {
+  border: solid white;
+  border-radius: 1rem;
+  margin: 0 0.5rem;
+}
+
+.eotg-attending-orgs__tabs a {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  vertical-align: bottom;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Add media query equivalent for small screens */
+@media (max-width: 576px) {
+  .eotg-attending-orgs__tabs {
+    min-height: 8rem;
+  }
+}
+
+.eotg-org__left {
+  margin-left: 2rem;
+}
+
+.eotg-org__content {
+  cursor: pointer;
+  margin: 1rem;
+  padding: 0.25rem;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: white;
+  text-align: center;
+  color: white;
+}
+
+.eotg-org__featurette {
+  width: 80%;
+  display: block;
+  margin: 10%;
+}
+
+.eotg-org__featurette-black {
+  width: 80%;
+  display: block;
+  margin: 10%;
+  background: grey;
+}
+
+.eotg-org__name {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.eotg-org__department {
+  margin: 0.25rem 0;
+  color: white;
+  font-size: 1rem;
+}
+
+.eotg-org__department span {
+  color: white;
+}
+
+/* Floating animation */
+.floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 0px;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
