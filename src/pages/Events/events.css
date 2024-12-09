@@ -1,6 +1,6 @@
 .event-logo{
-    height: 300px;
-    width: auto;
+    height: 100%;
+    width: 100%;
 }
 
 .event-type{
@@ -20,4 +20,9 @@
     height: 13vh;
     font-size: 25px;
     font-weight:600;
+}
+
+.event-logo-container{
+    height: 350px;
+    width: 250px;
 }
