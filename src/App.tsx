@@ -6,9 +6,10 @@ import CouncilMembers from "./pages/CouncilMembersPage/CouncilMembers";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Page from "./components/Page";
 import EOTGLayout from "./pages/EOTGPage/EOTGLayout";
-import { lazy } from "react";
+import EOTGPage from "./pages/EOTGPage";
+//import { lazy } from "react";
 
-const EOTGPage = lazy(() => import("./pages/EOTGPage/index.tsx"));
+//const EOTGPage = lazy(() => import("./pages/EOTGPage/index.tsx"));
 
 function App() {
   return (
