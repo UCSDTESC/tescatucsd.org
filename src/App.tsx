@@ -12,6 +12,7 @@ function App() {
       <Router>
         <Routes>
           <Route element={<Page />}>
+            {/* All app routes */}
             <Route path="/" element={<Main />} />
             <Route path="/events" element={<Events />} />
             <Route path="/council-members" element={<CouncilMembers />} />
