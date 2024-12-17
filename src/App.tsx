@@ -5,11 +5,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CouncilMembers from "./pages/CouncilMembersPage/CouncilMembers";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Page from "./components/Page";
+import PageNoHeader from "./components/PageNoHeader";
 import EOTGLayout from "./pages/EOTGPage/EOTGLayout";
 import EOTGPage from "./pages/EOTGPage";
-//import { lazy } from "react";
-
-//const EOTGPage = lazy(() => import("./pages/EOTGPage/index.tsx"));
 
 function App() {
   return (
@@ -17,11 +15,15 @@ function App() {
       <Router>
         <Routes>
           <Route element={<Page />}>
-            {/* All app routes */}
+            {/* Routes with the NavBar */}
             <Route path="/" element={<Main />} />
             <Route path="/events" element={<Events />} />
             <Route path="/council-members" element={<CouncilMembers />} />
             <Route path="/about-us" element={<AboutUs />} />
+          </Route>
+
+          <Route element={<PageNoHeader />}>
+            {/* Routes without the NavBar */}
             <Route
               path="/eotg"
               element={

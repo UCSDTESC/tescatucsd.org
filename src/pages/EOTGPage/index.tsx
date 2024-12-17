@@ -6,9 +6,6 @@ import Orgs from "./components/Orgs.tsx";
 import Faq from "./components/Faq.tsx";
 //import Footer from "./components/Footer.tsx";
 
-import "./js/sortElements.ts";
-import "./js/company-table.ts";
-
 class EOTGPage extends Component {
   componentDidMount() {
     document.title = "EOTG | UCSD TESC";

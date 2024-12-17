@@ -1,6 +1,6 @@
 .eotg-faq {
   width: 100%;
-  background: #71c167; /* $eotg-green */
+  background: #af9ce9; /* $eotg-green */
   color: white;
 }
 
@@ -9,7 +9,7 @@
   padding-top: 4rem;
   font-size: 3rem;
   font-family: "Ubuntu", sans-serif;
-  font-weight: 900;
+  /* font-weight: 900; */
   color: white;
 }
 
@@ -33,7 +33,12 @@
   text-align: center;
 }
 
-.eotg-question__heading a {
+.eotg-question__color {
+  color: #71c167;
+  font-weight: 800;
+}
+
+.eotg-question__heading {
   color: #71c167; /* $eotg-green */
   font-size: 1.4rem;
   font-weight: 800;
@@ -58,7 +63,16 @@
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
+.question__icon {
+  font-size: 1.5rem; /* Adjust size */
+  color: #71c167; /* Plus sign color */
+  font-weight: bold;
+  transition: transform 0.5s ease;
+}
 
+.eotg-question__heading a[aria-expanded="true"] .question__icon {
+  transform: rotate(45deg); /* Rotate to make it a minus */
+}
 .eotg-question__content {
   margin: 0 2rem;
   color: #71c167; /* $eotg-green */

@@ -1,7 +1,7 @@
 import React from "react";
 import studentFaq from "../data/EOTGFaq";
 import FaqItem from "./FaqItem";
-import WarrenMallMap from "../svg/warren-mall-map.png";
+import WarrenMallMap from "/eotg-pictures/warren-mall-map.png";
 import "./Faq.css";
 
 class Faq extends React.Component {

@@ -55,8 +55,10 @@ const Orgs = () => {
                         </div>
                         */}
             <div id="tuesday" className="tab-pane fade show active">
-              <div className="eotg-attending-orgs__day">Tuesday, Jan. 7th</div>
+              {/* <div className="eotg-attending-orgs__day">Tuesday, Jan. 7th</div> */}
+              <div className="eotg-attending-orgs__day"></div>
               {renderDay("tue")}
+              <div className="eotg-attending-orgs__day"></div>
             </div>
           </div>
         </div>

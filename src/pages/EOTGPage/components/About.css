@@ -16,7 +16,7 @@
   /* background-image: url(../../../../pages/EOTGPage/svg/bg-about-winter.svg); */
   /* Uncomment and replace the above URL to change the seasons */
   background-size: contain;
-  background-color: #84dadf; /* $eotg-blue */
+  background-color: #fc7970; /* $eotg-blue */
   min-height: 100vh;
   display: flex;
   align-items: center;

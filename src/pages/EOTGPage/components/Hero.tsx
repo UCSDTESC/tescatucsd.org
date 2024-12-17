@@ -6,7 +6,8 @@ import "./Hero.css";
 
 // import BearIsland from '../svg/bear-island-fall.svg';
 // import BearFrame from '../svg/bear-frame.svg';
-import BearPlatform from "../svg/bear-platform.svg";
+// import BearPlatform from "../svg/bear-platform.svg";
+import BearPlatform from "/eotg-pictures/bear-winter-minecraft-blocks.svg";
 // import BottomLeftCloud from '../svg/cloud-bottom-left.svg';
 // import BottomRightCloud from '../svg/cloud-bottom-right.svg';
 
@@ -25,12 +26,15 @@ class Hero extends React.Component {
       <section className="eotg-hero">
         <div className="text-center eotg-hero__container">
           <Row className="justify-content-center eotg-hero__row">
-            <Col md={6} className="d-flex flex-column justify-content-end">
+            <Col
+              md={6}
+              className="d-flex flex-column justify-content-end eotg-hero__col"
+            >
               <img src={BearPlatform} alt="" className="eotg-hero__graphic" />
             </Col>
             <Col
               md="6"
-              className="d-flex align-items-center justify-content-center"
+              className="d-flex align-items-center justify-content-center eotg-hero__col"
             >
               <div>
                 <div className="eotg-hero__title pb-2">

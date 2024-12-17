@@ -1,15 +1,13 @@
-import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 
-const Page = () => {
+const PageNoHeader = () => {
   return (
     <>
-      <NavBar />
       <Outlet />
       <Footer />
     </>
   );
 };
 
-export default Page;
+export default PageNoHeader;
