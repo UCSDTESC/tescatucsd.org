@@ -1,4 +1,10 @@
 import "./HomePageEvents.css";
+import {
+  upcomingEventLogos,
+  upcomingEventLinks,
+  pastEventLogos,
+  pastEventLinks
+} from "../Events/EventsList.ts";
 
 const HomePageEvents = () => {
   return (
@@ -15,11 +21,13 @@ const HomePageEvents = () => {
 
       <div className="row justify-content-center h-auto gap-5">
         <div className="col center-block text-center rounded-5 position-relative p-5">
-          <img
-            src="/public/event-logos/eotg-event-wi25.png"
-            className="img-home-page-events"
-            alt="Upcoming Event"
-          />
+          <a href={upcomingEventLinks[0]}>
+            <img
+              src={upcomingEventLogos[0]}
+              className="img-home-page-events"
+              alt="Upcoming Event Image"
+            />
+          </a>
           <div className="text-center">
             <h4>Upcoming Event</h4>
             <p>A description of the upcoming event.</p>
@@ -27,11 +35,13 @@ const HomePageEvents = () => {
         </div>
 
         <div className="col center-block text-center rounded-5 position-relative p-5">
-          <img
-            src="/public/event-logos/decaf-event-fa24.jpg"
-            className="img-home-page-events"
-            alt="Previous Event"
-          />
+        <a href={pastEventLinks[0]}>
+            <img
+              src={pastEventLogos[0]}
+              className="img-home-page-events"
+              alt="Previous Event Image"
+            />
+          </a>
           <div className="text-center">
             <h4>Previous Event</h4>
             <p>A description of the previous event.</p>
