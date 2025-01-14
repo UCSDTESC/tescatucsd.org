@@ -1,9 +1,10 @@
 import "./events.css";
 
 const Events = () => {
-  const upcomingEventLogos = ["/event-logos/eotg-event-wi25.png"];
+  const upcomingEventLogos = ["/event-logos/decaf-event-wi25.jpg"];
   const upcomingEventLinks = ["https://tescucsd.org/eotg"];
   const pastEventLogos = [
+    "/event-logos/eotg-event-wi25.jpg",
     "/event-logos/decaf-event-fa24.jpg",
     "/event-logos/eotg-event-fa24.jpg",
     "/event-logos/decaf-event-fa23.svg",
