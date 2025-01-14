@@ -35,7 +35,7 @@ const HomePageEvents = () => {
         </div>
 
         <div className="col center-block text-center rounded-5 position-relative p-5">
-        <a href={pastEventLinks[0]}>
+          <a href={pastEventLinks[0]}>
             <img
               src={pastEventLogos[0]}
               className="img-home-page-events"
