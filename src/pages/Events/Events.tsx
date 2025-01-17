@@ -1,5 +1,5 @@
 import "./events.css";
-
+import eventsPageImage from "/AllPages/events-page-image.png";
 const Events = () => {
   const upcomingEventLogos = ["/event-logos/decaf-event-wi25.jpg"];
   const upcomingEventLinks = ["https://tescucsd.org/eotg"];
@@ -14,7 +14,7 @@ const Events = () => {
     "/event-logos/baking-event-fa20.png",
     "/event-logos/matcha-event-fa20.svg",
     "/event-logos/destress-event-fa20.svg",
-    "/event-logos/eotg-event-fa20.svg",
+    "/event-logos/eotg-event-fa20.svg"
   ];
   const pastEventLinks = [
     "https://tescucsd.org/decaf-fa24",
@@ -26,11 +26,11 @@ const Events = () => {
     "https://decafucsd.com",
     "https://www.eotgucsd.com",
     "https://decafucsd.com",
-    "https://www.eotgucsd.com",
+    "https://www.eotgucsd.com"
   ];
   return (
     <>
-      <img className="header-image" src="events-page-image.png" alt=""></img>
+      <img className="header-image" src={eventsPageImage} alt=""></img>
       <div className="divider d-flex justify-content-center align-items-center text-light">
         <p className="text-center">
           At TESC, we believe events are the best way to grow and <br /> enhance
