@@ -6,16 +6,16 @@ const Slideshow = () => {
   // List of images and captions to display in the slideshow
   const slides = [
     {
-      image: "/images/slide1.jpg",
+      image: "/HomePage/Slideshow/slide1.jpg",
       caption:
         "Mini information about image and other things related and correlating to the image"
     },
     {
-      image: "/images/slide2.jpg",
+      image: "/HomePage/Slideshow/slide2.jpg",
       caption: "Another slide with some description here."
     },
     {
-      image: "/images/slide3.jpg",
+      image: "/HomePage/Slideshow/slide3.jpg",
       caption: "More details about another event or council meeting."
     }
   ];

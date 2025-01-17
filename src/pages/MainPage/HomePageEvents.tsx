@@ -1,5 +1,6 @@
 import "./HomePageEvents.css";
-
+import decafEventWi25 from "/event-logos/decaf-event-wi25.jpg"
+import eotgEventWi25 from "/event-logos/eotg-event-wi25.jpg"
 const HomePageEvents = () => {
   return (
     <div className="container mt-5">
@@ -16,7 +17,7 @@ const HomePageEvents = () => {
       <div className="row justify-content-center h-auto gap-5">
         <div className="col center-block text-center rounded-5 position-relative p-5">
           <img
-            src="/event-logos/decaf-event-wi25.jpg"
+            src={decafEventWi25}
             className="img-home-page-events"
             alt="Upcoming Event"
           />
@@ -28,7 +29,7 @@ const HomePageEvents = () => {
 
         <div className="col center-block text-center rounded-5 position-relative p-5">
           <img
-            src="/event-logos/eotg-event-wi25.jpg"
+            src={eotgEventWi25}
             className="img-home-page-events"
             alt="Previous Event"
           />
