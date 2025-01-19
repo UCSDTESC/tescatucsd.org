@@ -8,6 +8,8 @@ import Page from "./components/Page";
 import PageNoHeader from "./components/PageNoHeader";
 import EOTGLayout from "./pages/EOTGPage/EOTGLayout";
 import EOTGPage from "./pages/EOTGPage";
+import RedirectComponent from './RedirectComponent';
+
 
 function App() {
   return (
@@ -33,6 +35,10 @@ function App() {
               }
             />
           </Route>
+
+          {/* Redirect /discord to the Discord invite link */}
+          <Route path="/discord" element={<RedirectComponent />} />
+
         </Routes>
       </Router>
     </>
