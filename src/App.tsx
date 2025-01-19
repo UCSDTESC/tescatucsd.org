@@ -8,7 +8,7 @@ import Page from "./components/Page";
 import PageNoHeader from "./components/PageNoHeader";
 import EOTGLayout from "./pages/EOTGPage/EOTGLayout";
 import EOTGPage from "./pages/EOTGPage";
-import RedirectComponent from './RedirectComponent';
+import RedirectComponent from './components/RedirectComponent';
 
 
 function App() {
