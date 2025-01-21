@@ -1,6 +1,7 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
+
 const Page = () => {
   return (
     <>
@@ -10,4 +11,5 @@ const Page = () => {
     </>
   );
 };
+
 export default Page;

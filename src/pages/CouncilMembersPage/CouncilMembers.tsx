@@ -15,12 +15,14 @@ const CouncilMembers = () => {
           </a>
         </button>
       </div> */}
-      <div className="Airtable">
+      <div className="wrapper">
+        <h1>Council Members</h1>
         <iframe
           src={AIRTABLEURL}
           width={width * 0.8}
           height={height}
           title="EventsAirtable"
+          style={{ marginTop: "1rem" }}
         ></iframe>
       </div>
     </div>

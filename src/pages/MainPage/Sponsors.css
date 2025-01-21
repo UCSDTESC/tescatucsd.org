@@ -1,4 +1,12 @@
 /* Basic styling for the sponsors section */
+.no_underline {
+  text-decoration: none;
+}
+
+.spacer {
+  margin-bottom: 7rem;
+}
+
 .sponsors-section {
   padding: 20px;
   background-color: #f9f9f9;
@@ -29,9 +37,11 @@
 
 /* Responsive grid layout */
 .sponsors-grid {
+  margin-top: 1rem;
   display: grid;
+  gap: 1rem;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust size */
+  grid-template-columns: repeat(3, minmax(120px, 1fr)); /* Adjust size */
   justify-content: center;
 }
 
