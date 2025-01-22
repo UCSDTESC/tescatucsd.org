@@ -1,4 +1,4 @@
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaDiscord } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { NavLink } from "react-router-dom";
@@ -47,6 +47,11 @@ const Footer = () => {
       <li className="footer_items">
         <a href="https://x.com/UCSDTESC/" className="contact-icon">
           <FaXTwitter />
+        </a>
+      </li>
+      <li className="footer_items">
+        <a href="https://tescucsd.org/discord" className="contact-icon">
+          <FaDiscord />
         </a>
       </li>
     </ul>
