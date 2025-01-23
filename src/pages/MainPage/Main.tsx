@@ -10,9 +10,9 @@ const Main = () => {
   return (
     <>
       <Slideshow />
-      <Divider text={divider_1_text} />
+      <Divider>{divider_1_text}</Divider>
       <HomePageEvents />
-      <Divider text={divider_2_text} />
+      <Divider>{divider_2_text}</Divider>
       <Sponsors />
     </>
   );

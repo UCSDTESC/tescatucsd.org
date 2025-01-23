@@ -1,10 +1,13 @@
-import "./Divider.css";
+import { ReactNode } from "react";
 
-export default function Divider({ text }: { text: string }) {
+export default function Divider({ children }: { children: ReactNode }) {
   return (
-    <div className="divider d-flex justify-content-center align-items-center text-light p-5 mt-5 mb-5">
-      <p className="text-center m-5" style={{ whiteSpace: "pre-wrap" }}>
-        {text}
+    <div className="divider flex justify-center items-center text-white p-5">
+      <p
+        className="text-center m-0 text-2xl leading-[1.5]"
+        style={{ whiteSpace: "pre-wrap" }}
+      >
+        {children}
       </p>
     </div>
   );

@@ -1,6 +1,7 @@
 import "./about-us.css";
 import data from "./member-info.json";
 import eventsPageImage from "/AllPages/events-page-image.png";
+import Divider from "../MainPage/Divider";
 const AboutUs = () => {
   const members = data.members;
   //[name, role/committee, major, image]
@@ -11,14 +12,12 @@ const AboutUs = () => {
         src={eventsPageImage}
         alt=""
       ></img>
-      <div className="divider d-flex justify-content-center align-items-center text-light">
-        <p className="text-center">
-          The Triton Engineering Student Council (TESC), empowers UC San Diego's
-          <br /> engineering students by connecting them to impactful
-          communities,
-          <br /> projects, and career-building opportunities
-        </p>
-      </div>
+      <Divider>
+        The Triton Engineering Student Council (TESC), empowers UC San Diego's
+        <br /> engineering students by connecting them to impactful communities,
+        <br /> projects, and career-building opportunities
+      </Divider>
+
       <div className="container mt-4">
         <div className="row mt-4">
           {members.map((member, index) => (
