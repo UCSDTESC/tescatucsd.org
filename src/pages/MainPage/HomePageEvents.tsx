@@ -8,9 +8,11 @@ const HomePageEvents = () => {
 
       <div>
         <h3>
-          <a href="https://www.tescucsd.org/events" className="no_underline" title="Events">
-            See all events →
-          </a>
+          <u>
+            <a href="https://www.tescucsd.org/events" title="Events">
+              See all events →
+            </a>
+          </u>
         </h3>
       </div>
 

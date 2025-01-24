@@ -2,7 +2,7 @@ import "./Sponsors.css";
 
 const sponsors = [
   { id: 1, 
-    logo: "/logos/L3Harris_Logo.png", 
+    logo: "/logos/L3Harris_2.jpg", 
     alt: "L3Harris", 
     website: "https://www.l3harris.com/" 
 
@@ -28,6 +28,21 @@ const sponsors = [
     logo: "/logos/LANL_Logo_Temp.png", 
     alt: "LANL", 
     website: "https://www.lanl.gov/"
+  },
+  { id: 6, 
+    logo: "/logos/Freeform_Logo.jpg", 
+    alt: "Freeform", 
+    website: "https://freeform.co/"
+  },
+  { id: 7, 
+    logo: "/logos/Keller_North_America.png", 
+    alt: "Keller", 
+    website: "https://www.keller-na.com/"
+  },
+  { id: 8, 
+    logo: "/logos/tsmc_logo2.png", 
+    alt: "TSMC", 
+    website: "https://www.tsmc.com/english"
   },
 ];
 
