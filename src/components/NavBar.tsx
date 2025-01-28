@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import TescLogoWhite from "/AllPages/TESC-logo-white.png";
 import "./navbar.css";
 const NavBar = () => {
   const pages = (
@@ -25,7 +26,7 @@ const NavBar = () => {
       <nav className="navbar navbar-expand-lg navbar-custom">
         <div className="container-fluid d-flex align-items-center">
           <NavLink to="/">
-            <img className="nav__logo" src="/TESC-logo-white.png" alt="" />
+            <img className="nav__logo" src={TescLogoWhite} alt="" />
           </NavLink>
           <button
             className="navbar-toggler"

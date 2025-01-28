@@ -1,5 +1,6 @@
 import "./about-us.css";
 import data from "./member-info.json";
+import eventsPageImage from "/AllPages/events-page-image.png";
 const AboutUs = () => {
   const members = data.members;
   //[name, role/committee, major, image]
@@ -7,7 +8,7 @@ const AboutUs = () => {
     <>
       <img
         className="header-image object-fit-cover"
-        src="events-page-image.png"
+        src={eventsPageImage}
         alt=""
       ></img>
       <div className="divider d-flex justify-content-center align-items-center text-light">

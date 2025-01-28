@@ -9,7 +9,7 @@ import {
 const Events = () => {
   return (
     <>
-      <img className="header-image" src="events-page-image.png" alt=""></img>
+      <img className="header-image" src={eventsPageImage} alt=""></img>
       <div className="divider d-flex justify-content-center align-items-center text-light">
         <p className="text-center">
           At TESC, we believe events are the best way to grow and <br /> enhance
