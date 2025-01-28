@@ -2,8 +2,10 @@ import "./HomePageEvents.css";
 import {
   upcomingEventLogos,
   upcomingEventLinks,
+  upcomingEventDescription,
   pastEventLogos,
-  pastEventLinks
+  pastEventLinks,
+  pastEventDescription,
 } from "../Events/EventsList.ts";
 
 const HomePageEvents = () => {
@@ -30,7 +32,7 @@ const HomePageEvents = () => {
           </a>
           <div className="text-center">
             <h4>Upcoming Event</h4>
-            <p>A description of the upcoming event.</p>
+            <p>{upcomingEventDescription}</p>
           </div>
         </div>
 
@@ -44,7 +46,7 @@ const HomePageEvents = () => {
           </a>
           <div className="text-center">
             <h4>Previous Event</h4>
-            <p>A description of the previous event.</p>
+            <p>{pastEventDescription}</p>
           </div>
         </div>
       </div>

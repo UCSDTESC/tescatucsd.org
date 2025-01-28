@@ -5,6 +5,7 @@ import {
   pastEventLogos,
   pastEventLinks
 } from "./EventsList.ts";
+import eventsPageImage from "/AllPages/events-page-image.png";
 
 const Events = () => {
   return (
