@@ -5,6 +5,11 @@ const NavBar = () => {
   const pages = (
     <ul className="navbar-nav ms-auto mb-0">
       <li className="nav__items nav-item text-center px-4">
+        <NavLink className="nav-link" to="https://tesc.typeform.com/to/hlC07HII">
+          <span className="nav-text">Join Us</span>
+        </NavLink>
+      </li>
+      <li className="nav__items nav-item text-center px-4">
         <NavLink className="nav-link" to="/about-us">
           <span className="nav-text">About Us </span>
         </NavLink>
