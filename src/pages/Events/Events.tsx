@@ -23,7 +23,7 @@ const Events = () => {
           {upcomingEventLogos.map((logo, index) => (
             <div
               key={index}
-              className="col-6 col-sm-6 col-lg-3 d-flex justify-content-center align-items-center mb-4"
+              className="col-10 col-sm-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center mb-4"
             >
               <div className="container event-logo-container">
                 <img
@@ -47,7 +47,7 @@ const Events = () => {
           {pastEventLogos.map((logo, index) => (
             <div
               key={index}
-              className="col-6 col-sm-6 col-lg-3 d-flex justify-content-center align-items-center mb-4"
+              className="col-10 col-sm-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center mb-4"
             >
               <div className="container event-logo-container">
                 <img
