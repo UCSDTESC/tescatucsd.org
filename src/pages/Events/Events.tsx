@@ -1,4 +1,4 @@
-import "./events.css";
+// import "./events.css";
 import eventsPageImage from "/AllPages/events-page-image.png";
 import Divider from "../MainPage/Divider";
 const Events = () => {

@@ -1,4 +1,4 @@
-import "./about-us.css";
+// import "./about-us.css";
 import data from "./member-info.json";
 import eventsPageImage from "/AllPages/events-page-image.png";
 import Divider from "../MainPage/Divider";
