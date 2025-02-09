@@ -1,5 +1,5 @@
 // import AirTable from "./AirTable";
-import "./CouncilMembers.css";
+// import "./CouncilMembers.css";
 import useWindowDimensions from "../../Hooks/UseWindowDimensions";
 const AIRTABLEURL =
   "https://airtable.com/embed/appA3VErzwydr9T1M/shrxLuF6J25c0Z5WJ?backgroundColor=orange&viewControls=on?backgroundColor=green";

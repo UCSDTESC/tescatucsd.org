@@ -25,7 +25,7 @@ const AboutUs = () => {
             className=" flex flex-col justify-center items-center mb-3"
           >
             <img
-              className="h-full w-full object-cover rounded-2xl"
+              className="h-full w-full object-cover rounded-standard"
               src={member[3]}
               alt=""
               style={{ cursor: "pointer" }}

@@ -33,13 +33,13 @@ const Slideshow = () => {
   return (
     <div className="mt-5">
       <div className="max-w-[100%] flex items-center justify-center relative">
-        <div className="relative w-[30vw] h-[20vw] text-center bg-[#f3f8ff] p-[20px] rounded-[15px] [box-shadow:0px_4px_8px_rgba(0,_0,_0,_0.1)] ">
+        <div className="relative w-[30vw] h-[20vw] text-center bg-[#f3f8ff] p-[20px] rounded-standard [box-shadow:0px_4px_8px_rgba(0,_0,_0,_0.1)] ">
           <img
             src={slides[currentIndex].image}
             alt={`Slide ${currentIndex + 1}`}
-            className="w-full h-auto rounded-[10px]"
+            className="w-full h-auto rounded-standard "
           />
-          <p className="mt-[10px] text-[14px] text-[#333] absolute bottom-[1rem]">
+          <p className="mt-[10px] text-[14px] text-darkGray absolute bottom-[1rem]">
             {slides[currentIndex].caption}
           </p>
         </div>
@@ -47,7 +47,7 @@ const Slideshow = () => {
 
       <div className="max-w-[100%] flex items-center justify-center relative">
         <button
-          className="flex m-0 h-min cursor-pointer my-0 text-[24px] bg-none border-none text-[#1c2e4a] px-[15px] pb-0 "
+          className="flex m-0 h-min cursor-pointer my-0 text-[24px] bg-none border-none text-navy px-[15px] pb-0 "
           onClick={goToPrevSlide}
         >
           &lt;
@@ -57,16 +57,18 @@ const Slideshow = () => {
           {slides.map((_, index) => (
             <span
               key={index}
-              className="h-[10px] w-[10px] mx-[5px] my-0 bg-[#bbb] rounded-[50%] cursor-pointer "
+              className="h-[10px] w-[10px] mx-[5px] my-0 bg-gray rounded-standard  cursor-pointer "
               style={{
-                backgroundColor: `${index === currentIndex ? "#1c2e4a" : ""}`
+                backgroundColor: `${
+                  index === currentIndex ? "var(--color-navy)" : ""
+                }`
               }}
               onClick={() => setCurrentIndex(index)}
             ></span>
           ))}
         </div>
         <button
-          className="flex cursor-pointer m-0 h-min text-[24px] bg-none border-none text-[#1c2e4a] px-[15px] pb-0 "
+          className="flex cursor-pointer m-0 h-min text-[24px] bg-none border-none text-navy px-[15px] pb-0 "
           onClick={goToNextSlide}
         >
           &gt;

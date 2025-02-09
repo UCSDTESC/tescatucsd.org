@@ -1,4 +1,4 @@
-import "./App.css";
+// import "./App.css";
 import Events from "./pages/Events/Events";
 import Main from "./pages/MainPage/Main";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";

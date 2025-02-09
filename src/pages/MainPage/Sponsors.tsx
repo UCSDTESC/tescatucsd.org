@@ -1,4 +1,4 @@
-import "./Sponsors.css";
+// import "./Sponsors.css";
 
 const sponsors = [
   {

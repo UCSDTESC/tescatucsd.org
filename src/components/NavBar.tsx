@@ -39,23 +39,23 @@ import TescLogoWhite from "/AllPages/TESC-logo-white.png";
 // };
 const NavBar = () => {
   return (
-    <div className="w-full bg-[#1c2e4a] flex justify-between px-4 py-0">
+    <div className="w-full bg-navy flex justify-between px-4 py-0">
       <NavLink to="/">
         <img className="h-[80px]" src={TescLogoWhite} alt="" />
       </NavLink>
       <div className="flex items-center">
         <NavLink className="h-min mx-4" to="/about-us">
-          <span className="text-[#dbdada] text-[26px] font-medium">
+          <span className="text-offWhite text-[26px] font-medium">
             About Us{" "}
           </span>
         </NavLink>
 
         <NavLink className="h-min mx-4" to="/events">
-          <span className="text-[#dbdada] text-[26px] font-medium">Events</span>
+          <span className="text-offWhite text-[26px] font-medium">Events</span>
         </NavLink>
 
         <NavLink className="h-min mx-4" to="/council-members">
-          <span className="text-[#dbdada] text-[26px] font-medium">
+          <span className="text-offWhite text-[26px] font-medium">
             Council Members
           </span>
         </NavLink>

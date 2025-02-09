@@ -53,7 +53,7 @@ const Events = () => {
             <div key={index} className="">
               <div className="">
                 <img
-                  className="h-full w-full object-cover rounded-2xl overflow-clip"
+                  className="h-full w-full object-cover rounded-standard overflow-clip"
                   src={logo}
                   alt=""
                   style={{ cursor: "pointer" }}
@@ -78,7 +78,7 @@ const Events = () => {
               className="flex justify-center items-center mb-4 flex-nowrap"
             >
               <img
-                className="flex min-h-full min-w-full object-cover rounded-2xl"
+                className="flex min-h-full min-w-full object-cover rounded-standard"
                 src={logo}
                 alt=""
                 style={{ cursor: "pointer" }}

@@ -3,7 +3,7 @@ import decafEventWi25 from "/event-logos/decaf-event-wi25.jpg";
 import eotgEventWi25 from "/event-logos/eotg-event-wi25.jpg";
 const HomePageEvents = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center mb-[10vh]">
       <div className="max-w-[70%] mt-5">
         <h1 className="font-medium [line-height:1.2] text-[2vw]">Events</h1>
         <div>
@@ -18,8 +18,8 @@ const HomePageEvents = () => {
           </h3>
         </div>
 
-        <div className="grid grid-cols-2 justify- h-auto ml-auto mr-auto gap-5">
-          <div className=" w-[100%] center-block text-center rounded-5 position-relative p-5 aspect-square bg-[#e6f3ff] rounded-xl">
+        <div className="grid grid-cols-2 justify-center h-auto ml-auto mr-auto gap-5">
+          <div className=" w-[100%] text-center p-5 aspect-square bg-lightBlue rounded-standard">
             <img
               src={decafEventWi25}
               className="max-w-[90%] h-auto mb-[2%] mx-auto"
@@ -31,7 +31,7 @@ const HomePageEvents = () => {
             </div>
           </div>
 
-          <div className="w-[100%] center-block text-center rounded-5 position-relative p-5 aspect-square bg-[#ffe6e6] rounded-xl">
+          <div className="w-[100%] text-center p-5 aspect-square bg-lightPink rounded-standard">
             <img
               src={eotgEventWi25}
               className="max-w-[90%] h-auto2 mx-auto"
