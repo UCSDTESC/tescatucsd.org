@@ -1,9 +1,9 @@
 // import "./events.css";
 import eventsPageImage from "/AllPages/events-page-image.png";
 import Divider from "../MainPage/Divider";
+import upcomingEvents from "./UpcomingEvents";
+import pastEvents from "./PastEvents";
 const Events = () => {
-  const upcomingEventLogos = ["/event-logos/decaf-event-wi25.jpg"];
-  const upcomingEventLinks = ["https://tescucsd.org/eotg"];
   const pastEventLogos = [
     "/event-logos/eotg-event-wi25.jpg",
     "/event-logos/decaf-event-fa24.jpg",
@@ -49,16 +49,16 @@ const Events = () => {
         </h1>
 
         <div className="grid grid-cols-4 gap-5">
-          {upcomingEventLogos.map((logo, index) => (
+          {upcomingEvents.map((data, index) => (
             <div key={index} className="">
               <div className="">
                 <img
                   className="h-full w-full object-cover rounded-standard overflow-clip"
-                  src={logo}
+                  src={data[0]}
                   alt=""
                   style={{ cursor: "pointer" }}
                   onClick={() => {
-                    window.location.href = upcomingEventLinks[index];
+                    window.location.href = data[1];
                   }}
                 ></img>
               </div>
@@ -72,18 +72,20 @@ const Events = () => {
           Past Events
         </h1>
         <div className="grid grid-cols-4 t gap-5">
-          {pastEventLogos.map((logo, index) => (
+          {pastEvents.map((logo, index) => (
             <div
               key={index}
               className="flex justify-center items-center mb-4 flex-nowrap"
             >
               <img
                 className="flex min-h-full min-w-full object-cover rounded-standard"
-                src={logo}
+                src={logo[0]}
                 alt=""
                 style={{ cursor: "pointer" }}
                 onClick={() => {
-                  window.location.href = pastEventLinks[index];
+                  if (logo[1]) {
+                    window.location.href = logo[1];
+                  }
                 }}
               ></img>
             </div>
