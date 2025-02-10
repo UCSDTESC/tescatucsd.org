@@ -2,13 +2,7 @@
 import { membersData } from "./member-info.tsx";
 import eventsPageImage from "/AllPages/events-page-image.png";
 import Divider from "../MainPage/Divider";
-import {
-  ReactElement,
-  JSXElementConstructor,
-  ReactNode,
-  ReactPortal,
-  Key
-} from "react";
+import { Key } from "react";
 const AboutUs = () => {
   //[name, role/committee, major, image]
   return (
