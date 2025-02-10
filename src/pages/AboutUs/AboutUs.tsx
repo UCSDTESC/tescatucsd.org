@@ -11,6 +11,7 @@ const AboutUs = () => {
         className="w-full h-[50vh] object-cover"
         src={eventsPageImage}
         alt=""
+        fetchPriority="high"
       ></img>
       <Divider>
         The Triton Engineering Student Council (TESC), empowers UC San Diego's

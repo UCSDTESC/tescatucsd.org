@@ -10,6 +10,7 @@ const Events = () => {
         className="w-full h-[50vh] object-cover"
         src={eventsPageImage}
         alt=""
+        fetchPriority="high"
       ></img>
       <Divider>
         <p>

@@ -1,13 +1,18 @@
 // import "./App.css";
-import Events from "./pages/Events/Events";
-import Main from "./pages/MainPage/Main";
+// import PageNoHeader from "./components/PageNoHeader";
+// import EOTGLayout from "./pages/EOTGPage/EOTGLayout";
+// import EOTGPage from "./pages/EOTGPage";
+
+import { lazy } from "react";
+const Events = lazy(() => import("./pages/Events/Events"));
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CouncilMembers from "./pages/CouncilMembersPage/CouncilMembers";
-import AboutUs from "./pages/AboutUs/AboutUs";
+const CouncilMembers = lazy(
+  () => import("./pages/CouncilMembersPage/CouncilMembers")
+);
+const AboutUs = lazy(() => import("./pages/AboutUs/AboutUs"));
 import Page from "./components/Page";
-import PageNoHeader from "./components/PageNoHeader";
-import EOTGLayout from "./pages/EOTGPage/EOTGLayout";
-import EOTGPage from "./pages/EOTGPage";
+import Main from "./pages/MainPage/Main";
 import RedirectComponent from "./components/RedirectComponent";
 
 function App() {
@@ -23,9 +28,9 @@ function App() {
             <Route path="/about-us" element={<AboutUs />} />
           </Route>
 
-          <Route element={<PageNoHeader />}>
-            {/* Routes without the NavBar */}
-            <Route
+          {/* <Route element={<PageNoHeader />}> */}
+          {/* Routes without the NavBar */}
+          {/* <Route
               path="/eotg"
               element={
                 <EOTGLayout>
@@ -33,7 +38,7 @@ function App() {
                 </EOTGLayout>
               }
             />
-          </Route>
+          </Route> */}
 
           {/* Redirect /discord to the Discord invite link */}
           <Route path="/discord" element={<RedirectComponent />} />

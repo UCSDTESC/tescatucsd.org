@@ -1,7 +1,6 @@
 // import "./HomePageEvents.css";
-import decafEventWi25 from "/event-logos/decaf-event-wi25.jpg";
-import eotgEventWi25 from "/event-logos/eotg-event-wi25.jpg";
-const HomePageEvents = () => {
+
+const HomePageEvents = ({ images }: { images: string[] }) => {
   return (
     <div className="flex justify-center mb-[10vh]">
       <div className="max-w-[70%] mt-5">
@@ -21,9 +20,10 @@ const HomePageEvents = () => {
         <div className="grid grid-cols-2 justify-center h-auto ml-auto mr-auto gap-5">
           <div className=" w-[100%] text-center p-5 aspect-square bg-lightBlue rounded-standard">
             <img
-              src={decafEventWi25}
+              src={images[0]}
               className="max-w-[90%] h-auto mb-[2%] mx-auto"
               alt="Upcoming Event"
+              fetchPriority="high"
             />
             <div className="text-center">
               <h4>Upcoming Event</h4>
@@ -31,11 +31,12 @@ const HomePageEvents = () => {
             </div>
           </div>
 
-          <div className="w-[100%] text-center p-5 aspect-square bg-lightPink rounded-standard">
+          <div className="w-[100%] text-center p-5 aspect-square bg-lightPink rounded-xl">
             <img
-              src={eotgEventWi25}
+              src={images[1]}
               className="max-w-[90%] h-auto2 mx-auto"
               alt="Previous Event"
+              fetchPriority="high"
             />
             <div className="text-center">
               <h4>Previous Event</h4>
