@@ -1,9 +1,15 @@
 // import "./about-us.css";
-import data from "./member-info.json";
+import { membersData } from "./member-info.tsx";
 import eventsPageImage from "/AllPages/events-page-image.png";
 import Divider from "../MainPage/Divider";
+import {
+  ReactElement,
+  JSXElementConstructor,
+  ReactNode,
+  ReactPortal,
+  Key
+} from "react";
 const AboutUs = () => {
-  const members = data.members;
   //[name, role/committee, major, image]
   return (
     <>
@@ -19,7 +25,7 @@ const AboutUs = () => {
       </Divider>
 
       <div className="grid grid-cols-4 mt-4 gap-15 mx-auto w-[70%]">
-        {members.map((member, index) => (
+        {membersData.map((member: string[], index: Key | null | undefined) => (
           <div
             key={index}
             className=" flex flex-col justify-center items-center mb-3"
