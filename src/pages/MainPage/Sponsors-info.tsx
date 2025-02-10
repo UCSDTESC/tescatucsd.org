@@ -3,8 +3,14 @@ import Dynovas from "/logos/Dynovas Matrix Logo (Final).jpg";
 import LLNLlogoBLACK from "/logos/LLNLlogoBLACK.jpg";
 import Viasat_2018_Gradient_Web from "/logos/Viasat_2018_Gradient_Web (1).jpg";
 import LANL_Logo_Temp from "/logos/LANL_Logo_Temp.png";
-
-const sponsors = [
+export const sponsors_links = [
+  L3Harris_Logo,
+  Dynovas,
+  LLNLlogoBLACK,
+  Viasat_2018_Gradient_Web,
+  LANL_Logo_Temp
+];
+export const sponsors = [
   {
     id: 1,
     logo: L3Harris_Logo,
@@ -36,5 +42,3 @@ const sponsors = [
     website: "https://www.lanl.gov/"
   }
 ];
-
-export default sponsors;

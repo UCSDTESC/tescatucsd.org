@@ -3,14 +3,10 @@
 // import EOTGLayout from "./pages/EOTGPage/EOTGLayout";
 // import EOTGPage from "./pages/EOTGPage";
 
-import { lazy } from "react";
-const Events = lazy(() => import("./pages/Events/Events"));
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-const CouncilMembers = lazy(
-  () => import("./pages/CouncilMembersPage/CouncilMembers")
-);
-const AboutUs = lazy(() => import("./pages/AboutUs/AboutUs"));
+import CouncilMembers from "./pages/CouncilMembersPage/CouncilMembers";
+import Events from "./pages/Events/Events";
+import AboutUs from "./pages/AboutUs/AboutUs";
 import Page from "./components/Page";
 import Main from "./pages/MainPage/Main";
 import RedirectComponent from "./components/RedirectComponent";

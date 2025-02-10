@@ -1,11 +1,11 @@
 // import "./Main.css";
-import { motion } from "motion/react";
 import decafEventWi25 from "/event-logos/decaf-event-wi25.jpg";
 import eotgEventWi25 from "/event-logos/eotg-event-wi25.jpg";
-import { Suspense } from "react";
 import Divider from "./Divider";
 import Slideshow from "./Slideshow";
 import HomePageEvents from "./HomePageEvents";
+import { Helmet } from "react-helmet";
+
 import Sponsors from "./Sponsors";
 
 const divider_1_text =
@@ -15,6 +15,21 @@ const divider_2_text = ""; //In TESC we believe that best way to improve and pro
 const Main = () => {
   return (
     <>
+      <Helmet>
+        <link
+          rel="preload"
+          as="image"
+          href="/event-logos/decaf-event-wi25.jpg"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/event-logos/eotg-event-wi25.jpg"
+          fetchPriority="high"
+        />
+      </Helmet>
+
       <Slideshow />
       <Divider>{divider_1_text}</Divider>
       <HomePageEvents images={[decafEventWi25, eotgEventWi25]} />

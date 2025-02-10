@@ -1,11 +1,24 @@
 // import "./events.css";
 import eventsPageImage from "/AllPages/events-page-image.png";
 import Divider from "../MainPage/Divider";
-import upcomingEvents from "./UpcomingEvents";
-import pastEvents from "./PastEvents";
+import decaf_event_wi25 from "/event-logos/decaf-event-wi25.jpg";
+import { Helmet } from "react-helmet";
+import { lazy, Suspense } from "react";
+import LoadingIcon from "../MainPage/LoadingIcon";
+const PastEventsGrid = lazy(() => import("./PastEventsGrid"));
+const upcomingEvents = [[decaf_event_wi25, "https://tescucsd.org/eotg"]];
 const Events = () => {
   return (
     <>
+      <Helmet>
+        <link
+          rel="preload"
+          as="image"
+          href="/AllPages/events-page-image.png"
+          fetchPriority="high"
+        />
+      </Helmet>
+
       <img
         className="w-full h-[50vh] object-cover"
         src={eventsPageImage}
@@ -47,25 +60,11 @@ const Events = () => {
         <h1 className="font-medium [line-height:1.2] text-[2vw] mb-2">
           Past Events
         </h1>
+
         <div className="grid grid-cols-4 t gap-5">
-          {pastEvents.map((logo, index) => (
-            <div
-              key={index}
-              className="flex justify-center items-center mb-4 flex-nowrap"
-            >
-              <img
-                className="flex min-h-full min-w-full object-cover rounded-standard"
-                src={logo[0]}
-                alt=""
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  if (logo[1]) {
-                    window.location.href = logo[1];
-                  }
-                }}
-              ></img>
-            </div>
-          ))}
+          <Suspense fallback={<LoadingIcon />}>
+            <PastEventsGrid />
+          </Suspense>
         </div>
       </div>
     </>
