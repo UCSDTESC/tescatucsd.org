@@ -15,21 +15,6 @@ const divider_2_text = ""; //In TESC we believe that best way to improve and pro
 const Main = () => {
   return (
     <>
-      <Helmet>
-        <link
-          rel="preload"
-          as="image"
-          href="/event-logos/decaf-event-wi25.jpg"
-          fetchPriority="high"
-        />
-        <link
-          rel="preload"
-          as="image"
-          href="/event-logos/eotg-event-wi25.jpg"
-          fetchPriority="high"
-        />
-      </Helmet>
-
       <Slideshow />
       <Divider>{divider_1_text}</Divider>
       {/* <HomePageEvents images={[decafEventWi25, eotgEventWi25]} /> */}
