@@ -1,6 +1,6 @@
 // import "./Main.css";
-import decafEventWi25 from "/event-logos/decaf-event-wi25.jpg";
-import eotgEventWi25 from "/event-logos/eotg-event-wi25.jpg";
+// import decafEventWi25 from "/event-logos/decaf-event-wi25.jpg";
+// import eotgEventWi25 from "/event-logos/eotg-event-wi25.jpg";
 import Divider from "./Divider";
 import Slideshow from "./Slideshow";
 import HomePageEvents from "./HomePageEvents";
@@ -32,7 +32,8 @@ const Main = () => {
 
       <Slideshow />
       <Divider>{divider_1_text}</Divider>
-      <HomePageEvents images={[decafEventWi25, eotgEventWi25]} />
+      {/* <HomePageEvents images={[decafEventWi25, eotgEventWi25]} /> */}
+      <HomePageEvents />
       <Divider>{divider_2_text}</Divider>
       <Sponsors />
     </>
