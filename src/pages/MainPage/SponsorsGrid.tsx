@@ -1,5 +1,5 @@
 import "./Sponsors.css";
-import { sponsors, sponsors_links } from "./Sponsors-info";
+import { sponsors } from "./Sponsors-info";
 
 import useImagePreloader from "../../Hooks/useImagePreload";
 import LoadingIcon from "./LoadingIcon";
@@ -37,7 +37,7 @@ import LoadingIcon from "./LoadingIcon";
 // ];
 
 export default function SponsorsGrid() {
-  const imgsLoaded = useImagePreloader(sponsors_links);
+  const imgsLoaded = useImagePreloader(sponsors.map((sponsor) => sponsor.logo));
   return (
     <>
       {imgsLoaded.imagesPreloaded ? (
@@ -51,12 +51,12 @@ export default function SponsorsGrid() {
             <a href={sponsor.website}>
               <div
                 key={sponsor.id}
-                className="sponsor-item h-[150px] overflow-clip"
+                className="sponsor-item h-[100px] overflow-clip"
               >
                 <img
                   src={sponsor.logo}
                   alt={sponsor.alt}
-                  className="w-3/4 object-fit "
+                  className="w-5/8 object-fit "
                 />
               </div>
             </a>

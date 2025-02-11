@@ -1,44 +1,50 @@
-import L3Harris_Logo from "/logos/L3Harris_Logo.png";
-import Dynovas from "/logos/Dynovas Matrix Logo (Final).jpg";
-import LLNLlogoBLACK from "/logos/LLNLlogoBLACK.jpg";
-import Viasat_2018_Gradient_Web from "/logos/Viasat_2018_Gradient_Web (1).jpg";
-import LANL_Logo_Temp from "/logos/LANL_Logo_Temp.png";
-export const sponsors_links = [
-  L3Harris_Logo,
-  Dynovas,
-  LLNLlogoBLACK,
-  Viasat_2018_Gradient_Web,
-  LANL_Logo_Temp
-];
 export const sponsors = [
   {
     id: 1,
-    logo: L3Harris_Logo,
+    logo: "/logos/L3Harris_2.jpg",
     alt: "L3Harris",
     website: "https://www.l3harris.com/"
   },
   {
     id: 2,
-    logo: Dynovas,
+    logo: "/logos/Dynovas Matrix Logo (Final).jpg",
     alt: "Dynovas",
     website: "https://www.dynovas.com/"
   },
   {
     id: 3,
-    logo: LLNLlogoBLACK,
+    logo: "/logos/LLNLlogoBLACK.jpg",
     alt: "LLNL",
     website: "https://www.llnl.gov/"
   },
   {
     id: 4,
-    logo: Viasat_2018_Gradient_Web,
+    logo: "/logos/Viasat_2018_Gradient_Web (1).jpg",
     alt: "Viasat",
     website: "https://www.viasat.com/"
   },
   {
     id: 5,
-    logo: LANL_Logo_Temp,
+    logo: "/logos/LANL_Logo_Temp.png",
     alt: "LANL",
     website: "https://www.lanl.gov/"
+  },
+  {
+    id: 6,
+    logo: "/logos/Freeform_Logo.jpg",
+    alt: "Freeform",
+    website: "https://freeform.co/"
+  },
+  {
+    id: 7,
+    logo: "/logos/Keller_North_America.png",
+    alt: "Keller",
+    website: "https://www.keller-na.com/"
+  },
+  {
+    id: 8,
+    logo: "/logos/tsmc_logo2.png",
+    alt: "TSMC",
+    website: "https://www.tsmc.com/english"
   }
 ];

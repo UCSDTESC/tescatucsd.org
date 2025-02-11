@@ -31,7 +31,7 @@ const Slideshow = () => {
   };
 
   return (
-    <div className="mt-5">
+    <div className="my-[5vw]">
       <div className="max-w-[100%] flex items-center justify-center relative">
         <div className="relative w-[30vw] h-[20vw] text-center bg-[#f3f8ff] p-[20px] rounded-standard [box-shadow:0px_4px_8px_rgba(0,_0,_0,_0.1)] ">
           <img
@@ -45,7 +45,7 @@ const Slideshow = () => {
         </div>
       </div>
 
-      <div className="max-w-[100%] flex items-center justify-center relative">
+      <div className="max-w-[100%] flex items-center justify-center relative mt-[2vw]">
         <button
           className="flex m-0 h-min cursor-pointer my-0 text-[24px] bg-none border-none text-navy px-[15px] pb-0 "
           onClick={goToPrevSlide}
