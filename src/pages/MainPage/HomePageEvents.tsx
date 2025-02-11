@@ -34,7 +34,7 @@ const HomePageEvents = () => {
           </a>
           <div className="text-center">
             <h4>Upcoming Event</h4>
-            <p>{upcomingEventDescription}</p>
+            <p>{upcomingEventDescription[0]}</p>
           </div>
         </div>
 
@@ -48,7 +48,7 @@ const HomePageEvents = () => {
           </a>
           <div className="text-center">
             <h4>Previous Event</h4>
-            <p>{pastEventDescription}</p>
+            <p>{pastEventDescription[0]}</p>
           </div>
         </div>
       </div>
