@@ -6,18 +6,30 @@ const Slideshow = () => {
   // List of images and captions to display in the slideshow
   const slides = [
     {
-      image: "/HomePage/Slideshow/slide1.jpg",
+      image: "/slideshow-pictures/decaf-fa24/IMG_3802.png",
       caption:
-        "Mini information about image and other things related and correlating to the image"
+        "Disciplines of Engineering Career Fair Fall 2024"
     },
     {
-      image: "/HomePage/Slideshow/slide2.jpg",
-      caption: "Another slide with some description here."
+      image: "/slideshow-pictures/eotg-wi25/IMG_4351.JPEG",
+      caption: "Engineers on the Green Winter 2025"
     },
     {
-      image: "/HomePage/Slideshow/slide3.jpg",
-      caption: "More details about another event or council meeting."
-    }
+      image: "/slideshow-pictures/eotg-wi25/IMG_4354.JPEG",
+      caption: "Engineers on the Green Winter 2025"
+    },
+    {
+      image: "/slideshow-pictures/council-dirty-birds-social/20250117_184343.jpg",
+      caption: "TESC Council Social Winter 2025"
+    },
+    {
+      image: "/slideshow-pictures/council-dirty-birds-social/20250117_184426.jpg",
+      caption: "TESC Council Social Winter 2025"
+    },
+    {
+      image: "/slideshow-pictures/decaf-wi25/IMG_4427.JPEG",
+      caption: "Disciplines of Engineering Career Fair Winter 2025"
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
