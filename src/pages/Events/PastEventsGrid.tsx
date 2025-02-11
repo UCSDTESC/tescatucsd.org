@@ -1,19 +1,9 @@
 import useImagePreloader from "../../Hooks/useImagePreload";
 import LoadingIcon from "../MainPage/LoadingIcon";
+import { pastEventLinks, pastEventLogos} from "./EventsList";
 
-const pastEvents = [
-  ["/event-logos/eotg-event-wi25.jpg"],
-  ["/event-logos/decaf-event-fa24.jpg", "https://tescucsd.org/decaf-fa24"],
-  ["/event-logos/eotg-event-fa24.jpg", "https://tescucsd.org/eotg-fa24"],
-  ["/event-logos/decaf-event-fa23.svg", "https://decafucsd.com"],
-  ["/event-logos/sd-hacks-event-wi21.png"],
-  ["/event-logos/decaf-event-wi21.svg", "https://decafucsd.com"],
-  ["/event-logos/eotg-event-wi21.svg", "https://www.eotgucsd.com"],
-  ["/event-logos/baking-event-fa20.png"],
-  ["/event-logos/matcha-event-fa20.svg"],
-  ["/event-logos/destress-event-fa20.svg"],
-  ["/event-logos/eotg-event-fa20.svg", "https://www.eotgucsd.com"]
-];
+const pastEvents = pastEventLogos.map((logo, index) => [logo, pastEventLinks[index]]);
+
 export default function PastEventsGrid() {
   const ImagePreloader = useImagePreloader(pastEvents.map((item) => item[0]));
   return (
