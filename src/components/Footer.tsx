@@ -26,15 +26,15 @@ const Footer = () => {
   // );
   const pages = (
     <div className="flex items-center">
-      <NavLink className="h-min mx-4" to="/about-us">
+      <NavLink className="h-min mx-[32px]" to="/about-us">
         <span className="text-offWhite text-[26px] font-medium">About Us </span>
       </NavLink>
 
-      <NavLink className="h-min mx-4" to="/events">
+      <NavLink className="h-min mx-[32px]" to="/events">
         <span className="text-offWhite text-[26px] font-medium">Events</span>
       </NavLink>
 
-      <NavLink className="h-min mx-4" to="/council-members">
+      <NavLink className="h-min mx-[32px]" to="/council-members">
         <span className="text-offWhite text-[26px] font-medium">
           Council Members
         </span>

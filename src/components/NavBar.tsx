@@ -40,25 +40,23 @@ import useImagePreloader from "../Hooks/useImagePreload";
 //   );
 // };
 const NavBar = () => {
-  
-
   return (
-    <div className="w-full bg-navy flex justify-between px-4 py-0">
+    <div className="w-full bg-navy flex justify-between px-[18px] py-1">
       <NavLink to="/">
         <img className="h-[80px]" src={TescLogoWhite} alt="" />
       </NavLink>
       <div className="flex items-center">
-        <NavLink className="h-min mx-4" to="/about-us">
+        <NavLink className="h-min mx-[32px]" to="/about-us">
           <span className="text-offWhite text-[26px] font-medium">
             About Us{" "}
           </span>
         </NavLink>
 
-        <NavLink className="h-min mx-4" to="/events">
+        <NavLink className="h-min mx-[32px]" to="/events">
           <span className="text-offWhite text-[26px] font-medium">Events</span>
         </NavLink>
 
-        <NavLink className="h-min mx-4" to="/council-members">
+        <NavLink className="h-min mx-[32px]" to="/council-members">
           <span className="text-offWhite text-[26px] font-medium">
             Council Members
           </span>

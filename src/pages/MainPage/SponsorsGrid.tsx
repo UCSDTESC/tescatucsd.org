@@ -49,12 +49,14 @@ export default function SponsorsGrid() {
             alt: string;
           }) => (
             <a href={sponsor.website}>
-              <div key={sponsor.id} className="sponsor-item">
+              <div
+                key={sponsor.id}
+                className="sponsor-item h-[150px] overflow-clip"
+              >
                 <img
                   src={sponsor.logo}
                   alt={sponsor.alt}
-                  className="max-w-full max-h-[60px] object-contain"
-                  fetchPriority="high"
+                  className="w-3/4 object-fit "
                 />
               </div>
             </a>
