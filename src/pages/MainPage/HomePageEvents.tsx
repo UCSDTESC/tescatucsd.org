@@ -36,12 +36,12 @@ const HomePageEvents = () => {
               alt="Upcoming Event"
               fetchPriority="high"
             />
-			</a>
-            <div className="text-center">
-              <h4>Upcoming Event</h4>
-              <p>{upcomingEventDescription}</p>
-            </div>
+          </a>
+          <div className="text-center">
+            <h4>Upcoming Event</h4>
+            <p>{upcomingEventDescription[0]}</p>
           </div>
+        </div>
 
           <div className="w-[100%] text-center p-5 aspect-square bg-lightPink rounded-xl">
 		  <a href={pastEventLinks[0]}>
@@ -51,14 +51,14 @@ const HomePageEvents = () => {
               alt="Previous Event"
               fetchPriority="high"
             />
-			</a>
-            <div className="text-center">
-              <h4>Previous Event</h4>
-              <p>{pastEventDescription}</p>
-            </div>
+          </a>
+          <div className="text-center">
+            <h4>Previous Event</h4>
+            <p>{pastEventDescription[0]}</p>
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
