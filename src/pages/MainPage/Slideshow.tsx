@@ -6,7 +6,7 @@ const Slideshow = () => {
   // List of images and captions to display in the slideshow
   const slides = [
     {
-      image: "/slideshow-pictures/decaf-fa24/IMG_3802.png",
+      image: "/slideshow-pictures/decaf-fa24/IMG_3802.jpg",
       caption:
         "Disciplines of Engineering Career Fair Fall 2024"
     },
