@@ -13,10 +13,16 @@
       "/member-pictures/Shree-Venkatesh.jpg"
     ],
     [
-      "Christine Nguyen",
+      "Ashley Choi",
       "VP External",
-      "Computer Science",
-      "/member-pictures/Christine-Nguyen.jpg"
+      "Political Science",
+      "/member-pictures/Ashley-Choi.jpg"
+    ],
+    [
+      "Chloe Pracharktam",
+      "VP Events",
+      "Chemical Engineering",
+      "/member-pictures/Chloe-Pracharktam.jpg"
     ],
     [
       "Rohan Sachdeva",
@@ -31,22 +37,52 @@
       "/member-pictures/Pearl-Wen.jpg"
     ],
     [
-      "Ali Al Radhi",
-      "Marketing",
-      "Cognitive Science",
-      "/member-pictures/Ali-Alradhi.jpg"
+      "Christine Nguyen",
+      "Former VP External",
+      "Computer Science",
+      "/member-pictures/Christine-Nguyen.jpg"
     ],
     [
       "Anika Agarwal",
-      "Operations",
+      "Social Lead",
       "Computer Engineering",
       "/member-pictures/Anika-Agarwal.jpg"
     ],
     [
-      "Ashley Choi",
-      "Marketing",
-      "Political Science",
+      "Melchisedec Lai",
+      "Sponsorship Lead",
+      "Nanoengineering",
+      "/member-pictures/Mel-Lai.jpg"
+    ],
+    [
+      "Julia Nguyen",
+      "Financial Analyst",
+      "Business Economics",
+      "/member-pictures/Julia-Nguyen.jpg"
+    ],
+    [
+      "Nishitha Selvakumar",
+      "Tech Lead",
+      "Computer Science",
+      "/member-pictures/Nishitha-Selvakumar.jpg"
+    ],
+    [
+      "Jonathan Ty",
+      "Design Lead",
+      "Computer Science",
+      "/member-pictures/Jonathan-Ty.png"
+    ],
+    [
+      "Kai Velasco",
+      "Operations Lead",
+      "Structural Engineering",
       "/member-pictures/Profile_avatar_placeholder_large.png"
+    ],
+    [
+      "Elizabeth Dam",
+      "Social",
+      "Electrical Engineering",
+      "/member-pictures/Elizabeth-Dam.jpg"
     ],
     [
       "Ferrari Guan",
@@ -61,10 +97,10 @@
       "/member-pictures/Nabhya-Gupta.jpg"
     ],
     [
-      "Melchisedec Lai",
-      "Sponsorship",
-      "Nanoengineering",
-      "/member-pictures/Mel-Lai.jpg"
+      "Mia Jin",
+      "Design",
+      "Cognitive Science",
+      "/member-pictures/Mia-Jin.jpg"
     ],
     [
       "Eden Mai",
@@ -85,16 +121,10 @@
       "/member-pictures/Hieu-Nguyen.jpg"
     ],
     [
-      "Julia Nguyen",
-      "Finance",
-      "Business Economics",
-      "/member-pictures/Julia-Nguyen.jpg"
-    ],
-    [
-      "Chloe Pracharktam",
-      "Logistics",
+      "Anna Pham",
+      "Design",
       "Chemical Engineering",
-      "/member-pictures/Chloe-Pracharktam.jpg"
+      "/member-pictures/Anna-Pham.jpeg"
     ],
     [
       "Arnav Sahu",
@@ -103,10 +133,10 @@
       "/member-pictures/Arnav-Sahu.jpg"
     ],
     [
-      "Nishitha Selvakumar",
-      "Tech",
+      "Shruti Senthilram",
+      "Marketing",
       "Computer Science",
-      "/member-pictures/Nishitha-Selvakumar.jpg"
+      "/member-pictures/Profile_avatar_placeholder_large.png"
     ],
     [
       "Kavya Shah",
@@ -115,10 +145,16 @@
       "/member-pictures/Kavya-Shah.jpg"
     ],
     [
-      "Nishant Sharma",
-      "Sponsorship",
-      "Bioengineering: Biotechnology",
-      "/member-pictures/Nishant-Sharma.jpg"
+      "Ashton Simbol",
+      "Operations",
+      "Computer Science",
+      "/member-pictures/Profile_avatar_placeholder_large.png"
+    ],
+    [
+      "Aditya Sivanandan",
+      "ProDev",
+      "Mechanical Engineering",
+      "/member-pictures/Aditya-Sivanandan.jpg"
     ],
     [
       "Thanh Trinh",
@@ -128,20 +164,14 @@
     ],
     [
       "Brooke Truong",
-      "Logistics",
+      "ProDev",
       "Computer Science",
       "/member-pictures/Brooke-Truong.jpg"
     ],
     [
-      "Jonathan Ty",
-      "Marketing",
-      "Computer Science",
-      "/member-pictures/Jonathan-Ty.png"
-    ],
-    [
-      "Kai Velasco",
-      "Operations",
-      "Structural Engineering",
+      "Jenna Vo",
+      "Design",
+      "Aerospace Engineering",
       "/member-pictures/Profile_avatar_placeholder_large.png"
     ],
     [
