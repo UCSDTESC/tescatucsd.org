@@ -37,7 +37,7 @@ const Slideshow = () => {
           <img
             src={slides[currentIndex].image}
             alt={`Slide ${currentIndex + 1}`}
-            className="w-full h-auto rounded-standard "
+            className="w-[90%] h-auto rounded-standard mx-auto "
           />
           <p className="mt-[10px] text-[14px] text-darkGray absolute bottom-[1rem]">
             {slides[currentIndex].caption}

@@ -46,6 +46,12 @@ const NavBar = () => {
         <img className="h-[80px]" src={TescLogoWhite} alt="" />
       </NavLink>
       <div className="flex items-center">
+        <NavLink
+          className="h-min mx-[32px]"
+          to="https://tesc.typeform.com/to/hlC07HII"
+        >
+          <span className="text-offWhite text-[26px] font-medium">Join Us</span>
+        </NavLink>
         <NavLink className="h-min mx-[32px]" to="/about-us">
           <span className="text-offWhite text-[26px] font-medium">
             About Us{" "}
