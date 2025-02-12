@@ -1,5 +1,5 @@
 export const upcomingEventLogos = ["/event-logos/SandcastleBonfire.jpg"];
-export const upcomingEventLinks = [];
+export const upcomingEventLinks = ["https://docs.google.com/forms/d/e/1FAIpQLSfYP_vwKSgp0AF6B310_VyWz5hGEI3Hg6UfZetKdhE_THPiNA/viewform"];
 
 export const pastEventLogos = [
 "/event-logos/stempad-talk-wi25.png",
