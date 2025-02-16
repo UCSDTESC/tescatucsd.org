@@ -12,17 +12,15 @@ export default function AboutUsContent() {
         membersData.map((member: string[], index: number) => (
           <div
             key={index}
-            className=" flex flex-col justify-center items-center mb-3"
+            className="flex flex-col justify-center items-center"
           >
             <img
-              className="h-full w-full object-cover rounded-standard"
+              className="h-80 w-64 object-cover rounded-standard"
               src={member[3]}
               alt=""
-              style={{ cursor: "pointer" }}
-              onClick={() => {}}
             ></img>
             <p className="text-center">
-              <span className="text-bold">{member[0]}</span> <br />
+              <span className="font-bold">{member[0]}</span> <br />
               {member[1]}
             </p>
           </div>
