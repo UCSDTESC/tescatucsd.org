@@ -1,7 +1,4 @@
-import {
-  upcomingEventLogos,
-  upcomingEventLinks,
-} from "./EventsList.ts";
+import { upcomingEventLogos, upcomingEventLinks } from "./EventsList.ts";
 
 import eventsPageImage from "/AllPages/events-page-image.png";
 import Divider from "../MainPage/Divider";
@@ -44,7 +41,7 @@ const Events = () => {
           {upcomingEventLogos.map((logo, index) => (
             <div key={index} className="">
               <img
-                className="h-full w-full object-cover rounded-lg overflow-hidden cursor-pointer"
+                className="flex w-64 h-64 object-cover rounded-standard cursor-pointer"
                 src={logo}
                 alt=""
                 onClick={() => {
