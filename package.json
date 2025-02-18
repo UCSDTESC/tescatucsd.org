@@ -2,20 +2,24 @@
   "name": "tescucsd.org",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
+    "@tailwindcss/vite": "^4.0.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "airtable": "^0.12.2",
-    "bootstrap": "^5.3.3",
     "jquery": "^3.7.1",
+    "motion": "^12.4.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-icons": "^5.3.0",
-    "react-router-dom": "^6.28.0",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^5.4.0",
+    "react-router-dom": "^6.29.0",
     "react-scripts": "^5.0.1",
     "reactstrap": "^9.2.3",
-    "sass": "^1.80.5",
+    "sass": "^1.84.0",
+    "tailwindcss": "^4.0.0",
     "tescucsd.org": "file:",
     "web-vitals": "^2.1.4",
     "webpack": "^5.96.1"
@@ -45,9 +49,11 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.5.32",
-    "@vitejs/plugin-react-swc": "^3.7.1",
-    "vite": "^5.4.11",
+    "@types/react-helmet": "^6.1.11",
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "typescript": "^4.9.5",
+    "vite": "^5.4.14",
     "vite-plugin-svgr": "^4.3.0",
-    "vite-tsconfig-paths": "^5.1.3"
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }
