@@ -57,50 +57,6 @@ const Slideshow = () => {
   });
 
   return (
-    // <div className="my-[5vw]">
-    //   <div className="w-[100%] flex items-center justify-center relative">
-    //     <div className="relative w-[50vw] h-[30vw] text-center bg-[#f3f8ff] p-[20px] rounded-standard [box-shadow:0px_4px_8px_rgba(0,_0,_0,_0.1)] ">
-    //       <img
-    //         src={slides[currentIndex].image}
-    //         alt={`Slide ${currentIndex + 1}`}
-    //         className="w-[90%] h-[80%] object-cover rounded-standard mx-auto "
-    //       />
-    //       <p className="mt-[10px] text-darkGray absolute bottom-[10%] text-[1vw] w-full text-center">
-    //         {slides[currentIndex].caption}
-    //       </p>
-    //     </div>
-    //   </div>
-
-    //   <div className="max-w-[100%] flex items-center justify-center relative mt-[2vw]">
-    //     <button
-    //       className="flex m-0 h-min cursor-pointer my-0 text-[24px] bg-none border-none text-navy px-[15px] pb-0 "
-    //       onClick={goToPrevSlide}
-    //     >
-    //       &lt;
-    //     </button>
-
-    //     <div className="flex align-center mt-[8px]">
-    //       {slides.map((_, index) => (
-    //         <span
-    //           key={index}
-    //           className="h-[10px] w-[10px] mx-[5px] my-0 bg-gray rounded-standard  cursor-pointer "
-    //           style={{
-    //             backgroundColor: `${
-    //               index === currentIndex ? "var(--color-navy)" : ""
-    //             }`
-    //           }}
-    //           onClick={() => setCurrentIndex(index)}
-    //         ></span>
-    //       ))}
-    //     </div>
-    //     <button
-    //       className="flex cursor-pointer m-0 h-min text-[24px] bg-none border-none text-navy px-[15px] pb-0 "
-    //       onClick={goToNextSlide}
-    //     >
-    //       &gt;
-    //     </button>
-    //   </div>
-    // </div>
     <div className="max-w-screen  h-[80vh] relative overflow-x-hidden m-0">
       <div
         className="w-screen h-full relative duration-1000"
