@@ -1,6 +1,7 @@
 // Slideshow.jsx
 import { useEffect, useState } from "react";
 import { animate, motion } from "motion/react";
+import { left } from "@popperjs/core";
 // import "./Slideshow.css";
 
 const Slideshow = () => {
@@ -35,65 +36,17 @@ const Slideshow = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [inSwitch, setCurrentSwitch] = useState(0);
-  const animationDuration = 0.5;
   const goToNextSlide = () => {
-    setCurrentSwitch(1);
-    setTimeout(() => {
-      setCurrentIndex((currentIndex + 1) % slides.length);
-      setCurrentSwitch(0);
-    }, animationDuration * 1000);
+    setCurrentIndex((currentIndex + 1) % slides.length);
   };
   const dotClick = (index: number) => {
-    setCurrentSwitch(-2);
-    setTimeout(() => {
-      setCurrentSwitch(2);
-      setCurrentIndex(index);
-    }, animationDuration * 150);
+    setCurrentIndex(index);
   };
 
   const goToPrevSlide = () => {
-    setCurrentSwitch(-1);
-    setTimeout(() => {
-      setCurrentIndex((currentIndex - 1 + slides.length) % slides.length);
-      setCurrentSwitch(0);
-    }, animationDuration * 1000);
+    setCurrentIndex((currentIndex - 1 + slides.length) % slides.length);
   };
 
-  const slideShowVariants = {
-    initial: {
-      x: 0,
-
-      transition: {
-        duration: 0
-      }
-    },
-    left: {
-      x: "100vw",
-      transition: {
-        duration: animationDuration / 2
-      }
-    },
-    right: {
-      x: "-100vw",
-      transition: {
-        duration: animationDuration / 2
-      }
-    },
-    disappear: {
-      opacity: 0,
-      transition: {
-        duration: animationDuration / 5
-      }
-    },
-    appear: {
-      opacity: 1,
-      transition: {
-        duration: animationDuration / 5,
-        delay: 0.1
-      }
-    }
-  };
   useEffect(() => {
     const intervalID = setInterval(() => {
       goToNextSlide();
@@ -148,45 +101,31 @@ const Slideshow = () => {
     //     </button>
     //   </div>
     // </div>
-    <div className="max-w-screen h-[80vh] relative mb-2 overflow-x-hidden m-0">
-      <motion.div
-        className="w-full h-full "
-        variants={slideShowVariants}
-        initial="initial"
-        animate={
-          inSwitch === 1
-            ? "right"
-            : inSwitch === -1
-            ? "left"
-            : inSwitch === 0
-            ? "initial"
-            : inSwitch === -2
-            ? "disappear"
-            : "appear"
-        }
+    <div className="max-w-screen  h-[80vh] relative overflow-x-hidden m-0">
+      <div
+        className="w-screen h-full relative duration-1000"
+        style={{ transform: `translateX(-${currentIndex * 100}vw)` }}
       >
-        <img
-          src={
-            slides[currentIndex - 1 < 0 ? slides.length - 1 : currentIndex - 1]
-              .image
-          }
-          alt={`Slide ${currentIndex + 1}`}
-          className="w-full h-full object-cover absolute top-0 left-[-100vw] object-[50%_40%]"
-        />
-        <img
-          src={slides[currentIndex].image}
-          alt={`Slide ${currentIndex + 1}`}
-          className="w-full h-full object-cover object-[50%_40%]"
-        />
-        <img
-          src={
-            slides[currentIndex + 1 === slides.length ? 0 : currentIndex + 1]
-              .image
-          }
-          alt={`Slide ${currentIndex + 1}`}
-          className="w-full h-full object-cover absolute top-0 left-[100vw] object-[50%_40%]"
-        />
-      </motion.div>
+        {slides.map((slide, index) => {
+          return (
+            <div
+              className="absolute w-full h-full"
+              style={{
+                left: `${index * 100}vw`
+              }}
+            >
+              <img
+                src={slide.image}
+                alt=""
+                className="w-full h-full object-cover  object-[25%_35%]"
+              />
+              {/* <p className="text-black text-[5vh] absolute top-0 left-0 w-full bg-[#f3f8ff]">
+                {slide.caption}
+              </p> */}
+            </div>
+          );
+        })}
+      </div>
 
       <div className="w-[100%] flex items-center justify-center mt-[2vw] absolute bottom-0">
         <button
