@@ -12,11 +12,11 @@ const Slideshow = () => {
       caption: "Disciplines of Engineering Career Fair Fall 2024"
     },
     {
-      image: "/slideshow-pictures/eotg-wi25/IMG_4351.JPEG",
+      image: "/slideshow-pictures/eotg-wi25/IMG_4351.jpg",
       caption: "Engineers on the Green Winter 2025"
     },
     {
-      image: "/slideshow-pictures/eotg-wi25/IMG_4354.JPEG",
+      image: "/slideshow-pictures/eotg-wi25/IMG_4354.jpg",
       caption: "Engineers on the Green Winter 2025"
     },
     {
@@ -30,7 +30,7 @@ const Slideshow = () => {
       caption: "TESC Council Social Winter 2025"
     },
     {
-      image: "/slideshow-pictures/decaf-wi25/IMG_4427.JPEG",
+      image: "/slideshow-pictures/decaf-wi25/IMG_4427.jpg",
       caption: "Disciplines of Engineering Career Fair Winter 2025"
     }
   ];
