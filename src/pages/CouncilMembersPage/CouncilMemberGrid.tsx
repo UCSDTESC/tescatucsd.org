@@ -13,10 +13,10 @@ export default function CouncilMemberGrid() {
       {councilMemberData.map((councilMember) => (
         <div
           key={councilMember.OrgAcronym}
-          className="flex flex-col justify-center items-center"
+          className="flex flex-col justify-center items-center rounded-standard"
         >
           <img
-            className="h-64 w-64 object-contain object-center rounded-standard"
+            className="h-52 w-52 object-contain object-center rounded-standard  shadow-2xl"
             src={`council-member-logos/${councilMember.Image}`}
             alt=""
           ></img>

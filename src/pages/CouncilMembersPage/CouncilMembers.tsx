@@ -8,7 +8,7 @@ const CouncilMembers = () => {
         <h1 className="font-medium [line-height:1.2] text-[2vw] mb-2">
           Council Members
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-4 gap-5 mx-auto w-[80%]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-4 mx-auto w-[80%]">
           <Suspense fallback={<LoadingIcon />}>
             <CouncilMemberGrid />
           </Suspense>
