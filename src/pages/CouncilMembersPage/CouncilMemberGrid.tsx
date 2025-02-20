@@ -18,15 +18,15 @@ export default function CouncilMemberGrid() {
           className="flex flex-col justify-center items-center rounded-standard gap-3"
         >
           <img
-            className="h-52 w-52 object-contain object-center rounded-standard  shadow-2xl"
+            className="h-52 w-52 object-contain object-center rounded-standard  shadow-xl"
             src={`council-member-logos/${councilMember.Image}`}
             alt=""
           ></img>
-          <p className="text-center">
-            <span className="font-bold">{`${councilMember.Name} ${
-              councilMember.Name != councilMember.OrgAcronym &&
-              `(${councilMember.OrgAcronym})`
-            }`}</span>
+          <p className="text-center font-bold">
+            {councilMember.Name}{" "}
+            {councilMember.Name != councilMember.OrgAcronym && (
+              <span className="font-normal">{`(${councilMember.OrgAcronym})`}</span>
+            )}
           </p>
           <div className="flex flex-row gap-3">
             <a href={councilMember.Links[0]}>
