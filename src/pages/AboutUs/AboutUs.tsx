@@ -1,45 +1,38 @@
-import "./about-us.css";
-import data from "./member-info.json";
+// import "./about-us.css";
+import { Helmet } from "react-helmet";
 import eventsPageImage from "/AllPages/events-page-image.png";
+import Divider from "../MainPage/Divider";
+import { lazy, Suspense } from "react";
+import LoadingIcon from "../MainPage/LoadingIcon";
+// import AboutUsContent from "./AboutUsContent";
+const AboutUsContent = lazy(() => import("./AboutUsContent"));
 const AboutUs = () => {
-  const members = data.members;
   //[name, role/committee, major, image]
   return (
     <>
+      <Helmet>
+        <link
+          rel="preload"
+          as="image"
+          href="/AllPages/events-page-image.png"
+          fetchPriority="high"
+        />
+      </Helmet>
       <img
-        className="header-image object-fit-cover"
+        className="w-full h-[50vh] object-cover"
         src={eventsPageImage}
         alt=""
+        fetchPriority="high"
       ></img>
-      <div className="divider d-flex justify-content-center align-items-center text-light">
-        <p className="text-center">
-          The Triton Engineering Student Council (TESC), empowers UC San Diego's
-          <br /> engineering students by connecting them to impactful
-          communities,
-          <br /> projects, and career-building opportunities
-        </p>
-      </div>
-      <div className="container mt-4">
-        <div className="row mt-4">
-          {members.map((member, index) => (
-            <div
-              key={index}
-              className="col-6 col-sm-6 col-lg-3 d-flex flex-column justify-content-center align-items-center mb-3"
-            >
-              <img
-                className="member-image object-fit-cover rounded"
-                src={member[3]}
-                alt=""
-                style={{ cursor: "pointer" }}
-                onClick={() => {}}
-              ></img>
-              <p className="text-center">
-                <span className="text-bold">{member[0]}</span> <br />
-                {member[1]}
-              </p>
-            </div>
-          ))}
-        </div>
+      <Divider>
+        The Triton Engineering Student Council (TESC), empowers UC San Diego's
+        <br /> engineering students by connecting them to impactful communities,
+        <br /> projects, and career-building opportunities
+      </Divider>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-4 gap-5 mx-auto w-[80%]">
+        <Suspense fallback={<LoadingIcon />}>
+          <AboutUsContent />
+        </Suspense>
       </div>
     </>
   );

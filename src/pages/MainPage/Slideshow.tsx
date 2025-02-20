@@ -1,63 +1,115 @@
 // Slideshow.jsx
-import { useState } from "react";
-import "./Slideshow.css";
+import { useEffect, useState } from "react";
+import { animate, motion } from "motion/react";
+import { left } from "@popperjs/core";
+// import "./Slideshow.css";
 
 const Slideshow = () => {
   // List of images and captions to display in the slideshow
   const slides = [
     {
-      image: "/HomePage/Slideshow/slide1.jpg",
-      caption:
-        "Mini information about image and other things related and correlating to the image"
+      image: "/slideshow-pictures/decaf-fa24/IMG_3802.jpg",
+      caption: "Disciplines of Engineering Career Fair Fall 2024"
     },
     {
-      image: "/HomePage/Slideshow/slide2.jpg",
-      caption: "Another slide with some description here."
+      image: "/slideshow-pictures/eotg-wi25/IMG_4351.jpg",
+      caption: "Engineers on the Green Winter 2025"
     },
     {
-      image: "/HomePage/Slideshow/slide3.jpg",
-      caption: "More details about another event or council meeting."
+      image: "/slideshow-pictures/eotg-wi25/IMG_4354.jpg",
+      caption: "Engineers on the Green Winter 2025"
+    },
+    {
+      image:
+        "/slideshow-pictures/council-dirty-birds-social/20250117_184343.jpg",
+      caption: "TESC Council Social Winter 2025"
+    },
+    {
+      image:
+        "/slideshow-pictures/council-dirty-birds-social/20250117_184426.jpg",
+      caption: "TESC Council Social Winter 2025"
+    },
+    {
+      image: "/slideshow-pictures/decaf-wi25/IMG_4427.jpg",
+      caption: "Disciplines of Engineering Career Fair Winter 2025"
     }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const goToNextSlide = () => {
     setCurrentIndex((currentIndex + 1) % slides.length);
+  };
+  const dotClick = (index: number) => {
+    setCurrentIndex(index);
   };
 
   const goToPrevSlide = () => {
     setCurrentIndex((currentIndex - 1 + slides.length) % slides.length);
   };
 
+  useEffect(() => {
+    const intervalID = setInterval(() => {
+      goToNextSlide();
+    }, 5000);
+    return () => {
+      clearInterval(intervalID);
+    };
+  });
+
   return (
-    <div className="mt-5">
-      <div className="slideshow-container d-flex align-content-center justify-content-center position-relative">
-        <div className="slide">
-          <img
-            src={slides[currentIndex].image}
-            alt={`Slide ${currentIndex + 1}`}
-            className="slide-image"
-          />
-          <p className="caption">{slides[currentIndex].caption}</p>
-        </div>
+    <div className="max-w-screen  h-[80vh] relative overflow-x-hidden m-0">
+      <div
+        className="w-screen h-full relative duration-1000"
+        style={{ transform: `translateX(-${currentIndex * 100}vw)` }}
+      >
+        {slides.map((slide, index) => {
+          return (
+            <div
+              className="absolute w-full h-full"
+              style={{
+                left: `${index * 100}vw`
+              }}
+            >
+              <img
+                src={slide.image}
+                alt=""
+                className="w-full h-full object-cover  object-[25%_35%]"
+              />
+              {/* <p className="text-black text-[5vh] absolute top-0 left-0 w-full bg-[#f3f8ff]">
+                {slide.caption}
+              </p> */}
+            </div>
+          );
+        })}
       </div>
 
-      <div className="slideshow-container d-flex align-content-center justify-content-center position-relative">
-        <button className="arrow left-arrow" onClick={goToPrevSlide}>
+      <div className="w-[100%] flex items-center justify-center mt-[2vw] absolute bottom-0">
+        <button
+          className="flex m-0 h-min cursor-pointer my-0 text-[8vh] bg-none border-none text-white px-[15px] pb-0 "
+          onClick={goToPrevSlide}
+        >
           &lt;
         </button>
 
-        <div className="dots">
+        <div className="flex align-center mt-[8px]">
           {slides.map((_, index) => (
             <span
               key={index}
-              className={`dot ${index === currentIndex ? "active" : ""}`}
-              onClick={() => setCurrentIndex(index)}
+              className="h-[2vh] mx-[5px] my-0 bg-white rounded-standard  cursor-pointer duration-500"
+              style={{
+                backgroundColor: `${
+                  index === currentIndex ? "var(--color-navy)" : ""
+                }`,
+                width: `${index === currentIndex ? "4vh" : "2vh"}`
+              }}
+              onClick={() => dotClick(index)}
             ></span>
           ))}
         </div>
-        <button className="arrow right-arrow" onClick={goToNextSlide}>
+        <button
+          className="flex cursor-pointer m-0 h-min text-[8vh] bg-none border-none text-white px-[15px] pb-0 "
+          onClick={goToNextSlide}
+        >
           &gt;
         </button>
       </div>
