@@ -1,9 +1,12 @@
-// import { FaInstagram, FaLinkedin, FaDiscord } from "react-icons/fa";
-// import { FaXTwitter } from "react-icons/fa6";
-// import { MdEmail } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 // import "./footer.css";
-
+import {
+  DiscordOutlined,
+  InstagramOutlined,
+  LinkedinOutlined,
+  MailOutlined,
+  TwitterOutlined
+} from "@ant-design/icons";
 const Footer = () => {
   // const pages = (
   //   <ul className="flex">
@@ -53,35 +56,35 @@ const Footer = () => {
         href="mailto:contact@tesc.ucsd.edu"
         className="text-white text-[26px] leading-[39px]"
       >
-        {/* <MdEmail /> */}
+        <MailOutlined />
       </a>
 
       <a
         href="https://instagram.com/ucsdtesc/"
         className=" text-white text-[26px] leading-[39px]"
       >
-        {/* <FaInstagram /> */}
+        <InstagramOutlined />
       </a>
 
       <a
         href="https://www.linkedin.com/company/ucsdtesc"
         className=" text-white text-[26px] leading-[39px]"
       >
-        {/* <FaLinkedin /> */}
+        <LinkedinOutlined />
       </a>
 
       <a
         href="https://x.com/UCSDTESC/"
         className=" text-white text-[26px] leading-[39px]"
       >
-        {/* <FaXTwitter /> */}
+        <TwitterOutlined />
       </a>
 
       <a
         href="https://tescucsd.org/discord"
         className=" text-white text-[26px] leading-[39px]"
       >
-        {/* <FaDiscord /> */}
+        <DiscordOutlined />
       </a>
     </div>
   );
