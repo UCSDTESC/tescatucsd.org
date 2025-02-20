@@ -1,6 +1,6 @@
-import { FaInstagram, FaLinkedin, FaDiscord } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
+// import { FaInstagram, FaLinkedin, FaDiscord } from "react-icons/fa";
+// import { FaXTwitter } from "react-icons/fa6";
+// import { MdEmail } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 // import "./footer.css";
 
@@ -53,35 +53,35 @@ const Footer = () => {
         href="mailto:contact@tesc.ucsd.edu"
         className="text-white text-[26px] leading-[39px]"
       >
-        <MdEmail />
+        {/* <MdEmail /> */}
       </a>
 
       <a
         href="https://instagram.com/ucsdtesc/"
         className=" text-white text-[26px] leading-[39px]"
       >
-        <FaInstagram />
+        {/* <FaInstagram /> */}
       </a>
 
       <a
         href="https://www.linkedin.com/company/ucsdtesc"
         className=" text-white text-[26px] leading-[39px]"
       >
-        <FaLinkedin />
+        {/* <FaLinkedin /> */}
       </a>
 
       <a
         href="https://x.com/UCSDTESC/"
         className=" text-white text-[26px] leading-[39px]"
       >
-        <FaXTwitter />
+        {/* <FaXTwitter /> */}
       </a>
 
       <a
         href="https://tescucsd.org/discord"
         className=" text-white text-[26px] leading-[39px]"
       >
-        <FaDiscord />
+        {/* <FaDiscord /> */}
       </a>
     </div>
   );
