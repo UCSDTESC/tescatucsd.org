@@ -207,19 +207,19 @@ export const councilMemberData = [
     Name: "Triton AI",
     OrgAcronym: "Triton AI",
     Links: ["https://triton-ai.info/", "triton.ai"],
-    Image: "Triton AI.jpeg",
+    Image: "Triton-AI.jpeg",
   },
   {
     Name: "Triton BAJA",
     OrgAcronym: "Triton BAJA",
     Links: ["https://sites.google.com/ucsd.edu/tritonbaja", "tritonbaja"],
-    Image: "Triton BAJA.png",
+    Image: "Triton-BAJA.png",
   },
   {
     Name: "Triton Droids",
     OrgAcronym: "Triton Droids",
     Links: ["https://www.tritondroids.com/", "tritondroids"],
-    Image: "Triton Droids.jpeg",
+    Image: "Triton-Droids.jpeg",
   },
   {
     Name: "Triton NeuroTech",
@@ -237,7 +237,7 @@ export const councilMemberData = [
     Name: "Triton Racing",
     OrgAcronym: "Triton Racing",
     Links: ["sae.eng.ucsd.edu", "tritonracing"],
-    Image: "Triton Racing.png",
+    Image: "Triton-Racing.png",
   },
   {
     Name: "Triton Robosub",
@@ -285,7 +285,7 @@ export const councilMemberData = [
     Name: "Yonder Deep",
     OrgAcronym: "Yonder Deep",
     Links: ["https://yonderdeep.ucsd.edu/", "yonderdeep"],
-    Image: "Yonder Deep.jpeg",
+    Image: "Yonder-Deep.jpeg",
   },
   {
     Name: "Yonder Dynamics",
