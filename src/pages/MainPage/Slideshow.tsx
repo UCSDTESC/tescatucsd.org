@@ -1,36 +1,34 @@
 // Slideshow.jsx
 import { useEffect, useState } from "react";
-import { animate, motion } from "motion/react";
-import { left } from "@popperjs/core";
 // import "./Slideshow.css";
 
 const Slideshow = () => {
   // List of images and captions to display in the slideshow
   const slides = [
     {
-      image: "/slideshow-pictures/decaf-fa24/IMG_3802.jpg",
+      image: "/slideshow-pictures/decaf-fa24/IMG_3802.webp",
       caption: "Disciplines of Engineering Career Fair Fall 2024"
     },
     {
-      image: "/slideshow-pictures/eotg-wi25/IMG_4351.jpg",
+      image: "/slideshow-pictures/eotg-wi25/IMG_4351.webp",
       caption: "Engineers on the Green Winter 2025"
     },
     {
-      image: "/slideshow-pictures/eotg-wi25/IMG_4354.jpg",
+      image: "/slideshow-pictures/eotg-wi25/IMG_4354.webp",
       caption: "Engineers on the Green Winter 2025"
     },
     {
       image:
-        "/slideshow-pictures/council-dirty-birds-social/20250117_184343.jpg",
+        "/slideshow-pictures/council-dirty-birds-social/20250117_184343.webp",
       caption: "TESC Council Social Winter 2025"
     },
     {
       image:
-        "/slideshow-pictures/council-dirty-birds-social/20250117_184426.jpg",
+        "/slideshow-pictures/council-dirty-birds-social/20250117_184426.webp",
       caption: "TESC Council Social Winter 2025"
     },
     {
-      image: "/slideshow-pictures/decaf-wi25/IMG_4427.jpg",
+      image: "/slideshow-pictures/decaf-wi25/IMG_4427_25.webp",
       caption: "Disciplines of Engineering Career Fair Winter 2025"
     }
   ];
@@ -71,7 +69,7 @@ const Slideshow = () => {
               }}
             >
               <img
-                src={slide.image}
+                srcSet={slide.image}
                 alt=""
                 className="w-full h-full object-cover  object-[25%_35%]"
               />
