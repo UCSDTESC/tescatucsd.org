@@ -13,28 +13,28 @@ export default function CouncilMemberGrid() {
   return (
     <>
       {councilMemberData.map((councilMember) => (
-        <div
-          key={councilMember.OrgAcronym}
-          className="flex flex-col justify-center items-center rounded-standard gap-3"
-        >
-          <img
-            className="h-52 w-52 object-contain object-center rounded-standard  shadow-xl"
-            src={`council-member-logos/${councilMember.Image}`}
-            alt=""
-          ></img>
-          <p className="text-center font-bold">
-            {councilMember.Name}{" "}
-            {councilMember.Name != councilMember.OrgAcronym && (
-              <span className="font-normal">{`(${councilMember.OrgAcronym})`}</span>
-            )}
-          </p>
-          <div className="flex flex-row gap-3">
-            <a href={councilMember.Links[0]}>
-              <TbWorldWww size={22} />
-            </a>
-            <a href={`https://www.instagram.com/${councilMember.Links[1]}`}>
-              <FaInstagram size={22} />
-            </a>
+        <div className="w-72 h-88 bg-white shadow-2xl rounded-standard p-3 mx-4">
+          <div className="max-h-[14rem] h-[14rem] overflow-hidden">
+            <img
+              className="w-full h-full object-fill rounded-standard"
+              src={`council-member-logos/${councilMember.Image}`}
+              alt={councilMember.Name}
+            />
+          </div>
+          <div className="p-2 flex flex-col">
+            <p className="text-center font-semibold">{councilMember.Name}</p>
+            <div className="flex flex-row justify-center items-center gap-3">
+              <a href={councilMember.Links[0]}>
+                <TbWorldWww size={22} />
+              </a>
+              {/* <p className="text-center font-normal">
+                {councilMember.Name != councilMember.OrgAcronym &&
+                  `(${councilMember.OrgAcronym})`}
+              </p> */}
+              <a href={`https://www.instagram.com/${councilMember.Links[1]}`}>
+                <FaInstagram size={22} />
+              </a>
+            </div>
           </div>
         </div>
       ))}
