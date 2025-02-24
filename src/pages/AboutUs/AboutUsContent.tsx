@@ -14,14 +14,14 @@ type Member = [
 
 interface MemberCardProps {
   member: Member;
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
-const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+const MemberCard: React.FC<MemberCardProps> = ({ member, isOpen, onToggle }) => {
 
-  // If the linkedInURL or emailAddress is not provided, default to a placeholder
   const linkedInURL = member[4] || "https://linkedin.com";
-  const emailAddress = member[5] || "https://mail.google.com";
+  const emailAddress = member[5] || "https://gmail.com";
 
   return (
     <div className="flex flex-col justify-center items-center">
@@ -34,8 +34,8 @@ const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
         />
         {/* Ellipsis Button */}
         <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="absolute bottom-2 right-2 bg-white rounded-full p-2 shadow hover:bg-gray-100"
+          onClick={onToggle}
+          className="absolute bottom-2 right-2 z-20 bg-white rounded-full p-2 shadow hover:bg-gray-100 transition duration-200 ease-in-out"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +48,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
         </button>
 
         {/* Pop-up menu */}
-        {menuOpen && (
+        {isOpen && (
           <div className="absolute bottom-10 right-2 bg-white rounded shadow-md p-2 flex flex-col space-y-1 z-10">
             <a
               href={linkedInURL}
@@ -77,6 +77,9 @@ const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
 };
 
 export default function AboutUsContent() {
+  // State to track which member's popup is open.
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   const imagePreloader = useImagePreloader(
     membersData.map((member) => member[3])
   );
@@ -85,7 +88,14 @@ export default function AboutUsContent() {
     <>
       {imagePreloader?.imagesPreloaded ? (
         membersData.map((member, index) => (
-          <MemberCard key={index} member={member as Member} />
+          <MemberCard
+            key={index}
+            member={member as Member}
+            isOpen={activeIndex === index}
+            onToggle={() =>
+              setActiveIndex(activeIndex === index ? null : index)
+            }
+          />
         ))
       ) : (
         <LoadingIcon />
