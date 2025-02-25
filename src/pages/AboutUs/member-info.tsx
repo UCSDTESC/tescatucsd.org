@@ -3,150 +3,175 @@ export const membersData = [
     "Jasper Huang",
     "Co-President",
     "Computer Engineering",
-    "/member-pictures/Jasper-Huang.jpg"
+    "/member-pictures/Jasper-Huang.jpg",
   ],
   [
     "Shree Venkatesh",
     "Co-President",
     "Computer Science",
-    "/member-pictures/Shree-Venkatesh.jpg"
+    "/member-pictures/Shree-Venkatesh.jpg",
   ],
   [
-    "Christine Nguyen",
+    "Ashley Choi",
     "VP External",
-    "Computer Science",
-    "/member-pictures/Christine-Nguyen.jpg"
+    "Political Science",
+    "/member-pictures/Ashley-Choi.jpg",
+  ],
+  [
+    "Chloe Pracharktam",
+    "VP Events",
+    "Chemical Engineering",
+    "/member-pictures/Chloe-Pracharktam.jpg",
   ],
   [
     "Rohan Sachdeva",
     "VP Internal",
     "Computer Science",
-    "/member-pictures/Rohan-Sachdeva.jpg"
+    "/member-pictures/Rohan-Sachdeva.jpg",
   ],
   [
     "Pearl Wen",
     "VP Finance",
     "Cognitive Science",
-    "/member-pictures/Pearl-Wen.jpg"
+    "/member-pictures/Pearl-Wen.jpg",
   ],
   [
-    "Ali Al Radhi",
-    "Marketing",
-    "Cognitive Science",
-    "/member-pictures/Ali-Alradhi.jpg"
+    "Christine Nguyen",
+    "Former VP External",
+    "Computer Science",
+    "/member-pictures/Christine-Nguyen.jpg",
   ],
   [
     "Anika Agarwal",
-    "Operations",
+    "Social Lead",
     "Computer Engineering",
-    "/member-pictures/Anika-Agarwal.jpg"
+    "/member-pictures/Anika-Agarwal.jpg",
   ],
   [
-    "Ashley Choi",
-    "Marketing",
-    "Political Science",
-    "/member-pictures/Profile_avatar_placeholder_large.png"
+    "Melchisedec Lai",
+    "Sponsorship Lead",
+    "Nanoengineering",
+    "/member-pictures/Mel-Lai.jpg",
+  ],
+  [
+    "Julia Nguyen",
+    "Financial Analyst",
+    "Business Economics",
+    "/member-pictures/Julia-Nguyen.jpg",
+  ],
+  [
+    "Nishitha Selvakumar",
+    "Tech Lead",
+    "Computer Science",
+    "/member-pictures/Nishitha-Selvakumar.jpg",
+  ],
+  [
+    "Jonathan Ty",
+    "Design Lead",
+    "Computer Science",
+    "/member-pictures/Jonathan-Ty.png",
+  ],
+  [
+    "Kai Velasco",
+    "Operations Lead",
+    "Structural Engineering",
+    "/member-pictures/Profile_avatar_placeholder_large.png",
+  ],
+  [
+    "Elizabeth Dam",
+    "Social",
+    "Electrical Engineering",
+    "/member-pictures/Elizabeth-Dam.jpg",
   ],
   [
     "Ferrari Guan",
     "Tech",
     "Computer Engineering",
-    "/member-pictures/Ferrari-Guan.jpg"
+    "/member-pictures/Ferrari-Guan.jpg",
   ],
   [
     "Nabhya Gupta",
     "Tech",
     "Computer Engineering",
-    "/member-pictures/Nabhya-Gupta.jpg"
+    "/member-pictures/Nabhya-Gupta.jpg",
   ],
-  [
-    "Melchisedec Lai",
-    "Sponsorship",
-    "Nanoengineering",
-    "/member-pictures/Mel-Lai.jpg"
-  ],
+  ["Mia Jin", "Design", "Cognitive Science", "/member-pictures/Mia-Jin.jpg"],
   [
     "Eden Mai",
     "Operations",
     "Aerospace Engineering",
-    "/member-pictures/Eden-Mai.png"
+    "/member-pictures/Eden-Mai.png",
   ],
   [
     "Rachel Mao",
     "Sponsorship",
     "Structural Engineering",
-    "/member-pictures/Rachel-Mao.jpg"
+    "/member-pictures/Rachel-Mao.jpg",
   ],
   [
     "Hieu Nguyen",
     "Tech",
     "Mathematics-Computer Science",
-    "/member-pictures/Hieu-Nguyen.jpg"
+    "/member-pictures/Hieu-Nguyen.jpg",
   ],
   [
-    "Julia Nguyen",
-    "Finance",
-    "Business Economics",
-    "/member-pictures/Julia-Nguyen.jpg"
-  ],
-  [
-    "Chloe Pracharktam",
-    "Logistics",
+    "Anna Pham",
+    "Design",
     "Chemical Engineering",
-    "/member-pictures/Chloe-Pracharktam.jpg"
+    "/member-pictures/Anna-Pham.jpeg",
   ],
   [
     "Arnav Sahu",
     "Operations",
     "Electrical Engineering",
-    "/member-pictures/Arnav-Sahu.jpg"
+    "/member-pictures/Arnav-Sahu.jpg",
   ],
   [
-    "Nishitha Selvakumar",
-    "Tech",
+    "Shruti Senthilram",
+    "Marketing",
     "Computer Science",
-    "/member-pictures/Nishitha-Selvakumar.jpg"
+    "/member-pictures/Shruti-Senthilram.jpg",
   ],
   [
     "Kavya Shah",
     "Sponsorship",
     "Mathematics-Computer Science",
-    "/member-pictures/Kavya-Shah.jpg"
+    "/member-pictures/Kavya-Shah.jpg",
   ],
   [
-    "Nishant Sharma",
-    "Sponsorship",
-    "Bioengineering: Biotechnology",
-    "/member-pictures/Nishant-Sharma.jpg"
+    "Ashton Simbol",
+    "Operations",
+    "Computer Science",
+    "/member-pictures/Ashton-Simbol.jpg",
+  ],
+  [
+    "Aditya Sivanandan",
+    "ProDev",
+    "Mechanical Engineering",
+    "/member-pictures/Aditya-Sivanandan.jpg",
   ],
   [
     "Thanh Trinh",
     "Tech",
     "Computer Engineering",
-    "/member-pictures/Thanh-Trinh.jpg"
+    "/member-pictures/Thanh-Trinh.jpg",
   ],
   [
     "Brooke Truong",
-    "Logistics",
+    "ProDev",
     "Computer Science",
-    "/member-pictures/Brooke-Truong.jpg"
+    "/member-pictures/Brooke-Truong.jpg",
   ],
   [
-    "Jonathan Ty",
-    "Marketing",
-    "Computer Science",
-    "/member-pictures/Jonathan-Ty.png"
-  ],
-  [
-    "Kai Velasco",
-    "Operations",
-    "Structural Engineering",
-    "/member-pictures/Profile_avatar_placeholder_large.png"
+    "Jenna Vo",
+    "Design",
+    "Aerospace Engineering",
+    "/member-pictures/Jenna-Vo.jpeg",
   ],
   [
     "Kevin Yang",
     "Operations",
     "Computer Science",
-    "/member-pictures/Kevin-Yang.jpg"
-  ]
+    "/member-pictures/Kevin-Yang.jpg",
+  ],
 ];
