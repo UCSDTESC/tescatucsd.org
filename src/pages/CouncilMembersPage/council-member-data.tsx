@@ -63,7 +63,7 @@ export const councilMemberData = [
     Name: "ECE Undergraduate Student Council",
     OrgAcronym: "ECE USC",
     Links: ["eceusc.ucsd.edu", "eceusc_ucsd"],
-    Image: "ECE UCS.png",
+    Image: "ECE-USC.png",
   },
   {
     Name: "Engineering World Health",
