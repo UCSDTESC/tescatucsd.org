@@ -35,7 +35,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, isOpen, onToggle }) => 
         {/* Ellipsis Button */}
         <button
           onClick={onToggle}
-          className="absolute bottom-2 right-2 z-20 bg-white rounded-full p-2 shadow hover:bg-gray-100 transition duration-200 ease-in-out"
+          className="absolute bottom-2 right-2 z-20 bg-white rounded-full p-2 shadow hover:bg-gray-100 transition duration-200 ease-in-out cursor-pointer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
