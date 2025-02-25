@@ -21,7 +21,7 @@ const HomePageEvents = () => {
         />
         <link
           rel="preload"
-          href={pastEventLogos[1]}
+          href={pastEventLogos[0]}
           as="image"
           fetchPriority="high"
         />
