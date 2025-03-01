@@ -23,7 +23,7 @@ export default function CouncilMemberGrid() {
               className="max-h-[14rem] h-[14rem] overflow-hidden"
             >
               <img
-                className="w-full h-full object-fill rounded-standard"
+                className="w-full h-full object-contain rounded-standard"
                 src={`council-member-logos/${councilMember.Image}`}
                 alt={councilMember.Name}
               />
