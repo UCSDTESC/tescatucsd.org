@@ -1,7 +1,6 @@
 import { councilMemberData } from "./council-member-data";
 import useImagePreloader from "../../Hooks/useImagePreload";
 import LoadingIcon from "../MainPage/LoadingIcon";
-import { TbWorldWww } from "react-icons/tb";
 import { InstagramOutlined, GlobalOutlined } from "@ant-design/icons";
 
 export default function CouncilMemberGrid() {
