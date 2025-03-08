@@ -1,5 +1,5 @@
 export const upcomingEventLogos = ["/event-logos/Tapioca.png"];
-export const upcomingEventLinks = [];
+export const upcomingEventLinks = ["https://tapiocaexpress.com/"];
 
 export const pastEventLogos = [
   "/event-logos/SandcastleBonfire.jpg",
