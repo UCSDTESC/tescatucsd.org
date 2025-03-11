@@ -10,6 +10,7 @@ import AboutUs from "./pages/AboutUs/AboutUs";
 import Page from "./components/Page";
 import Main from "./pages/MainPage/Main";
 import RedirectComponent from "./components/RedirectComponent";
+import Bulletin from "./pages/Bulletin/Bulletin";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/council-members" element={<CouncilMembers />} />
             <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/bulletin" element={<Bulletin />} />
           </Route>
 
           {/* <Route element={<PageNoHeader />}> */}
