@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import supabase from "../../supabase/supabase";
+import Editor from "./Editor";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function Bulletin() {
   const [data, setData] = useState<
@@ -15,7 +17,9 @@ export default function Bulletin() {
       End_Date: any;
     }[]
   >();
-  const [selection, setSelection] = useState<number>(-1);
+  const postId = useParams();
+  const [selection, setSelection] = useState<number>(Number(postId.postId));
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const filtered = useMemo(() => {
     return search
@@ -36,10 +40,35 @@ export default function Bulletin() {
     };
     fetch();
   }, []);
+  const formatDate = (date: string) => {
+    const DateObject = new Date(date);
+    const parseDate = DateObject.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    }).split("/");
+    const parseTime = DateObject.toLocaleTimeString("en-us", {
+      hour: "2-digit",
+      second: "2-digit",
+      minute: "2-digit"
+    });
 
+    return (
+      parseDate[2] +
+      parseDate[0]+parseDate[1] +
+      "T" +
+      parseTime
+        .toString()
+        .replace(",", "")
+        .replaceAll(":", "")
+        .replace("PM", "")
+        .replace("AM", "")
+        .replace(" ", "")
+    );
+  };
   return (
     <div className="w-full flex justify-center">
-      <div className="grid w-[80%] border border-black border-spacing-1 grid-cols-[200px_1fr] min-h-[80vh] max-h-[100vh] grid-rows-[auto_1fr] my-20">
+      <div className="grid w-[80%] border border-black border-spacing-1 grid-cols-[200px_1fr] min-h-[80vh]  grid-rows-[auto_1fr] my-20">
         <div className="col-span-2">
           <form action="" className="p-3">
             <input
@@ -48,25 +77,26 @@ export default function Bulletin() {
               onChange={(e) => {
                 setSearch(e.target.value);
               }}
-              className="border- border rounded-standard p-1 focus:outline-none"
+              className=" border rounded-standard p-1 focus:outline-none"
             />
           </form>
         </div>
-        <div className="grid grid-rows-[repeat(auto-fill,minmax(100px,1fr))] border-t border-black overflow-y-auto">
+        <div className="grid grid-rows-[repeat(auto-fill,100px)] border-t border-black overflow-y-auto ">
           {filtered?.map((daton) => {
             return (
               <button
-                className="border-b border-black cursor-pointer "
+                className=" cursor-pointer flex flex-col p-1 h-full"
                 onClick={() => {
+                  navigate(`/bulletin/${daton.id}`);
                   setSelection(daton.id);
                 }}
               >
-                <div className="">{daton.Title}</div>
-                <span className="line-clamp-3">
-                  <div
-                    dangerouslySetInnerHTML={{ __html: daton.Content }}
-                  ></div>
-                </span>
+                <div className="border  border-black h-full w-full p-1 rounded-standard bg-lightBlue">
+                  <div className="font-bold w-max">{daton.Title}</div>
+                  <span className="line-clamp-3 w-max">
+                    posted: {new Date(daton.created_at).toDateString()}
+                  </span>
+                </div>
               </button>
             );
           })}
@@ -94,16 +124,38 @@ export default function Bulletin() {
                         &nbsp;
                         {new Date(daton.End_Date).toLocaleTimeString()}
                       </div>
-                      <div className="">
-                        Location: &nbsp;{" "}
-                        {daton.Location_Str === null
-                          ? "unknown"
-                          : daton.Location_Str}
-                      </div>
-                      <div
-                        className="border border-black rounded-standard min-h-[40vh] p-4"
-                        dangerouslySetInnerHTML={{ __html: daton.Content }}
-                      ></div>
+                      {daton.Location_Str && (
+                        <div className="">
+                          Location: &nbsp;
+                          {daton.Location_Str} |{" "}
+                          <a
+                            href={`https://www.google.com/maps/dir/?api=1&destination=${daton.Location_Str.replace(
+                              " ",
+                              "+"
+                            ).replace(",", "%2C")}&travelmode=walking`}
+                            className=" hover:underline decoration-auto"
+                          >
+                            directions
+                          </a>
+                        </div>
+                      )}
+
+                      <a
+                        href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${daton.Title.replace(
+                          " ",
+                          "+"
+                        )}&details=More+details+see:+${
+                          window.location.href
+                        }&location=${daton.Location_Str}&dates=${formatDate(
+                          daton.Start_Date
+                        )}/${formatDate(daton.End_Date)}&ctz=America/Los_Angeles
+`}
+                        className="hover:underline decoration-auto"
+                      >
+                        Add to Calendar
+                      </a>
+
+                      <Editor content={daton.Content}></Editor>
                     </span>
                   );
               })}

@@ -3,7 +3,12 @@
 // import EOTGLayout from "./pages/EOTGPage/EOTGLayout";
 // import EOTGPage from "./pages/EOTGPage";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
 import CouncilMembers from "./pages/CouncilMembersPage/CouncilMembers";
 import Events from "./pages/Events/Events";
 import AboutUs from "./pages/AboutUs/AboutUs";
@@ -19,11 +24,14 @@ function App() {
         <Routes>
           <Route element={<Page />}>
             {/* Routes with the NavBar */}
-            <Route path="/" element={<Main />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/council-members" element={<CouncilMembers />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/bulletin" element={<Bulletin />} />
+            <Route path="" element={<Main />} />
+            <Route path="events" element={<Events />} />
+            <Route path="council-members" element={<CouncilMembers />} />
+            <Route path="about-us" element={<AboutUs />} />
+            <Route path="bulletin">
+              <Route path=":postId" element={<Bulletin />} />
+              <Route path="" element={<Navigate to="-1" />} />
+            </Route>
           </Route>
 
           {/* <Route element={<PageNoHeader />}> */}
