@@ -38,7 +38,7 @@ const Events = () => {
       </div>
 
       <div className="mt-4 mx-auto w-[80%]">
-        <h1 className="font-medium [line-height:1.2] text-[2vw] mb-2">
+        <h1 className="text-[30px] text-[#11426B] font-bold mb-4">
           Upcoming Events
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
@@ -48,8 +48,8 @@ const Events = () => {
         </div>
       </div>
 
-      <div className="mt-4 mx-auto w-[80%] mb-10">
-        <h1 className="font-medium [line-height:1.2] text-[2vw] mb-2">
+      <div className="mt-10 mx-auto w-[80%] mb-10">
+        <h1 className="text-[30px] text-[#11426B] font-bold mb-4">
           Past Events
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
