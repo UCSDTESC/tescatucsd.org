@@ -20,12 +20,12 @@ const Events = () => {
       <div className="m-12 mt-20 flex flex-row justify-between items-center max-w-[80%] mx-auto">
         <div className="sm:max-w-full md:max-w-3/5 ">
           <p className="font-semibold text-[40px] text-[#11426B] leading-10 mb-3">
-            Jump into engineering leadership—where ideas comes alive and
-            students shape what’s next...
+            Jump into engineering leadership—where ideas come alive and students
+            shape what’s next...
           </p>
           <p className="font-semibold text-[22px] mb-3">
             Our events bring together passionate engineers to learn, connect,
-            and lead. Whether it's talk by start-ups, interactive workshop, or
+            and lead. Whether it's talks by start-ups, interactive workshops, or
             socials, there's always an opportunity to engage, grow, and make an
             impact!
           </p>
