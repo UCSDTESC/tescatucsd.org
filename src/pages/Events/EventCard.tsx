@@ -14,9 +14,9 @@ export function EventCard({ event }: Props) {
         }
       }}
     >
-      <div className="relative min-w-xs w-max bg-white shadow-2xl rounded-standard">
+      <div className="relative min-h-[25rem] w-full bg-white shadow-2xl rounded-standard">
         <img
-          className="h-auto max-h-72 w-full p-3 mx-auto object-cover rounded-standard"
+          className="h-64 w-full p-3 mx-auto object-cover rounded-standard"
           src={event.image}
           alt={event.name}
         />
@@ -24,12 +24,12 @@ export function EventCard({ event }: Props) {
           <p className="font-bold text-[#003059]">{event.date}</p>
           <div className="py-3">
             <p className="italic">{event.name}</p>
-            <p>
+            <p className="overflow-hidden overflow-ellipsis whitespace-nowrap">
               <span className="font-semibold text-[#003059]">Where? </span>
-              {event.location}
+              {event.location == "" ? "N/A" : event.location}
             </p>
           </div>
-          <div className="flex flex-row justify-center gap-2 mt-2">
+          <div className="flex flex-row justify-center gap-2 mt-1">
             {event.tags.map((tag) => (
               <div className="bg-[#A1C7E7] px-2 w-fit font-semibold text-[14px] rounded-standard">
                 {tag}
