@@ -1,3 +1,4 @@
+import { LinkedinFilled, MailFilled, MailTwoTone } from "@ant-design/icons";
 import React from "react";
 
 interface Props {
@@ -38,49 +39,29 @@ const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
   return (
     <div className="flex flex-col justify-center items-center">
       {/* Container for image and ellipsis button */}
-      <div className="relative">
+      <div className="relative w-64 h-80 bg-white shadow-2xl rounded-standard">
         <img
-          className="h-80 w-64 object-cover rounded-standard"
+          className="h-56 w-64 p-3 mx-auto object-cover rounded-standard"
           src={member[3]}
           alt={member[0]}
         />
-        {/* Ellipsis Button */}
-        <button className="absolute bottom-2 right-2 z-20 bg-white rounded-full p-2 shadow hover:bg-gray-100 transition duration-200 ease-in-out cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4"
-            fill="currentColor"
-            viewBox="0 0 20 20"
+        <p className="text-center">
+          <span className="font-bold">{member[0]}</span> <br />
+          {member[1]}
+        </p>
+        <div className="flex flex-row gap-3 justify-center mt-2">
+          <MailFilled
+            width={"642px"}
+            style={{ fontSize: "22px", color: "#DC3545" }}
           >
-            <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zm6 0a2 2 0 11-4 0 2 2 0 014 0zm6 0a2 2 0 11-4 0 2 2 0 014 0z" />
-          </svg>
-        </button>
+            <a href={linkedInURL}></a>
+          </MailFilled>
 
-        {/* Pop-up menu */}
-        {
-          <div className="absolute bottom-10 right-2 bg-white rounded shadow-md p-2 flex flex-col space-y-1 z-10">
-            <a
-              href={linkedInURL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-2 py-1 hover:bg-gray-200 rounded"
-            >
-              LinkedIn
-            </a>
-            <a
-              href={`mailto:${emailAddress}`}
-              className="px-2 py-1 hover:bg-gray-200 rounded"
-            >
-              Email
-            </a>
-          </div>
-        }
+          <LinkedinFilled style={{ fontSize: "20px", color: "#0A66C2" }}>
+            <a href={`mailto:${emailAddress}`}>Email</a>
+          </LinkedinFilled>
+        </div>
       </div>
-      {/* Member Info */}
-      <p className="text-center mt-2">
-        <span className="font-bold">{member[0]}</span> <br />
-        {member[1]}
-      </p>
     </div>
   );
 };
