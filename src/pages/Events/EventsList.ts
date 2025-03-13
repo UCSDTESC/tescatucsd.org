@@ -56,7 +56,7 @@ export interface Event{
 export const upcomingEvents: Event[] = [
   {name: "Tapoca Express Fundraiser", date: "March 6th, 2025", location: "Tapioca Express, Price Center", tags: ["Fundraiser", "Finance"], image: "/event-logos/Tapioca.png", link: "https://tapiocaexpress.com/"},
 ]
-export const previousEvents: Event[] = [
+export const pastEvents: Event[] = [
   {
     name: "Sandcastle Competition",
     date: "March 2nd, 2025",

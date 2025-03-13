@@ -1,8 +1,7 @@
-import { upcomingEventLogos, upcomingEventLinks } from "./EventsList.ts";
+import { upcomingEvents, pastEvents } from "./EventsList.ts";
 import { Helmet } from "react-helmet";
 import { lazy, Suspense } from "react";
 import LoadingIcon from "../MainPage/LoadingIcon";
-import { EventCard } from "./EventCard.tsx";
 
 const EventsGrid = lazy(() => import("./EventsGrid.tsx"));
 
@@ -43,18 +42,9 @@ const Events = () => {
           Upcoming Events
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          {upcomingEventLogos.map((logo, index) => (
-            <EventCard
-              image={logo}
-              name="Tapioca Express Fundraiser"
-              location="Tapioca Express, Price Center"
-              date="March 6th, 2025"
-              tags={["Fundraiser", "Finance"]}
-              onClick={() => {
-                window.location.href = upcomingEventLinks[index];
-              }}
-            />
-          ))}
+          <Suspense fallback={<LoadingIcon />}>
+            <EventsGrid events={upcomingEvents} />
+          </Suspense>
         </div>
       </div>
 
@@ -64,7 +54,7 @@ const Events = () => {
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           <Suspense fallback={<LoadingIcon />}>
-            <EventsGrid events={[]} />
+            <EventsGrid events={pastEvents} />
           </Suspense>
         </div>
       </div>
