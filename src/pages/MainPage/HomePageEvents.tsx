@@ -6,7 +6,7 @@ import {
   upcomingEventDescription,
   pastEventLogos,
   pastEventLinks,
-  pastEventDescription
+  pastEventDescription,
 } from "../Events/EventsList.ts";
 
 const HomePageEvents = () => {
@@ -28,7 +28,7 @@ const HomePageEvents = () => {
       </Helmet>
       <div className="flex justify-center mb-[10vh]">
         <div className="max-w-[70%] mt-5">
-          <h1 className="font-medium [line-height:1.2] text-[2.5vw]">Events</h1>
+          <h1 className="text-[30px] text-[#11426B] font-bold mb-4">Events</h1>
           <div>
             <h3>
               <a
