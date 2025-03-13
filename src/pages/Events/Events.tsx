@@ -1,10 +1,8 @@
 import { upcomingEventLogos, upcomingEventLinks } from "./EventsList.ts";
-
-import eventsPageImage from "/AllPages/events-page-image.png";
-import Divider from "../MainPage/Divider";
 import { Helmet } from "react-helmet";
 import { lazy, Suspense } from "react";
 import LoadingIcon from "../MainPage/LoadingIcon";
+import { EventCard } from "./EventCard.tsx";
 
 const PastEventsGrid = lazy(() => import("./PastEventsGrid"));
 
@@ -46,16 +44,16 @@ const Events = () => {
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {upcomingEventLogos.map((logo, index) => (
-            <div key={index} className="">
-              <img
-                className="flex w-64 h-64 object-cover rounded-standard cursor-pointer"
-                src={logo}
-                alt=""
-                onClick={() => {
-                  window.location.href = upcomingEventLinks[index];
-                }}
-              />
-            </div>
+            <EventCard
+              image={logo}
+              name="Tapioca Express Fundraiser"
+              location="Tapioca Express, Price Center"
+              date="March 6th, 2025"
+              tags={["Fundraiser", "Finance"]}
+              onClick={() => {
+                window.location.href = upcomingEventLinks[index];
+              }}
+            />
           ))}
         </div>
       </div>
