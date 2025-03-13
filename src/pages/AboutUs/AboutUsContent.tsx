@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useImagePreloader from "../../Hooks/useImagePreload";
 import LoadingIcon from "../MainPage/LoadingIcon.tsx";
 import {

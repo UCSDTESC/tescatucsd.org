@@ -1,4 +1,4 @@
-import { LinkedinFilled, MailFilled, MailTwoTone } from "@ant-design/icons";
+import { LinkedinFilled, MailFilled } from "@ant-design/icons";
 import React from "react";
 
 interface Props {
@@ -39,9 +39,9 @@ const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
   return (
     <div className="flex flex-col justify-center items-center">
       {/* Container for image and ellipsis button */}
-      <div className="relative w-64 h-80 bg-white shadow-2xl rounded-standard">
+      <div className="relative w-full max-w-xs bg-white shadow-2xl rounded-standard">
         <img
-          className="h-56 w-64 p-3 mx-auto object-cover rounded-standard"
+          className="h-56 w-full p-3 mx-auto object-cover rounded-standard"
           src={member[3]}
           alt={member[0]}
         />
@@ -49,7 +49,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
           <span className="font-bold">{member[0]}</span> <br />
           {member[1]}
         </p>
-        <div className="flex flex-row gap-3 justify-center mt-2">
+        <div className="flex flex-row gap-3 justify-center my-3">
           <MailFilled
             width={"642px"}
             style={{ fontSize: "22px", color: "#DC3545" }}
