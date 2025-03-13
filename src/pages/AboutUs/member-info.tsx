@@ -258,5 +258,3 @@ export const prodev: string[][] = [
     "brooke@tesc.ucsd.edu",
   ],
 ];
-
-export const membersData: string[][] = [];

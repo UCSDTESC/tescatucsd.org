@@ -28,11 +28,13 @@ const AboutUs = () => {
         </div>
         <img src="AllPages/bear.png" alt="bear" className="w-72 h-auto"></img>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-4 gap-5 mx-auto w-[80%]">
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-4 gap-5 mx-auto w-[80%]"> */}
+      <div className="max-w-[80%] mx-auto">
         <Suspense fallback={<LoadingIcon />}>
           <AboutUsContent />
         </Suspense>
       </div>
+      {/* </div> */}
     </>
   );
 };
