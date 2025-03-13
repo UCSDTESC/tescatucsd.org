@@ -16,7 +16,7 @@ export function EventCard({ event }: Props) {
     >
       <div className="relative min-h-[25rem] w-full bg-white shadow-2xl rounded-standard">
         <img
-          className="h-64 w-full p-3 mx-auto object-cover rounded-standard"
+          className="h-64 w-full p-3 mx-auto object-cover rounded-[20px]"
           src={event.image}
           alt={event.name}
         />
@@ -31,7 +31,7 @@ export function EventCard({ event }: Props) {
           </div>
           <div className="flex flex-row justify-center gap-2 mt-1">
             {event.tags.map((tag) => (
-              <div className="bg-[#A1C7E7] px-2 w-fit font-semibold text-[14px] rounded-standard">
+              <div className="bg-[#A1C7E7] px-2 w-fit font-semibold text-[14px] rounded-[20px]">
                 {tag}
               </div>
             ))}
