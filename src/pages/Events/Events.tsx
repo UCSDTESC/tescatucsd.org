@@ -4,7 +4,7 @@ import { lazy, Suspense } from "react";
 import LoadingIcon from "../MainPage/LoadingIcon";
 import { EventCard } from "./EventCard.tsx";
 
-const PastEventsGrid = lazy(() => import("./PastEventsGrid"));
+const EventsGrid = lazy(() => import("./EventsGrid.tsx"));
 
 const Events = () => {
   return (
@@ -64,7 +64,7 @@ const Events = () => {
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           <Suspense fallback={<LoadingIcon />}>
-            <PastEventsGrid />
+            <EventsGrid events={[]} />
           </Suspense>
         </div>
       </div>

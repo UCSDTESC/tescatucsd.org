@@ -44,3 +44,15 @@ export const pastEventDescription = [
   "On Friday, February 7th, from 1:00-3:00 PM, TESC will be hosting a talk with Stempad at the QCC in Jacob's Hall. Stempad is a digital scientific note editor startup and they will be talking about how to build a startup and the difference between a startup and a large company.",
   "DECaF 2025, a student-run career fair organized by the Triton Engineering Student Council, aims to connect talented engineering students with leading recruiters like you. With an annual attendance of 1,000+ students from various engineering majors, this event presents a unique opportunity to meet and engage with potential future employees. Participating companies will have direct access to a diverse pool of motivated and skilled students and a comprehensive resume database."
 ];
+
+export interface Event{
+  name: string;
+  date: string;
+  location: string;
+  tags: string[];
+  image: string;
+  link: string;
+};
+export const upcomingEvents: Event[] = [
+  {name: "Tapoca Express Fundraiser", date: "March 6th, 2025", location: "Tapioca Express, Price Center", tags: ["Fundraiser", "Finance"], image: "/event-logos/Tapioca.png", link: "https://tapiocaexpress.com/"},
+]

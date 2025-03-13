@@ -1,13 +1,16 @@
 import useImagePreloader from "../../Hooks/useImagePreload";
 import LoadingIcon from "../MainPage/LoadingIcon";
 import { pastEventLinks, pastEventLogos } from "./EventsList";
-
+import { Event } from "./EventsList";
 const pastEvents = pastEventLogos.map((logo, index) => [
   logo,
   pastEventLinks[index],
 ]);
 
-export default function PastEventsGrid() {
+interface Props {
+  events: Event[];
+}
+export default function EventsGrid({ events }: Props) {
   const ImagePreloader = useImagePreloader(pastEvents.map((item) => item[0]));
   return (
     <>
