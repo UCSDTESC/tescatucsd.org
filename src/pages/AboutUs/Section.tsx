@@ -7,9 +7,7 @@ interface Props {
 export function Section({ data, title }: Props) {
   return (
     <div className="flex flex-col">
-      <p className="text-[30px] text-[#11426B] font-medium">
-        President, Vice President
-      </p>
+      <p className="text-[30px] text-[#11426B] font-medium">{title}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-4 gap-5">
         {data.map((member, index) => (
           <MemberCard key={index} member={member as Member} />
