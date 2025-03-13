@@ -1,4 +1,4 @@
-export const membersData: string[][] = [
+export const pvpData: string[][] = [
   [
     "Jasper Huang",
     "Co-President",
@@ -55,6 +55,9 @@ export const membersData: string[][] = [
     "https://www.linkedin.com/in/christine-nguyen-79538a1b8",
     "christine@tesc.ucsd.edu",
   ],
+];
+
+export const committeeLeadsData: string[][] = [
   [
     "Anika Agarwal",
     "Social Lead",
@@ -103,6 +106,9 @@ export const membersData: string[][] = [
     "",
     "kai@tesc.ucsd.edu",
   ],
+];
+
+export const social: string[][] = [
   [
     "Elizabeth Dam",
     "Social",
@@ -111,6 +117,8 @@ export const membersData: string[][] = [
     "",
     "elizabeth@tesc.ucsd.edu",
   ],
+];
+export const tech: string[][] = [
   [
     "Ferrari Guan",
     "Tech",
@@ -128,36 +136,30 @@ export const membersData: string[][] = [
     "nabhya@tesc.ucsd.edu",
   ],
   [
-    "Mia Jin",
-    "Design",
-    "Cognitive Science",
-    "/member-pictures/Mia-Jin.jpg",
-    "",
-    "mia@tesc.ucsd.edu",
-  ],
-  [
-    "Eden Mai",
-    "Operations",
-    "Aerospace Engineering",
-    "/member-pictures/Eden-Mai.png",
-    "",
-    "edenm@tesc.ucsd.edu",
-  ],
-  [
-    "Rachel Mao",
-    "Sponsorship",
-    "Structural Engineering",
-    "/member-pictures/Rachel-Mao.jpg",
-    "",
-    "rachel@tesc.ucsd.edu",
-  ],
-  [
     "Hieu Nguyen",
     "Tech",
     "Mathematics-Computer Science",
     "/member-pictures/Hieu-Nguyen.jpg",
     "",
     "hieu.nguyen@tesc.ucsd.edu",
+  ],
+  [
+    "Thanh Trinh",
+    "Tech",
+    "Computer Engineering",
+    "/member-pictures/Thanh-Trinh.jpg",
+    "https://www.linkedin.com/in/thanh-trinh-329373245/",
+    "thanh@tesc.ucsd.edu",
+  ],
+];
+export const design: string[][] = [
+  [
+    "Mia Jin",
+    "Design",
+    "Cognitive Science",
+    "/member-pictures/Mia-Jin.jpg",
+    "",
+    "mia@tesc.ucsd.edu",
   ],
   [
     "Anna Pham",
@@ -168,13 +170,15 @@ export const membersData: string[][] = [
     "anna@tesc.ucsd.edu",
   ],
   [
-    "Arnav Sahu",
-    "Operations",
-    "Electrical Engineering",
-    "/member-pictures/Arnav-Sahu.jpg",
+    "Jenna Vo",
+    "Design",
+    "Aerospace Engineering",
+    "/member-pictures/Jenna-Vo.jpeg",
     "",
-    "arnav@tesc.ucsd.edu",
+    "jenna@tesc.ucsd.edu",
   ],
+];
+export const marketing: string[][] = [
   [
     "Shruti Senthilram",
     "Marketing",
@@ -183,13 +187,23 @@ export const membersData: string[][] = [
     "",
     "shruti@tesc.ucsd.edu",
   ],
+];
+export const operations: string[][] = [
   [
-    "Kavya Shah",
-    "Sponsorship",
-    "Mathematics-Computer Science",
-    "/member-pictures/Kavya-Shah.jpg",
+    "Eden Mai",
+    "Operations",
+    "Aerospace Engineering",
+    "/member-pictures/Eden-Mai.png",
     "",
-    "kavya@tesc.ucsd.edu",
+    "edenm@tesc.ucsd.edu",
+  ],
+  [
+    "Arnav Sahu",
+    "Operations",
+    "Electrical Engineering",
+    "/member-pictures/Arnav-Sahu.jpg",
+    "",
+    "arnav@tesc.ucsd.edu",
   ],
   [
     "Ashton Simbol",
@@ -200,20 +214,40 @@ export const membersData: string[][] = [
     "ashton@tesc.ucsd.edu",
   ],
   [
+    "Kevin Yang",
+    "Operations",
+    "Computer Science",
+    "/member-pictures/Kevin-Yang.jpg",
+    "",
+    "kevin@tesc.ucsd.edu",
+  ],
+];
+export const sponsorship: string[][] = [
+  [
+    "Rachel Mao",
+    "Sponsorship",
+    "Structural Engineering",
+    "/member-pictures/Rachel-Mao.jpg",
+    "",
+    "rachel@tesc.ucsd.edu",
+  ],
+  [
+    "Kavya Shah",
+    "Sponsorship",
+    "Mathematics-Computer Science",
+    "/member-pictures/Kavya-Shah.jpg",
+    "",
+    "kavya@tesc.ucsd.edu",
+  ],
+];
+export const prodev: string[][] = [
+  [
     "Aditya Sivanandan",
     "ProDev",
     "Mechanical Engineering",
     "/member-pictures/Aditya-Sivanandan.jpg",
     "",
     "aditya@tesc.ucsd.edu",
-  ],
-  [
-    "Thanh Trinh",
-    "Tech",
-    "Computer Engineering",
-    "/member-pictures/Thanh-Trinh.jpg",
-    "https://www.linkedin.com/in/thanh-trinh-329373245/",
-    "thanh@tesc.ucsd.edu",
   ],
   [
     "Brooke Truong",
@@ -223,20 +257,6 @@ export const membersData: string[][] = [
     "",
     "brooke@tesc.ucsd.edu",
   ],
-  [
-    "Jenna Vo",
-    "Design",
-    "Aerospace Engineering",
-    "/member-pictures/Jenna-Vo.jpeg",
-    "",
-    "jenna@tesc.ucsd.edu",
-  ],
-  [
-    "Kevin Yang",
-    "Operations",
-    "Computer Science",
-    "/member-pictures/Kevin-Yang.jpg",
-    "",
-    "kevin@tesc.ucsd.edu",
-  ],
 ];
+
+export const membersData: string[][] = [];

@@ -1,10 +1,7 @@
 // import "./about-us.css";
 import { Helmet } from "react-helmet";
-import eventsPageImage from "/AllPages/events-page-image.png";
-import Divider from "../MainPage/Divider";
 import { lazy, Suspense } from "react";
 import LoadingIcon from "../MainPage/LoadingIcon";
-// import AboutUsContent from "./AboutUsContent";
 const AboutUsContent = lazy(() => import("./AboutUsContent"));
 const AboutUs = () => {
   //[name, role/committee, major, image]
