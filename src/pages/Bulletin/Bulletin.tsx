@@ -9,12 +9,12 @@ export default function Bulletin() {
       id: number;
       UID: string;
       created_at: string;
-      Title: string;
-      Content: string;
-      Location: string;
-      Location_Str: string;
-      Start_Date: any;
-      End_Date: any;
+      title: string;
+      content: string;
+      location: string;
+      location_str: string;
+      start_date: any;
+      end_date: any;
     }[]
   >();
   const postId = useParams();
@@ -23,10 +23,11 @@ export default function Bulletin() {
   const [search, setSearch] = useState("");
   const filtered = useMemo(() => {
     return search
-      ? data?.filter((daton) => daton.Title.toLowerCase().includes(search))
+      ? data?.filter((daton) => daton.title.toLowerCase().includes(search))
       : data;
   }, [search, data]);
   useEffect(() => {
+    console.log("fetching data");
     const fetch = async () => {
       const { data, error } = await supabase
         .from("Events")
@@ -41,30 +42,7 @@ export default function Bulletin() {
     fetch();
   }, []);
   const formatDate = (date: string) => {
-    const DateObject = new Date(date);
-    const parseDate = DateObject.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit"
-    }).split("/");
-    const parseTime = DateObject.toLocaleTimeString("en-us", {
-      hour: "2-digit",
-      second: "2-digit",
-      minute: "2-digit"
-    });
-
-    return (
-      parseDate[2] +
-      parseDate[0]+parseDate[1] +
-      "T" +
-      parseTime
-        .toString()
-        .replace(",", "")
-        .replaceAll(":", "")
-        .replace("PM", "")
-        .replace("AM", "")
-        .replace(" ", "")
-    );
+    return date.replaceAll(":", "").replaceAll("-", "").split("+")[0];
   };
   return (
     <div className="w-full flex justify-center">
@@ -92,7 +70,7 @@ export default function Bulletin() {
                 }}
               >
                 <div className="border  border-black h-full w-full p-1 rounded-standard bg-lightBlue">
-                  <div className="font-bold w-max">{daton.Title}</div>
+                  <div className="font-bold w-max">{daton.title}</div>
                   <span className="line-clamp-3 w-max">
                     posted: {new Date(daton.created_at).toDateString()}
                   </span>
@@ -109,30 +87,25 @@ export default function Bulletin() {
                   return (
                     <span className="">
                       <h1 className="font-bold text-[30px]">
-                        {daton.Title} -&nbsp;
-                        {new Date(daton.created_at).toDateString()}
+                        {daton.title} -&nbsp;
+                        {new Date(daton.created_at).toUTCString()}
                       </h1>
                       <div className="">
                         Start Date:&nbsp;
-                        {new Date(daton.Start_Date).toDateString()}
-                        &nbsp;
-                        {new Date(daton.Start_Date).toLocaleTimeString()}
+                        {new Date(daton.start_date).toUTCString()}
                       </div>
                       <div className="">
                         End Date: &nbsp;
-                        {new Date(daton.End_Date).toDateString()}
-                        &nbsp;
-                        {new Date(daton.End_Date).toLocaleTimeString()}
+                        {new Date(daton.end_date).toUTCString()}
                       </div>
-                      {daton.Location_Str && (
+                      {daton.location_str && (
                         <div className="">
-                          Location: &nbsp;
-                          {daton.Location_Str} |{" "}
+                          location: &nbsp;
+                          {daton.location_str} |{" "}
                           <a
-                            href={`https://www.google.com/maps/dir/?api=1&destination=${daton.Location_Str.replace(
-                              " ",
-                              "+"
-                            ).replace(",", "%2C")}&travelmode=walking`}
+                            href={`https://www.google.com/maps/dir/?api=1&destination=${daton.location_str
+                              .replace(" ", "+")
+                              .replace(",", "%2C")}&travelmode=walking`}
                             className=" hover:underline decoration-auto"
                           >
                             directions
@@ -141,21 +114,21 @@ export default function Bulletin() {
                       )}
 
                       <a
-                        href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${daton.Title.replace(
+                        href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${daton.title.replace(
                           " ",
                           "+"
                         )}&details=More+details+see:+${
                           window.location.href
-                        }&location=${daton.Location_Str}&dates=${formatDate(
-                          daton.Start_Date
-                        )}/${formatDate(daton.End_Date)}&ctz=America/Los_Angeles
+                        }&location=${daton.location_str}&dates=${formatDate(
+                          daton.start_date
+                        )}/${formatDate(daton.end_date)}&ctz=America/Los_Angeles
 `}
                         className="hover:underline decoration-auto"
                       >
                         Add to Calendar
                       </a>
 
-                      <Editor content={daton.Content}></Editor>
+                      <Editor content={daton.content}></Editor>
                     </span>
                   );
               })}

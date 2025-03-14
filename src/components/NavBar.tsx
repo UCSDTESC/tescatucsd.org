@@ -67,6 +67,11 @@ const NavBar = () => {
             Council Members
           </span>
         </NavLink>
+        <NavLink className="h-min mx-[32px]" to="/bulletin/-1">
+          <span className="text-offWhite text-[26px] font-medium">
+            Bulletin
+          </span>
+        </NavLink>
       </div>
     </div>
   );

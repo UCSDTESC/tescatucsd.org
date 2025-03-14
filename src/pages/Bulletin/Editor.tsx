@@ -40,7 +40,7 @@ export default function Editor({ content }: { content: string }) {
       editorProps={{
         attributes: {
           class:
-            "border-black border rounded-lg p-3  focus:outline-none min-h-[70vh] overflow-y-scroll"
+            "border-black border rounded-standard p-5  focus:outline-none min-h-[70vh] overflow-y-scroll"
         }
       }}
     ></EditorProvider>
