@@ -16,11 +16,11 @@ export function EventCard({ event }: Props) {
     >
       <div className="relative min-h-[25rem] w-full bg-white shadow-2xl rounded-standard">
         <img
-          className="h-64 w-full p-3 mx-auto object-cover rounded-[20px]"
+          className="h-64 w-full p-5 pb-2 mx-auto object-cover rounded-[40px]"
           src={event.image}
           alt={event.name}
         />
-        <div className="p-3 pt-0 pb-5">
+        <div className="p-5 pt-0 pb-5">
           <p className="font-bold text-[#003059]">{event.date}</p>
           <div className="py-3">
             <p className="italic">{event.name}</p>
