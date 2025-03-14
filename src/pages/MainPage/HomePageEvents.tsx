@@ -1,56 +1,33 @@
-// import "./HomePageEvents.css";
-import { Helmet } from "react-helmet";
-import {
-  upcomingEventLogos,
-  upcomingEventLinks,
-  upcomingEventDescription,
-  pastEventLogos,
-  pastEventLinks,
-  pastEventDescription,
-} from "../Events/EventsList.ts";
 import { useNavigate } from "react-router-dom";
 
+const events = [
+  {
+    name: "TapEx fundraiser",
+    image: "/event-logos/Tapioca.png",
+    description:
+      "Come out and support TESC by purchasing from Tapioca Express @ Price Center! Show this flyer at the register and 10% of the proceeds will go to TESC.",
+    link: "https://tapiocaexpress.com",
+  },
+  {
+    name: "Sandcastle competition",
+    image: "/event-logos/SandcastleBonfire.jpg",
+    description:
+      "Join TESC for a Sand Castle Competition & Bonfire! Open to all Jacobs School of Engineering students, build your best sandcastle, earn points, and celebrate with S'mores by the bonfire. See you there!",
+    link: "https://tapiocaexpress.com",
+  },
+  {
+    name: "Talk with Stempad",
+    image: "/event-logos/stempad-talk-wi25.png",
+    description:
+      "Join us for an engaging talk series featuring Stempad as they share their journey as a startup. Learn how they got started, the challenges of building from the ground up, and how startup life compares to working in big tech or large companies.",
+    link: "https://tapiocaexpress.com",
+  },
+];
+
 const HomePageEvents = () => {
-  const events = [
-    {
-      name: "TapEx fundraiser",
-      image: "/event-logos/Tapioca.png",
-      description:
-        "Come out and support TESC by purchasing from Tapioca Express @ Price Center! Show this flyer at the register and 10% of the proceeds will go to TESC.",
-      link: "https://tapiocaexpress.com",
-    },
-    {
-      name: "Sandcastle competition",
-      image: "/event-logos/SandcastleBonfire.jpg",
-      description:
-        "Join TESC for a Sand Castle Competition & Bonfire! Open to all Jacobs School of Engineering students, build your best sandcastle, earn points, and celebrate with S'mores by the bonfire. See you there!",
-      link: "https://tapiocaexpress.com",
-    },
-    {
-      name: "Talk with Stempad",
-      image: "/event-logos/stempad-talk-wi25.png",
-      description:
-        "Join us for an engaging talk series featuring Stempad as they share their journey as a startup. Learn how they got started, the challenges of building from the ground up, and how startup life compares to working in big tech or large companies.",
-      link: "https://tapiocaexpress.com",
-    },
-  ];
   const navigate = useNavigate();
   return (
     <>
-      <Helmet>
-        <link
-          rel="preload"
-          href={upcomingEventLogos[0]}
-          as="image"
-          fetchPriority="high"
-        />
-        <link
-          rel="preload"
-          href={pastEventLogos[0]}
-          as="image"
-          fetchPriority="high"
-        />
-      </Helmet>
       <div className="flex justify-center mb-[10vh]">
         <div className="max-w-[70%] mt-5">
           <h1 className="text-[30px] text-[#003059] font-bold">Events</h1>
