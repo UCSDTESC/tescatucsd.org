@@ -7,7 +7,7 @@ export default function Sponsors() {
   return (
     <div className="mb-[7rem] flex justify-center">
       <div className="w-[70%]">
-        <h1 className="text-[30px] text-[#11426B] font-bold mb-4">Sponsors</h1>
+        <h1 className="text-[30px] text-[#003059] font-bold mb-4">Sponsors</h1>
 
         <div className="grid gap-[1rem] grid-cols-3 justify-center">
           <Suspense fallback={<LoadingIcon />}>
