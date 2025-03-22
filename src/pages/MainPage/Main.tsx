@@ -4,6 +4,7 @@
 import Divider from "./Divider";
 import Slideshow from "./Slideshow";
 import HomePageEvents from "./HomePageEvents";
+import Policy from "./Policy";
 import { Helmet } from "react-helmet";
 
 import Sponsors from "./Sponsors";
@@ -21,6 +22,7 @@ const Main = () => {
       <HomePageEvents />
       <Divider>{divider_2_text}</Divider>
       <Sponsors />
+      <Policy />
     </>
   );
 };
