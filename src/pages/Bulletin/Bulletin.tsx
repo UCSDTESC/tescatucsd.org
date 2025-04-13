@@ -11,6 +11,15 @@ import supabase from "../../supabase/supabase";
 import Editor from "./Editor";
 import { useNavigate, useParams } from "react-router-dom";
 
+const tags = [
+  "fundraiser",
+  "social",
+  "workshop",
+  "GBM",
+  "panels/talks",
+  "other",
+];
+
 export default function Bulletin() {
   const [data, setData] = useState<
     {
@@ -29,6 +38,7 @@ export default function Bulletin() {
   const [selection, setSelection] = useState<number>(Number(postId.postId));
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
+  const [tagFilters, setTagFilters] = useState<string[]>([]);
 
   useEffect(() => {
     const fetch = async () => {
@@ -36,6 +46,7 @@ export default function Bulletin() {
         .from("Events")
         .select()
         .ilike("title", `%${search}%`)
+        .contains("tags", tagFilters)
         .order("created_at", { ascending: false });
       if (data) {
         setData(data);
@@ -44,7 +55,7 @@ export default function Bulletin() {
       }
     };
     fetch();
-  }, [search]);
+  }, [search, tagFilters]);
   const formatDate = (date: string) => {
     return date.replaceAll(":", "").replaceAll("-", "").split("+")[0];
   };
@@ -61,6 +72,26 @@ export default function Bulletin() {
               }}
               className=" border rounded-standard p-1 focus:outline-none"
             />
+            {tags.map((tag) => {
+              return (
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id={tag}
+                    onChange={(e) => {
+                      if (e.target.checked) {
+                        setTagFilters([...tagFilters, tag]);
+                      } else {
+                        setTagFilters(tagFilters.filter((t) => t !== tag));
+                      }
+                    }}
+                  />
+                  <label htmlFor={tag} className="ml-2">
+                    {tag}
+                  </label>
+                </div>
+              );
+            })}
           </form>
         </div>
         <div className="grid grid-rows-[repeat(auto-fill,100px)] border-t border-black overflow-y-auto ">
