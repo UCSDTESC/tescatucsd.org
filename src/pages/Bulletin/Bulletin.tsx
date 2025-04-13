@@ -1,4 +1,12 @@
-import { useEffect, useMemo, useState } from "react";
+import {
+  JSXElementConstructor,
+  ReactElement,
+  ReactNode,
+  ReactPortal,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import supabase from "../../supabase/supabase";
 import Editor from "./Editor";
 import { useNavigate, useParams } from "react-router-dom";
@@ -21,17 +29,13 @@ export default function Bulletin() {
   const [selection, setSelection] = useState<number>(Number(postId.postId));
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
-  const filtered = useMemo(() => {
-    return search
-      ? data?.filter((daton) => daton.title.toLowerCase().includes(search))
-      : data;
-  }, [search, data]);
+
   useEffect(() => {
-    console.log("fetching data");
     const fetch = async () => {
       const { data, error } = await supabase
         .from("Events")
         .select()
+        .ilike("title", `%${search}%`)
         .order("created_at", { ascending: false });
       if (data) {
         setData(data);
@@ -40,7 +44,7 @@ export default function Bulletin() {
       }
     };
     fetch();
-  }, []);
+  }, [search]);
   const formatDate = (date: string) => {
     return date.replaceAll(":", "").replaceAll("-", "").split("+")[0];
   };
@@ -60,24 +64,39 @@ export default function Bulletin() {
           </form>
         </div>
         <div className="grid grid-rows-[repeat(auto-fill,100px)] border-t border-black overflow-y-auto ">
-          {filtered?.map((daton) => {
-            return (
-              <button
-                className=" cursor-pointer flex flex-col p-1 h-full"
-                onClick={() => {
-                  navigate(`/bulletin/${daton.id}`);
-                  setSelection(daton.id);
-                }}
-              >
-                <div className="border  border-black h-full w-full p-1 rounded-standard bg-lightBlue">
-                  <div className="font-bold w-max">{daton.title}</div>
-                  <span className="line-clamp-3 w-max">
-                    posted: {new Date(daton.created_at).toDateString()}
-                  </span>
-                </div>
-              </button>
-            );
-          })}
+          {data?.length === 0 && <p>No Events Found</p>}
+          {data?.map(
+            (daton: {
+              id: SetStateAction<number>;
+              title:
+                | string
+                | number
+                | boolean
+                | ReactElement<any, string | JSXElementConstructor<any>>
+                | Iterable<ReactNode>
+                | ReactPortal
+                | null
+                | undefined;
+              created_at: string | number | Date;
+            }) => {
+              return (
+                <button
+                  className=" cursor-pointer flex flex-col p-1 h-full"
+                  onClick={() => {
+                    navigate(`/bulletin/${daton.id}`);
+                    setSelection(daton.id);
+                  }}
+                >
+                  <div className="border  border-black h-full w-full p-1 rounded-standard bg-lightBlue">
+                    <div className="font-bold w-max">{daton.title}</div>
+                    <span className="line-clamp-3 w-max">
+                      posted: {new Date(daton.created_at).toDateString()}
+                    </span>
+                  </div>
+                </button>
+              );
+            }
+          )}
         </div>
         <div className="border-l border-t border-black flex justify-center">
           <div className="w-[90%] p-10">
