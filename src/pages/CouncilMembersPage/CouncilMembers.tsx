@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import CouncilMemberGrid from "./CouncilMemberGrid";
 import LoadingIcon from "../MainPage/LoadingIcon";
+import { allCouncilMembers } from "./council-member-data";
 const CouncilMembers = () => {
   return (
     <div className="min-h-fit max-w-[90%] m-auto">
@@ -25,7 +26,7 @@ const CouncilMembers = () => {
         </div>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center my-4 mx-auto w-[80%] gap-10">
           <Suspense fallback={<LoadingIcon />}>
-            <CouncilMemberGrid />
+            <CouncilMemberGrid data={allCouncilMembers} />
           </Suspense>
         </div>
       </div>
