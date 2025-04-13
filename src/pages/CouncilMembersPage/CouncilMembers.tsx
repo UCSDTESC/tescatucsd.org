@@ -59,7 +59,7 @@ const CouncilMembers = () => {
           <img
             src="AllPages/council-page-image.png"
             alt="JSOE"
-            className="hidden md:block w-72 h-auto"
+            className="hidden md:block w-72 h-auto ml-6"
           ></img>
         </div>
         <div className="flex flex-row justify-between items-center font-bold w-[90%] h-[2vw] p-5 mt-16 bg-white border-[#0000001A] border-1 rounded-full shadow-xl">
@@ -79,6 +79,9 @@ const CouncilMembers = () => {
             );
           })}
         </div>
+        <p className="font-semibold text-[30px] text-[#11426B] leading-14 mb-3 mt-10">
+          {category} Council Members
+        </p>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center my-4 mx-auto w-[80%] gap-10">
           <Suspense fallback={<LoadingIcon />}>
             <CouncilMemberGrid data={categoryMap[category]} />

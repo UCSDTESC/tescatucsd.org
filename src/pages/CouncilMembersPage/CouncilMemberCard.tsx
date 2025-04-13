@@ -15,11 +15,17 @@ export default function CouncilMemberCard({ councilMember }: Props) {
         />
         <p className="text-center font-bold">{councilMember.Name}</p>
         <div className="flex flex-row gap-4 justify-center my-3">
-          <GlobalOutlined style={{ fontSize: "20px" }}>
+          <GlobalOutlined
+            className="hover:cursor-pointer"
+            style={{ fontSize: "20px" }}
+          >
             <a href={councilMember.Links[0]} />
           </GlobalOutlined>
 
-          <InstagramOutlined style={{ fontSize: "21px" }}>
+          <InstagramOutlined
+            className="hover:cursor-pointer"
+            style={{ fontSize: "21px" }}
+          >
             <a href={councilMember.Links[1]} />
           </InstagramOutlined>
         </div>
