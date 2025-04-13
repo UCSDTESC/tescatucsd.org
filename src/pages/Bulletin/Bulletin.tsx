@@ -10,6 +10,7 @@ import {
 import supabase from "../../supabase/supabase";
 import Editor from "./Editor";
 import { useNavigate, useParams } from "react-router-dom";
+import { councilMemberNames } from "../CouncilMembersPage/council-member-data";
 
 const tags = [
   "fundraiser",
@@ -39,15 +40,20 @@ export default function Bulletin() {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [tagFilters, setTagFilters] = useState<string[]>([]);
+  const [orgFilters, setOrgFilters] = useState<string[]>([]);
 
   useEffect(() => {
     const fetch = async () => {
-      const { data, error } = await supabase
+      let query = supabase
         .from("Events")
         .select()
         .ilike("title", `%${search}%`)
         .contains("tags", tagFilters)
         .order("created_at", { ascending: false });
+      if (orgFilters.length > 0) {
+        query = query.in("org_name", orgFilters);
+      }
+      const { data, error } = await query;
       if (data) {
         setData(data);
       } else {
@@ -55,10 +61,12 @@ export default function Bulletin() {
       }
     };
     fetch();
-  }, [search, tagFilters]);
+  }, [search, tagFilters, orgFilters]);
+
   const formatDate = (date: string) => {
     return date.replaceAll(":", "").replaceAll("-", "").split("+")[0];
   };
+
   return (
     <div className="w-full flex justify-center">
       <div className="grid w-[80%] border border-black border-spacing-1 grid-cols-[200px_1fr] min-h-[80vh]  grid-rows-[auto_1fr] my-20">
@@ -72,26 +80,52 @@ export default function Bulletin() {
               }}
               className=" border rounded-standard p-1 focus:outline-none"
             />
-            {tags.map((tag) => {
-              return (
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id={tag}
-                    onChange={(e) => {
-                      if (e.target.checked) {
-                        setTagFilters([...tagFilters, tag]);
-                      } else {
-                        setTagFilters(tagFilters.filter((t) => t !== tag));
-                      }
-                    }}
-                  />
-                  <label htmlFor={tag} className="ml-2">
-                    {tag}
-                  </label>
-                </div>
-              );
-            })}
+            <div className="flex flex-row gap-3">
+              <div>
+                {tags.map((tag: string) => {
+                  return (
+                    <div className="flex items-center">
+                      <input
+                        type="checkbox"
+                        id={tag}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            setTagFilters([...tagFilters, tag]);
+                          } else {
+                            setTagFilters(tagFilters.filter((t) => t !== tag));
+                          }
+                        }}
+                      />
+                      <label htmlFor={tag} className="ml-2">
+                        {tag}
+                      </label>
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="max-h-[10rem] overflow-scroll">
+                {councilMemberNames.map((org: string) => {
+                  return (
+                    <div className="flex items-center">
+                      <input
+                        type="checkbox"
+                        id={org}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            setOrgFilters([...orgFilters, org]);
+                          } else {
+                            setOrgFilters(orgFilters.filter((t) => t !== org));
+                          }
+                        }}
+                      />
+                      <label htmlFor={org} className="ml-2">
+                        {org}
+                      </label>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </form>
         </div>
         <div className="grid grid-rows-[repeat(auto-fill,100px)] border-t border-black overflow-y-auto ">
