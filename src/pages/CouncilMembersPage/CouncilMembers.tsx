@@ -1,8 +1,46 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import CouncilMemberGrid from "./CouncilMemberGrid";
 import LoadingIcon from "../MainPage/LoadingIcon";
-import { allCouncilMembers } from "./council-member-data";
+import {
+  allCouncilMembers,
+  bioengineeringOrgs,
+  chemicalNanoOrgs,
+  structuralOrgs,
+  computerOrgs,
+  electricalOrgs,
+  mechanicalOrgs,
+  roboticsOrgs,
+  generalMiscOrgs,
+  CouncilMember,
+} from "./council-member-data";
+
+const categories: string[] = [
+  "All",
+  "Bioengineering",
+  "Chemical/Nano",
+  "Structural",
+  "Computer",
+  "Electrical",
+  "Mechanical",
+  "Robotics",
+  "General/Misc",
+];
+
+const categoryMap: { [key: string]: CouncilMember[] } = {
+  All: allCouncilMembers,
+  Bioengineering: bioengineeringOrgs,
+  "Chemical/Nano": chemicalNanoOrgs,
+  Structural: structuralOrgs,
+  Computer: computerOrgs,
+  Electrical: electricalOrgs,
+  Mechanical: mechanicalOrgs,
+  Robotics: roboticsOrgs,
+  "General/Misc": generalMiscOrgs,
+};
+
 const CouncilMembers = () => {
+  const [category, setCategory] = useState<string>("All");
+
   return (
     <div className="min-h-fit max-w-[90%] m-auto">
       <div className="mt-20 mb-20 flex-col flex justify-center items-center">
@@ -24,9 +62,26 @@ const CouncilMembers = () => {
             className="hidden md:block w-72 h-auto"
           ></img>
         </div>
+        <div className="flex flex-row justify-between items-center font-bold w-[90%] h-[2vw] p-5 mt-16 bg-white border-[#0000001A] border-1 rounded-full shadow-xl">
+          {categories.map((type, index) => {
+            return (
+              <p
+                key={index}
+                className={`hover:cursor-pointer ${
+                  category == type && "p-1 px-3 rounded-full bg-[#0000001A]"
+                } ${index == 0 && "ml-16"} ${
+                  index == categories.length - 1 && "mr-16"
+                } transition-all duration-600 ease-in-out transform`}
+                onClick={() => setCategory(type)}
+              >
+                {type}
+              </p>
+            );
+          })}
+        </div>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center my-4 mx-auto w-[80%] gap-10">
           <Suspense fallback={<LoadingIcon />}>
-            <CouncilMemberGrid data={allCouncilMembers} />
+            <CouncilMemberGrid data={categoryMap[category]} />
           </Suspense>
         </div>
       </div>
