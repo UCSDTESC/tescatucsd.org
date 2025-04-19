@@ -1,19 +1,34 @@
-import { LinkedinFilled, MailFilled } from "@ant-design/icons";
-import React from "react";
+import React, { useState } from "react";
+import {
+  CaretUpOutlined,
+  CaretDownOutlined,
+  LinkedinFilled,
+  MailFilled,
+} from "@ant-design/icons";
 
 interface Props {
   data: string[][];
   title: string;
 }
 export function Section({ data, title }: Props) {
+  const [open, setOpen] = useState(true);
   return (
     <div className="flex flex-col">
-      <p className="text-[30px] text-[#11426B] font-medium">{title}</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-4 gap-5">
-        {data.map((member, index) => (
-          <MemberCard key={index} member={member as Member} />
-        ))}
+      <div className="flex flex-row items-center gap-4">
+        <p className="text-[30px] text-[#11426B] font-medium">{title}</p>
+        {open ? (
+          <CaretUpOutlined onClick={() => setOpen(!open)} />
+        ) : (
+          <CaretDownOutlined onClick={() => setOpen(!open)} />
+        )}
       </div>
+      {open && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-4 gap-5">
+          {data.map((member, index) => (
+            <MemberCard key={index} member={member as Member} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -39,9 +54,9 @@ const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
   return (
     <div className="flex flex-col justify-center items-center">
       {/* Container for image and ellipsis button */}
-      <div className="relative w-full max-w-xs bg-white shadow-2xl rounded-standard">
+      <div className="relative w-full max-w-xs bg-white shadow-2xl rounded-[20px]">
         <img
-          className=" w-full  aspect-[1/1.3] p-3 mx-auto object-cover rounded-standard"
+          className=" w-full  aspect-[1/1.3] p-4 mx-auto object-cover rounded-[40px]"
           src={member[3]}
           alt={member[0]}
         />
