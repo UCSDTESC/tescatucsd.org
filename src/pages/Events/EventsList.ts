@@ -45,7 +45,7 @@ export const pastEventLinks = [
 ];
 
 export const pastEventDescription = [
-  "Come out the Matthew's Quad and enjoys some games like 'Tug of War' and 'Potato Sack Race'!",
+  "Hello participants! Ready to put your skills to the test and show if you can take on the competition? Sign up now for the TESC Olympics event, starting on April 19th from 10am to 2pm on the Matthews Quad. We'll have a variety of activities for all to enjoy, so please RSVP to indicate which activities you will participate in. Winners of the games will be awarded trophies as well! We'll be providing snacks and lunch, so if you have any dietary restrictions, please list them below. Hope to see you there! And may the odds be in your favor....",
   "Come out and support the Triton Engineering Student Council (TESC) by purchasing from Tapioca Express! Show this flyer at the register and 10% of the proceeds will go to TESC.",
   "Come out and support the Triton Engineering Student Council (TESC) by purchasing from Tapioca Express! Show this flyer at the register and 10% of the proceeds will go to TESC.",
   "Triton Engineering Student Council is inviting you to participate in our Sand Castle Competition and join us for a warm and cozy bonfire with some smores' on March 2nd, 2025! We are opening this event to all students within the Jacobs School of Engineering community! For this Sand Castle Competition, the best sand castles will be given points. We will be mostly judging you on your team spirit, quality of the sand castle, and engineering aspects when building it! Afterwards, we will be celebrating the winners with some smore's and a bonfire!!", 
