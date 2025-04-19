@@ -13,7 +13,12 @@ export default function Sponsors() {
           Sponsors
         </h1>
 
-        <div className="grid gap-[1rem] grid-cols-3 justify-center">
+        <div className="
+          grid gap-[1rem] 
+          grid-cols-3 
+          justify-center 
+          grid grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))]
+        ">
           <Suspense fallback={<LoadingIcon />}>
             <SponsorsGrid />
           </Suspense>
