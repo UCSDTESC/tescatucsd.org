@@ -41,7 +41,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
       {/* Container for image and ellipsis button */}
       <div className="relative w-full max-w-xs bg-white shadow-2xl rounded-standard">
         <img
-          className="h-56 w-full p-3 mx-auto object-cover rounded-standard"
+          className=" w-full  aspect-[1/1.3] p-3 mx-auto object-cover rounded-standard"
           src={member[3]}
           alt={member[0]}
         />
