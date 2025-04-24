@@ -6,7 +6,7 @@ export default function Policy() {
           Non-Discrimination Policy
         </h1>
 
-        <div className="flex items-center justify-between gap-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <p className="text-lg text-gray-800 leading-relaxed flex-1">
             <span>
               In accordance with applicable Federal and State law and University

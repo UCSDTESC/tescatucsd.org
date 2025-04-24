@@ -1,7 +1,5 @@
 import { NavLink } from "react-router-dom";
 import TescLogoWhite from "/AllPages/TESC-logo-white.png";
-import eventsPageImage from "/AllPages/events-page-image.png";
-import useImagePreloader from "../Hooks/useImagePreload";
 // import "./navbar.css";
 // const NavBar = () => {
 //   const pages = (
@@ -41,7 +39,7 @@ import useImagePreloader from "../Hooks/useImagePreload";
 // };
 const NavBar = () => {
   return (
-    <div className="w-full bg-navy flex justify-between px-[18px] py-1">
+    <div className="w-full bg-radial from-[#114675] from-40% to-navy flex justify-between px-[18px] py-1">
       <NavLink to="/">
         <img className="h-[80px]" src={TescLogoWhite} alt="" />
       </NavLink>

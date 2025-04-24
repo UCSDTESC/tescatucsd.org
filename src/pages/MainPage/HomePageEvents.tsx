@@ -61,7 +61,7 @@ const HomePageEvents = () => {
                     src={event.image}
                     alt={event.name}
                   />
-                  <div className="w-full h-full overflow-hidden px-2">
+                  <div className="w-full h-full overflow-hidden px-7">
                     <p className="line-clamp-6 text-[14px]">
                       {event.description}
                     </p>
