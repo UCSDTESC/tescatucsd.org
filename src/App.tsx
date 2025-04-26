@@ -10,7 +10,7 @@ import AboutUs from "./pages/AboutUs/AboutUs";
 import Page from "./components/Page";
 import Main from "./pages/MainPage/Main";
 import RedirectComponent from "./components/RedirectComponent";
-import ProfiledComponent from "./ProfiledComponent";
+import ProfiledComponent from "./util/ProfiledComponent";
 
 function App() {
   return (
