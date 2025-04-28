@@ -1,13 +1,8 @@
-// import "./about-us.css";
 import { Helmet } from "react-helmet";
-import eventsPageImage from "/AllPages/events-page-image.png";
-import Divider from "../MainPage/Divider";
 import { lazy, Suspense } from "react";
 import LoadingIcon from "../MainPage/LoadingIcon";
-// import AboutUsContent from "./AboutUsContent";
 const AboutUsContent = lazy(() => import("./AboutUsContent"));
 const AboutUs = () => {
-  //[name, role/committee, major, image]
   return (
     <>
       <Helmet>
@@ -18,18 +13,24 @@ const AboutUs = () => {
           fetchPriority="high"
         />
       </Helmet>
-      <img
-        className="w-full h-[50vh] object-cover"
-        src={eventsPageImage}
-        alt=""
-        fetchPriority="high"
-      ></img>
-      <Divider>
-        The Triton Engineering Student Council (TESC), empowers UC San Diego's
-        <br /> engineering students by connecting them to impactful communities,
-        <br /> projects, and career-building opportunities
-      </Divider>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-4 gap-5 mx-auto w-[80%]">
+      <div className="m-12 mt-20 flex flex-row justify-between items-center max-w-[80%] mx-auto">
+        <div className="sm:max-w-full md:max-w-3/5 ">
+          <p className="font-semibold text-[60px] text-[#11426B] leading-14 mb-3">
+            Get to know our <br /> board members
+          </p>
+          <p className="font-semibold text-[22px] mb-3">
+            Meet the leaders behind our organization! Our board members are
+            dedicated to fostering community, innovation, and growth. Get to
+            know the team working to bring our mission to life!
+          </p>
+        </div>
+        <img
+          src="AllPages/bear.png"
+          alt="bear"
+          className="hidden md:block w-72 h-auto"
+        ></img>
+      </div>
+      <div className="max-w-[80%] mx-auto mb-10">
         <Suspense fallback={<LoadingIcon />}>
           <AboutUsContent />
         </Suspense>
