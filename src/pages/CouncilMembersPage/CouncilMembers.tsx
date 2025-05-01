@@ -1,5 +1,5 @@
-import { Suspense, useState } from "react";
-import CouncilMemberGrid from "./CouncilMemberGrid";
+import { lazy, Suspense, useState } from "react";
+const CouncilMemberGrid = lazy(() => import("./CouncilMemberGrid"));
 import LoadingIcon from "../MainPage/LoadingIcon";
 import {
   allCouncilMembers,
