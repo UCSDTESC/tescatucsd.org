@@ -31,7 +31,7 @@ const Events = () => {
           </p>
         </div>
         <img
-          src="AllPages/events-lead.png"
+          src="AllPages/events-lead.webp"
           alt="lead"
           className="hidden md:block w-80 h-auto"
         ></img>
