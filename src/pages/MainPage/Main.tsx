@@ -1,9 +1,10 @@
 import Divider from "./Divider";
+import LoadingIcon from "./LoadingIcon";
 import Slideshow from "./Slideshow";
-import HomePageEvents from "./HomePageEvents";
-import Policy from "./Policy";
-
-import Sponsors from "./Sponsors";
+import { lazy, Suspense } from "react";
+const HomePageEvents = lazy(() => import("./HomePageEvents"));
+const Policy = lazy(() => import("./Policy"));
+const Sponsors = lazy(() => import("./Sponsors"));
 
 const divider_1_text =
   "The Triton Engineering Student Council (TESC) empowers UC San Diego \n engineering students by connecting them with impactful communities, projects,\n and career building opportunities.";
@@ -13,9 +14,11 @@ const Main = () => {
     <>
       <Slideshow />
       <Divider>{divider_1_text}</Divider>
-      <HomePageEvents />
-      <Sponsors />
-      <Policy />
+      <Suspense fallback={<LoadingIcon />}>
+        <HomePageEvents />
+        <Sponsors />
+        <Policy />
+      </Suspense>
     </>
   );
 };

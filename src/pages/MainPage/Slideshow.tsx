@@ -18,13 +18,11 @@ const Slideshow = () => {
       caption: "Engineers on the Green Winter 2025"
     },
     {
-      image:
-        "/slideshow-pictures/council-dirty-birds-social/20250117_184343.webp",
+      image: "/slideshow-pictures/council-dirty-birds-social/20250117_184343.webp",
       caption: "TESC Council Social Winter 2025"
     },
     {
-      image:
-        "/slideshow-pictures/council-dirty-birds-social/20250117_184426.webp",
+      image: "/slideshow-pictures/council-dirty-birds-social/20250117_184426.webp",
       caption: "TESC Council Social Winter 2025"
     },
     {
@@ -67,6 +65,7 @@ const Slideshow = () => {
               style={{
                 left: `${index * 100}vw`
               }}
+              key={index}
             >
               <img
                 srcSet={slide.image}
@@ -95,9 +94,7 @@ const Slideshow = () => {
               key={index}
               className="h-[2vh] mx-[5px] my-0 bg-white rounded-standard  cursor-pointer duration-500"
               style={{
-                backgroundColor: `${
-                  index === currentIndex ? "var(--color-navy)" : ""
-                }`,
+                backgroundColor: `${index === currentIndex ? "var(--color-navy)" : ""}`,
                 width: `${index === currentIndex ? "4vh" : "2vh"}`
               }}
               onClick={() => dotClick(index)}
