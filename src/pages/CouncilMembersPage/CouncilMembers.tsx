@@ -1,6 +1,5 @@
 import { lazy, Suspense, useState } from "react";
 const CouncilMemberGrid = lazy(() => import("./CouncilMemberGrid"));
-import LoadingIcon from "../MainPage/LoadingIcon";
 import {
   allCouncilMembers,
   bioengineeringOrgs,
@@ -13,6 +12,7 @@ import {
   generalMiscOrgs,
   CouncilMember,
 } from "./council-member-data";
+import useImagePreloader from "../../Hooks/useImagePreload";
 
 const categories: string[] = [
   "All",
@@ -40,7 +40,7 @@ const categoryMap: { [key: string]: CouncilMember[] } = {
 
 const CouncilMembers = () => {
   const [category, setCategory] = useState<string>("All");
-
+  const imagePreloader = useImagePreloader(["AllPages/council-page-image.png"]);
   return (
     <div className="min-h-fit max-w-[90%] m-auto">
       <div className="mt-20 mb-20 flex-col flex justify-center items-center">
@@ -56,11 +56,13 @@ const CouncilMembers = () => {
               student support!
             </p>
           </div>
-          <img
-            src="AllPages/council-page-image.png"
-            alt="JSOE"
-            className="hidden md:block w-72 h-auto ml-6"
-          ></img>
+          {imagePreloader.imagesPreloaded && (
+            <img
+              src="AllPages/council-page-image.png"
+              alt="JSOE"
+              className="hidden md:block w-72 h-auto ml-6 animate-[animate-in_1s]"
+            ></img>
+          )}
         </div>
         <div className="flex flex-row justify-between items-center font-bold w-[90%] h-[2vw] p-5 mt-16 bg-white border-[#0000001A] border-1 rounded-full shadow-xl">
           {categories.map((type, index) => {
@@ -83,7 +85,7 @@ const CouncilMembers = () => {
           {category} Council Members
         </p>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center my-4 mx-auto w-[80%] gap-10">
-          <Suspense fallback={<LoadingIcon />}>
+          <Suspense>
             <CouncilMemberGrid data={categoryMap[category]} />
           </Suspense>
         </div>
