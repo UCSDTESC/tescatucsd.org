@@ -1,39 +1,29 @@
 import { useNavigate } from "react-router-dom";
 import { Event } from "./EventsList";
 import useImagePreloader from "../../Hooks/useImagePreload";
-import LoadingIcon from "../MainPage/LoadingIcon";
 interface Props {
   event: Event;
 }
 export function EventCard({ event }: Props) {
   const navigate = useNavigate();
   const ImagePreloader = useImagePreloader([event.image]);
+
   return (
     <>
-      {ImagePreloader.imagesPreloaded ? (
-        <div
-          className="flex flex-col justify-center items-center"
-          onClick={() => {
-            if (event.link) {
-              navigate(event.link);
-            }
-          }}
-        >
-          <div className="relative min-h-[25rem] w-full bg-white shadow-2xl rounded-standard">
-            {/* <img
-              className=" w-full aspect-[1/1.1] p-5 pb-2 mx-auto object-cover rounded-[40px]"
+      <div className="relative min-h-[25rem] w-full bg-white shadow-2xl rounded-standard">
+        <div className="mb-0 w-[90%] aspect-[1/1.1] m-6 pb-2 mx-auto object-cover rounded-[40px] relative">
+          {ImagePreloader.imagesPreloaded && (
+            <img
+              className=" w-full aspect-[1/1.1] object-cover rounded-[40px] absolute top-0 left-0 z-1 animate-[animate-in_1s]"
               src={event.image}
               alt={event.name}
-            /> */}
-            <div className=" w-[90%] aspect-[1/1.1] m-6 pb-2 mx-auto object-cover rounded-[40px] relative">
-              <img
-                className=" w-full aspect-[1/1.1] object-cover rounded-[40px] absolute top-0 left-0"
-                src={event.image}
-                alt={event.name}
-              />
-              <div className="bg-lightBlue w-full h-full rounded-[40px] "></div>
-            </div>
-            <div className="p-5 pt-0 pb-5">
+            />
+          )}
+          <div className="bg-lightBlue w-full h-full rounded-[40px] animate-pulse"></div>
+        </div>
+        <div className="p-5 pt-0 pb-5">
+          {ImagePreloader.imagesPreloaded ? (
+            <>
               <p className="font-bold text-[#003059]">{event.date}</p>
               <div className="py-3">
                 <p className="italic">{event.name}</p>
@@ -49,12 +39,25 @@ export function EventCard({ event }: Props) {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
+            </>
+          ) : (
+            <>
+              <p className="w-20 bg-lightBlue h-6 animate-pulse rounded-standard"></p>
+              <div className="py-3">
+                <p className="w-40 bg-lightBlue h-6 animate-pulse rounded-standard my-1"></p>
+                <p className="overflow-hidden overflow-ellipsis whitespace-nowrap flex gap-x-2">
+                  <span className="w-50 bg-lightBlue rounded-standard h-6"></span>
+                </p>
+              </div>
+              <div className="flex flex-row justify-center gap-2 mt-1">
+                {Array.from({ length: 2 }).map(() => (
+                  <div className="bg-[#A1C7E7] h-6 aspect-[3/1] animate-pulse px-2  rounded-[20px]"></div>
+                ))}
+              </div>
+            </>
+          )}
         </div>
-      ) : (
-        <LoadingIcon />
-      )}
+      </div>
     </>
   );
 }

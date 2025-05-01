@@ -16,8 +16,8 @@ const useImagePreloader = (imageList: string[]) => {
     let isCancelled = false;
 
     const preloadImages = async () => {
-      const imagesPromiseList: Promise<HTMLImageElement>[] = imageList.map((img) =>
-        preloadImage(img)
+      const imagesPromiseList: Promise<HTMLImageElement>[] = imageList.map(
+        (img) => preloadImage(img)
       );
 
       Promise.all(imagesPromiseList)

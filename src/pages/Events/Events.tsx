@@ -42,9 +42,7 @@ const Events = () => {
           Upcoming Events
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          <Suspense fallback={<LoadingIcon />}>
-            <EventsGrid events={upcomingEvents} />
-          </Suspense>
+          <EventsGrid events={upcomingEvents} />
         </div>
       </div>
 
@@ -53,9 +51,7 @@ const Events = () => {
           Past Events
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          <Suspense fallback={<LoadingIcon />}>
-            <EventsGrid events={pastEvents} />
-          </Suspense>
+          <EventsGrid events={pastEvents} />
         </div>
       </div>
     </>

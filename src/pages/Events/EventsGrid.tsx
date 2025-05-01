@@ -1,5 +1,3 @@
-import useImagePreloader from "../../Hooks/useImagePreload";
-import LoadingIcon from "../MainPage/LoadingIcon";
 import { EventCard } from "./EventCard";
 import { Event } from "./EventsList";
 
