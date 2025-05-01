@@ -1,20 +1,20 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { Event } from "./EventsList";
 import useImagePreloader from "../../Hooks/useImagePreload";
 interface Props {
   event: Event;
 }
 export function EventCard({ event }: Props) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const ImagePreloader = useImagePreloader([event.image]);
 
   return (
     <>
       <div className="relative min-h-[25rem] w-full bg-white shadow-2xl rounded-standard">
-        <div className="mb-0 w-[90%] aspect-[1/1.1] m-6 pb-2 mx-auto object-cover rounded-[40px] relative">
+        <div className="mb-0 w-[90%] aspect-[1/1.2] m-6 pb-2 mx-auto object-contain rounded-[40px] relative">
           {ImagePreloader.imagesPreloaded && (
             <img
-              className=" w-full aspect-[1/1.1] object-cover rounded-[40px] absolute top-0 left-0 z-1 animate-[animate-in_1s]"
+              className=" w-full h-full object-cover rounded-[40px] absolute top-0 left-0 z-1 animate-[animate-in_1s]"
               src={event.image}
               alt={event.name}
             />
