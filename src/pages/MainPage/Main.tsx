@@ -14,11 +14,9 @@ const Main = () => {
     <>
       <Slideshow />
       <Divider>{divider_1_text}</Divider>
-      <Suspense fallback={<LoadingIcon />}>
-        <HomePageEvents />
-        <Sponsors />
-        <Policy />
-      </Suspense>
+      <HomePageEvents />
+      <Sponsors />
+      <Policy />
     </>
   );
 };
