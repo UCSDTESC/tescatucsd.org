@@ -64,9 +64,32 @@ export interface Event{
   link: string;
 };
 export const upcomingEvents: Event[] = [
-  {name: "Tapoca Express Fundraiser", date: "March 6th, 2025", location: "Tapioca Express, Price Center", tags: ["Fundraiser", "Finance"], image: "/event-logos/Tapioca.png", link: "https://tapiocaexpress.com/"},
+  {
+    name: "Headshot Day & Mixer", 
+    date: "May 5th, 2025", 
+    location: "Bear Room, Price Center", 
+    tags: ["Social", "Career"], 
+    image: "/event-logos/headshot&mixer.jpg", 
+    link: "tinyurl.com/headshot-mixer"
+  },
+  {
+    name: "Engineer's Formal Prom", 
+    date: "May 18th, 2025", 
+    location: "Stage Room", 
+    tags: ["Social"], 
+    image: "/event-logos/Engineering_Prom_1.jpg", 
+    link: "https://www.zeffy.com/en-US/ticketing/2025-aerospace-prom"
+  },
 ]
 export const pastEvents: Event[] = [
+  {
+    name: "Tapoca Express Fundraiser", 
+    date: "March 6th, 2025", 
+    location: "Tapioca Express, Price Center", 
+    tags: ["Fundraiser", "Finance"], 
+    image: "/event-logos/Tapioca.png", 
+    link: "https://tapiocaexpress.com/"
+  },
   {
     name: "Sandcastle Competition",
     date: "March 2nd, 2025",
