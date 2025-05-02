@@ -6,9 +6,7 @@ interface Props {
   councilMember: CouncilMember;
 }
 export default function CouncilMemberCard({ councilMember }: Props) {
-  const ImagePreloader = useImagePreloader([
-    `council-member-logos/${councilMember.Image}`,
-  ]);
+  const ImagePreloader = useImagePreloader([`council-member-logos/${councilMember.Image}`]);
   return (
     <>
       {ImagePreloader.imagesPreloaded ? (
@@ -21,17 +19,11 @@ export default function CouncilMemberCard({ councilMember }: Props) {
             />
             <p className="text-center font-bold h-10">{councilMember.Name}</p>
             <div className="flex flex-row gap-4 justify-center my-3">
-              <GlobalOutlined
-                className="hover:cursor-pointer"
-                style={{ fontSize: "20px" }}
-              >
+              <GlobalOutlined className="hover:cursor-pointer" style={{ fontSize: "20px" }}>
                 <a href={councilMember.Links[0]} />
               </GlobalOutlined>
 
-              <InstagramOutlined
-                className="hover:cursor-pointer"
-                style={{ fontSize: "21px" }}
-              >
+              <InstagramOutlined className="hover:cursor-pointer" style={{ fontSize: "21px" }}>
                 <a href={councilMember.Links[1]} />
               </InstagramOutlined>
             </div>
@@ -47,17 +39,11 @@ export default function CouncilMemberCard({ councilMember }: Props) {
               <div className="bg-lightBlue animate-pulse h-8 w-[80%] mx-auto rounded-standard"></div>
             </p>
             <div className="flex flex-row gap-4 justify-center my-3">
-              <GlobalOutlined
-                className="hover:cursor-pointer"
-                style={{ fontSize: "20px" }}
-              >
+              <GlobalOutlined className="hover:cursor-pointer" style={{ fontSize: "20px" }}>
                 <a href={councilMember.Links[0]} />
               </GlobalOutlined>
 
-              <InstagramOutlined
-                className="hover:cursor-pointer"
-                style={{ fontSize: "21px" }}
-              >
+              <InstagramOutlined className="hover:cursor-pointer" style={{ fontSize: "21px" }}>
                 <a href={councilMember.Links[1]} />
               </InstagramOutlined>
             </div>

@@ -1,5 +1,5 @@
-import { lazy, Suspense, useState } from "react";
-const CouncilMemberGrid = lazy(() => import("./CouncilMemberGrid"));
+import {  useState } from "react";
+import CouncilMemberGrid from "./CouncilMemberGrid";
 import {
   allCouncilMembers,
   bioengineeringOrgs,
@@ -10,7 +10,7 @@ import {
   mechanicalOrgs,
   roboticsOrgs,
   generalMiscOrgs,
-  CouncilMember,
+  CouncilMember
 } from "./council-member-data";
 import useImagePreloader from "../../Hooks/useImagePreload";
 
@@ -23,7 +23,7 @@ const categories: string[] = [
   "Electrical",
   "Mechanical",
   "Robotics",
-  "General/Misc",
+  "General/Misc"
 ];
 
 const categoryMap: { [key: string]: CouncilMember[] } = {
@@ -35,7 +35,7 @@ const categoryMap: { [key: string]: CouncilMember[] } = {
   Electrical: electricalOrgs,
   Mechanical: mechanicalOrgs,
   Robotics: roboticsOrgs,
-  "General/Misc": generalMiscOrgs,
+  "General/Misc": generalMiscOrgs
 };
 
 const CouncilMembers = () => {
@@ -52,10 +52,9 @@ const CouncilMembers = () => {
               Get to know our council members
             </p>
             <p className="font-semibold text-[22px] mb-3">
-              Meet the council members behind our organization! We’re dedicated
-              to supporting the engineering community through any means, whether
-              that be through industry connections, financial support, or
-              student support!
+              Meet the council members behind our organization! We’re dedicated to supporting the
+              engineering community through any means, whether that be through industry connections,
+              financial support, or student support!
             </p>
           </div>
           {imagePreloader.imagesPreloaded && (
@@ -86,10 +85,8 @@ const CouncilMembers = () => {
         <p className="font-semibold text-[30px] text-[#11426B] leading-14 mb-3 mt-10">
           {category} Council Members
         </p>
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center my-4 mx-auto w-[80%] gap-10">
-          <Suspense>
-            <CouncilMemberGrid data={categoryMap[category]} />
-          </Suspense>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] justify-center items-center my-4 mx-auto w-[80%] gap-10">
+          <CouncilMemberGrid data={categoryMap[category]} />
         </div>
       </div>
     </div>
