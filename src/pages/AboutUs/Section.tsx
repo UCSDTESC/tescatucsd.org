@@ -50,7 +50,6 @@ const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
   // If the linkedInURL or emailAddress is not provided, default to a placeholder
   const linkedInURL = member[4] || "https://linkedin.com";
   const emailAddress = member[5] || "https://mail.google.com";
-
   return (
     <div className="flex flex-col justify-center items-center">
       {/* Container for image and ellipsis button */}

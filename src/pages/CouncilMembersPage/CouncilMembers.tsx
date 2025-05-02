@@ -40,7 +40,9 @@ const categoryMap: { [key: string]: CouncilMember[] } = {
 
 const CouncilMembers = () => {
   const [category, setCategory] = useState<string>("All");
-  const imagePreloader = useImagePreloader(["AllPages/council-page-image.png"]);
+  const imagePreloader = useImagePreloader([
+    "AllPages/council-page-image.webp",
+  ]);
   return (
     <div className="min-h-fit max-w-[90%] m-auto">
       <div className="mt-20 mb-20 flex-col flex justify-center items-center">
@@ -58,7 +60,7 @@ const CouncilMembers = () => {
           </div>
           {imagePreloader.imagesPreloaded && (
             <img
-              src="AllPages/council-page-image.png"
+              src="AllPages/council-page-image.webp"
               alt="JSOE"
               className="hidden md:block w-72 h-auto ml-6 animate-[animate-in_1s]"
             ></img>
