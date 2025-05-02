@@ -1,7 +1,6 @@
-import { lazy, Suspense } from "react";
-const HomePageEventCards = lazy(() => {
-  return import("./HomePageEventsCards");
-});
+import { Suspense } from "react";
+import useImagePreloader from "../../Hooks/useImagePreload";
+import HomePageEventCards from "./HomePageEventsCards";
 
 const HomePageEvents = () => {
   const events = [
@@ -21,7 +20,7 @@ const HomePageEvents = () => {
     },
     {
       name: "Talk with Stempad",
-      image: "/event-logos/stempad-talk-wi25.webp",
+      image: "/event-logos/stempad-talk-wi25.png",
       description:
         "Join us for an engaging talk series featuring Stempad as they share their journey as a startup. Learn how they got started, the challenges of building from the ground up, and how startup life compares to working in big tech or large companies.",
       link: "https://tapiocaexpress.com"
