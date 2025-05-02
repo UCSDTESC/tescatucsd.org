@@ -1,5 +1,5 @@
-import { lazy, Suspense, useState } from "react";
-const CouncilMemberGrid = lazy(() => import("./CouncilMemberGrid"));
+import {  useState } from "react";
+import CouncilMemberGrid from "./CouncilMemberGrid";
 import {
   allCouncilMembers,
   bioengineeringOrgs,
@@ -84,9 +84,7 @@ const CouncilMembers = () => {
           {category} Council Members
         </p>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] justify-center items-center my-4 mx-auto w-[80%] gap-10">
-          <Suspense>
-            <CouncilMemberGrid data={categoryMap[category]} />
-          </Suspense>
+          <CouncilMemberGrid data={categoryMap[category]} />
         </div>
       </div>
     </div>
