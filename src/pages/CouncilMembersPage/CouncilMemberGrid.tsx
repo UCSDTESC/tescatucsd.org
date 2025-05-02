@@ -1,6 +1,6 @@
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import { CouncilMember } from "./council-member-data";
-const CouncilMemberCard = lazy(() => import("./CouncilMemberCard"));
+import CouncilMemberCard from "./CouncilMemberCard";
 import { motion } from "framer-motion";
 import { GlobalOutlined, InstagramOutlined } from "@ant-design/icons";
 
