@@ -45,7 +45,7 @@ import { useState } from "react";
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div className="w-full bg-radial from-[#114675] from-40% to-navy flex justify-between px-[18px] py-1">
+    <div className="w-full md:bg-radial md:from-[#114675] md:from-40% md:to-navy bg-navy flex justify-between px-[18px] py-1">
       <NavLink to="/" className="">
         <img className="h-[80px] aspect-auto" src={TescLogoWhite} alt="" />
       </NavLink>
@@ -78,7 +78,7 @@ const NavBar = () => {
       </div>
 
       <div
-        className={`absolute md:hidden w-full flex flex-col top-20 z-100 bg-navy left-0 items-end text-center overflow-hidden animate-[navbar-animate_0.1s]
+        className={`fixed md:hidden w-max flex flex-col top-20 z-100 bg-navy right-0 items-end text-center overflow-hidden animate-[navbar-animate_1s_forwards]
       ${menuOpen ? "block" : "hidden"}`}
       >
         <NavLink
