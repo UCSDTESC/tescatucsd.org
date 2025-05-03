@@ -2,6 +2,8 @@ import { NavLink } from "react-router-dom";
 import TescLogoWhite from "/AllPages/TESC-logo-white.png";
 import eventsPageImage from "/AllPages/events-page-image.png";
 import useImagePreloader from "../Hooks/useImagePreload";
+import { MenuOutlined } from "@ant-design/icons";
+import { useState } from "react";
 // import "./navbar.css";
 // const NavBar = () => {
 //   const pages = (
@@ -39,31 +41,61 @@ import useImagePreloader from "../Hooks/useImagePreload";
 //     </>
 //   );
 // };
+
+
+
 const NavBar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="w-full bg-navy flex justify-between px-[18px] py-1">
-      <NavLink to="/">
-        <img className="h-[80px]" src={TescLogoWhite} alt="" />
+      <NavLink to="/" className="">
+        <img className="h-[80px] aspect-auto" src={TescLogoWhite} alt="" />
       </NavLink>
-      <div className="flex items-center">
+      <div className="hidden md:flex items-center  text-[clamp(20px,2.3vw,26px)]">
         <NavLink
           className="h-min mx-[32px]"
           to="https://tesc.typeform.com/to/hlC07HII"
         >
-          <span className="text-offWhite text-[26px] font-medium">Join Us</span>
+          <span className="text-offWhite  font-medium">Join Us</span>
         </NavLink>
         <NavLink className="h-min mx-[32px]" to="/about-us">
-          <span className="text-offWhite text-[26px] font-medium">
+          <span className="text-offWhite  font-medium">
             About Us{" "}
           </span>
         </NavLink>
 
         <NavLink className="h-min mx-[32px]" to="/events">
-          <span className="text-offWhite text-[26px] font-medium">Events</span>
+          <span className="text-offWhite  font-medium">Events</span>
         </NavLink>
 
         <NavLink className="h-min mx-[32px]" to="/council-members">
-          <span className="text-offWhite text-[26px] font-medium">
+          <span className="text-offWhite  font-medium">
+            Council Members
+          </span>
+        </NavLink>
+      </div>
+      <div className={`absolute md:hidden bg-navy top-24 left-0 flex-col items-center gap-6 font-semibold text-lg transform transition-transform
+      ${menuOpen ? "opacity-100" : "opacity-0"}`}
+      >
+        WHATTTTTT
+        <NavLink
+          className="h-min mx-[32px]"
+          to="https://tesc.typeform.com/to/hlC07HII"
+        >
+          <span className="text-offWhite  font-medium">Join Us</span>
+        </NavLink>
+        <NavLink className="h-min mx-[32px]" to="/about-us">
+          <span className="text-offWhite  font-medium">
+            About Us{" "}
+          </span>
+        </NavLink>
+
+        <NavLink className="h-min mx-[32px]" to="/events">
+          <span className="text-offWhite  font-medium">Events</span>
+        </NavLink>
+
+        <NavLink className="h-min mx-[32px]" to="/council-members">
+          <span className="text-offWhite  font-medium">
             Council Members
           </span>
         </NavLink>
