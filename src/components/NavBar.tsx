@@ -1,48 +1,32 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import TescLogoWhite from "/AllPages/TESC-logo-white.png";
-import eventsPageImage from "/AllPages/events-page-image.png";
-import useImagePreloader from "../Hooks/useImagePreload";
-import { MenuOutlined } from "@ant-design/icons";
-import { useState } from "react";
-// import "./navbar.css";
-// const NavBar = () => {
-//   const pages = (
-//     <ul className="navbar-nav ms-auto mb-0">
-//       <li className="nav__items nav-item text-center px-4">
-//         <NavLink className="nav-link" to="/about-us">
-//           <span className="nav-text">About Us </span>
-//         </NavLink>
-//       </li>
-//       <li className="nav__items nav-item text-center px-4">
-//         <NavLink className="nav-link" to="/events">
-//           <span className="nav-text">Events</span>
-//         </NavLink>
-//       </li>
-//       <li className="nav__items nav-item text-center px-4">
-//         <NavLink className="nav-link" to="/council-members">
-//           <span className="nav-text">Council Members</span>
-//         </NavLink>
-//       </li>
-//     </ul>
-//   );
-//   return (
-//     <>
-//       <nav className="navbar navbar-expand-lg navbar-custom">
-//         <div className="container-fluid d-flex align-items-center">
-//           <NavLink to="/">
-//             <img className="nav__logo" src={TescLogoWhite} alt="" />
-//           </NavLink>
 
-//           <div className="collapse navbar-collapse" id="navbarText">
-//             {pages}
-//           </div>
-//         </div>
-//       </nav>
-//     </>
-//   );
-// };
+import { MenuOutlined } from "@ant-design/icons";
+import { useEffect, useRef, useState } from "react";
+// handle dropdown display
 
 const NavBar = () => {
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const location = useLocation();
+  useEffect(() => {
+    const handleClickOutside = (event: Event) => {
+      console.log("clic");
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("scroll", handleClickOutside);
+  }, []);
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="w-full md:bg-radial md:from-[#114675] md:from-40% md:to-navy bg-navy flex justify-between px-[18px] py-1">
@@ -51,6 +35,7 @@ const NavBar = () => {
       </NavLink>
       <button
         className="text-white md:hidden text-[clamp(16px,3vw,40px)]"
+        ref={buttonRef}
         onClick={() => {
           setMenuOpen(!menuOpen);
         }}
@@ -78,8 +63,9 @@ const NavBar = () => {
       </div>
 
       <div
-        className={`fixed md:hidden w-max flex flex-col top-20 z-100 bg-navy right-0 items-end text-center overflow-hidden animate-[navbar-animate_1s_forwards]
+        className={`absolute md:hidden w-max flex flex-col top-20 z-100 bg-navy right-0 items-end text-center overflow-hidden animate-[navbar-animate_1s_forwards]
       ${menuOpen ? "block" : "hidden"}`}
+        ref={dropdownRef}
       >
         <NavLink
           className="h-max py-3 mx-[20px]"
