@@ -10,6 +10,14 @@ export function EventCard({ event }: Props) {
 
   return (
     <>
+    <div
+      className="flex flex-col justify-center items-center"
+      onClick={() => {
+        if (event.link) {
+          window.location.href = event.link;
+        }
+      }}
+    >
       <div className="relative min-h-[25rem] w-full bg-white shadow-2xl rounded-standard">
         <div className="mb-0 w-[90%] aspect-[1/1.2] m-6 pb-2 mx-auto object-contain rounded-[40px] relative">
           {ImagePreloader.imagesPreloaded && (

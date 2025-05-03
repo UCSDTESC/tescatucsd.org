@@ -5,7 +5,7 @@ import {
   InstagramOutlined,
   LinkedinOutlined,
   MailOutlined,
-  TwitterOutlined
+  TwitterOutlined,
 } from "@ant-design/icons";
 const Footer = () => {
   // const pages = (
@@ -28,7 +28,7 @@ const Footer = () => {
   //   </ul>
   // );
   const pages = (
-    <div className="flex items-center">
+    <div className="xl:flex items-center hidden">
       <NavLink
         className="h-min mx-[32px]"
         to="https://tesc.typeform.com/to/hlC07HII"
@@ -54,35 +54,35 @@ const Footer = () => {
     <div className="flex m-0 p-0 h-[39px] items-center gap-[25px]">
       <a
         href="mailto:contact@tesc.ucsd.edu"
-        className="text-white text-[26px] leading-[39px]"
+        className="text-white text-[clamp(20px,2vw,26px)] leading-[39px]"
       >
         <MailOutlined />
       </a>
 
       <a
         href="https://instagram.com/ucsdtesc/"
-        className=" text-white text-[26px] leading-[39px]"
+        className=" text-white text-[clamp(20px,2vw,26px)] leading-[39px]"
       >
         <InstagramOutlined />
       </a>
 
       <a
         href="https://www.linkedin.com/company/ucsdtesc"
-        className=" text-white text-[26px] leading-[39px]"
+        className=" text-white text-[clamp(20px,2vw,26px)] leading-[39px]"
       >
         <LinkedinOutlined />
       </a>
 
       <a
         href="https://x.com/UCSDTESC/"
-        className=" text-white text-[26px] leading-[39px]"
+        className=" text-white text-[clamp(20px,2vw,26px)] leading-[39px]"
       >
         <TwitterOutlined />
       </a>
 
       <a
         href="https://tescucsd.org/discord"
-        className=" text-white text-[26px] leading-[39px]"
+        className=" text-white text-[clamp(20px,2vw,26px)] leading-[39px]"
       >
         <DiscordOutlined />
       </a>
@@ -91,8 +91,8 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-navy pl-[2%] min-h-[15vh] flex justify-between w-full items-center">
-        <div className="flex flex-row items-start text-left gap-5">
+      <footer className="bg-radial from-[#114675] from-40% to-navy pl-[2%] min-h-[15vh] flex justify-between w-full items-center">
+        <div className=" xl:flex-row flex items-start text-left gap-5">
           <p className="text-offWhite text-[26px] leading-[39px] font-medium list-none">
             Contact Us
           </p>

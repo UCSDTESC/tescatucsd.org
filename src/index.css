@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+*{
+  interpolate-size: allow-keywords;
+}
 :root {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
@@ -53,5 +56,13 @@
   }
   100% {
     opacity: 1;
+}
+}
+@keyframes navbar-animate{
+  from{
+    height:0
+  }
+  to{
+    height:100vh
   }
 }
