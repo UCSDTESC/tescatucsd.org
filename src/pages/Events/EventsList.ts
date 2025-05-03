@@ -7,7 +7,6 @@ export const pastEventLogos = [
   "/event-logos/asml.jpg",
   "/event-logos/field_day_2.png",
   "/event-logos/Tapioca.png",
-  "/event-logos/Tapioca.png",
   "/event-logos/SandcastleBonfire.jpg",
   "/event-logos/stempad-talk-wi25.webp",
   "/event-logos/decaf-event-wi25.png",
@@ -26,8 +25,7 @@ export const pastEventLogos = [
 
 export const pastEventLinks = [
   "https://docs.google.com/forms/d/e/1FAIpQLScuAw4QWprCEHYHNvPYP8WyVq-MAL1og0M48x2bXnw2Swm59A/viewform",
-  "https://tescucsd.org",
-  "https://tapiocaexpress.com/",
+  "https://tinyurl.com/sp25-tesc-olympics",
   "https://tapiocaexpress.com/",
   "https://docs.google.com/forms/d/e/1FAIpQLSfYP_vwKSgp0AF6B310_VyWz5hGEI3Hg6UfZetKdhE_THPiNA/viewform",
   "http://tinyurl.com/stempad-rsvp",
@@ -70,7 +68,7 @@ export const upcomingEvents: Event[] = [
     location: "Bear Room, Price Center", 
     tags: ["Social", "Career"], 
     image: "/event-logos/headshot&mixer.jpg", 
-    link: "tinyurl.com/headshot-mixer"
+    link: "https://tinyurl.com/headshot-mixer"
   },
   {
     name: "Engineer's Formal Prom", 
@@ -88,7 +86,15 @@ export const pastEvents: Event[] = [
     location: "Qualcomm Conference Center - JSOE 1st Floor",
     tags: ["Career"],
     image: "/event-logos/asml-tech-talk.png",
-    link: "tinyurl.com/euv-lithography",
+    link: "https://tinyurl.com/euv-lithography",
+  },
+  {
+    name: "TESC Olympics",
+    date: "April 19th, 2025",
+    location: "Matthew's Quad",
+    tags: ["Social"],
+    image: "/event-logos/field_day_2.jpg",
+    link: "https://tinyurl.com/sp25-tesc-olympics"
   },
   {
     name: "Tapioca Express Fundraiser", 
