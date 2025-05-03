@@ -83,7 +83,15 @@ export const upcomingEvents: Event[] = [
 ]
 export const pastEvents: Event[] = [
   {
-    name: "Tapoca Express Fundraiser", 
+    name: "ASML Tech Talk",
+    date: "April 25th, 2025",
+    location: "Qualcomm Conference Center - JSOE 1st Floor",
+    tags: ["Career"],
+    image: "/event-logos/asml-tech-talk.png",
+    link: "tinyurl.com/euv-lithography",
+  },
+  {
+    name: "Tapioca Express Fundraiser", 
     date: "March 6th, 2025", 
     location: "Tapioca Express, Price Center", 
     tags: ["Fundraiser", "Finance"], 
