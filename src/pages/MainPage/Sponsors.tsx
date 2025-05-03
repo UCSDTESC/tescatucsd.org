@@ -1,5 +1,5 @@
-import { Suspense } from "react";
-import SponsorsGrid from "./SponsorsGrid";
+import { lazy, Suspense } from "react";
+const SponsorsGrid = lazy(() => import("./SponsorsGrid"));
 import LoadingIcon from "./LoadingIcon";
 import "./Sponsors.css";
 

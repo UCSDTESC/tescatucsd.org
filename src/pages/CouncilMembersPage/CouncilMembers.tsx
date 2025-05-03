@@ -1,6 +1,5 @@
-import { Suspense, useState } from "react";
+import {  useState } from "react";
 import CouncilMemberGrid from "./CouncilMemberGrid";
-import LoadingIcon from "../MainPage/LoadingIcon";
 import {
   allCouncilMembers,
   bioengineeringOrgs,
@@ -11,8 +10,9 @@ import {
   mechanicalOrgs,
   roboticsOrgs,
   generalMiscOrgs,
-  CouncilMember,
+  CouncilMember
 } from "./council-member-data";
+import useImagePreloader from "../../Hooks/useImagePreload";
 
 const categories: string[] = [
   "All",
@@ -23,7 +23,7 @@ const categories: string[] = [
   "Electrical",
   "Mechanical",
   "Robotics",
-  "General/Misc",
+  "General/Misc"
 ];
 
 const categoryMap: { [key: string]: CouncilMember[] } = {
@@ -35,12 +35,14 @@ const categoryMap: { [key: string]: CouncilMember[] } = {
   Electrical: electricalOrgs,
   Mechanical: mechanicalOrgs,
   Robotics: roboticsOrgs,
-  "General/Misc": generalMiscOrgs,
+  "General/Misc": generalMiscOrgs
 };
 
 const CouncilMembers = () => {
   const [category, setCategory] = useState<string>("All");
-
+  const imagePreloader = useImagePreloader([
+    "AllPages/council-page-image.webp",
+  ]);
   return (
     <div className="min-h-fit max-w-[90%] m-auto">
       <div className="mt-20 mb-20 flex-col flex justify-center items-center">
@@ -50,17 +52,18 @@ const CouncilMembers = () => {
               Get to know our council members
             </p>
             <p className="font-semibold text-[22px] mb-3">
-              Meet the council members behind our organization! We’re dedicated
-              to supporting the engineering community through any means, whether
-              that be through industry connections, financial support, or
-              student support!
+              Meet the council members behind our organization! We’re dedicated to supporting the
+              engineering community through any means, whether that be through industry connections,
+              financial support, or student support!
             </p>
           </div>
-          <img
-            src="AllPages/council-page-image.png"
-            alt="JSOE"
-            className="hidden md:block w-72 h-auto ml-6"
-          ></img>
+          {imagePreloader.imagesPreloaded && (
+            <img
+              src="AllPages/council-page-image.webp"
+              alt="JSOE"
+              className="hidden md:block w-72 h-auto ml-6 animate-[animate-in_1s]"
+            ></img>
+          )}
         </div>
         <div className="flex flex-row justify-between items-center font-bold w-[90%] h-[2vw] p-5 mt-16 bg-white border-[#0000001A] border-1 rounded-full shadow-xl">
           {categories.map((type, index) => {
@@ -82,10 +85,8 @@ const CouncilMembers = () => {
         <p className="font-semibold text-[30px] text-[#11426B] leading-14 mb-3 mt-10">
           {category} Council Members
         </p>
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center my-4 mx-auto w-[80%] gap-10">
-          <Suspense fallback={<LoadingIcon />}>
-            <CouncilMemberGrid data={categoryMap[category]} />
-          </Suspense>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] justify-center items-center my-4 mx-auto w-[80%] gap-10">
+          <CouncilMemberGrid data={categoryMap[category]} />
         </div>
       </div>
     </div>
