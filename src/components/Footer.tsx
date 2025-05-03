@@ -28,7 +28,7 @@ const Footer = () => {
   //   </ul>
   // );
   const pages = (
-    <div className="md:flex items-center hidden">
+    <div className="xl:flex items-center hidden">
       <NavLink
         className="h-min mx-[32px]"
         to="https://tesc.typeform.com/to/hlC07HII"
@@ -91,8 +91,8 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-navy pl-[2%] min-h-[15vh] flex justify-between w-full items-center">
-        <div className=" md:flex-row flex items-start text-left gap-5">
+      <footer className="bg-radial from-[#114675] from-40% to-navy pl-[2%] min-h-[15vh] flex justify-between w-full items-center">
+        <div className=" xl:flex-row flex items-start text-left gap-5">
           <p className="text-offWhite text-[26px] leading-[39px] font-medium list-none">
             Contact Us
           </p>
