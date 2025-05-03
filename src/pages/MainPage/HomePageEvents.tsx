@@ -2,25 +2,25 @@ import { useNavigate } from "react-router-dom";
 
 const events = [
   {
-    name: "TapEx fundraiser",
-    image: "/event-logos/Tapioca.png",
+    name: "Headshot Day & Mixer",
+    image: "/event-logos/headshot&mixer.jpg",
     description:
-      "Come out and support TESC by purchasing from Tapioca Express @ Price Center! Show this flyer at the register and 10% of the proceeds will go to TESC.",
-    link: "https://tapiocaexpress.com",
+      "Need a fresh headshot? 📸 Love a good mixer? We’ve got you covered! TESC is excited to present: Headshots & Mixer Event! Come strike a pose, mingle, and make some memories! Scan the QR code to RSVP!",
+    link: "tinyurl.com/headshot-mixer",
   },
   {
-    name: "Sandcastle competition",
-    image: "/event-logos/SandcastleBonfire.jpg",
+    name: "Engineer's Formal Prom",
+    image: "/event-logos/Engineering_Prom_1.jpg",
     description:
-      "Join TESC for a Sand Castle Competition & Bonfire! Open to all Jacobs School of Engineering students, build your best sandcastle, earn points, and celebrate with S'mores by the bonfire. See you there!",
-    link: "https://tapiocaexpress.com",
+      "Get ready to dress to impress because Premiere Night: An Engineer’s Formal is officially happening — and tickets are now available! ✨ Don’t miss your chance to walk the red carpet and enjoy a Hollywood-inspired night!",
+    link: "https://www.zeffy.com/en-US/ticketing/2025-aerospace-prom",
   },
   {
-    name: "Talk with Stempad",
-    image: "/event-logos/stempad-talk-wi25.png",
+    name: "ASML Tech Talk",
+    image: "/event-logos/asml-tech-talk.png",
     description:
-      "Join us for an engaging talk series featuring Stempad as they share their journey as a startup. Learn how they got started, the challenges of building from the ground up, and how startup life compares to working in big tech or large companies.",
-    link: "https://tapiocaexpress.com",
+      "Want to get the inside scoop on cutting-edge semiconductor innovations? TESC is bringing you an exciting Tech Talk with Dr. Andrew LaForge, Head of EUV Source Functions at ASML!",
+    link: "tinyurl.com/euv-lithography",
   },
 ];
 
