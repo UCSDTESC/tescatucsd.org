@@ -44,11 +44,10 @@ const NavBar = () => {
         <img className="h-[80px]" src={TescLogoWhite} alt="" />
       </NavLink>
       <div className="flex items-center">
-        <NavLink
-          className="h-min mx-[32px]"
-          to="https://tesc.typeform.com/to/hlC07HII"
-        >
-          <span className="text-offWhite text-[26px] font-medium">Join Us</span>
+        <NavLink className="h-min mx-[32px]" to="https://tesc.typeform.com/to/hlC07HII">
+          <span className="text-offWhite text-[26px] font-medium">
+            Join Us
+          </span>
         </NavLink>
         <NavLink className="h-min mx-[32px]" to="/about-us">
           <span className="text-offWhite text-[26px] font-medium">
@@ -57,7 +56,9 @@ const NavBar = () => {
         </NavLink>
 
         <NavLink className="h-min mx-[32px]" to="/events">
-          <span className="text-offWhite text-[26px] font-medium">Events</span>
+          <span className="text-offWhite text-[26px] font-medium">
+            Events
+          </span>
         </NavLink>
 
         <NavLink className="h-min mx-[32px]" to="/council-members">
