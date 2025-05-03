@@ -10,7 +10,7 @@ export function EventCard({ event }: Props) {
       className="flex flex-col justify-center items-center"
       onClick={() => {
         if (event.link) {
-          navigate(event.link);
+          window.location.href = event.link;
         }
       }}
     >

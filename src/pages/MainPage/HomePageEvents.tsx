@@ -51,7 +51,7 @@ const HomePageEvents = () => {
                 } flex-col justify-center items-center`}
                 onClick={() => {
                   if (event.link) {
-                    navigate(event.link);
+                    window.location.href = event.link;
                   }
                 }}
               >
