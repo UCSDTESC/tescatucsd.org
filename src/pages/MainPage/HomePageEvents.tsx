@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import useImagePreloader from "../../Hooks/useImagePreload";
 import HomePageEventCards from "./HomePageEventsCards";
 
 const events = [
@@ -8,7 +7,7 @@ const events = [
     image: "/event-logos/headshot&mixer.jpg",
     description:
       "Need a fresh headshot? 📸 Love a good mixer? We’ve got you covered! TESC is excited to present: Headshots & Mixer Event! Come strike a pose, mingle, and make some memories! Scan the QR code to RSVP!",
-    link: "tinyurl.com/headshot-mixer",
+    link: "https://tinyurl.com/headshot-mixer",
   },
   {
     name: "Engineer's Formal Prom",
@@ -22,12 +21,11 @@ const events = [
     image: "/event-logos/asml-tech-talk.png",
     description:
       "Want to get the inside scoop on cutting-edge semiconductor innovations? TESC is bringing you an exciting Tech Talk with Dr. Andrew LaForge, Head of EUV Source Functions at ASML!",
-    link: "tinyurl.com/euv-lithography",
+    link: "https://tinyurl.com/euv-lithography",
   },
 ];
 
 const HomePageEvents = () => {
-  const navigate = useNavigate();
   return (
     <>
       <div className="flex justify-center mb-[10vh]">

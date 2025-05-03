@@ -5,8 +5,15 @@ interface event {
   name: string;
   description: string;
 }
-export default function HomePageEventCards({ event, index }: { event: event; index: number }) {
+export default function HomePageEventCards({
+  event,
+  index,
+}: {
+  event: event;
+  index: number;
+}) {
   const ImagePreloader = useImagePreloader([event.image]);
+  console.log(event.link);
   return (
     <>
       {ImagePreloader.imagesPreloaded ? (
@@ -14,7 +21,7 @@ export default function HomePageEventCards({ event, index }: { event: event; ind
           className={`${
             index === 2 && "block lg:hidden xl:block"
           } flex-col justify-center items-center`}
-          href={event.link}
+          onClick={() => (window.location.href = event.link)}
         >
           <div className="relative h-fit w-full bg-white shadow-2xl rounded-[20px]">
             <img

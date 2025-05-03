@@ -9,7 +9,6 @@ export function EventCard({ event }: Props) {
   const ImagePreloader = useImagePreloader([event.image]);
 
   return (
-    <>
     <div
       className="flex flex-col justify-center items-center"
       onClick={() => {
@@ -66,6 +65,6 @@ export function EventCard({ event }: Props) {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
