@@ -1,12 +1,9 @@
-import { upcomingEventLogos, upcomingEventLinks } from "./EventsList.ts";
-
-import eventsPageImage from "/AllPages/events-page-image.png";
-import Divider from "../MainPage/Divider";
+import { upcomingEvents, pastEvents } from "./EventsList.ts";
 import { Helmet } from "react-helmet";
 import { lazy, Suspense } from "react";
 import LoadingIcon from "../MainPage/LoadingIcon";
 
-const PastEventsGrid = lazy(() => import("./PastEventsGrid"));
+const EventsGrid = lazy(() => import("./EventsGrid.tsx"));
 
 const Events = () => {
   return (
@@ -20,46 +17,44 @@ const Events = () => {
         />
       </Helmet>
 
-      <img
-        className="w-full h-[50vh] object-cover"
-        src={eventsPageImage}
-        alt=""
-        fetchPriority="high"
-      />
-      <Divider>
-        <p>
-          At TESC, we believe events are the best way to grow and <br /> enhance
-          the engineering student body
-        </p>
-      </Divider>
+      <div className="m-12 mt-20 flex flex-row justify-between items-center max-w-[80%] mx-auto">
+        <div className="sm:max-w-full md:max-w-3/5 ">
+          <p className="font-semibold text-[40px] text-[#11426B] leading-10 mb-3">
+            Jump into engineering leadership—where ideas come alive and students
+            shape what’s next...
+          </p>
+          <p className="font-semibold text-[22px] mb-3">
+            Our events bring together passionate engineers to learn, connect,
+            and lead. Whether it's talks by start-ups, interactive workshops, or
+            socials, there's always an opportunity to engage, grow, and make an
+            impact!
+          </p>
+        </div>
+        <img
+          src="AllPages/events-lead.png"
+          alt="lead"
+          className="hidden md:block w-80 h-auto"
+        ></img>
+      </div>
 
-      <div className="mt-4 mx-auto w-[70%]">
-        <h1 className="font-medium [line-height:1.2] text-[2vw] mb-2">
+      <div className="mt-4 mx-auto w-[80%]">
+        <h1 className="text-[30px] text-[#11426B] font-bold mb-4">
           Upcoming Events
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          {upcomingEventLogos.map((logo, index) => (
-            <div key={index} className="">
-              <img
-                className="flex w-64 h-64 object-cover rounded-standard cursor-pointer"
-                src={logo}
-                alt=""
-                onClick={() => {
-                  window.location.href = upcomingEventLinks[index];
-                }}
-              />
-            </div>
-          ))}
+          <Suspense fallback={<LoadingIcon />}>
+            <EventsGrid events={upcomingEvents} />
+          </Suspense>
         </div>
       </div>
 
-      <div className="mt-4 mx-auto w-[70%]">
-        <h1 className="font-medium [line-height:1.2] text-[2vw] mb-2">
+      <div className="mt-10 mx-auto w-[80%] mb-10">
+        <h1 className="text-[30px] text-[#11426B] font-bold mb-4">
           Past Events
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           <Suspense fallback={<LoadingIcon />}>
-            <PastEventsGrid />
+            <EventsGrid events={pastEvents} />
           </Suspense>
         </div>
       </div>

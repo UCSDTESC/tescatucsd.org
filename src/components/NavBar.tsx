@@ -45,7 +45,7 @@ import { useState } from "react";
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div className="w-full bg-navy flex justify-between px-[18px] py-1">
+    <div className="w-full bg-radial from-[#114675] from-40% to-navy flex justify-between px-[18px] py-1">
       <NavLink to="/" className="">
         <img className="h-[80px] aspect-auto" src={TescLogoWhite} alt="" />
       </NavLink>
