@@ -42,8 +42,6 @@ import { useState } from "react";
 //   );
 // };
 
-
-
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
@@ -51,7 +49,15 @@ const NavBar = () => {
       <NavLink to="/" className="">
         <img className="h-[80px] aspect-auto" src={TescLogoWhite} alt="" />
       </NavLink>
-      <div className="hidden md:flex items-center  text-[clamp(20px,2.3vw,26px)]">
+      <button
+        className="text-white md:hidden text-[clamp(16px,3vw,40px)]"
+        onClick={() => {
+          setMenuOpen(!menuOpen);
+        }}
+      >
+        <MenuOutlined />
+      </button>
+      <div className="hidden md:flex items-center  text-[clamp(16px,2vw,26px)]">
         <NavLink
           className="h-min mx-[32px]"
           to="https://tesc.typeform.com/to/hlC07HII"
@@ -59,9 +65,7 @@ const NavBar = () => {
           <span className="text-offWhite  font-medium">Join Us</span>
         </NavLink>
         <NavLink className="h-min mx-[32px]" to="/about-us">
-          <span className="text-offWhite  font-medium">
-            About Us{" "}
-          </span>
+          <span className="text-offWhite  font-medium">About Us </span>
         </NavLink>
 
         <NavLink className="h-min mx-[32px]" to="/events">
@@ -69,33 +73,28 @@ const NavBar = () => {
         </NavLink>
 
         <NavLink className="h-min mx-[32px]" to="/council-members">
-          <span className="text-offWhite  font-medium">
-            Council Members
-          </span>
+          <span className="text-offWhite  font-medium">Council Members</span>
         </NavLink>
       </div>
-      <div className={`absolute md:hidden bg-navy top-24 left-0 flex-col items-center gap-6 font-semibold text-lg transform transition-transform
-      ${menuOpen ? "opacity-100" : "opacity-0"}`}
+
+      <div
+        className={`absolute md:hidden w-full flex flex-col top-20 z-100 bg-navy left-0 items-end text-center overflow-hidden animate-[navbar-animate_0.1s]
+      ${menuOpen ? "block" : "hidden"}`}
       >
-        WHATTTTTT
         <NavLink
-          className="h-min mx-[32px]"
+          className="h-max py-3 mx-[20px]"
           to="https://tesc.typeform.com/to/hlC07HII"
         >
-          <span className="text-offWhite  font-medium">Join Us</span>
+          <span className="text-offWhite py-2  font-medium">Join Us</span>
         </NavLink>
-        <NavLink className="h-min mx-[32px]" to="/about-us">
-          <span className="text-offWhite  font-medium">
-            About Us{" "}
-          </span>
+        <NavLink className="h-max py-3 mx-[20px]" to="/about-us">
+          <span className="text-offWhite py-2 font-medium">About Us </span>
         </NavLink>
-
-        <NavLink className="h-min mx-[32px]" to="/events">
-          <span className="text-offWhite  font-medium">Events</span>
+        <NavLink className="h-max py-3 mx-[20px]" to="/events">
+          <span className="text-offWhite py-2 font-medium">Events</span>
         </NavLink>
-
-        <NavLink className="h-min mx-[32px]" to="/council-members">
-          <span className="text-offWhite  font-medium">
+        <NavLink className="h-max py-3 mx-[20px]" to="/council-members">
+          <span className="text-offWhite py-2 font-medium">
             Council Members
           </span>
         </NavLink>
