@@ -77,7 +77,7 @@ const NavBar = () => {
       <div className={`absolute md:hidden bg-navy top-24 left-0 flex-col items-center gap-6 font-semibold text-lg transform transition-transform
       ${menuOpen ? "opacity-100" : "opacity-0"}`}
       >
-        WHATTTTTT
+   
         <NavLink
           className="h-min mx-[32px]"
           to="https://tesc.typeform.com/to/hlC07HII"
