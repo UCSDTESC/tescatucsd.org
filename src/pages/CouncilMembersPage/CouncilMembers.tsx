@@ -65,14 +65,28 @@ const CouncilMembers = () => {
             ></img>
           )}
         </div>
-        <div className="flex flex-row justify-between items-center font-bold w-[90%] h-[2vw] p-5 mt-16 bg-white border-[#0000001A] border-1 rounded-full shadow-xl">
+        <div className="w-full mt-16">
+          <div className="flex md:hidden justify-center px-4">
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className="block w-[80%] max-w-xs px-4 py-3 text-base font-bold text-gray-700 bg-white border-[#0000001A] border rounded-full shadow-xl appearance-none focus:outline-none text-center"
+            >
+              {categories.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="hidden md:flex flex-wrap justify-center items-center font-bold w-full max-w-[90%] mx-auto p-2 bg-white border-[#0000001A] border rounded-full shadow-xl gap-x-4 gap-y-1">
           {categories.map((type, index) => {
             return (
               <p
                 key={index}
                 className={`hover:cursor-pointer ${
                   category == type && "p-1 px-3 rounded-full bg-[#0000001A]"
-                } ${index == 0 && "ml-16"} ${
+                } ${index == 0 && "ml-4"} ${
                   index == categories.length - 1 && "mr-16"
                 } transition-all duration-600 ease-in-out transform`}
                 onClick={() => setCategory(type)}
@@ -81,6 +95,7 @@ const CouncilMembers = () => {
               </p>
             );
           })}
+          </div>
         </div>
         <p className="font-semibold text-[30px] text-[#11426B] leading-14 mb-3 mt-10">
           {category} Council Members
