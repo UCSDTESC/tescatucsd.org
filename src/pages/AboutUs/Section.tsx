@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  CaretUpOutlined,
-  CaretDownOutlined,
-  LinkedinFilled,
-  MailFilled,
-} from "@ant-design/icons";
+import { CaretUpOutlined, CaretDownOutlined, LinkedinFilled, MailFilled } from "@ant-design/icons";
 import useImagePreloader from "../../Hooks/useImagePreload";
 
 interface Props {
@@ -67,17 +62,14 @@ const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
               <span className="font-bold">{member[0]}</span> <br />
               {member[1]}
             </p>
-            <div className="flex flex-row gap-3 justify-center my-3">
-              <MailFilled
-                width={"642px"}
-                style={{ fontSize: "22px", color: "#DC3545" }}
-              >
-                <a href={linkedInURL}></a>
-              </MailFilled>
+            <div className="flex flex-row gap-4 justify-center my-3">
+              <a href={`mailto:${emailAddress}`}>
+                <MailFilled width={"642px"} style={{ fontSize: "22px", color: "#DC3545" }} />
+              </a>
 
-              <LinkedinFilled style={{ fontSize: "20px", color: "#0A66C2" }}>
-                <a href={`mailto:${emailAddress}`}>Email</a>
-              </LinkedinFilled>
+              <a href={linkedInURL}>
+                <LinkedinFilled style={{ fontSize: "20px", color: "#0A66C2" }} />
+              </a>
             </div>
           </div>
         </>
@@ -92,17 +84,14 @@ const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
               <div className="bg-lightBlue w-40 h-6 rounded-standard mx-auto my-1 animate-pulse"></div>
               <div className="bg-lightBlue w-20 h-5 rounded-standard mx-auto my-1 animate-pulse"></div>
             </div>
-            <div className="flex flex-row gap-3 justify-center my-3">
-              <MailFilled
-                width={"642px"}
-                style={{ fontSize: "22px", color: "#DC3545" }}
-              >
-                <a href={linkedInURL}></a>
-              </MailFilled>
+            <div className="flex flex-row gap-4 justify-center my-3">
+              <a href={`mailto:${emailAddress}`}>
+                <MailFilled width={"642px"} style={{ fontSize: "22px", color: "#DC3545" }} />
+              </a>
 
-              <LinkedinFilled style={{ fontSize: "20px", color: "#0A66C2" }}>
-                <a href={`mailto:${emailAddress}`}>Email</a>
-              </LinkedinFilled>
+              <a href={linkedInURL}>
+                <LinkedinFilled style={{ fontSize: "20px", color: "#0A66C2" }} />
+              </a>
             </div>
           </div>
         </>
