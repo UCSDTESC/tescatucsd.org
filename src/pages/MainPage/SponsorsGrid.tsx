@@ -42,22 +42,18 @@ export default function SponsorsGrid() {
     <>
       {imgsLoaded.imagesPreloaded ? (
         sponsors.map(
-          (sponsor: {
-            website: string;
-            id: number;
-            logo: string;
-            alt: string;
-          }) => (
-            <a href={sponsor.website}>
-              <div
-                key={sponsor.id}
-                className="sponsor-item h-[100px] overflow-clip"
-              >
-                <img
-                  src={sponsor.logo}
-                  alt={sponsor.alt}
-                  className="w-5/8 object-fit "
-                />
+          (
+            sponsor: {
+              website: string;
+              id: number;
+              logo: string;
+              alt: string;
+            },
+            index
+          ) => (
+            <a href={sponsor.website} key={index}>
+              <div key={sponsor.id} className="sponsor-item h-[100px] overflow-clip">
+                <img src={sponsor.logo} alt={sponsor.alt} className="w-5/8 object-fit " />
               </div>
             </a>
           )
