@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CaretUpOutlined, CaretDownOutlined, LinkedinFilled, MailFilled } from "@ant-design/icons";
+import useImagePreloader from "../../Hooks/useImagePreload";
 
 interface Props {
   data: string[][];
