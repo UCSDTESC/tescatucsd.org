@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  CaretUpOutlined,
-  CaretDownOutlined,
-  LinkedinFilled,
-  MailFilled,
-} from "@ant-design/icons";
+import { CaretUpOutlined, CaretDownOutlined, LinkedinFilled, MailFilled } from "@ant-design/icons";
 
 interface Props {
   data: string[][];
@@ -64,17 +59,13 @@ const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
           <span className="font-bold">{member[0]}</span> <br />
           {member[1]}
         </p>
-        <div className="flex flex-row gap-3 justify-center my-3">
-          <MailFilled
-            width={"642px"}
-            style={{ fontSize: "22px", color: "#DC3545" }}
-          >
-            <a href={linkedInURL}></a>
-          </MailFilled>
-
-          <LinkedinFilled style={{ fontSize: "20px", color: "#0A66C2" }}>
-            <a href={`mailto:${emailAddress}`}>Email</a>
-          </LinkedinFilled>
+        <div className="flex flex-row gap-4 justify-center my-3">
+          <a href={`mailto:${emailAddress}`}>
+            <MailFilled width={"642px"} style={{ fontSize: "22px", color: "#DC3545" }} />
+          </a>
+          <a href={linkedInURL}>
+            <LinkedinFilled style={{ fontSize: "20px", color: "#0A66C2" }} />
+          </a>
         </div>
       </div>
     </div>
