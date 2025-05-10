@@ -64,14 +64,6 @@ export interface Event {
 
 export const upcomingEvents: Event[] = [
   {
-    name: "Headshot Day & Mixer", 
-    date: "May 5th, 2025", 
-    location: "Bear Room, Price Center", 
-    tags: ["Social", "Career"], 
-    image: "/event-logos/headshot&mixer.jpg", 
-    link: "https://tinyurl.com/headshot-mixer"
-  },
-  {
     name: "Engineer's Formal Prom", 
     date: "May 18th, 2025", 
     location: "Stage Room", 
@@ -81,6 +73,14 @@ export const upcomingEvents: Event[] = [
   },
 ]
 export const pastEvents: Event[] = [
+  {
+    name: "Headshot Day & Mixer", 
+    date: "May 5th, 2025", 
+    location: "Bear Room, Price Center", 
+    tags: ["Social", "Career"], 
+    image: "/event-logos/headshot&mixer.jpg", 
+    link: "https://tinyurl.com/headshot-mixer"
+  },
   {
     name: "ASML Tech Talk",
     date: "April 25th, 2025",
