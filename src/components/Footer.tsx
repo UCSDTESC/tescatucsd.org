@@ -7,6 +7,11 @@ import {
   MailOutlined,
   TwitterOutlined,
 } from "@ant-design/icons";
+import instagramIcon from "../../public/social-icons/Instagram.png"
+import discordIcon from "../../public/social-icons/Discord.png"
+import mailIcon from "../../public/social-icons/mail.png"
+import linkedInIcon from "../../public/social-icons/LinkedIn.png"
+import twitterIcon from "../../public/social-icons/Twitter.png"
 const Footer = () => {
   // const pages = (
   //   <ul className="flex">
@@ -27,64 +32,79 @@ const Footer = () => {
   //     </li>
   //   </ul>
   // );
-  const pages = (
-    <div className="xl:flex items-center hidden">
-      <NavLink
-        className="h-min mx-[32px]"
-        to="https://tesc.typeform.com/to/hlC07HII"
-      >
-        <span className="text-offWhite text-[26px] font-medium">Join Us</span>
-      </NavLink>
-      <NavLink className="h-min mx-[32px]" to="/about-us">
-        <span className="text-offWhite text-[26px] font-medium">About Us </span>
-      </NavLink>
+  // const pages = (
+  //   <div className="xl:flex items-center hidden">
+  //     <NavLink
+  //       className="h-min mx-[32px]"
+  //       to="https://tesc.typeform.com/to/hlC07HII"
+  //     >
+  //       <span className="text-offWhite text-[26px] font-medium">Join Us</span>
+  //     </NavLink>
+  //     <NavLink className="h-min mx-[32px]" to="/about-us">
+  //       <span className="text-offWhite text-[26px] font-medium">About Us </span>
+  //     </NavLink>
 
-      <NavLink className="h-min mx-[32px]" to="/events">
-        <span className="text-offWhite text-[26px] font-medium">Events</span>
-      </NavLink>
+  //     <NavLink className="h-min mx-[32px]" to="/events">
+  //       <span className="text-offWhite text-[26px] font-medium">Events</span>
+  //     </NavLink>
 
-      <NavLink className="h-min mx-[32px]" to="/council-members">
-        <span className="text-offWhite text-[26px] font-medium">
-          Council Members
-        </span>
-      </NavLink>
-    </div>
-  );
+  //     <NavLink className="h-min mx-[32px]" to="/council-members">
+  //       <span className="text-offWhite text-[26px] font-medium">
+  //         Council Members
+  //       </span>
+  //     </NavLink>
+  //   </div>
+  // );
   const contactIcons = (
     <div className="flex m-0 p-0 h-[39px] items-center gap-[25px]">
       <a
         href="mailto:contact@tesc.ucsd.edu"
         className="text-white text-[clamp(20px,2vw,26px)] leading-[39px]"
       >
-        <MailOutlined />
+        <img
+          src={mailIcon}
+          alt="Mail"
+        />
       </a>
 
       <a
         href="https://instagram.com/ucsdtesc/"
         className=" text-white text-[clamp(20px,2vw,26px)] leading-[39px]"
       >
-        <InstagramOutlined />
+        <img
+          src={instagramIcon}
+          alt="Instagram"
+        />
       </a>
 
       <a
         href="https://www.linkedin.com/company/ucsdtesc"
         className=" text-white text-[clamp(20px,2vw,26px)] leading-[39px]"
       >
-        <LinkedinOutlined />
+        <img
+          src={linkedInIcon}
+          alt="LinkedIn"
+          />
       </a>
 
       <a
         href="https://x.com/UCSDTESC/"
         className=" text-white text-[clamp(20px,2vw,26px)] leading-[39px]"
       >
-        <TwitterOutlined />
+        <img
+          src={twitterIcon}
+          alt="Twitter"
+        />
       </a>
 
       <a
         href="https://tescucsd.org/discord"
         className=" text-white text-[clamp(20px,2vw,26px)] leading-[39px]"
       >
-        <DiscordOutlined />
+        <img
+          src={discordIcon}
+          alt="Discord"
+        />
       </a>
     </div>
   );
@@ -98,7 +118,7 @@ const Footer = () => {
           </p>
           <div>{contactIcons}</div>
         </div>
-        <div>{pages}</div>
+        {/* <div>{pages}</div> */}
       </footer>
     </>
   );
