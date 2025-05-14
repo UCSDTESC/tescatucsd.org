@@ -53,7 +53,7 @@ export default function SponsorsGrid() {
           ) => (
             <a href={sponsor.website} key={index}>
               <div key={sponsor.id} className="sponsor-item h-[100px] overflow-clip">
-                <img src={sponsor.logo} alt={sponsor.alt} className="w-5/8 object-fit " />
+                <img src={sponsor.logo} alt={sponsor.alt} className="w-[clamp(15vw,50vw,90vw)] object-fit " />
               </div>
             </a>
           )
