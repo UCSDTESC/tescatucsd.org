@@ -3,18 +3,18 @@ import HomePageEventCards from "./HomePageEventsCards";
 
 const events = [
   {
-    name: "Headshot Day & Mixer",
-    image: "/event-logos/headshot&mixer.jpg",
-    description:
-      "Need a fresh headshot? 📸 Love a good mixer? We’ve got you covered! TESC is excited to present: Headshots & Mixer Event! Come strike a pose, mingle, and make some memories! Scan the QR code to RSVP!",
-    link: "https://tinyurl.com/headshot-mixer",
-  },
-  {
     name: "Engineer's Formal Prom",
     image: "/event-logos/Engineering_Prom_1.jpg",
     description:
       "Get ready to dress to impress because Premiere Night: An Engineer’s Formal is officially happening — and tickets are now available! ✨ Don’t miss your chance to walk the red carpet and enjoy a Hollywood-inspired night!",
     link: "https://www.zeffy.com/en-US/ticketing/2025-aerospace-prom",
+  },
+  {
+    name: "Headshot Day & Mixer",
+    image: "/event-logos/headshot&mixer.jpg",
+    description:
+      "Need a fresh headshot? 📸 Love a good mixer? We’ve got you covered! TESC is excited to present: Headshots & Mixer Event! Come strike a pose, mingle, and make some memories! Scan the QR code to RSVP!",
+    link: "https://tinyurl.com/headshot-mixer",
   },
   {
     name: "ASML Tech Talk",
