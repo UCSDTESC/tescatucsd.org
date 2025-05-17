@@ -17,7 +17,7 @@ const Footer = () => {
       </a>
 
       <a
-        href="https://instagram.com/ucsdtesc/"
+        href="https://www.instagram.com/tesc.at.ucsd"
         className=" text-white text-[clamp(20px,2vw,26px)] leading-[39px]"
       >
         <img
