@@ -46,13 +46,19 @@ export default function CouncilMemberCard({ councilMember }: Props) {
               <div className="bg-lightBlue animate-pulse h-8 w-[80%] mx-auto rounded-standard"></div>
             </p>
             <div className="flex flex-row gap-4 justify-center my-3">
-              <GlobalOutlined className="hover:cursor-pointer" style={{ fontSize: "20px" }}>
+              {/* <GlobalOutlined className="hover:cursor-pointer" style={{ fontSize: "20px" }}>
                 <a href={councilMember.Links[0]} />
               </GlobalOutlined>
 
               <InstagramOutlined className="hover:cursor-pointer" style={{ fontSize: "21px" }}>
                 <a href={councilMember.Links[1]} />
-              </InstagramOutlined>
+              </InstagramOutlined> */}
+              <a href={councilMember.Links[0]} target="_blank" rel="noopener noreferrer">
+                <GlobalOutlined className="hover:cursor-pointer" style={{ fontSize: "20px" }} />
+              </a>
+              <a href={councilMember.Links[1]} target="_blank" rel="noopener noreferrer">
+                <InstagramOutlined className="hover:cursor-pointer" style={{ fontSize: "21px" }} />
+              </a>
             </div>
           </div>
         </div>
