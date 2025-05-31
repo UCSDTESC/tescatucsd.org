@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useState } from "react";
 import CouncilMemberGrid from "./CouncilMemberGrid";
 import {
   allCouncilMembers,
@@ -10,7 +10,7 @@ import {
   mechanicalOrgs,
   roboticsOrgs,
   generalMiscOrgs,
-  CouncilMember
+  CouncilMember,
 } from "./council-member-data";
 import useImagePreloader from "../../Hooks/useImagePreload";
 
@@ -23,7 +23,7 @@ const categories: string[] = [
   "Electrical",
   "Mechanical",
   "Robotics",
-  "General/Misc"
+  "General/Misc",
 ];
 
 const categoryMap: { [key: string]: CouncilMember[] } = {
@@ -35,14 +35,12 @@ const categoryMap: { [key: string]: CouncilMember[] } = {
   Electrical: electricalOrgs,
   Mechanical: mechanicalOrgs,
   Robotics: roboticsOrgs,
-  "General/Misc": generalMiscOrgs
+  "General/Misc": generalMiscOrgs,
 };
 
 const CouncilMembers = () => {
   const [category, setCategory] = useState<string>("All");
-  const imagePreloader = useImagePreloader([
-    "AllPages/council-page-image.webp",
-  ]);
+  const imagePreloader = useImagePreloader(["AllPages/council-page-image.webp"]);
   return (
     <div className="min-h-fit max-w-[90%] m-auto">
       <div className="mt-20 mb-20 flex-col flex justify-center items-center">
@@ -80,27 +78,27 @@ const CouncilMembers = () => {
             </select>
           </div>
           <div className="hidden md:flex flex-wrap justify-center items-center font-bold w-full max-w-[90%] mx-auto p-2 bg-white border-[#0000001A] border rounded-full shadow-xl gap-x-4 gap-y-1">
-          {categories.map((type, index) => {
-            return (
-              <p
-                key={index}
-                className={`hover:cursor-pointer ${
-                  category == type && "p-1 px-3 rounded-full bg-[#0000001A]"
-                } ${index == 0 && "ml-4"} ${
-                  index == categories.length - 1 && "mr-16"
-                } transition-all duration-600 ease-in-out transform`}
-                onClick={() => setCategory(type)}
-              >
-                {type}
-              </p>
-            );
-          })}
+            {categories.map((type, index) => {
+              return (
+                <p
+                  key={index}
+                  className={`hover:cursor-pointer ${
+                    category == type && "p-1 px-3 rounded-full bg-[#0000001A]"
+                  } ${index == 0 && "ml-4"} ${
+                    index == categories.length - 1 && "mr-16"
+                  } transition-all duration-600 ease-in-out transform`}
+                  onClick={() => setCategory(type)}
+                >
+                  {type}
+                </p>
+              );
+            })}
           </div>
         </div>
         <p className="font-semibold text-[30px] text-[#11426B] leading-14 mb-3 mt-10">
           {category} Council Members
         </p>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] justify-center items-center my-4 mx-auto w-[80%] gap-10">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] justify-center items-center my-4 mx-auto w-[80%] gap-10">
           <CouncilMemberGrid data={categoryMap[category]} />
         </div>
       </div>
