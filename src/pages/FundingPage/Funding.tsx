@@ -8,19 +8,21 @@ const Funding: React.FC = () => {
 	return (
 		<div className="min-h-screen bg-offWhite text-navy py-12 px-6 md:px-12">
 			<div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-8 md:p-12">
-				<h1 className="text-3xl md:text-4xl font-semibold mb-4 text-center">
+						<h1 className="text-4xl md:text-5xl font-semibold mb-4 text-center">
 					Student Travel Funds
 				</h1>
 
-				<p className="text-base md:text-lg text-gray-700 mb-6">
-					The Student Travel Fund is a financial resource providing support for
-					Jacobs School of Engineering undergraduate students to attend
-					conferences and competitions. It covers travel expenses like
-					transportation and hotel costs, as well as conference fees. This fund
-					can be used by both individual students and student organizations to
-					cover costs associated with their participation in academic or
-					professional events.
-				</p>
+						<p className="text-base md:text-lg text-gray-700 mb-6">
+							The Student Travel Fund is a financial resource providing support for
+							Jacobs School of Engineering undergraduate students to attend
+							conferences and competitions. It covers travel expenses like
+							transportation and hotel costs, as well as conference fees. This fund
+							can be used by both individual students and student organizations to
+							cover costs associated with their participation in academic or
+							professional events. The fund is a gift derived from proceeds of the
+							Jacobs School Ring Ceremony and is intended to support student
+							development opportunities.
+						</p>
 
 				<section className="mb-6">
 					<h2 className="text-xl font-medium mb-3">Application Overview</h2>
@@ -38,16 +40,22 @@ const Funding: React.FC = () => {
 									of <strong>Y</strong> students. Please confirm you accept this
 									below.
 								</li>
-								<li>
-									Student Organizations applying for Student Travel Funds are
-									not eligible for Matching Funds within the same academic year.
-									Please indicate below that you understand your organization
-									cannot apply for both.
-								</li>
-								<li>
-									Note: this is a reimbursement program. Save proof of expense
-									to receive reimbursement.
-								</li>
+												<li>
+													<strong>
+														Student Organizations applying for Student Travel Funds are
+														not eligible for Matching Funds within the same academic
+														year.
+													</strong>{" "}
+													Please indicate below that you understand your organization
+													cannot apply for both.
+												</li>
+												<li>
+													Note: this is a reimbursement program. Students should expect
+													to pay out-of-pocket initially and submit receipts for
+													reimbursement. Typical reimbursements range from
+													<strong> $300 to $500</strong> depending on documented expenses
+													and available funds.
+												</li>
 							</ul>
 						</div>
 
