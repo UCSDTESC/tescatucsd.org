@@ -34,7 +34,7 @@ const HomePageEvents = () => {
           <div className="mb-7">
             <h3>
               <a
-                href="https://www.tescucsd.org/events"
+                href="https://www.tescatucsd.org/events"
                 className="underline font-light text-[#000000]"
                 title="Events"
               >

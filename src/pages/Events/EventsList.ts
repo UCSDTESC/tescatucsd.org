@@ -30,7 +30,7 @@ export const pastEventLinks = [
   "https://docs.google.com/forms/d/e/1FAIpQLSfYP_vwKSgp0AF6B310_VyWz5hGEI3Hg6UfZetKdhE_THPiNA/viewform",
   "http://tinyurl.com/stempad-rsvp",
   "https://decafucsd.com",
-  "https://tescucsd.org/eotg",
+  "https://tescatucsd.org/eotg",
   "https://decafucsd.com",
   "https://www.eotgucsd.com",
   "https://decafucsd.com",
@@ -135,7 +135,7 @@ export const pastEvents: Event[] = [
     location: "Warren Mall",
     tags: [],
     image: "/event-logos/eotg-event-wi25.jpg",
-    link: "https://tescucsd.org/eotg"
+    link: "https://tescatucsd.org/eotg"
   },
   {
     name: "DECaF",
@@ -151,7 +151,7 @@ export const pastEvents: Event[] = [
     location: "Warren Mall",
     tags: [],
     image: "/event-logos/eotg-event-fa24.jpg",
-    link: "https://tescucsd.org/eotg"
+    link: "https://tescatucsd.org/eotg"
   },
   {
     name: "DECaF",
@@ -183,7 +183,7 @@ export const pastEvents: Event[] = [
     location: "Warren Mall",
     tags: [],
     image: "/event-logos/eotg-event-wi21.svg",
-    link: "https://tescucsd.org/eotg"
+    link: "https://tescatucsd.org/eotg"
   },
   {
     name: "Baking Event",
@@ -215,6 +215,6 @@ export const pastEvents: Event[] = [
     location: "Warren Mall",
     tags: [],
     image: "/event-logos/eotg-event-fa20.svg",
-    link: "https://tescucsd.org/eotg"
+    link: "https://tescatucsd.org/eotg"
   }
 ];
