@@ -3,26 +3,24 @@ import HomePageEventCards from "./HomePageEventsCards";
 
 const events = [
   {
+    name: "Engineers on the Green", 
+    image: "/event-logos/Fall-2025-EOTG.png", 
+    description: "Join us at Engineers on the Green, the annual engineering club fair where you can explore exciting projects, meet fellow innovators, and find your place in our vibrant engineering community. Discover clubs, get involved, and kickstart your journey into hands-on engineering!",
+    link: "https://www.eotgatucsd.com "
+  },
+  {
+    name: "Intro Night", 
+    image: "/event-logos/TESC_Intro_Night.png", 
+    description: "Come join us at our general body meeting to learn about our future plans!",
+    link: ""
+  },
+  {
     name: "Engineer's Formal Prom",
     image: "/event-logos/Engineering_Prom_1.jpg",
     description:
       "Get ready to dress to impress because Premiere Night: An Engineer’s Formal is officially happening — and tickets are now available! ✨ Don’t miss your chance to walk the red carpet and enjoy a Hollywood-inspired night!",
     link: "https://www.zeffy.com/en-US/ticketing/2025-aerospace-prom",
-  },
-  {
-    name: "Headshot Day & Mixer",
-    image: "/event-logos/headshot&mixer.jpg",
-    description:
-      "Need a fresh headshot? 📸 Love a good mixer? We’ve got you covered! TESC is excited to present: Headshots & Mixer Event! Come strike a pose, mingle, and make some memories! Scan the QR code to RSVP!",
-    link: "https://tinyurl.com/headshot-mixer",
-  },
-  {
-    name: "ASML Tech Talk",
-    image: "/event-logos/asml-tech-talk.png",
-    description:
-      "Want to get the inside scoop on cutting-edge semiconductor innovations? TESC is bringing you an exciting Tech Talk with Dr. Andrew LaForge, Head of EUV Source Functions at ASML!",
-    link: "https://tinyurl.com/euv-lithography",
-  },
+  }
 ];
 
 const HomePageEvents = () => {

@@ -65,7 +65,22 @@ export interface Event {
 }
 
 export const upcomingEvents: Event[] = [
-  
+  {
+    name: "Engineers on the Green", 
+    date: "September 30th, 2025", 
+    location: "Warren Mall", 
+    tags: [], 
+    image: "/event-logos/Fall-2025-EOTG.png", 
+    link: "https://www.eotgatucsd.com "
+  },
+  {
+    name: "Intro Night", 
+    date: "October 1st, 2025", 
+    location: "Qualcomm Conference Center", 
+    tags: [], 
+    image: "/event-logos/TESC_Intro_Night.png", 
+    link: ""
+  },
 ]
 export const pastEvents: Event[] = [
   {
