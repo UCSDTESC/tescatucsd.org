@@ -2,7 +2,7 @@ import instagramIcon from "/social-icons/Instagram.png";
 import discordIcon from "/social-icons/Discord.png";
 import mailIcon from "/social-icons/mail.png";
 import linkedInIcon from "/social-icons/LinkedIn.png";
-import twitterIcon from "/public/social-icons/Twitter.png";
+import twitterIcon from "/social-icons/Twitter.png";
 const Footer = () => {
   const contactIcons = (
     <div className="flex m-0 p-0 h-[39px] items-center gap-[25px]">
