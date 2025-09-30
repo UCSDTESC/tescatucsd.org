@@ -46,14 +46,6 @@ export const pvpData: string[][] = [
     "/member-pictures/Pearl-Wen.jpg",
     "https://www.linkedin.com/in/pearl-wen-3a66a8263",
     "pearl@tesc.ucsd.edu"
-  ],
-  [
-    "Christine Nguyen",
-    "Former VP External",
-    "Computer Science",
-    "/member-pictures/Christine-Nguyen.jpg",
-    "https://www.linkedin.com/in/christine-nguyen-79538a1b8",
-    "christine@tesc.ucsd.edu"
   ]
 ];
 
