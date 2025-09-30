@@ -35,7 +35,7 @@ const Footer = () => {
       </a>
 
       <a
-        href="https://tescucsd.org/discord"
+        href="https://tescatucsd.org/discord"
         className=" text-white text-[clamp(20px,2vw,26px)] leading-[39px]"
       >
         <img src={discordIcon} alt="Discord" />
