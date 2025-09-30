@@ -1,19 +1,19 @@
 export const pvpData: string[][] = [
   [
-    "Jasper Huang",
+    "Melchisedec Lai",
     "Co-President",
-    "Computer Engineering",
-    "/member-pictures/Jasper-Huang.jpg",
-    "https://www.linkedin.com/in/yj-huang/",
-    "jasper@tesc.ucsd.edu"
+    "Nanoengineering",
+    "/member-pictures/Mel-Lai.jpg",
+    "https://www.linkedin.com/in/mel-lai/",
+    "melchisedec@tesc.ucsd.edu"
   ],
   [
-    "Shree Venkatesh",
+    "Chloe Pracharktam",
     "Co-President",
-    "Computer Science",
-    "/member-pictures/Shree-Venkatesh.jpg",
-    "https://www.linkedin.com/in/shree-venkatesh/",
-    "shree@tesc.ucsd.edu"
+    "Chemical Engineering",
+    "/member-pictures/Chloe-Pracharktam.jpg",
+    "",
+    "chloe@tesc.ucsd.edu"
   ],
   [
     "Ashley Choi",
@@ -24,16 +24,16 @@ export const pvpData: string[][] = [
     "ashley@tesc.ucsd.edu"
   ],
   [
-    "Chloe Pracharktam",
+    "Parth Trivedi",
     "VP Events",
-    "Chemical Engineering",
-    "/member-pictures/Chloe-Pracharktam.jpg",
     "",
-    "ashley@tesc.ucsd.edu"
+    "/member-pictures/Parth_Trivedi.png",
+    "",
+    "parth@tesc.ucsd.edu"
   ],
   [
     "Rohan Sachdeva",
-    "VP Internal",
+    "Acting VP Internal",
     "Computer Science",
     "/member-pictures/Rohan-Sachdeva.jpg",
     "https://www.linkedin.com/in/rohanvsachdeva/",
@@ -65,14 +65,6 @@ export const committeeLeadsData: string[][] = [
     "/member-pictures/Anika-Agarwal.jpg",
     "",
     "anika_agarwal@tesc.ucsd.edu"
-  ],
-  [
-    "Melchisedec Lai",
-    "Sponsorship Lead",
-    "Nanoengineering",
-    "/member-pictures/Mel-Lai.jpg",
-    "https://www.linkedin.com/in/mel-lai/",
-    "melchisedec@tesc.ucsd.edu"
   ],
   [
     "Julia Nguyen",
