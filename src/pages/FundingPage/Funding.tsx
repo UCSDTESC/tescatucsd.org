@@ -26,23 +26,7 @@ const Funding: React.FC = () => {
 
 			{/* Main Content */}
 			<div className="max-w-[80%] mx-auto mb-10">
-				<div className="flex flex-col items-center gap-4 mb-8">					<div className="text-center text-sm text-gray-700 max-w-xl">
-						<p>
-							Student Organizations applying for Student Travel Funds are not
-							eligible for Matching Funds within the same academic year. Learn more about Matching Funds at the link to the IDEAS center website below.
-						</p>
-					</div>
-
-					<a
-						href={matchingFundsLink}
-						target="_blank"
-						rel="noreferrer"
-						className="inline-block bg-white border-2 border-[#11426B] text-[#11426B] px-6 py-3 rounded-md shadow-md hover:bg-[#11426B] hover:text-white transition-colors duration-200 font-semibold"
-						aria-label="Open Matching Funds information"
-					>
-						Matching Funds
-					</a>
-
+				<div className="flex flex-col items-center gap-4 mb-8">
 					<p className="text-base md:text-lg text-gray-700 mb-6">
 						The Student Travel Fund is a financial resource providing support for
 						Jacobs School of Engineering undergraduate students to attend
