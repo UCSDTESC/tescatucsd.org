@@ -1,5 +1,5 @@
 {
-  "name": "tescucsd.org",
+  "name": "tescatucsd.org",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -21,7 +21,7 @@
     "reactstrap": "^9.2.3",
     "sass": "^1.84.0",
     "tailwindcss": "^4.0.0",
-    "tescucsd.org": "file:",
+    "tescatucsd.org": "file:",
     "web-vitals": "^2.1.4",
     "webpack": "^5.96.1"
   },
