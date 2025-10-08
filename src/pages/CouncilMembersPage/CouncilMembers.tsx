@@ -23,7 +23,7 @@ const categories: string[] = [
   "Electrical",
   "Mechanical",
   "Robotics",
-  "General/Misc",
+  "Interdisciplinary/General",
 ];
 
 const categoryMap: { [key: string]: CouncilMember[] } = {
@@ -35,7 +35,7 @@ const categoryMap: { [key: string]: CouncilMember[] } = {
   Electrical: electricalOrgs,
   Mechanical: mechanicalOrgs,
   Robotics: roboticsOrgs,
-  "General/Misc": generalMiscOrgs,
+  "Interdisciplinary/General": generalMiscOrgs,
 };
 
 const CouncilMembers = () => {
