@@ -40,6 +40,14 @@ export const pvpData: string[][] = [
     "rohan@tesc.ucsd.edu"
   ],
   [
+    "Anika Agarwal",
+    "VP Internal",
+    "Computer Engineering",
+    "/member-pictures/Anika-Agarwal.jpg",
+    "",
+    "anika_agarwal@tesc.ucsd.edu"
+  ],
+  [
     "Pearl Wen",
     "VP Finance",
     "Cognitive Science",
@@ -51,28 +59,20 @@ export const pvpData: string[][] = [
 
 export const committeeLeadsData: string[][] = [
   [
-    "Anika Agarwal",
-    "Social Lead",
-    "Computer Engineering",
-    "/member-pictures/Anika-Agarwal.jpg",
-    "",
-    "anika_agarwal@tesc.ucsd.edu"
-  ],
-  [
     "Julia Nguyen",
-    "Financial Analyst",
+    "Finance Lead",
     "Business Economics",
     "/member-pictures/Julia-Nguyen.jpg",
     "",
     "julia@tesc.ucsd.edu"
   ],
   [
-    "Nishitha Selvakumar",
+    "Hieu Nguyen",
     "Tech Lead",
-    "Computer Science",
-    "/member-pictures/Nishitha-Selvakumar.jpg",
+    "Mathematics-Computer Science",
+    "/member-pictures/Hieu-Nguyen.jpg",
     "",
-    "nishitha@tesc.ucsd.edu"
+    "hieu.nguyen@tesc.ucsd.edu"
   ],
   [
     "Jonathan Ty",
@@ -83,23 +83,40 @@ export const committeeLeadsData: string[][] = [
     "ty@tesc.ucsd.edu"
   ],
   [
-    "Kai Velasco",
-    "Operations Lead",
-    "Structural Engineering",
-    "/member-pictures/Profile_avatar_placeholder_large.png",
-    "",
-    "kai@tesc.ucsd.edu"
-  ]
-];
-
-export const social: string[][] = [
-  [
     "Elizabeth Dam",
-    "Social",
+    "Social Lead",
     "Electrical Engineering",
     "/member-pictures/Elizabeth-Dam.jpg",
     "",
     "elizabeth@tesc.ucsd.edu"
+  ],
+  [
+    "Aditya Sivanandan",
+    "ProDev Lead",
+    "Mechanical Engineering",
+    "/member-pictures/Aditya-Sivanandan.jpg",
+    "",
+    "aditya@tesc.ucsd.edu"
+  ],
+  [
+    "Alexis Gonzalez",
+    "Sponsorship Lead",
+    "Structural Engineering",
+    "/member-pictures/Alexis-Gonzalez.jpg",
+    "",
+    "alg045@ucsd.edu"
+  ]
+];
+
+
+export const social: string[][] = [
+  [
+    "Varsha Vijayanand",
+    "Social",
+    "Aerospace Engineering",
+    "/member-pictures/Profile_avatar_placeholder_large.png",
+    "",
+    "vvijayanand@ucsd.edu"
   ]
 ];
 export const tech: string[][] = [
@@ -112,39 +129,24 @@ export const tech: string[][] = [
     "ferrari@tesc.ucsd.edu"
   ],
   [
-    "Nabhya Gupta",
-    "Tech",
-    "Computer Engineering",
-    "/member-pictures/Nabhya-Gupta.jpg",
-    "",
-    "nabhya@tesc.ucsd.edu"
-  ],
-  [
-    "Hieu Nguyen",
-    "Tech",
-    "Mathematics-Computer Science",
-    "/member-pictures/Hieu-Nguyen.jpg",
-    "",
-    "hieu.nguyen@tesc.ucsd.edu"
-  ],
-  [
     "Thanh Trinh",
     "Tech",
     "Computer Engineering",
     "/member-pictures/Thanh-Trinh.jpg",
     "https://www.linkedin.com/in/thanh-trinh-329373245/",
     "thanh@tesc.ucsd.edu"
+  ],
+  [
+    "Alexander Radulescu",
+    "Council",
+    "Computer Science",
+    "/member-pictures/Alexander-Radulescu.jpg",
+    "https://www.linkedin.com/in/alexander-radulescu-28b517262/",
+    "alradulescu@ucsd.edu"
   ]
 ];
 export const design: string[][] = [
-  [
-    "Mia Jin",
-    "Design",
-    "Cognitive Science",
-    "/member-pictures/Mia-Jin.jpg",
-    "",
-    "mia@tesc.ucsd.edu"
-  ],
+
   [
     "Anna Pham",
     "Design",
@@ -188,26 +190,10 @@ export const marketing: string[][] = [
     "sbuyuksonmez@ucsd.edu"
   ]
 ];
-export const operations: string[][] = [
-  [
-    "Eden Mai",
-    "Operations",
-    "Aerospace Engineering",
-    "/member-pictures/Eden-Mai.png",
-    "",
-    "edenm@tesc.ucsd.edu"
-  ],
-  [
-    "Arnav Sahu",
-    "Operations",
-    "Electrical Engineering",
-    "/member-pictures/Arnav-Sahu.jpg",
-    "",
-    "arnav@tesc.ucsd.edu"
-  ],
+export const council: string[][] = [
   [
     "Ashton Simbol",
-    "Operations",
+    "Council",
     "Computer Science",
     "/member-pictures/Ashton-Simbol.jpg",
     "",
@@ -215,46 +201,54 @@ export const operations: string[][] = [
   ],
   [
     "Kevin Yang",
-    "Operations",
+    "Council",
     "Computer Science",
     "/member-pictures/Kevin-Yang.jpg",
     "",
     "kevin@tesc.ucsd.edu"
+  ],
+  [
+    "Nabhya Gupta",
+    "Tech",
+    "Computer Engineering",
+    "/member-pictures/Nabhya-Gupta.jpg",
+    "",
+    "nabhya@tesc.ucsd.edu"
+  ],
+  [
+    "Alexander Radulescu",
+    "Council",
+    "Computer Science",
+    "/member-pictures/Alexander-Radulescu.jpg",
+    "https://www.linkedin.com/in/alexander-radulescu-28b517262/",
+    "alradulescu@ucsd.edu"
   ]
 ];
 export const sponsorship: string[][] = [
-  [
-    "Rachel Mao",
-    "Sponsorship",
-    "Structural Engineering",
-    "/member-pictures/Rachel-Mao.jpg",
-    "",
-    "rachel@tesc.ucsd.edu"
-  ],
-  [
-    "Kavya Shah",
-    "Sponsorship",
-    "Mathematics-Computer Science",
-    "/member-pictures/Kavya-Shah.jpg",
-    "",
-    "kavya@tesc.ucsd.edu"
-  ]
+  // [
+  //   "Rachel Mao",
+  //   "Sponsorship",
+  //   "Structural Engineering",
+  //   "/member-pictures/Rachel-Mao.jpg",
+  //   "",
+  //   "rachel@tesc.ucsd.edu"
+  // ],
+  // [
+  //   "Kavya Shah",
+  //   "Sponsorship",
+  //   "Mathematics-Computer Science",
+  //   "/member-pictures/Kavya-Shah.jpg",
+  //   "",
+  //   "kavya@tesc.ucsd.edu"
+  // ]
 ];
 export const prodev: string[][] = [
   [
-    "Aditya Sivanandan",
+    "Kai Velasco",
     "ProDev",
-    "Mechanical Engineering",
-    "/member-pictures/Aditya-Sivanandan.jpg",
+    "Structural Engineering",
+    "/member-pictures/Profile_avatar_placeholder_large.png",
     "",
-    "aditya@tesc.ucsd.edu"
-  ],
-  [
-    "Brooke Truong",
-    "ProDev",
-    "Computer Science",
-    "/member-pictures/Brooke-Truong.jpg",
-    "",
-    "brooke@tesc.ucsd.edu"
+    "kai@tesc.ucsd.edu"
   ]
 ];
