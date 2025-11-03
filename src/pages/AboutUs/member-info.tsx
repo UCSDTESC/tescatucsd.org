@@ -33,7 +33,7 @@ export const pvpData: string[][] = [
   ],
   [
     "Rohan Sachdeva",
-    "Acting VP Internal",
+    "Graduate Advisor / Acting VP Internal",
     "Computer Science",
     "/member-pictures/Rohan-Sachdeva.jpg",
     "https://www.linkedin.com/in/rohanvsachdeva/",
@@ -121,6 +121,14 @@ export const social: string[][] = [
 ];
 export const tech: string[][] = [
   [
+    "Jasper Huang",
+    "Tech",
+    "",
+    "/member-pictures/Jasper-Huang.jpg",
+    "",
+    "jasper@tesc.ucsd.edu"
+  ],
+  [
     "Ferrari Guan",
     "Tech",
     "Computer Engineering",
@@ -138,7 +146,7 @@ export const tech: string[][] = [
   ],
   [
     "Alexander Radulescu",
-    "Council",
+    "Tech",
     "Computer Science",
     "/member-pictures/Alexander-Radulescu.jpg",
     "https://www.linkedin.com/in/alexander-radulescu-28b517262/",
@@ -209,7 +217,7 @@ export const council: string[][] = [
   ],
   [
     "Nabhya Gupta",
-    "Tech",
+    "Council",
     "Computer Engineering",
     "/member-pictures/Nabhya-Gupta.jpg",
     "",
@@ -247,8 +255,24 @@ export const prodev: string[][] = [
     "Kai Velasco",
     "ProDev",
     "Structural Engineering",
-    "/member-pictures/Profile_avatar_placeholder_large.png",
+    "/member-pictures/Kai-Velasco.jpg",
     "",
     "kai@tesc.ucsd.edu"
+  ],
+  [
+    "Jade",
+    "ProDev",
+    "",
+    "/member-pictures/Profile_avatar_placeholder_large.png",
+    "",
+    "jade@tesc.ucsd.edu"
+  ],
+  [
+    "Jonathan",
+    "ProDev",
+    "",
+    "/member-pictures/Profile_avatar_placeholder_large.png",
+    "",
+    "jonathan@tesc.ucsd.edu"
   ]
 ];
