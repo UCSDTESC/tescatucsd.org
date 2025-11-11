@@ -1,6 +1,7 @@
 import React from "react";
 import { LinkedinFilled, MailFilled } from "@ant-design/icons";
 import useImagePreloader from "../../Hooks/useImagePreload";
+import { motion } from "framer-motion";
 
 interface Props {
   data: string[][];
@@ -12,7 +13,18 @@ export function Section({ data, title }: Props) {
       <p className="text-[30px] text-[#11426B] font-semibold mb-4">{title}</p>
       <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] justify-center items-center gap-10">
         {data.map((member, index) => (
-          <MemberCard key={index} member={member as Member} />
+          <motion.div
+            key={member[0]}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.4,
+              delay: index * 0.1,
+              ease: "easeOut"
+            }}
+          >
+            <MemberCard key={index} member={member as Member} />
+          </motion.div>
         ))}
       </div>
     </div>
