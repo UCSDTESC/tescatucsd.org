@@ -83,7 +83,7 @@ const CouncilMembers = () => {
                 <p
                   key={index}
                   className={`hover:cursor-pointer ${
-                    category == type && "p-1 px-3 rounded-full bg-[#0000001A]"
+                    category == type && " px-3 rounded-full bg-[#0000001A]"
                   } ${index == 0 && "ml-4"} ${
                     index == categories.length - 1 && "mr-16"
                   } transition-all duration-600 ease-in-out transform`}
