@@ -2,12 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px; /* More padding for a balanced look */
+  padding: 20px; /* Increased padding for better spacing */
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   transition: transform 0.3s ease;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+  min-height: 140px; /* Ensure minimum height for larger logos */
 }
 
 .sponsor-box {

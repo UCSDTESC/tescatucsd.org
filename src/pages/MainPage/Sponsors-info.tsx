@@ -7,15 +7,15 @@ export const sponsors = [
   },
   {
     id: 2,
-    logo: "/logos/Dynovas Matrix Logo (Final).jpg",
-    alt: "Dynovas",
-    website: "https://www.dynovas.com/"
+    logo: "/logos/Logo-GeneralAtomics.jpg",
+    alt: "General Atomics",
+    website: "https://www.ga.com/"
   },
   {
     id: 3,
-    logo: "/logos/LLNLlogoBLACK.jpg",
-    alt: "LLNL",
-    website: "https://www.llnl.gov/"
+    logo: "/logos/Logo-LADWP.png",
+    alt: "Los Angeles Department of Water and Power",
+    website: "https://www.ladwp.com/"
   },
   {
     id: 4,
@@ -31,20 +31,26 @@ export const sponsors = [
   },
   {
     id: 6,
-    logo: "/logos/Freeform_Logo.jpg",
-    alt: "Freeform",
-    website: "https://freeform.co/"
+    logo: "/logos/Skyworks_logo.png",
+    alt: "Skyworks Solutions",
+    website: "https://www.skyworksinc.com"
   },
   {
     id: 7,
-    logo: "/logos/Keller_North_America.png",
-    alt: "Keller",
-    website: "https://www.keller-na.com/"
+    logo: "/logos/Logo-Sony.png",
+    alt: "Sony Interactive Entertainment - PlayStation",
+    website: "https://www.playstation.com"
   },
   {
     id: 8,
-    logo: "/logos/tsmc_logo2.png",
-    alt: "TSMC",
-    website: "https://www.tsmc.com/english"
+    logo: "/logos/Logo-pillsbury.png",
+    alt: "Pillsbury Winthrop Shaw Pittman",
+    website: "https://www.pillsburylaw.com"
+  },
+  {
+    id:9,
+    logo:"/logos/TSMC-logo.png",
+    alt:"TSMC",
+    website:"https://www.tsmc.com/english"
   }
 ];
