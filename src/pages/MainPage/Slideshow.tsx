@@ -6,37 +6,37 @@ const slides = [
   {
     image: "/slideshow-pictures/slideshow_1.webp",
     caption: "Disciplines of Engineering Career Fair Fall 2024",
-    object: [0, 60]
+    object: [40, 60]
   },
   {
     image: "/slideshow-pictures/slideshow_2.webp",
     caption: "Engineers on the Green Winter 2025",
-    object: [10, 66]
+    object: [0, 66]
   },
   {
     image: "/slideshow-pictures/slideshow_3.webp",
     caption: "Engineers on the Green Winter 2025",
-    object: [10, 10]
+    object: [50, 10]
   },
   {
     image: "/slideshow-pictures/slideshow_4.webp",
     caption: "TESC Council Social Winter 2025",
-    object: [10, 80]
+    object: [0, 80]
   },
   {
     image: "/slideshow-pictures/slideshow_5.webp",
     caption: "TESC Council Social Winter 2025",
-    object: [10, 60]
+    object: [50, 60]
   },
   {
     image: "/slideshow-pictures/slideshow_6.webp",
     caption: "Disciplines of Engineering Career Fair Winter 2025",
-    object: [10, 70]
+    object: [0, 70]
   },
   {
     image: "/slideshow-pictures/slideshow_7.webp",
     caption: "Disciplines of Engineering Career Fair Winter 2025",
-    object: [10, 10]
+    object: [0, 10]
   }
 ];
 
