@@ -4,28 +4,39 @@ import useImagePreloader from "../../Hooks/useImagePreload";
 // List of images and captions to display in the slideshow
 const slides = [
   {
-    image: "/slideshow-pictures/decaf-fa24/IMG_3802.webp",
-    caption: "Disciplines of Engineering Career Fair Fall 2024"
+    image: "/slideshow-pictures/slideshow_1.webp",
+    caption: "Disciplines of Engineering Career Fair Fall 2024",
+    object: [0, 60]
   },
   {
-    image: "/slideshow-pictures/eotg-wi25/IMG_4351.webp",
-    caption: "Engineers on the Green Winter 2025"
+    image: "/slideshow-pictures/slideshow_2.webp",
+    caption: "Engineers on the Green Winter 2025",
+    object: [10, 66]
   },
   {
-    image: "/slideshow-pictures/eotg-wi25/IMG_4354.webp",
-    caption: "Engineers on the Green Winter 2025"
+    image: "/slideshow-pictures/slideshow_3.webp",
+    caption: "Engineers on the Green Winter 2025",
+    object: [10, 10]
   },
   {
-    image: "/slideshow-pictures/council-dirty-birds-social/20250117_184343.webp",
-    caption: "TESC Council Social Winter 2025"
+    image: "/slideshow-pictures/slideshow_4.webp",
+    caption: "TESC Council Social Winter 2025",
+    object: [10, 80]
   },
   {
-    image: "/slideshow-pictures/council-dirty-birds-social/20250117_184426.webp",
-    caption: "TESC Council Social Winter 2025"
+    image: "/slideshow-pictures/slideshow_5.webp",
+    caption: "TESC Council Social Winter 2025",
+    object: [10, 60]
   },
   {
-    image: "/slideshow-pictures/decaf-wi25/IMG_4427_25.webp",
-    caption: "Disciplines of Engineering Career Fair Winter 2025"
+    image: "/slideshow-pictures/slideshow_6.webp",
+    caption: "Disciplines of Engineering Career Fair Winter 2025",
+    object: [10, 70]
+  },
+  {
+    image: "/slideshow-pictures/slideshow_7.webp",
+    caption: "Disciplines of Engineering Career Fair Winter 2025",
+    object: [10, 10]
   }
 ];
 
@@ -64,11 +75,12 @@ const Slideshow = () => {
             <img
               srcSet={slides[0].image}
               alt=""
-              className="w-full h-full object-cover object-[25%_35%] animate-[slide-animate-in_1s]"
+              className="w-full h-full object-cover animate-[slide-animate-in_1s]"
+              style={{ objectPosition: `${slides[0].object[0]}% ${slides[0].object[1]}%` }}
             />
           )}
           <img
-            srcSet="/slideshow-pictures/decaf-fa24/IMG_3802_small.webp"
+            srcSet="/slideshow-pictures/slideshow_1_small.webp"
             alt=""
             className="-z-1 absolute top-0 left-0 w-full h-full object-cover object-[25%_35%] animate-[soft-pulse_1s_cubic-bezier(0.4,0,0.6,1)_infinite]"
           />
@@ -87,7 +99,8 @@ const Slideshow = () => {
                 <img
                   srcSet={slide.image}
                   alt=""
-                  className="w-full h-full object-cover  object-[25%_35%]"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: `${slide.object[0]}% ${slide.object[1]}%` }}
                 />
               </div>
             );
