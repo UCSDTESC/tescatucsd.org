@@ -48,9 +48,15 @@ export const sponsors = [
     website: "https://www.pillsburylaw.com"
   },
   {
-    id:9,
-    logo:"/logos/TSMC-logo.png",
-    alt:"TSMC",
-    website:"https://www.tsmc.com/english"
+    id: 9,
+    logo: "/logos/TSMC-logo.png",
+    alt: "TSMC",
+    website: "https://www.tsmc.com/english"
+  },
+  {
+    id: 10,
+    logo: "/logos/Logo-RTX.png",
+    alt: "RTX",
+    website: "https://www.rtx.com/"
   }
 ];
