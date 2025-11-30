@@ -8,6 +8,15 @@ export function EventCard({ event }: Props) {
   // const navigate = useNavigate();
   const ImagePreloader = useImagePreloader([event.image]);
 
+  const isContain = event.imageFit === "contain";
+
+  const imagePositionClass =
+    event.imagePosition === "top"
+      ? "object-top"
+      : event.imagePosition === "bottom"
+      ? "object-bottom"
+      : "object-center"; // default center for cover mode
+
   return (
     <div
       className="flex flex-col justify-center items-center"
@@ -18,15 +27,22 @@ export function EventCard({ event }: Props) {
       }}
     >
       <div className="relative min-h-[25rem] w-full bg-white shadow-2xl rounded-standard">
-        <div className="mb-0 w-[90%] aspect-[1/1.2] m-6 pb-2 mx-auto object-contain rounded-[40px] relative">
-          {ImagePreloader.imagesPreloaded && (
+        <div className="mb-0 w-[90%] aspect-[1/1.2] m-6 pb-2 mx-auto relative rounded-[40px] overflow-hidden flex items-center justify-center">
+          {ImagePreloader.imagesPreloaded ? (
             <img
-              className=" w-full h-full object-cover rounded-[40px] absolute top-0 left-0 z-1 animate-[animate-in_1s]"
               src={event.image}
               alt={event.name}
+              className={
+                isContain
+                  ? // 🔹 CONTAIN MODE: keep full image, inner rounded corners
+                    "max-w-full max-h-full rounded-[40px] animate-[animate-in_1s] object-contain"
+                  : // 🔹 COVER MODE: full-bleed, crop, position control
+                    `w-full h-full rounded-[40px] absolute top-0 left-0 z-1 animate-[animate-in_1s] object-cover ${imagePositionClass}`
+              }
             />
+          ) : (
+            <div className="bg-lightBlue w-full h-full animate-pulse" />
           )}
-          <div className="bg-lightBlue w-full h-full rounded-[40px] animate-pulse"></div>
         </div>
         <div className="p-5 pt-0 pb-5">
           {ImagePreloader.imagesPreloaded ? (
