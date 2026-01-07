@@ -16,10 +16,14 @@ const Funding: React.FC = () => {
 	const blinkStudentTravelLink =
 		"https://blink.ucsd.edu/travel/travel-policy-procedures/register-travelers/student-travel.html";
 
+	// Reusable Tailwind for underlined links (replaces style={{ textDecoration: "underline" }})
+	const underlineLink =
+		"underline underline-offset-2 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#11426B]";
+
 	return (
 		<>
 			{/* Hero Section */}
-			<div className="m-12 mt-20 flex flex-row justify-between items-center max-w-[80%] mx-auto">
+			<div className="m-12 mt-20 flex flex-row items-center justify-between mx-auto max-w-[80%]">
 				<div className="sm:max-w-full md:max-w-3/5">
 					<p className="font-semibold text-[60px] text-[#11426B] leading-14 mb-3">
 						Student Travel Funds
@@ -49,10 +53,7 @@ const Funding: React.FC = () => {
 						Ring Ceremony and is intended to support student development
 						opportunities. This year, TESC is responsible for managing the
 						application process and reviewing applications. Contact us at{" "}
-						<a
-							href={`mailto:${boardEmail}`}
-							style={{ textDecoration: "underline" }}
-						>
+						<a href={`mailto:${boardEmail}`} className={underlineLink}>
 							{boardEmail}
 						</a>{" "}
 						if you have questions, concerns, or feedback about the process.
@@ -74,10 +75,7 @@ const Funding: React.FC = () => {
 								<strong>Application Review (2–3 weeks):</strong> TESC reviews
 								applications on a rolling basis. If you do not receive an email
 								within <strong>two weeks</strong>, please follow up at{" "}
-								<a
-									href={`mailto:${boardEmail}`}
-									style={{ textDecoration: "underline" }}
-								>
+								<a href={`mailto:${boardEmail}`} className={underlineLink}>
 									{boardEmail}
 								</a>{" "}
 								and we will finish reviewing your application as soon as
@@ -121,8 +119,13 @@ const Funding: React.FC = () => {
 								<strong>If you are applying as part of a student organization,</strong>{" "}
 								note that student organizations applying for Student Travel Funds
 								are not eligible for{" "}
-								<a href={matchingFundsLink} target="_blank" rel="noreferrer">
-									<span style={{ textDecoration: "underline" }}>Matching Funds</span>
+								<a
+									href={matchingFundsLink}
+									target="_blank"
+									rel="noreferrer"
+									className={underlineLink}
+								>
+									Matching Funds
 								</a>{" "}
 								within the same academic year.
 							</li>
@@ -143,15 +146,12 @@ const Funding: React.FC = () => {
 								href={businessTravelFormLink}
 								target="_blank"
 								rel="noreferrer"
-								style={{ textDecoration: "underline" }}
+								className={underlineLink}
 							>
 								Student Certification for Business Travel form
 							</a>{" "}
 							and email it to{" "}
-							<a
-								href={`mailto:${deanFinOpsEmail}`}
-								style={{ textDecoration: "underline" }}
-							>
+							<a href={`mailto:${deanFinOpsEmail}`} className={underlineLink}>
 								{deanFinOpsEmail}
 							</a>
 							.
@@ -168,7 +168,10 @@ const Funding: React.FC = () => {
 								faculty advisor, feel free to leave this section blank.
 							</li>
 							<li>
-								<strong>Chart String Information (Fund, Financial Unit, Function, Project, Task):</strong>{" "}
+								<strong>
+									Chart String Information (Fund, Financial Unit, Function, Project,
+									Task):
+								</strong>{" "}
 								If you are not applying under a faculty or lab, it is okay to
 								leave these fields blank.
 							</li>
@@ -181,7 +184,7 @@ const Funding: React.FC = () => {
 								href={blinkStudentTravelLink}
 								target="_blank"
 								rel="noreferrer"
-								style={{ textDecoration: "underline" }}
+								className={underlineLink}
 							>
 								this Blink page
 							</a>
@@ -301,7 +304,7 @@ const Funding: React.FC = () => {
 									href={eceTravelFundLink}
 									target="_blank"
 									rel="noreferrer"
-									style={{ textDecoration: "underline" }}
+									className={underlineLink}
 								>
 									ECE Undergraduate Travel Fund
 								</a>
@@ -311,7 +314,7 @@ const Funding: React.FC = () => {
 									href={ugResearchTravelFundingLink}
 									target="_blank"
 									rel="noreferrer"
-									style={{ textDecoration: "underline" }}
+									className={underlineLink}
 								>
 									Undergraduate Research Conference Travel Funding
 								</a>
@@ -321,7 +324,7 @@ const Funding: React.FC = () => {
 									href={matchingFundsLink}
 									target="_blank"
 									rel="noreferrer"
-									style={{ textDecoration: "underline" }}
+									className={underlineLink}
 								>
 									Matching Funds (recommended for student organizations)
 								</a>
@@ -331,7 +334,7 @@ const Funding: React.FC = () => {
 									href={blinkStudentTravelLink}
 									target="_blank"
 									rel="noreferrer"
-									style={{ textDecoration: "underline" }}
+									className={underlineLink}
 								>
 									UC San Diego Student Travel Policies & Procedures (Blink)
 								</a>
