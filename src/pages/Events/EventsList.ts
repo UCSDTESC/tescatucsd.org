@@ -66,12 +66,46 @@ export interface Event {
 
 export const upcomingEvents: Event[] = [
   {
+    name: "Tapioca Express Fundraiser",
+    date: "November 21st, 2026",
+    location: "Tapioca Express, Price Center",
+    tags: ["Fundraiser", "Finance"],
+    image: "/event-logos/tapex_fundraiser.jpg",
+    link: "https://tapiocaexpress.com/"
+  },
+  {
+    name: "Board Game Night",
+    date: "November 21st, 2026",
+    location: "Study Rooms, Price Center",
+    tags: ["Social"],
+    image: "/event-logos/BoardGameNightPostWLogos.jpg",
+    link: ""
+  }
+];
+export const pastEvents: Event[] = [
+  {
     name: "Engineers on the Green",
-    date: "September 30th, 2025",
+    date: "January 8th, 2026",
     location: "Warren Mall",
     tags: ["Social", "Career"],
-    image: "/event-logos/Fall-2025-EOTG.png",
+    image: "/event-logos/eotg-winter2026.jpg",
     link: "https://www.eotgatucsd.com "
+  },
+  {
+    name: "DECaF",
+    date: "October 14th, 2025",
+    location: "Qualcomm Room, JSOE",
+    tags: ["Career"],
+    image: "/event-logos/DECaF_FA25.jpg",
+    link: "https://decafucsd.com"
+  },
+  {
+    name: "Sunset & S'mores Bonfire Night",
+    date: "October 3rd, 2025",
+    location: "La Jolla Shores",
+    tags: ["Social"],
+    image: "/event-logos/Sunset__Smores_Bonfire.png",
+    link: ""
   },
   {
     name: "Intro Night / GBM",
@@ -82,15 +116,13 @@ export const upcomingEvents: Event[] = [
     link: ""
   },
   {
-    name: "Sunset & S'mores Bonfire Night",
-    date: "October 3rd, 2025",
-    location: "La Jolla Shores",
-    tags: ["Social"],
-    image: "/event-logos/Sunset__Smores_Bonfire.png",
-    link: ""
-  }
-];
-export const pastEvents: Event[] = [
+    name: "Engineers on the Green",
+    date: "September 30th, 2025",
+    location: "Warren Mall",
+    tags: ["Social", "Career"],
+    image: "/event-logos/Fall-2025-EOTG.png",
+    link: "https://www.eotgatucsd.com "
+  },
   {
     name: "Engineer's Formal Prom",
     date: "May 18th, 2025",
