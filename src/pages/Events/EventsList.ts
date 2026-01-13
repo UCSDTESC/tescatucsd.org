@@ -20,7 +20,7 @@ export const pastEventLogos = [
   "/event-logos/baking-event-fa20.png",
   "/event-logos/matcha-event-fa20.svg",
   "/event-logos/destress-event-fa20.svg",
-  "/event-logos/eotg-event-fa20.svg"
+  "/event-logos/eotg-event-fa20.svg",
 ];
 
 export const pastEventLinks = [
@@ -41,7 +41,7 @@ export const pastEventLinks = [
   "https://decafucsd.com",
   "https://www.eotgucsd.com",
   "https://decafucsd.com",
-  "https://www.eotgucsd.com"
+  "https://www.eotgucsd.com",
 ];
 
 export const pastEventDescription = [
@@ -52,7 +52,7 @@ export const pastEventDescription = [
   "Come out and support the Triton Engineering Student Council (TESC) by purchasing from Tapioca Express! Show this flyer at the register and 10% of the proceeds will go to TESC.",
   "Triton Engineering Student Council is inviting you to participate in our Sand Castle Competition and join us for a warm and cozy bonfire with some smores' on March 2nd, 2025! We are opening this event to all students within the Jacobs School of Engineering community! For this Sand Castle Competition, the best sand castles will be given points. We will be mostly judging you on your team spirit, quality of the sand castle, and engineering aspects when building it! Afterwards, we will be celebrating the winners with some smore's and a bonfire!!",
   "On Friday, February 7th, from 1:00-3:00 PM, TESC will be hosting a talk with Stempad at the QCC in Jacob's Hall. Stempad is a digital scientific note editor startup and they will be talking about how to build a startup and the difference between a startup and a large company.",
-  "DECaF 2025, a student-run career fair organized by the Triton Engineering Student Council, aims to connect talented engineering students with leading recruiters like you. With an annual attendance of 1,000+ students from various engineering majors, this event presents a unique opportunity to meet and engage with potential future employees. Participating companies will have direct access to a diverse pool of motivated and skilled students and a comprehensive resume database."
+  "DECaF 2025, a student-run career fair organized by the Triton Engineering Student Council, aims to connect talented engineering students with leading recruiters like you. With an annual attendance of 1,000+ students from various engineering majors, this event presents a unique opportunity to meet and engage with potential future employees. Participating companies will have direct access to a diverse pool of motivated and skilled students and a comprehensive resume database.",
 ];
 
 export interface Event {
@@ -64,32 +64,31 @@ export interface Event {
   link: string;
 }
 
-export const upcomingEvents: Event[] = [
+export const upcomingEvents: Event[] = [];
+export const pastEvents: Event[] = [
   {
     name: "Tapioca Express Fundraiser",
-    date: "November 21st, 2026",
+    date: "November 21st, 2025",
     location: "Tapioca Express, Price Center",
     tags: ["Fundraiser", "Finance"],
     image: "/event-logos/tapex_fundraiser.jpg",
-    link: "https://tapiocaexpress.com/"
+    link: "https://tapiocaexpress.com/",
   },
   {
     name: "Board Game Night",
-    date: "November 21st, 2026",
+    date: "November 21st, 2025",
     location: "Study Rooms, Price Center",
     tags: ["Social"],
     image: "/event-logos/BoardGameNightPostWLogos.jpg",
-    link: ""
-  }
-];
-export const pastEvents: Event[] = [
+    link: "",
+  },
   {
     name: "Engineers on the Green",
     date: "January 8th, 2026",
     location: "Warren Mall",
     tags: ["Social", "Career"],
     image: "/event-logos/eotg-winter2026.jpg",
-    link: "https://www.eotgatucsd.com "
+    link: "https://www.eotgatucsd.com ",
   },
   {
     name: "DECaF",
@@ -97,7 +96,7 @@ export const pastEvents: Event[] = [
     location: "Qualcomm Room, JSOE",
     tags: ["Career"],
     image: "/event-logos/DECaF_FA25.jpg",
-    link: "https://decafucsd.com"
+    link: "https://decafucsd.com",
   },
   {
     name: "Sunset & S'mores Bonfire Night",
@@ -105,7 +104,7 @@ export const pastEvents: Event[] = [
     location: "La Jolla Shores",
     tags: ["Social"],
     image: "/event-logos/Sunset__Smores_Bonfire.png",
-    link: ""
+    link: "",
   },
   {
     name: "Intro Night / GBM",
@@ -113,7 +112,7 @@ export const pastEvents: Event[] = [
     location: "Qualcomm Conference Center",
     tags: ["Social", "GBM"],
     image: "/event-logos/TESC_Intro_Night.png",
-    link: ""
+    link: "",
   },
   {
     name: "Engineers on the Green",
@@ -121,7 +120,7 @@ export const pastEvents: Event[] = [
     location: "Warren Mall",
     tags: ["Social", "Career"],
     image: "/event-logos/Fall-2025-EOTG.png",
-    link: "https://www.eotgatucsd.com "
+    link: "https://www.eotgatucsd.com ",
   },
   {
     name: "Engineer's Formal Prom",
@@ -129,7 +128,7 @@ export const pastEvents: Event[] = [
     location: "Stage Room",
     tags: ["Social"],
     image: "/event-logos/Engineering_Prom_1.jpg",
-    link: "https://www.zeffy.com/en-US/ticketing/2025-aerospace-prom"
+    link: "https://www.zeffy.com/en-US/ticketing/2025-aerospace-prom",
   },
   {
     name: "Headshot Day & Mixer",
@@ -137,7 +136,7 @@ export const pastEvents: Event[] = [
     location: "Bear Room, Price Center",
     tags: ["Social", "Career"],
     image: "/event-logos/headshot&mixer.jpg",
-    link: "https://tinyurl.com/headshot-mixer"
+    link: "https://tinyurl.com/headshot-mixer",
   },
   {
     name: "ASML Tech Talk",
@@ -145,7 +144,7 @@ export const pastEvents: Event[] = [
     location: "Qualcomm Conference Center - JSOE 1st Floor",
     tags: ["Career"],
     image: "/event-logos/asml-tech-talk.png",
-    link: "https://tinyurl.com/euv-lithography"
+    link: "https://tinyurl.com/euv-lithography",
   },
   {
     name: "TESC Olympics",
@@ -153,7 +152,7 @@ export const pastEvents: Event[] = [
     location: "Matthew's Quad",
     tags: ["Social"],
     image: "/event-logos/field_day_2.jpg",
-    link: "https://tinyurl.com/sp25-tesc-olympics"
+    link: "https://tinyurl.com/sp25-tesc-olympics",
   },
   {
     name: "Tapioca Express Fundraiser",
@@ -161,7 +160,7 @@ export const pastEvents: Event[] = [
     location: "Tapioca Express, Price Center",
     tags: ["Fundraiser", "Finance"],
     image: "/event-logos/Tapioca.png",
-    link: "https://tapiocaexpress.com/"
+    link: "https://tapiocaexpress.com/",
   },
   {
     name: "Sandcastle Competition",
@@ -169,7 +168,7 @@ export const pastEvents: Event[] = [
     location: "La Jolla Shores",
     tags: ["Social"],
     image: "/event-logos/SandcastleBonfire.jpg",
-    link: "https://docs.google.com/forms/d/e/1FAIpQLSfYP_vwKSgp0AF6B310_VyWz5hGEI3Hg6UfZetKdhE_THPiNA/viewform"
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSfYP_vwKSgp0AF6B310_VyWz5hGEI3Hg6UfZetKdhE_THPiNA/viewform",
   },
   {
     name: "Talk with Stempad",
@@ -177,7 +176,7 @@ export const pastEvents: Event[] = [
     location: "Qualcomm Room, JSOE",
     tags: ["Career"],
     image: "/event-logos/stempad-talk-wi25.webp",
-    link: "http://tinyurl.com/stempad-rsvp"
+    link: "http://tinyurl.com/stempad-rsvp",
   },
   {
     name: "DECaF",
@@ -185,7 +184,7 @@ export const pastEvents: Event[] = [
     location: "Qualcomm Room, JSOE",
     tags: ["Career"],
     image: "/event-logos/decaf-event-wi25.png",
-    link: "https://decafucsd.com"
+    link: "https://decafucsd.com",
   },
   {
     name: "Engineers on the Green",
@@ -193,7 +192,7 @@ export const pastEvents: Event[] = [
     location: "Warren Mall",
     tags: [],
     image: "/event-logos/eotg-event-wi25.jpg",
-    link: "https://tescatucsd.org/eotg"
+    link: "https://tescatucsd.org/eotg",
   },
   {
     name: "DECaF",
@@ -201,7 +200,7 @@ export const pastEvents: Event[] = [
     location: "Qualcomm Room, JSOE",
     tags: ["Career"],
     image: "/event-logos/decaf-event-fa24.jpg",
-    link: "https://decafucsd.com"
+    link: "https://decafucsd.com",
   },
   {
     name: "Engineers on the Green",
@@ -209,7 +208,7 @@ export const pastEvents: Event[] = [
     location: "Warren Mall",
     tags: [],
     image: "/event-logos/eotg-event-fa24.jpg",
-    link: "https://tescatucsd.org/eotg"
+    link: "https://tescatucsd.org/eotg",
   },
   {
     name: "DECaF",
@@ -217,7 +216,7 @@ export const pastEvents: Event[] = [
     location: "",
     tags: ["Career"],
     image: "/event-logos/decaf-event-fa23.svg",
-    link: "https://decafucsd.com"
+    link: "https://decafucsd.com",
   },
   {
     name: "SD Hacks",
@@ -225,7 +224,7 @@ export const pastEvents: Event[] = [
     location: "",
     tags: ["Hackathon"],
     image: "/event-logos/sd-hacks-event-wi21.png",
-    link: ""
+    link: "",
   },
   {
     name: "DECaF",
@@ -233,7 +232,7 @@ export const pastEvents: Event[] = [
     location: "",
     tags: ["Career"],
     image: "/event-logos/decaf-event-wi21.svg",
-    link: "https://decafucsd.com"
+    link: "https://decafucsd.com",
   },
   {
     name: "Engineers on the Green",
@@ -241,7 +240,7 @@ export const pastEvents: Event[] = [
     location: "Warren Mall",
     tags: [],
     image: "/event-logos/eotg-event-wi21.svg",
-    link: "https://tescatucsd.org/eotg"
+    link: "https://tescatucsd.org/eotg",
   },
   {
     name: "Baking Event",
@@ -249,7 +248,7 @@ export const pastEvents: Event[] = [
     location: "",
     tags: ["Social"],
     image: "/event-logos/baking-event-fa20.png",
-    link: ""
+    link: "",
   },
   {
     name: "Matcha",
@@ -257,7 +256,7 @@ export const pastEvents: Event[] = [
     location: "",
     tags: [],
     image: "/event-logos/matcha-event-fa20.svg",
-    link: ""
+    link: "",
   },
   {
     name: "Destress with TESC",
@@ -265,7 +264,7 @@ export const pastEvents: Event[] = [
     location: "",
     tags: ["Social"],
     image: "/event-logos/destress-event-fa20.svg",
-    link: ""
+    link: "",
   },
   {
     name: "Engineers on the Green",
@@ -273,6 +272,6 @@ export const pastEvents: Event[] = [
     location: "Warren Mall",
     tags: [],
     image: "/event-logos/eotg-event-fa20.svg",
-    link: "https://tescatucsd.org/eotg"
-  }
+    link: "https://tescatucsd.org/eotg",
+  },
 ];
