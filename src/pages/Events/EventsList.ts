@@ -62,6 +62,10 @@ export interface Event {
   tags: string[];
   image: string;
   link: string;
+
+  // optional properties for image styling and fitting
+  imageFit?: "cover" | "contain";
+  imagePosition?: "top" | "center" | "bottom";
 }
 
 export const upcomingEvents: Event[] = [
@@ -71,7 +75,9 @@ export const upcomingEvents: Event[] = [
     location: "Warren Mall",
     tags: ["Social", "Career"],
     image: "/event-logos/Fall-2025-EOTG.png",
-    link: "https://www.eotgatucsd.com "
+    link: "https://www.eotgatucsd.com ",
+    imageFit: "contain",
+    imagePosition: "center"
   },
   {
     name: "Intro Night / GBM",
@@ -105,7 +111,9 @@ export const pastEvents: Event[] = [
     location: "Bear Room, Price Center",
     tags: ["Social", "Career"],
     image: "/event-logos/headshot&mixer.jpg",
-    link: "https://tinyurl.com/headshot-mixer"
+    link: "https://tinyurl.com/headshot-mixer",
+    imageFit: "contain",
+    imagePosition: "center"
   },
   {
     name: "ASML Tech Talk",
@@ -113,7 +121,9 @@ export const pastEvents: Event[] = [
     location: "Qualcomm Conference Center - JSOE 1st Floor",
     tags: ["Career"],
     image: "/event-logos/asml-tech-talk.png",
-    link: "https://tinyurl.com/euv-lithography"
+    link: "https://tinyurl.com/euv-lithography",
+    imageFit: "contain",
+    imagePosition: "center"
   },
   {
     name: "TESC Olympics",
@@ -131,13 +141,16 @@ export const pastEvents: Event[] = [
     image: "/event-logos/Tapioca.png",
     link: "https://tapiocaexpress.com/"
   },
-  {
+ {
     name: "Sandcastle Competition",
     date: "March 2nd, 2025",
     location: "La Jolla Shores",
     tags: ["Social"],
     image: "/event-logos/SandcastleBonfire.jpg",
-    link: "https://docs.google.com/forms/d/e/1FAIpQLSfYP_vwKSgp0AF6B310_VyWz5hGEI3Hg6UfZetKdhE_THPiNA/viewform"
+    link:
+      "https://docs.google.com/forms/d/e/1FAIpQLSfYP_vwKSgp0AF6B310_VyWz5hGEI3Hg6UfZetKdhE_THPiNA/viewform",      
+    imageFit: "contain",
+    imagePosition: "center"
   },
   {
     name: "Talk with Stempad",
@@ -145,7 +158,9 @@ export const pastEvents: Event[] = [
     location: "Qualcomm Room, JSOE",
     tags: ["Career"],
     image: "/event-logos/stempad-talk-wi25.webp",
-    link: "http://tinyurl.com/stempad-rsvp"
+    link: "http://tinyurl.com/stempad-rsvp",
+    imageFit: "contain",
+    imagePosition: "center"
   },
   {
     name: "DECaF",
@@ -153,7 +168,9 @@ export const pastEvents: Event[] = [
     location: "Qualcomm Room, JSOE",
     tags: ["Career"],
     image: "/event-logos/decaf-event-wi25.png",
-    link: "https://decafucsd.com"
+    link: "https://decafucsd.com",
+    imageFit: "contain",
+    imagePosition: "center"
   },
   {
     name: "Engineers on the Green",
@@ -161,7 +178,9 @@ export const pastEvents: Event[] = [
     location: "Warren Mall",
     tags: [],
     image: "/event-logos/eotg-event-wi25.jpg",
-    link: "https://tescatucsd.org/eotg"
+    link: "https://tescatucsd.org/eotg",
+    imageFit: "contain",
+    imagePosition: "center"
   },
   {
     name: "DECaF",
@@ -177,7 +196,9 @@ export const pastEvents: Event[] = [
     location: "Warren Mall",
     tags: [],
     image: "/event-logos/eotg-event-fa24.jpg",
-    link: "https://tescatucsd.org/eotg"
+    link: "https://tescatucsd.org/eotg",
+    imageFit: "contain",
+    imagePosition: "center"
   },
   {
     name: "DECaF",
