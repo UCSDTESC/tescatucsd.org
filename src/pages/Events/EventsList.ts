@@ -64,7 +64,16 @@ export interface Event {
   link: string;
 }
 
-export const upcomingEvents: Event[] = [];
+export const upcomingEvents: Event[] = [
+  {
+    name: "DeCaF Winter 2026",
+    date: "January 20th, 2026",
+    location: "Price Center West Ballroom A",
+    tags: ["Career"],
+    image: "/event-logos/decaf-event-wi26.png",
+    link: "https://decafatucsd.com/",
+  },
+];
 export const pastEvents: Event[] = [
   {
     name: "Tapioca Express Fundraiser",
@@ -91,7 +100,7 @@ export const pastEvents: Event[] = [
     link: "https://www.eotgatucsd.com ",
   },
   {
-    name: "DECaF",
+    name: "DECaF Fall 2025",
     date: "October 14th, 2025",
     location: "Qualcomm Room, JSOE",
     tags: ["Career"],
