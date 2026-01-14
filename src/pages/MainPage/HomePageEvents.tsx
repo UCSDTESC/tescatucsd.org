@@ -3,23 +3,22 @@ import HomePageEventCards from "./HomePageEventsCards";
 
 const events = [
   {
-    name: "Engineers on the Green", 
-    image: "/event-logos/Fall-2025-EOTG.png", 
-    description: "Join us at Engineers on the Green, the annual engineering club fair where you can explore exciting projects, meet fellow innovators, and find your place in our vibrant engineering community. Discover clubs, get involved, and kickstart your journey into hands-on engineering!",
-    link: "https://www.eotgatucsd.com "
+    name: "Tapioca Express Fundraiser", 
+    image: "/event-logos/tapex_fundraiser.jpg", 
+    description: "Join us this Friday at Tapioca Express to help raise funds for TESC, ISPE, BMES, and EWB! This will be a great opportunity to connect with your fellow engineering students, so be sure to pull up!",
+    link: "https://tapiocaexpress.com/"
   },
   {
-    name: "Intro Night", 
-    image: "/event-logos/TESC_Intro_Night.png", 
-    description: "Come join us at our general body meeting to learn about our future plans!",
+    name: "Board Game Night", 
+    image: "/event-logos/BoardGameNightPostWLogos.jpg", 
+    description: "Take a break from midterms, get food at Tapex, and have fun playing Codenames, Secret Hitler, Poker, Exploding Kittens, and much more! 🍽️🎲",
     link: ""
   },
   {
-    name: "Engineer's Formal Prom",
-    image: "/event-logos/Engineering_Prom_1.jpg",
-    description:
-      "Get ready to dress to impress because Premiere Night: An Engineer’s Formal is officially happening — and tickets are now available! ✨ Don’t miss your chance to walk the red carpet and enjoy a Hollywood-inspired night!",
-    link: "https://www.zeffy.com/en-US/ticketing/2025-aerospace-prom",
+    name: "Engineers on the Green", 
+    image: "/event-logos/eotg-winter2026.jpg", 
+    description: "Join us at Engineers on the Green, the annual engineering club fair where you can explore exciting projects, meet fellow innovators, and find your place in our vibrant engineering community. Discover clubs, get involved, and kickstart your journey into hands-on engineering!",
+    link: "https://www.eotgatucsd.com "
   }
 ];
 
