@@ -185,7 +185,7 @@ export const pastEvents: Event[] = [
     location: "Qualcomm Room, JSOE",
     tags: ["Career"],
     image: "/event-logos/stempad-talk-wi25.webp",
-    link: "http://tinyurl.com/stempad-rsvp",
+    link: "https://www.stempad.com/",
   },
   {
     name: "DECaF",
