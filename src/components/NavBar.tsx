@@ -58,7 +58,7 @@ const NavBar = () => {
         </NavLink>
 
         <NavLink className="h-min mx-[32px]" to="/council-members">
-          <span className="text-offWhite  font-medium">Council Members</span>
+          <span className="text-offWhite  font-medium">Council testMembers</span>
         </NavLink>
 
         <NavLink className="h-min mx-[32px]" to="/funding">
