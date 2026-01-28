@@ -81,10 +81,9 @@ const Funding: React.FC = () => {
               <li>
                 <strong>Post-Travel Reimbursement:</strong> After traveling to your event, you must
                 complete and submit the mandatory Post-Travel Form{" "}
-                <strong>within two (2) weeks of travel</strong> and upload your{" "}
+                <strong>within two weeks of travel</strong> and upload your{" "}
                 <strong>itemized receipts</strong> and <strong>proof of payment</strong> for all
-                expenses you wish to be reimbursed. Requests received after this deadline will not be processed, 
-                and the award will be forfeited. Reimbursements are processed only after travel
+                expenses you wish to be reimbursed. Reimbursements are processed only after travel
                 has occurred and documentation is submitted.
               </li>
             </ol>
@@ -205,10 +204,6 @@ const Funding: React.FC = () => {
                     Funds within the same academic year.
                   </strong>
                 </li>
-                <li>
-                  We only support domestic travel in the United States at this time and cannot 
-                  fund travel to other countries.
-                </li>
               </ul>
             </div>
 
@@ -239,7 +234,6 @@ const Funding: React.FC = () => {
               </h3>
               <ul className="list-disc list-inside text-gray-700 ml-2 space-y-1">
                 <li>Name of conference or competition</li>
-                <li>Location of event</li>
                 <li>Quarter when event will be held</li>
                 <li>Start date of event</li>
                 <li>End date of event</li>
