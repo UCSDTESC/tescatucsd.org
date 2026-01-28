@@ -284,3 +284,36 @@ export const pastEvents: Event[] = [
     link: "https://tescatucsd.org/eotg",
   },
 ];
+import supabase  from "./supabase";
+
+import { useEffect, useState } from "react";
+
+export const EventsList = () => {
+  const [events, setEvents] = useState<Event[]>([]); 
+  useEffect(()=>{
+    const fetchEvents=async() =>{
+       const { data, error } = await supabase
+        .from("events")
+        .select("*")
+        .eq("deleted", false);
+        if (!error && data) setEvents(data);
+    };
+    fetchEvents();
+  },[]);
+  return (
+    <div>
+      <h2>All Events</h2>
+      <ul>
+        {events.map(evt => (
+          <li key={evt.id}>
+            <img src={evt.image} alt={evt.name} width={100} />
+            <div>{evt.location}</div>
+            <a href={evt.link}>Event Link</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+

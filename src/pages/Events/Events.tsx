@@ -1,5 +1,5 @@
 import useImagePreloader from "../../Hooks/useImagePreload.tsx";
-import { upcomingEvents, pastEvents } from "./EventsList.ts";
+import { upcomingEvents, pastEvents } from "./EventsList.tsx";
 import { lazy, Suspense } from "react";
 
 const EventsGrid = lazy(() => import("./EventsGrid.tsx"));
