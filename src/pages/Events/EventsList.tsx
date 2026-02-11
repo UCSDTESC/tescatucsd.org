@@ -315,9 +315,10 @@ export function useSplitEvents() {
         .eq("deleted", false);
       console.log("Supabase events data:", data);
       if (data) {
+        const sorted = [...data].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
         const now = new Date();
-        const upcoming = data.filter(event => new Date(event.date) >= now);
-        const past = data.filter(event => new Date(event.date) < now);
+        const upcoming = sorted.filter(event => new Date(event.date) >= now);
+        const past = sorted.filter(event => new Date(event.date) < now);
         console.log("Upcoming events:", upcoming);
         console.log("Past events:", past);
         setUpcomingEvents(upcoming as Event[]);
