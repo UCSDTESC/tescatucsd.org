@@ -1,10 +1,11 @@
 import useImagePreloader from "../../Hooks/useImagePreload.tsx";
-import { upcomingEvents, pastEvents } from "./EventsList.tsx";
+import { useSplitEvents } from "./EventsList";
 import { lazy, Suspense } from "react";
 
 const EventsGrid = lazy(() => import("./EventsGrid.tsx"));
 
 const Events = () => {
+  const { upcomingEvents, pastEvents } = useSplitEvents();
   const imagePreloader = useImagePreloader(["AllPages/events-lead.webp"]);
   return (
     <>
