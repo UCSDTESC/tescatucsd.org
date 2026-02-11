@@ -288,7 +288,15 @@ export interface Event {
 
 // Example static events array for export
 
-
+export interface Event {
+  id?: string | number;
+  name: string;
+  date: string;
+  location: string;
+  tags: string[];
+  image: string;
+  link: string;
+}
 
 import { useEffect, useState } from "react";
 import supabase from "./supabase";
@@ -303,17 +311,17 @@ export function useSplitEvents() {
       console.log("Fetching events from Supabase...");
       const { data, error } = await supabase
         .from("events")
-        .select("*")
+        .select("id,name:title,date:start_date,location:location_str,tags,image:poster")
         .eq("deleted", false);
       console.log("Supabase events data:", data);
-      if (!error && data) {
+      if (data) {
         const now = new Date();
         const upcoming = data.filter(event => new Date(event.date) >= now);
         const past = data.filter(event => new Date(event.date) < now);
         console.log("Upcoming events:", upcoming);
         console.log("Past events:", past);
-        setUpcomingEvents(upcoming);
-        setPastEvents(past);
+        setUpcomingEvents(upcoming as Event[]);
+        setPastEvents(past as Event[]);
       } else {
         console.error("Supabase error:", error);
       }
