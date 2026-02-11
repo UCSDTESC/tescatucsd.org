@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import HomePageEventCards from "./HomePageEventsCards";
+import { EventCard } from "../Events/EventCard";
 import { upcomingEvents, pastEvents } from "../Events/EventsList.ts";
 
 const events = [
@@ -28,7 +28,7 @@ const HomePageEvents = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-full justify-center h-auto ml-auto mr-auto gap-10">
             {events.map((event, index) => (
               <Suspense fallback={<></>}>
-                <HomePageEventCards {...{ event, index }} key={index} />
+                <EventCard {...{ event, index }} key={index} />
               </Suspense>
             ))}
           </div>
