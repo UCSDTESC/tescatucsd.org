@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { EventCard } from "../Events/EventCard";
-import { upcomingEvents, pastEvents } from "../Events/EventsList.ts";
+import { upcomingEvents, pastEvents } from "../Events/EventsList.tsx";
 
 const events = [
   ...upcomingEvents.slice(0, 3),
