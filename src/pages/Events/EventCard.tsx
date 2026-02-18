@@ -7,18 +7,27 @@ interface Props {
 export function EventCard({ event }: Props) {
   // const navigate = useNavigate();
   const ImagePreloader = useImagePreloader([event.image]);
-function formatEventDate(dateString: string) {
-  if (!dateString) return '';
-  const date = new Date(dateString);
-  return date.toLocaleString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit',
-    hour12: true,
-  });
-}
+  /** Short month names for DateParser. */
+  const MONTH_NAMES = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+  ];
+
+  /** Parses and displays date/time as stored (no timezone conversion). Expects YYYY-MM-DDTHH:mm or similar. Used in: DataTable getCellValue, event display. */
+  const DateParser = (date: string) => {
+    if (!date || date === "N/A") return date;
+    const match = date.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2}))?/);
+    if (!match) return date;
+    const [, year, month, day, hour, min, sec] = match;
+    const monthNum = parseInt(month, 10) - 1;
+    const hourNum = parseInt(hour, 10);
+    const ampm = hourNum >= 12 ? "PM" : "AM";
+    const hour12 = hourNum % 12 || 12;
+    const timeStr = sec
+      ? `${hour12}:${min}:${sec} ${ampm}`
+      : `${hour12}:${min} ${ampm}`;
+    return `${MONTH_NAMES[monthNum]} ${parseInt(day, 10)}, ${year}, ${timeStr}`;
+  };
 
   return (
     <div
@@ -43,7 +52,7 @@ function formatEventDate(dateString: string) {
         <div className="p-5 pt-0 pb-5">
           {ImagePreloader.imagesPreloaded ? (
             <>
-              <p className="font-bold text-[#003059]">{formatEventDate(event.date)}</p>
+              <p className="font-bold text-[#003059]">{DateParser(event.date)}</p>
               <div className="py-3">
                 <p className="italic">{event.name}</p>
                 <p className="overflow-hidden overflow-ellipsis whitespace-nowrap">
