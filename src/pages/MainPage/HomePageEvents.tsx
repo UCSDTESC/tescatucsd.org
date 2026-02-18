@@ -1,13 +1,17 @@
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { EventCard } from "../Events/EventCard";
-import { upcomingEvents, pastEvents } from "../Events/EventsList.tsx";
-
-const events = [
-  ...upcomingEvents.slice(0, 3),
-  ...pastEvents.slice(0, Math.max(0, 3 - upcomingEvents.length))
-];
+import supabase from "./../Events/supabase";
+import { useSplitEvents } from "../Events/EventsList.tsx";
 
 const HomePageEvents = () => {
+
+  const { upcomingEvents, pastEvents } = useSplitEvents();
+
+  const events = [
+    ...upcomingEvents.slice(0, 3),
+    ...pastEvents.slice(0, Math.max(0, 3 - upcomingEvents.length))
+  ];
+
   return (
     <>
       <div className="flex justify-center mb-[10vh]">
