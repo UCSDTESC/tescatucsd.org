@@ -25,6 +25,7 @@ function App() {
             <Route path="/council-members" element={<CouncilMembers />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/funding" element={<Funding />} />
+            
           </Route>
 
           {/* <Route element={<PageNoHeader />}> */}
