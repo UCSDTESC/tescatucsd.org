@@ -7,6 +7,18 @@ interface Props {
 export function EventCard({ event }: Props) {
   // const navigate = useNavigate();
   const ImagePreloader = useImagePreloader([event.image]);
+function formatEventDate(dateString: string) {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  return date.toLocaleString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+  });
+}
 
   return (
     <div
@@ -31,7 +43,7 @@ export function EventCard({ event }: Props) {
         <div className="p-5 pt-0 pb-5">
           {ImagePreloader.imagesPreloaded ? (
             <>
-              <p className="font-bold text-[#003059]">{event.date}</p>
+              <p className="font-bold text-[#003059]">{formatEventDate(event.date)}</p>
               <div className="py-3">
                 <p className="italic">{event.name}</p>
                 <p className="overflow-hidden overflow-ellipsis whitespace-nowrap">
