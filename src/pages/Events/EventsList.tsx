@@ -9,12 +9,13 @@ export interface Event {
   tags: string[];
   image: string;
   link: string;
+  orgs: string;
 }
 
 export function useSplitEvents() {
   const [upcomingEvents, setUpcomingEvents] = useState<Event[]>([]);
   const [pastEvents, setPastEvents] = useState<Event[]>([]);
-  const StartOfLink =  'https://portal.tescatucsd.org/bulletin/';
+  const StartOfLink = "https://portal.tescatucsd.org/bulletin/";
 
   useEffect(() => {
     console.log("useSplitEvents useEffect running");
@@ -22,29 +23,35 @@ export function useSplitEvents() {
       console.log("Fetching events from Supabase...");
       const { data, error } = await supabase
         .from("events")
-        .select("id,name:title,date:start_date,location:location_str,tags,image:poster")
+        .select(
+          "id,name:title,date:start_date,location:location_str,tags,image:poster, orgs!inner(name)",
+        )
         .eq("deleted", false);
       console.log("Supabase events data:", data);
-      
+
       if (data) {
-        const normalized: Event[] = data.map(row => ({
+        console.log(data);
+        const normalized: Event[] = data.map((row) => ({
           id: row.id,
           name: row.name,
           date: row.date,
           location: row.location,
           tags: Array.isArray(row.tags) ? row.tags : [],
           image: row.image,
-          link: StartOfLink + row.id
+          link: StartOfLink + row.id,
+          orgs: Array.isArray(row.orgs)
+            ? row.orgs.map((o) => o.name).join(", ")
+            : (row.orgs as { name: string })?.name ?? "",
         }));
 
         const sorted = [...normalized].sort(
-          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
         );
 
         const now = new Date();
 
-        setUpcomingEvents(sorted.filter(e => new Date(e.date) >= now));
-        setPastEvents(sorted.filter(e => new Date(e.date) < now));
+        setUpcomingEvents(sorted.filter((e) => new Date(e.date) >= now));
+        setPastEvents(sorted.filter((e) => new Date(e.date) < now));
       } else {
         console.error("Supabase error:", error);
       }
@@ -52,5 +59,8 @@ export function useSplitEvents() {
     fetchEvents();
   }, []);
 
-  return { upcomingEvents, pastEvents };
+  return {
+    upcomingEvents: upcomingEvents.filter((e) => e.orgs == "TESC"),
+    pastEvents: pastEvents.filter((e) => e.orgs == "TESC"),
+  };
 }
