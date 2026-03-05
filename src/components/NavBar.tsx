@@ -43,10 +43,7 @@ const NavBar = () => {
         <MenuOutlined />
       </button>
       <div className="hidden md:flex items-center  text-[clamp(16px,2vw,26px)]">
-        <NavLink
-          className="h-min mx-[32px]"
-          to="https://tesc.typeform.com/to/hlC07HII"
-        >
+        <NavLink className="h-min mx-[32px]" to="https://tesc.typeform.com/to/hlC07HII">
           <span className="text-offWhite  font-medium">Join Us</span>
         </NavLink>
         <NavLink className="h-min mx-[32px]" to="/about-us">
@@ -64,6 +61,9 @@ const NavBar = () => {
         <NavLink className="h-min mx-[32px]" to="/funding">
           <span className="text-offWhite  font-medium">Funding</span>
         </NavLink>
+        <a className="h-min mx-[32px]" href="https://portal.tescatucsd.org/bulletin/-1">
+          <span className="text-offWhite  font-medium">Portal</span>
+        </a>
       </div>
 
       <div
@@ -71,10 +71,7 @@ const NavBar = () => {
       ${menuOpen ? "block" : "hidden"}`}
         ref={dropdownRef}
       >
-        <NavLink
-          className="h-max py-3 mx-[20px]"
-          to="https://tesc.typeform.com/to/hlC07HII"
-        >
+        <NavLink className="h-max py-3 mx-[20px]" to="https://tesc.typeform.com/to/hlC07HII">
           <span className="text-offWhite py-2  font-medium">Join Us</span>
         </NavLink>
         <NavLink className="h-max py-3 mx-[20px]" to="/about-us">
@@ -84,10 +81,14 @@ const NavBar = () => {
           <span className="text-offWhite py-2 font-medium">Events</span>
         </NavLink>
         <NavLink className="h-max py-3 mx-[20px]" to="/council-members">
-          <span className="text-offWhite py-2 font-medium">
-            Council Members
-          </span>
+          <span className="text-offWhite py-2 font-medium">Council Members</span>
         </NavLink>
+        <NavLink className="h-min py-3 mx-[20px]" to="/funding">
+          <span className="text-offWhite  font-medium">Funding</span>
+        </NavLink>
+        <a className="h-min py-3 mx-[20px]" href="https://portal.tescatucsd.org/bulletin/-1">
+          <span className="text-offWhite  font-medium">Portal</span>
+        </a>
       </div>
     </div>
   );
