@@ -8,6 +8,7 @@ import CouncilMembers from "./pages/CouncilMembersPage/CouncilMembers";
 import Events from "./pages/Events/Events";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Funding from "./pages/FundingPage/Funding";
+import Accomplishments from "./pages/Accomplishments";
 import Page from "./components/Page";
 import Main from "./pages/MainPage/Main";
 import RedirectComponent from "./components/RedirectComponent";
@@ -24,6 +25,7 @@ function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/council-members" element={<CouncilMembers />} />
             <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/accomplishments" element={<Accomplishments />} />
             <Route path="/funding" element={<Funding />} />
           </Route>
 

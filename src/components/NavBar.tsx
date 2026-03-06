@@ -134,7 +134,7 @@ const NavBar = () => {
             <div className={dividerLine} />
 
             <NavLink
-              to="#"
+              to="/accomplishments"
               className={dropdownItemClass}
             >
               Accomplishments
