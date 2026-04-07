@@ -113,10 +113,10 @@ const NavBar = () => {
         
     
         <div className="relative group h-min mx-[32px]">
-          {/* Top-level item */}
-          <NavLink to="/council-members">
-            <span className="text-offWhite font-medium">Council Members</span>
-          </NavLink>
+          {/* Label only — navigation is via dropdown items */}
+          <span className="cursor-default text-offWhite font-medium select-none">
+            Council Members
+          </span>
 
           {/* Invisible hover bridge (prevents flicker) */}
           <div className={hoverBridgeClass} />
@@ -125,7 +125,7 @@ const NavBar = () => {
           <div className={`${dropdownContainerClass} w-[240px]`}>
 
             <NavLink
-              to="#"
+              to="/council-members"
               className={dropdownItemClass}
             >
               Members
@@ -164,11 +164,15 @@ const NavBar = () => {
         <NavLink className="h-max py-3 mx-[20px]" to="/events">
           <span className="text-offWhite py-2 font-medium">Events</span>
         </NavLink>
-        <NavLink className="h-max py-3 mx-[20px]" to="/council-members">
-          <span className="text-offWhite py-2 font-medium">
-            Council Members
-          </span>
-        </NavLink>
+        <div className="flex flex-col items-end gap-1 py-2 mx-[20px]">
+          <span className="text-offWhite font-medium">Council Members</span>
+          <NavLink className="h-max py-1" to="/council-members">
+            <span className="text-offWhite/90 text-sm font-medium">Members</span>
+          </NavLink>
+          <NavLink className="h-max py-1" to="/accomplishments">
+            <span className="text-offWhite/90 text-sm font-medium">Accomplishments</span>
+          </NavLink>
+        </div>
       </div>
     </div>
   );
