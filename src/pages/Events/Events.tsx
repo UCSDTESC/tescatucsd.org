@@ -6,7 +6,7 @@ const EventsGrid = lazy(() => import("./EventsGrid.tsx"));
 
 const Events = () => {
   const { upcomingEvents, pastEvents } = useSplitEvents();
-  const imagePreloader = useImagePreloader(["AllPages/events-lead.webp"]);
+  const imagePreloader = useImagePreloader(["/AllPages/events-lead.webp"]);
   console.log(upcomingEvents)
   return (
     <>
@@ -24,7 +24,7 @@ const Events = () => {
         </div>
         {imagePreloader.imagesPreloaded && (
           <img
-            src="AllPages/events-lead.webp"
+            src="/AllPages/events-lead.webp"
             alt="lead"
             className="hidden md:block w-80 h-auto animate-[animate-in_1s]"
           />
