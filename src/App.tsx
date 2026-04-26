@@ -27,6 +27,7 @@ function App() {
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/accomplishments" element={<Accomplishments />} />
             <Route path="/funding" element={<Funding />} />
+            
           </Route>
 
           {/* <Route element={<PageNoHeader />}> */}
