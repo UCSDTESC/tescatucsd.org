@@ -32,7 +32,7 @@ const Funding: React.FC = () => {
             and conference fees.
           </p>
         </div>
-        <img src="AllPages/bear.png" alt="bear" className="hidden md:block w-72 h-auto" />
+        <img src="/AllPages/bear.png" alt="bear" className="hidden md:block w-72 h-auto" />
       </div>
 
       {/* Main Content */}

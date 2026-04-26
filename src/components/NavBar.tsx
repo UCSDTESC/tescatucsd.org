@@ -43,12 +43,14 @@ const NavBar = () => {
         <MenuOutlined />
       </button>
       <div className="hidden md:flex items-center  text-[clamp(16px,2vw,26px)]">
-        <NavLink
+        <a
           className="h-min mx-[32px]"
-          to="https://tesc.typeform.com/to/hlC07HII"
+          href="https://tesc.typeform.com/to/hlC07HII"
+          target="_blank"
+          rel="noreferrer"
         >
           <span className="text-offWhite  font-medium">Join Us</span>
-        </NavLink>
+        </a>
         <NavLink className="h-min mx-[32px]" to="/about-us">
           <span className="text-offWhite  font-medium">About Us </span>
         </NavLink>
@@ -56,9 +58,27 @@ const NavBar = () => {
         <NavLink className="h-min mx-[32px]" to="/events">
           <span className="text-offWhite  font-medium">Events</span>
         </NavLink>
-        <NavLink className="h-min mx-[32px]" to="/council-members">
-          <span className="text-offWhite  font-medium">Council Members</span>
-        </NavLink>
+        <div className="relative group h-min mx-[32px]">
+          <span className="cursor-default text-offWhite font-medium select-none">
+            Council Members
+          </span>
+          <div className="absolute left-1/2 top-full h-3 w-full -translate-x-1/2" />
+          <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 w-[240px] rounded-xl bg-navy/95 border border-white/20 shadow-xl backdrop-blur-sm z-50 overflow-hidden">
+            <NavLink
+              to="/council-members"
+              className="block px-4 py-3 text-offWhite hover:bg-white/10 text-base font-medium"
+            >
+              Members
+            </NavLink>
+            <div className="h-px bg-white/15" />
+            <NavLink
+              to="/accomplishments"
+              className="block px-4 py-3 text-offWhite hover:bg-white/10 text-base font-medium"
+            >
+              Accomplishments
+            </NavLink>
+          </div>
+        </div>
 
         <NavLink className="h-min mx-[32px]" to="/funding">
           <span className="text-offWhite  font-medium">Funding</span>
@@ -70,12 +90,14 @@ const NavBar = () => {
       ${menuOpen ? "block" : "hidden"}`}
         ref={dropdownRef}
       >
-        <NavLink
+        <a
           className="h-max py-3 mx-[20px]"
-          to="https://tesc.typeform.com/to/hlC07HII"
+          href="https://tesc.typeform.com/to/hlC07HII"
+          target="_blank"
+          rel="noreferrer"
         >
           <span className="text-offWhite py-2  font-medium">Join Us</span>
-        </NavLink>
+        </a>
         <NavLink className="h-max py-3 mx-[20px]" to="/about-us">
           <span className="text-offWhite py-2 font-medium">About Us </span>
         </NavLink>

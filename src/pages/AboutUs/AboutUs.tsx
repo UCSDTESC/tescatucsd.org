@@ -63,7 +63,7 @@ const categoryMap: { [key: string]: { data: string[][], title: string }[] } = {
 
 const AboutUs = () => {
   const [category, setCategory] = useState<string>("All");
-  const imagePreloader = useImagePreloader(["AllPages/bear.png"]);
+  const imagePreloader = useImagePreloader(["/AllPages/bear.png"]);
 
   return (
     <>
@@ -90,7 +90,7 @@ const AboutUs = () => {
             </div>
             {imagePreloader.imagesPreloaded && (
               <img
-                src="AllPages/bear.png"
+                src="/AllPages/bear.png"
                 alt="bear"
                 className="hidden md:block w-72 h-auto ml-6 animate-[animate-in_1s]"
               ></img>

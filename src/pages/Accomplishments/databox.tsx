@@ -303,7 +303,11 @@ export function DataBox({ selectedClubId, clubData }: DataBoxProps) {
           }`}
         >
           <img
-            src={clubAccomplishments.logoSrc}
+            src={
+              clubAccomplishments.logoSrc.startsWith("/")
+                ? clubAccomplishments.logoSrc
+                : `/${clubAccomplishments.logoSrc}`
+            }
             alt={`${clubAccomplishments.id} logo`}
             className="max-h-full max-w-full object-contain object-center"
           />
