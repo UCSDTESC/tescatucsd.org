@@ -1,9 +1,7 @@
 import React from "react";
-
+import businessTravelFormLink from "/Funding/Student-Certification-for-Business.pdf";
 const Funding: React.FC = () => {
   const googleFormLink = "https://forms.gle/g6GC2MjhuTgNiB9k7";
-  const businessTravelFormLink =
-    "https://blink.ucsd.edu/_files/travel-tab/Student%20Certification%20for%20Business%2005.pdf";
   const deanFinOpsEmail = "jsoe-dean-finops-g@ucsd.edu";
   const boardEmail = "board@tescatucasd.org";
 
@@ -146,11 +144,7 @@ const Funding: React.FC = () => {
               >
                 Student Certification for Business Travel form
               </a>{" "}
-              and email it to{" "}
-              <a href={`mailto:${deanFinOpsEmail}`} className={underlineLink}>
-                {deanFinOpsEmail}
-              </a>
-              .
+              and include a public google drive link on the application form .
             </p>
 
             <p className="text-gray-700 mb-3 font-semibold">Notes on completing the form:</p>
