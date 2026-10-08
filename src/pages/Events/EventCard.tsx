@@ -4,27 +4,27 @@ import useImagePreloader from "../../Hooks/useImagePreload";
 interface Props {
   event: Event;
 }
+
+const eventDateFormatter = new Intl.DateTimeFormat("en-US", {
+  timeZone: "America/Los_Angeles",
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+  hour: "numeric",
+  minute: "2-digit",
+});
+
+// start_date is a UTC timestamptz from the portal; events happen in San Diego.
+function formatEventDate(date: string) {
+  if (!date || date === "N/A") return date;
+  const parsed = new Date(date);
+  if (Number.isNaN(parsed.getTime())) return date;
+  return eventDateFormatter.format(parsed);
+}
+
 export function EventCard({ event }: Props) {
   // const navigate = useNavigate();
   const ImagePreloader = useImagePreloader([event.image]);
-  const MONTH_NAMES = [
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-  ];
-function formatEventDate(date: string) {
-  if (!date || date === "N/A") return date;
-  const match = date.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2}))?/);
-  if (!match) return date;
-  const [, year, month, day, hour, min, sec] = match;
-  const monthNum = parseInt(month, 10) - 1;
-  const hourNum = parseInt(hour, 10);
-  const ampm = hourNum >= 12 ? "PM" : "AM";
-  const hour12 = hourNum % 12 || 12;
-  const timeStr = sec
-    ? `${hour12}:${min}:${sec} ${ampm}`
-    : `${hour12}:${min} ${ampm}`;
-  return `${MONTH_NAMES[monthNum]} ${parseInt(day, 10)}, ${year}, ${timeStr}`;
-};
 
   return (
     <div

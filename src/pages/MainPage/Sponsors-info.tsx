@@ -1,62 +1,74 @@
 export const sponsors = [
   {
     id: 1,
-    logo: "/logos/L3Harris_2.jpg",
-    alt: "L3Harris",
-    website: "https://www.l3harris.com/"
+    logo: "/logos/Logo-RTX.png",
+    alt: "RTX",
+    website: "https://www.rtx.com"
   },
   {
     id: 2,
-    logo: "/logos/Logo-GeneralAtomics.jpg",
-    alt: "General Atomics",
-    website: "https://www.ga.com/"
+    logo: "/logos/kla-logo.png",
+    alt: "KLA",
+    website: "https://www.kla.com"
   },
   {
     id: 3,
-    logo: "/logos/Logo-LADWP.png",
-    alt: "Los Angeles Department of Water and Power",
-    website: "https://www.ladwp.com/"
+    logo: "/logos/F5_Networks_logo.svg",
+    alt: "F5",
+    website: "https://www.f5.com"
   },
   {
     id: 4,
-    logo: "/logos/Viasat_2018_Gradient_Web (1).jpg",
-    alt: "Viasat",
-    website: "https://www.viasat.com/"
+    logo: "/logos/Veeva_Systems_Logo.svg",
+    alt: "Veeva Systems",
+    website: "https://www.veeva.com"
   },
   {
     id: 5,
-    logo: "/logos/LANL_Logo_Temp.png",
-    alt: "LANL",
-    website: "https://www.lanl.gov/"
-  },
-  {
-    id: 6,
-    logo: "/logos/Skyworks_logo.png",
-    alt: "Skyworks Solutions",
-    website: "https://www.skyworksinc.com"
-  },
-  {
-    id: 7,
-    logo: "/logos/Logo-Sony.png",
-    alt: "Sony Interactive Entertainment - PlayStation",
-    website: "https://www.playstation.com"
-  },
-  {
-    id: 8,
     logo: "/logos/Logo-pillsbury.png",
     alt: "Pillsbury Winthrop Shaw Pittman",
     website: "https://www.pillsburylaw.com"
   },
   {
+    id: 6,
+    logo: "/logos/Logo-SonyPS.png",
+    alt: "Sony Interactive Entertainment - PlayStation",
+    website: "https://www.playstation.com"
+  },
+  {
+    id: 7,
+    logo: "/logos/Epic.png",
+    alt: "Epic",
+    website: "https://www.epic.com"
+  },
+  {
+    id: 8,
+    logo: "/logos/Acciona_logo.svg",
+    alt: "ACCIONA",
+    website: "https://www.acciona.com"
+  },
+  {
     id: 9,
-    logo: "/logos/TSMC-logo.png",
-    alt: "TSMC",
-    website: "https://www.tsmc.com/english"
+    logo: "/logos/Everpure_Logo.png",
+    alt: "Everpure",
+    website: "https://www.everpuredata.com"
   },
   {
     id: 10,
-    logo: "/logos/Logo-RTX.png",
-    alt: "RTX",
-    website: "https://www.rtx.com/"
+    logo: "/logos/Salesforce-logo.svg",
+    alt: "Salesforce",
+    website: "https://www.salesforce.com"
+  },
+  {
+    id: 11,
+    logo: "/logos/Viasat_2018_Gradient_Web.png",
+    alt: "Viasat",
+    website: "https://www.viasat.com"
+  },
+  {
+    id: 12,
+    logo: "/logos/Thermo_Fisher_Scientific_logo.svg",
+    alt: "Thermo Fisher",
+    website: "https://www.thermofisher.com"
   }
 ];
