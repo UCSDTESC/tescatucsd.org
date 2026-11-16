@@ -1,9 +1,10 @@
 import React from "react";
 import businessTravelFormLink from "/Funding/Student-Certification-for-Business.pdf";
+import StfChat from "../../components/StfChat/StfChat";
 const Funding: React.FC = () => {
   const googleFormLink = "https://forms.gle/g6GC2MjhuTgNiB9k7";
   const deanFinOpsEmail = "jsoe-dean-finops-g@ucsd.edu";
-  const boardEmail = "board@tescatucasd.org";
+  const contactEmail = "contact@tescatucsd.org";
 
   const eceTravelFundLink =
     "https://www.ece.ucsd.edu/undergraduate/undergraduate-student-life/travel-fund";
@@ -44,8 +45,8 @@ const Funding: React.FC = () => {
             Ceremony and is intended to support student development opportunities. This year, TESC
             is responsible for managing the application process and reviewing applications. Contact
             us at{" "}
-            <a href={`mailto:${boardEmail}`} className={underlineLink}>
-              {boardEmail}
+            <a href={`mailto:${contactEmail}`} className={underlineLink}>
+              {contactEmail}
             </a>{" "}
             if you have questions, concerns, or feedback about the process.
           </p>
@@ -66,8 +67,8 @@ const Funding: React.FC = () => {
                 rolling basis. However, please leave at least 4 weeks for the review process as we
                 cannot guarantee a response for travel happening earlier than that. If you do not
                 receive an email within <strong> three weeks</strong>, please follow up at{" "}
-                <a href={`mailto:${boardEmail}`} className={underlineLink}>
-                  {boardEmail}
+                <a href={`mailto:${contactEmail}`} className={underlineLink}>
+                  {contactEmail}
                 </a>{" "}
                 and we will finish reviewing your application as soon as possible.
               </li>
@@ -335,6 +336,9 @@ const Funding: React.FC = () => {
           </a>
         </div>
       </div>
+
+      {/* Chat assistant (bottom-right corner) */}
+      <StfChat />
     </>
   );
 };
