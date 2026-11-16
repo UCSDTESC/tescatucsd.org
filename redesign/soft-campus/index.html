@@ -1,0 +1,1133 @@
+<!doctype html>
+<html lang="en">
+<script>
+  // run the intro once per visitor, and only when motion is welcome (add ?intro to the URL to see it again)
+  (() => {
+    let seen = false;
+    try { seen = localStorage.getItem("tesc-intro-seen") === "1"; } catch (e) {}
+    if (/[?&]intro\b/.test(location.search)) seen = false;
+    if (!seen && !matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("js-intro");
+  })();
+</script>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The Triton Engineering Student Council (TESC) connects UC San Diego engineering students with 50+ engineering student organizations, events, and the Student Travel Fund.">
+<title>TESC | Triton Engineering Student Council</title>
+<link rel="preload" as="image" href="assets/montage/photo-slideshow_5.webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#11426B;
+  --blue-deep:#0C3152;
+  --dark:#373536;
+  --light:#E6E7E9;
+  --white:#FFFFFF;
+  --mute:#6B696A;
+  --soft:#F3F4F5;
+  --display:"PT Sans",system-ui,sans-serif;
+  --body:"Lato",system-ui,sans-serif;
+  --pad:clamp(20px,3.9vw,56px);
+  --gutter:12px;
+  --shadow:0 1px 2px rgba(17,66,107,.06),0 18px 40px -18px rgba(17,66,107,.28);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{font-family:var(--body);color:var(--dark);background:var(--light);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+[hidden]{display:none!important}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:8px}
+.on-dark :focus-visible{outline-color:var(--white)}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.02;letter-spacing:-.01em}
+.h2{font-size:clamp(42px,5.3vw,76px)}
+.sub{font-size:clamp(16px,1.3vw,19px);color:var(--mute);max-width:44ch}
+.ph{background:#FFE27A;color:var(--dark);font:700 13px/1.3 var(--body);padding:6px 10px;border-radius:6px;display:inline-block}
+.phone-only{display:none}
+svg.ico{width:18px;height:18px;flex:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 15px/1 var(--body);padding:15px 24px;border-radius:999px;border:1.5px solid currentColor;white-space:nowrap;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.btn svg{width:16px;height:16px;flex:none;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn:active{transform:scale(.97)}
+.btn--blue{background:var(--blue);color:var(--white);border-color:var(--blue)}
+.btn--blue:hover{background:var(--blue-deep);border-color:var(--blue-deep)}
+.btn--white{background:var(--white);color:var(--blue);border-color:var(--white)}
+.btn--white:hover{background:transparent;color:var(--white)}
+.btn--line-blue{color:var(--blue)}
+.btn--line-blue:hover{background:var(--blue);color:var(--white)}
+.btn--line-dark{color:var(--dark)}
+.btn--line-dark:hover{background:var(--dark);color:var(--white)}
+.btn--line-white{color:var(--white)}
+.btn--line-white:hover{background:var(--white);color:var(--blue)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+
+/* nav: a full-width solid bar; past the hero the logo and Discord button fade in */
+.nav{position:fixed;z-index:50;top:0;left:0;right:0;color:var(--blue);background:var(--white);box-shadow:0 1px 0 rgba(17,66,107,.08);transition:background .4s,color .4s}
+.nav.is-dark{color:var(--white);background:var(--dark)}
+.nav.is-blue{color:var(--white);background:var(--blue)}
+.nav.is-dark .nav-bar .btn--blue,.nav.is-blue .nav-bar .btn--blue{background:var(--white);color:var(--blue);border-color:var(--white)}
+.nav-bar{position:relative;height:72px;display:flex;align-items:center;justify-content:center;padding:0 var(--pad)}
+.brand,.nav-bar .btn{position:absolute;top:50%;opacity:0;visibility:hidden;transition:opacity .4s .15s,translate .6s var(--ease) .1s,visibility .4s .15s}
+.brand{left:var(--pad);translate:-16px -50%;font:700 28px/1 var(--display);letter-spacing:.2em}
+.nav-bar .btn{right:var(--pad);translate:16px -50%;padding:13px 22px;font-size:16px}
+.nav.past-hero .brand,.nav.past-hero .nav-bar .btn{opacity:1;visibility:visible;translate:0 -50%}
+.nav ul{display:flex;gap:clamp(24px,3vw,44px);list-style:none;font:700 17px/1 var(--body);white-space:nowrap}
+.nav ul a{position:relative}
+.nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+.menu-btn{display:none;align-items:center;gap:8px;padding:9px 14px;border:1.5px solid currentColor;border-radius:999px;font:700 15px/1 var(--body)}
+/* phone menu */
+.sheet{position:fixed;inset:0;z-index:120;display:flex;flex-direction:column;background:var(--white);color:var(--blue);padding:0 24px 32px}
+.sheet-bar{height:76px;margin:0 -8px 0 -4px;display:flex;align-items:center;justify-content:space-between}
+.sheet-bar b{font:700 24px/1 var(--display);letter-spacing:.2em}
+.sheet .menu-btn{display:inline-flex}
+.sheet ul{list-style:none;margin-top:28px;display:flex;flex-direction:column}
+.sheet li a{display:flex;align-items:center;justify-content:space-between;padding:14px 0;font:700 36px/1.1 var(--display);border-bottom:1px solid var(--light)}
+/* the section you are reading is marked, so the menu doubles as a "you are here" */
+.sheet li a[aria-current="true"]::after{content:"You are here";font:700 13px/1 var(--body);padding:7px 11px;border-radius:999px;background:var(--light);color:var(--blue)}
+.sheet > .btn{margin-top:auto;justify-content:center;padding:18px 22px;font-size:17px}
+
+/* hero */
+.hero{position:relative;overflow-x:clip;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,684px);gap:clamp(24px,4vw,64px);min-height:100svh;padding:120px var(--pad) 48px;align-items:center}
+.hero-copy{display:flex;flex-direction:column;align-items:flex-start;gap:34px}
+.acro{display:flex;gap:clamp(14px,2vw,28px);color:var(--blue)}
+.acro-col{display:flex;flex-direction:column;align-items:center}
+.mask{overflow:hidden;display:block}
+.letter{display:block;font:700 clamp(96px,13.6vw,200px)/.9 var(--display)}
+.word{margin-top:16px;font:700 clamp(11px,.95vw,13px)/1 var(--body);letter-spacing:.2em;text-transform:uppercase}
+.intro{font-size:clamp(18px,1.6vw,23px);line-height:1.45;max-width:30ch}
+.montage{position:relative;height:min(76svh,660px);min-height:500px}
+.mframe{position:absolute;inset:0;overflow:hidden;background:var(--blue-deep);isolation:isolate}
+.mframe img,.mposter img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;visibility:hidden}
+.mframe img{visibility:visible;opacity:0}
+.mframe img.is-on{opacity:1}
+.mposter img.is-on{visibility:visible}
+.mposter{position:absolute;margin:0;border-radius:16px;overflow:hidden;background:var(--white);border:6px solid var(--white);box-shadow:0 22px 44px -18px rgba(12,49,82,.5)}
+.mposter img{border-radius:10px}
+.mposter--a{left:-60px;bottom:48px;width:min(30%,204px);aspect-ratio:1;rotate:-7deg}
+.mposter--b{right:-20px;top:-28px;width:min(25%,172px);aspect-ratio:1;rotate:6deg}
+/* intro: a fast cut montage that grows into the hero frame (first visit only) */
+.loader{display:none}
+.js-intro .loader{display:block;position:fixed;inset:0;z-index:200;background:var(--blue-deep)}
+.js-intro body{overflow:hidden}
+.intro-win{position:fixed;left:50%;top:50%;width:300px;height:375px;translate:-50% -50%;overflow:hidden;border-radius:4px;background:var(--blue)}
+.intro-win img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;visibility:hidden}
+.intro-win img.is-on{visibility:visible}
+.intro-mark{position:fixed;left:var(--pad);bottom:clamp(24px,4vh,40px);color:var(--white);font:700 28px/1 var(--display);letter-spacing:.2em}
+.intro-bar{position:fixed;right:var(--pad);bottom:clamp(30px,4.4vh,46px);width:min(30vw,240px);height:2px;background:rgba(255,255,255,.2)}
+.intro-bar b{display:block;height:100%;background:var(--white);transform:scaleX(0);transform-origin:left}
+.org-stack{display:inline-flex;align-items:center;gap:14px;font:700 15px/1.3 var(--body);color:var(--blue)}
+.org-stack .faces{display:flex;flex:none}
+.org-stack img{width:50px;height:50px;padding:5px;margin-left:-12px;border-radius:50%;background:var(--white);border:2px solid var(--light);object-fit:contain;transition:transform .35s var(--ease)}
+.org-stack img:first-child{margin-left:0}
+.org-stack:hover img{transform:translateY(-3px)}
+.org-stack:hover span{text-decoration:underline;text-underline-offset:4px}
+
+/* mission */
+.mission{position:relative;overflow-x:clip;padding:clamp(72px,7vw,104px) var(--pad) clamp(48px,5vw,72px);display:flex;flex-direction:column;gap:36px;align-items:flex-start}
+.statement{font:700 clamp(32px,4.6vw,68px)/1.1 var(--display);letter-spacing:-.01em;color:var(--blue)}
+.statement .w{opacity:.16}
+/* meet the board: a hand of portrait cards that rises out of a blue panel and fans open on hover */
+.board{position:relative;display:flex;justify-content:flex-end;align-items:center;width:100%;margin-top:clamp(72px,7vw,104px);padding:28px clamp(28px,4vw,56px);min-height:200px;background:var(--blue);color:var(--white);isolation:isolate}
+.fan{position:absolute;left:clamp(28px,4vw,56px);bottom:0;width:48%;height:calc(100% + 120px)}
+.fan-card{position:absolute;left:50%;bottom:42px;width:150px;aspect-ratio:4/5;margin-left:-75px;border-radius:16px;border:5px solid var(--white);background:var(--white);overflow:hidden;box-shadow:0 18px 30px -16px rgba(5,22,38,.55);transform-origin:50% 140%;will-change:transform}
+.fan-card img{width:100%;height:100%;object-fit:cover;border-radius:11px}
+.fan-cap{position:absolute;left:50%;bottom:12px;z-index:30;translate:-50% 0;white-space:nowrap;font:700 14px/1 var(--body);color:rgba(255,255,255,.85);opacity:0;transition:opacity .3s}
+.board.is-hover .fan-cap{opacity:1}
+.board-copy{width:44%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.board-copy h2{font:700 clamp(40px,4.4vw,64px)/1 var(--display);letter-spacing:-.01em}
+.board-copy p{margin-top:12px;font-size:clamp(16px,1.2vw,18px);color:rgba(255,255,255,.75)}
+.board-arrow{flex:none;display:grid;place-items:center;width:clamp(56px,6vw,84px);aspect-ratio:1;border-radius:50%;background:var(--white);color:var(--blue);transition:transform .5s var(--ease),background .3s}
+.board-arrow svg{width:40%;height:40%}
+.board:hover .board-arrow{transform:rotate(-45deg) scale(1.06)}
+.board:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+/* emphasis: an underline that draws itself and marker highlights, both tied to scroll and safe across line breaks */
+.statement em{--ul:0%;font-style:italic;background:linear-gradient(var(--blue),var(--blue)) 0 92%/var(--ul,0%) .08em no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.statement mark{--hl:0%;color:inherit;background:linear-gradient(#C9DCEC,#C9DCEC) 0 74%/var(--hl,0%) .46em no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .04em;margin:0 -.04em}
+
+/* events (sample content; the React version loads these from the events portal) */
+.events{padding:0 var(--gutter) var(--gutter)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 48px;flex-wrap:wrap}
+.events .sec-head{padding:0 calc(var(--pad) - var(--gutter)) 28px}
+.events .ph{margin-top:14px}
+.tbd{color:#C2410C}
+/* tickets: each event is a ticket with a tear-off date stub */
+.tickets{display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter)}
+.ticket{position:relative;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr) 120px;min-height:300px;background:var(--white);border-radius:14px;box-shadow:var(--shadow);transition:transform .5s var(--ease)}
+.ticket:hover{transform:translateY(-4px)}
+.ticket-img{position:relative;overflow:hidden;border-radius:14px 0 0 14px;background:var(--soft)}
+.ticket-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ticket-img span{position:absolute;inset:0;display:grid;place-items:center;padding:16px;text-align:center;font:700 14px/1.3 var(--body);color:var(--mute)}
+.ticket-info{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:12px;padding:28px}
+.ticket-info h3{font-size:clamp(26px,2.3vw,34px)}
+.ticket-info p{font-size:16px;color:var(--mute)}
+.ticket-info .btn{margin-top:6px;padding:13px 20px}
+.ticket-stub{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border-left:2px dashed var(--light);border-radius:0 14px 14px 0;background:var(--white);transform-origin:0 100%;transition:transform .6s var(--ease)}
+.ticket-stub::before,.ticket-stub::after{content:"";position:absolute;left:-11px;width:20px;height:20px;border-radius:50%;background:var(--light)}
+.ticket-stub::before{top:-10px}
+.ticket-stub::after{bottom:-10px}
+.ticket-stub small{font:700 15px/1 var(--body);color:var(--mute)}
+.ticket-stub b{font:700 52px/1 var(--display);color:var(--blue)}
+.ticket:hover .ticket-stub{transform:rotate(-5deg)}
+.ticket--next .ticket-stub{background:var(--blue);border-left-color:var(--blue)}
+.ticket--next .ticket-stub small,.ticket--next .ticket-stub b{color:var(--white)}
+.ticket-stub .tbd{font-size:inherit}
+.ticket--next .ticket-stub .tbd{color:#FFD9C2}
+.stamp{display:inline-block;padding:5px 10px;border:2px solid #C2410C;border-radius:6px;color:#C2410C;font:700 14px/1 var(--body);rotate:-6deg}
+
+/* archive */
+.archive{margin-top:clamp(64px,7vw,104px);background:var(--dark);color:var(--white);padding:100px 0 40px;overflow:hidden;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+.archive .sec-head{padding:0 var(--pad) 40px}
+.archive .sub{color:rgba(255,255,255,.72)}
+.archive .sub b{font-weight:700;color:var(--white)}
+/* corkboard: posters pinned with tape, free to drag around */
+.rail{position:relative;height:clamp(560px,48vw,700px);margin:0 var(--pad)}
+.poster{position:absolute;left:var(--x);top:var(--y);width:var(--w,clamp(170px,15.5vw,236px));rotate:var(--r);margin:0;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none}
+.poster.is-dragging{cursor:grabbing}
+.poster img{width:100%;height:auto;border-radius:3px;box-shadow:0 18px 30px -14px rgba(0,0,0,.65);pointer-events:none;-webkit-user-drag:none}
+.poster::before{content:"";position:absolute;z-index:1;top:-13px;left:50%;width:86px;height:26px;translate:-50% 0;rotate:-4deg;background:rgba(232,224,200,.85);box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.poster:nth-child(even)::before{rotate:5deg}
+.poster time,.poster h3{display:none}
+
+/* orgs */
+.orgs{padding:clamp(64px,7vw,104px) var(--pad);display:flex;flex-direction:column;gap:28px}
+.search{display:flex;align-items:center;gap:12px;width:min(380px,100%);height:52px;padding:0 20px;background:var(--white);border-radius:999px;box-shadow:var(--shadow);color:#8A8889}
+.search svg{width:18px;height:18px;flex:none}
+.search input{flex:1;min-width:0;border:0;outline:0;background:none;font:400 15px var(--body);color:var(--dark)}
+.search:focus-within{outline:2px solid var(--blue);outline-offset:3px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:var(--white);font:700 14px/1.2 var(--body);color:var(--dark);white-space:nowrap;transition:background .3s,color .3s}
+.chip span{font-weight:400;font-size:13px;color:#8A8889;transition:color .3s}
+.chip:hover{background:var(--soft)}
+.chip[aria-pressed="true"]{background:var(--blue);color:var(--white)}
+.chip[aria-pressed="true"] span{color:rgba(255,255,255,.7)}
+.grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.org{position:relative;display:flex;flex-direction:column;gap:14px;padding:18px;background:var(--white);border-radius:24px}
+.org .logo{position:relative;height:150px;background:var(--soft);border-radius:14px}
+.org .logo img{position:absolute;inset:12px;width:calc(100% - 24px);height:calc(100% - 24px);object-fit:contain}
+.org .logo--dark{background:var(--blue)}
+.org h3{font-size:20px;line-height:1.15}
+.org p{font-size:13px;line-height:1.4;color:var(--mute)}
+.org .links{margin-top:auto;padding-top:6px;display:flex;gap:14px;color:var(--blue)}
+.org .links a{display:grid;place-items:center;width:30px;height:30px;margin:-6px;border-radius:8px;transition:background .25s}
+.org .links a:hover{background:var(--soft)}
+.org .links svg{width:18px;height:18px}
+.empty{grid-column:1/-1;padding:40px 0;color:var(--mute)}
+.browse{align-self:flex-start}
+
+/* fund */
+.fund{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,5vw,80px);padding:clamp(64px,7vw,96px) var(--pad);background:var(--blue);color:var(--white);overflow:hidden}
+.fund-copy{display:flex;flex-direction:column;gap:26px;align-self:start}
+.fund-copy .lede{font-size:clamp(17px,1.3vw,19px);color:rgba(255,255,255,.88);max-width:46ch}
+.fund-copy .note{font-size:14px;color:rgba(255,255,255,.65);max-width:52ch}
+.note svg{display:none}
+/* phones show the steps as a list that opens one step at a time (desktop shows the boarding pass) */
+.steps ol{list-style:none}
+.step{display:grid;grid-template-columns:32px 1fr;gap:12px;padding:16px;margin-bottom:10px;border-radius:16px;background:rgba(255,255,255,.08);transition:background .3s,color .3s}
+.step:last-child{margin-bottom:0}
+.dot{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font:700 15px/1 var(--display);background:rgba(255,255,255,.15);color:var(--white)}
+.step h3{font-size:19px;padding-top:4px}
+.step-btn{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;font:inherit}
+.step-btn svg{width:20px;height:20px;color:rgba(255,255,255,.7);transition:transform .3s var(--ease)}
+.step p{display:none;margin-top:12px;font-size:15px;line-height:1.5}
+.step.is-open{background:var(--white);color:var(--dark)}
+.step.is-open .dot{background:var(--blue)}
+.step.is-open .step-btn svg{transform:rotate(180deg);color:var(--blue)}
+.step.is-open p{display:block}
+.fund > .pass{align-self:center}
+/* boarding pass: each step gets stamped as you scroll past it; the stub's last stamp reads Reimbursed */
+.pass{display:grid;grid-template-columns:minmax(0,1fr) 150px;background:var(--white);color:var(--dark);border-radius:20px;box-shadow:0 30px 60px -30px rgba(5,22,38,.6)}
+.pass-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 24px;background:var(--soft);border-radius:20px 0 0 0;font:700 15px/1 var(--body);color:var(--blue)}
+.pass-head span{font:400 13px/1 var(--body);color:var(--mute)}
+.pass-route{display:flex;align-items:center;gap:14px;padding:22px 24px;font:700 clamp(22px,1.9vw,28px)/1 var(--display);color:var(--blue);white-space:nowrap}
+.pass-route svg{width:22px;height:22px;flex:none}
+.pass ol{list-style:none}
+.pass li{display:grid;grid-template-columns:32px minmax(0,1fr) auto;align-items:center;gap:14px;padding:16px 24px;border-top:1px solid var(--light)}
+.pass-n{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font:700 15px/1 var(--display);border:1.5px solid var(--blue);color:var(--blue);transition:background .3s,color .3s}
+.pass li h3{font-size:19px;line-height:1.15}
+.pass li p{font-size:13px;color:var(--mute)}
+.pass li .stamp{opacity:0;scale:1.7;transition:opacity .2s,scale .35s cubic-bezier(.3,1.6,.5,1)}
+.pass li.is-stamped .stamp{opacity:1;scale:1}
+.pass li.is-stamped .pass-n{background:var(--blue);color:var(--white)}
+.pass-stub{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px 12px;border-left:2px dashed var(--light)}
+.pass-stub::before,.pass-stub::after{content:"";position:absolute;left:-11px;width:20px;height:20px;border-radius:50%;background:var(--blue)}
+.pass-stub::before{top:-10px}
+.pass-stub::after{bottom:-10px}
+.pass-stub small{font-size:13px;color:var(--mute)}
+.final{width:112px;height:112px;border-radius:50%;border:3px solid var(--blue);display:grid;place-items:center;font:700 18px/1 var(--display);color:var(--blue);rotate:-14deg;opacity:.16;transition:opacity .3s,scale .45s cubic-bezier(.3,1.6,.5,1)}
+.pass.is-done .final{opacity:1;scale:1.06}
+
+/* sponsors */
+.sponsors{padding:clamp(64px,7vw,104px) var(--pad);display:flex;flex-direction:column;gap:32px}
+.logos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.logos li{position:relative;list-style:none;height:150px;background:var(--white);border-radius:20px;transition:transform .4s var(--ease),box-shadow .4s}
+.logos li:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.logos img{position:absolute;inset:40px 36px;width:calc(100% - 72px);height:calc(100% - 80px);object-fit:contain}
+
+/* footer: one short heading, round social buttons, plain link columns */
+.foot{background:var(--blue);color:var(--white);padding:clamp(64px,6vw,88px) var(--pad) 0}
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:48px 72px}
+.foot-cta{display:flex;flex-direction:column;gap:28px}
+.foot-cta h2{font-size:clamp(40px,3.9vw,56px);line-height:1.02}
+.social{list-style:none;display:flex;gap:12px}
+.social a{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35);transition:background .3s,color .3s,border-color .3s}
+.social a:hover{background:var(--white);color:var(--blue);border-color:var(--white)}
+.social svg{width:20px;height:20px}
+.cols{display:flex;gap:clamp(40px,5vw,72px)}
+.cols h3{font:400 13px/1 var(--body);color:rgba(255,255,255,.6);margin-bottom:18px}
+.cols ul{list-style:none;display:flex;flex-direction:column;gap:14px;font-size:17px}
+.cols a:hover,.top-link:hover{text-decoration:underline;text-underline-offset:4px}
+.legal{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:clamp(56px,6vw,80px);padding:22px 0 26px;border-top:1px solid rgba(255,255,255,.2)}
+.legal small{font-size:13px;color:rgba(255,255,255,.7)}
+.top-link{display:inline-flex;align-items:center;gap:6px;font:700 14px/1 var(--body)}
+.top-link svg{width:16px;height:16px}
+
+/* responsive */
+@media (max-width:1180px){
+  .grid,.logos{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media (max-width:1100px){
+  .tickets{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  /* nav: one bar with the wordmark and a large Menu button that is easy to tap */
+  .nav.is-dark,.nav.is-blue{color:var(--blue);background:var(--white)}
+  .nav-bar{height:76px;justify-content:flex-end;padding:0 16px 0 20px}
+  .nav ul,.nav-bar .btn{display:none}
+  .menu-btn{display:inline-flex;min-height:52px;padding:0 22px;gap:10px;font-size:17px}
+  .menu-btn svg.ico{width:22px;height:22px}
+  .brand{left:20px;font-size:26px}
+  .hero{grid-template-columns:1fr;padding-top:100px}
+  .hero-copy{gap:28px;padding-bottom:0}
+  .montage{height:62svh;min-height:420px}
+  .mposter--a{left:-8px;bottom:24px;width:120px}
+  .mposter--b{right:-6px;top:-18px;width:100px}
+  .org-stack img{width:40px;height:40px;margin-left:-10px}
+  .board{flex-direction:column;align-items:stretch;padding-top:150px;margin-top:110px}
+  .fan{left:0;right:0;width:auto;top:-110px;bottom:auto;height:270px}
+  .fan-card{width:104px;margin-left:-52px}
+  .board-copy{width:auto}
+  .fund{grid-template-columns:1fr;padding:80px var(--pad)}
+}
+/* phone: more room, fewer things to scan per section */
+@media (max-width:760px){
+  :root{--pad:24px}
+  body{font-size:16px}
+  .desk-only{display:none!important}
+  .phone-only{display:revert}
+  .h2{font-size:40px;line-height:1.05}
+  .sub{font-size:16px}
+  .sec-head{gap:10px}
+
+  .hero{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:108px 0 0}
+  .hero-copy{align-items:stretch;gap:22px;padding:0 24px 40px}
+  .letter{font-size:24vw}
+  .word{font-size:8.5px;letter-spacing:.14em}
+  .acro{justify-content:space-between}
+  .intro{font-size:20px;max-width:none}
+  .hero .btns{flex-direction:column;align-items:stretch;gap:14px}
+  .hero .btns .btn{justify-content:center;padding:17px 22px;font-size:16px}
+  .hero .btns .btn--line-blue{border-color:transparent;padding:6px}
+  .hero .btns .btn--line-blue:hover{background:none;color:var(--blue)}
+  .org-stack{display:none}
+  .montage{flex:1;height:auto;min-height:340px}
+  .mposter--a{display:none}
+  .mposter--b{right:24px;top:-34px;width:112px;rotate:-6deg}
+
+  .mission{padding:56px 24px 72px;gap:0}
+  .statement{font-size:30px;line-height:1.25}
+  .board{margin-top:120px;padding:140px 22px 28px}
+  .board-copy h2{font-size:34px}
+  .board-arrow{width:48px}
+
+  .events{padding:16px 24px 72px}
+  .events .sec-head{padding:0 0 24px}
+  .feat{background:var(--white)}
+  .feat > img{width:100%;height:300px;object-fit:cover}
+  .feat-info{display:flex;flex-direction:column;gap:12px;padding:22px}
+  .feat-info h3{font-size:28px}
+  .meta{display:flex;align-items:center;gap:8px;font-size:15px}
+  .meta svg{width:16px;height:16px;color:var(--mute)}
+  .feat-info .btn{justify-content:center;margin-top:4px;padding:16px 22px;font-size:16px}
+  .ev-sub{font-size:22px;margin:32px 0 16px}
+  .ev-list{list-style:none;background:var(--white)}
+  .ev-list li + li{border-top:1px solid var(--light)}
+  .ev-list a{display:flex;align-items:center;gap:14px;padding:14px 16px}
+  .ev-list img{width:60px;height:60px;border-radius:8px;object-fit:cover;flex:none}
+  .ev-list span{flex:1;display:flex;flex-direction:column;gap:4px}
+  .ev-list b{font-size:17px;line-height:1.25}
+  .ev-list small{font-size:14px;color:var(--mute)}
+  .ev-list svg{width:20px;height:20px;color:#8A8889}
+
+  .archive{min-height:0;padding:64px 0}
+  .archive .sec-head{padding:0 24px 28px}
+  /* phones swipe through the posters instead of dragging them */
+  .rail{display:flex;height:auto;margin:0;gap:16px;padding:14px 24px 8px;scroll-padding:0 24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .rail::-webkit-scrollbar{display:none}
+  .poster{position:relative;left:auto;top:auto;width:auto;rotate:0deg;flex:none;display:flex;flex-direction:column;gap:10px;scroll-snap-align:start;cursor:auto;touch-action:auto}
+  .poster img{height:338px;width:auto;border-radius:6px}
+  .poster time{display:block;order:3;font-size:13px;color:rgba(255,255,255,.6)}
+  .poster h3{display:block;font-size:20px}
+  .pager{display:flex;justify-content:space-between;align-items:center;padding:0 24px;margin-top:24px}
+  .dots{display:flex;gap:6px}
+  .dots i{width:8px;height:8px;border-radius:4px;background:rgba(255,255,255,.3);transition:width .3s var(--ease),background .3s}
+  .dots i.on{width:22px;background:var(--white)}
+  .pager a{display:inline-flex;align-items:center;gap:6px;font:700 15px/1 var(--body)}
+  .pager svg{width:16px;height:16px}
+
+  .orgs{padding:72px 0;gap:20px}
+  .orgs .sec-head{padding:0 24px;gap:18px}
+  .search{width:100%;height:50px;box-shadow:none;border:1px solid #CFD0D3}
+  .chips{flex-wrap:nowrap;overflow-x:auto;padding:0 24px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{padding:10px 16px}
+  .grid{display:flex;flex-direction:column;gap:0;margin:0 24px;background:var(--white);overflow:hidden}
+  .org{flex-direction:row;align-items:center;gap:14px;padding:14px 16px;border-radius:0}
+  .org{box-shadow:0 -1px 0 var(--light)} /* a divider above each row; the list clips the first one */
+  .org .logo{width:56px;height:56px;flex:none;border-radius:12px}
+  .org .logo img{inset:6px;width:calc(100% - 12px);height:calc(100% - 12px)}
+  .org > div:nth-child(2){flex:1;min-width:0}
+  .org h3{font-size:18px}
+  .org .links{padding:0;margin:0}
+  .org .links a{display:none}
+  /* the whole row opens the organization's site */
+  .org .links a:first-child{display:block;position:absolute;inset:0;width:auto;height:auto;margin:0;border-radius:0;background:none}
+  .org .links a:first-child svg{display:none}
+  .org::after{content:"";flex:none;width:20px;height:20px;background:#8A8889;-webkit-mask:var(--chev) center/contain no-repeat;mask:var(--chev) center/contain no-repeat}
+  .org{--chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E")}
+  .empty{padding:24px 16px}
+  .browse{align-self:stretch;justify-content:center;margin:0 24px;padding:17px 22px;font-size:16px}
+
+  .fund{display:flex;flex-direction:column;gap:24px;padding:56px 24px 72px}
+  .fund-copy{display:contents}
+  .fund-copy .lede{font-size:16px}
+  .fund .btns{flex-direction:column;align-items:stretch;gap:14px}
+  .fund .btns .btn{justify-content:center;padding:17px 22px;font-size:16px}
+  .fund .btns .btn--line-white{border-color:transparent;padding:6px}
+  .fund .btns .btn--line-white:hover{background:none;color:var(--white)}
+  .steps{order:5}
+  .how{font-size:22px;margin-bottom:16px}
+  .fund-copy .note{order:10;display:flex;gap:12px;padding:16px;border:1px solid rgba(255,255,255,.25);border-radius:16px;color:rgba(255,255,255,.82)}
+  .note svg{display:block;width:20px;height:20px;flex:none;margin-top:2px}
+
+  .sponsors{padding:72px 24px;gap:24px}
+  .sponsors .sec-head{display:contents}
+  .sponsors .sec-head .btn{order:10;justify-content:center;padding:17px 22px;font-size:16px}
+  .logos{grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--light)}
+  .logos li{height:104px;border-radius:0}
+  .logos li:hover{transform:none;box-shadow:none}
+  .logos li:nth-child(n+7){display:none}
+  .logos img{inset:30px 26px;width:calc(100% - 52px);height:calc(100% - 60px)}
+
+  .foot{padding:56px 24px 0}
+  .foot-top{flex-direction:column;gap:36px}
+  .foot-cta{gap:24px}
+  .foot-cta h2{font-size:36px}
+  .social a{width:56px;height:56px}
+  .social svg{width:22px;height:22px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px}
+  .cols .col-contact{grid-column:1/-1}
+  .cols ul{font-size:18px}
+  .legal{flex-direction:column;align-items:flex-start;gap:14px;margin-top:36px;padding:20px 0 28px}
+  .top-link{order:-1;font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){
+  .statement .w{opacity:1}
+  .statement em{--ul:100%}
+  .statement mark{--hl:100%}
+  *{transition-duration:0s!important}
+}
+</style>
+</head>
+<body>
+<div class="loader" id="loader" aria-hidden="true"><div class="intro-win" id="introWin"></div><span class="intro-mark">TESC</span><i class="intro-bar"><b id="introBar"></b></i></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-chev-d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="nav-bar">
+    <a class="brand" href="#top" aria-label="TESC home">TESC</a>
+    <nav aria-label="Primary"><ul>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#orgs">Organizations</a></li>
+      <li><a href="#funding">Funding</a></li>
+      <li><a href="#mission">About</a></li>
+    </ul></nav>
+    <a class="btn btn--blue" href="https://tescatucsd.org/discord">Join the Discord</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sheet"><svg class="ico"><use href="#i-menu"/></svg>Menu</button>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="sheet-bar"><b>TESC</b><button class="menu-btn" id="sheetClose"><svg class="ico"><use href="#i-x"/></svg>Close</button></div>
+  <ul>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#orgs">Organizations</a></li>
+    <li><a href="#funding">Funding</a></li>
+    <li><a href="#mission">About</a></li>
+    <li><a href="#sponsors">Sponsors</a></li>
+  </ul>
+  <a class="btn btn--blue" href="https://tescatucsd.org/discord">Join the Discord</a>
+</div>
+
+<main id="top">
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-copy">
+      <h1 class="acro" aria-label="TESC, Triton Engineering Student Council">
+        <span class="acro-col" aria-hidden="true"><span class="mask"><span class="letter">T</span></span><span class="word">Triton</span></span>
+        <span class="acro-col" aria-hidden="true"><span class="mask"><span class="letter">E</span></span><span class="word">Engineering</span></span>
+        <span class="acro-col" aria-hidden="true"><span class="mask"><span class="letter">S</span></span><span class="word">Student</span></span>
+        <span class="acro-col" aria-hidden="true"><span class="mask"><span class="letter">C</span></span><span class="word">Council</span></span>
+      </h1>
+      <p class="intro reveal">The council includes 50+ engineering student organizations at UC San Diego.</p>
+      <div class="btns reveal">
+        <a class="btn btn--blue magnet" href="https://tescatucsd.org/discord">Join the Discord <svg class="desk-only"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--line-blue magnet" href="#events">Explore events <svg class="phone-only"><use href="#i-down"/></svg></a>
+      </div>
+      <a class="org-stack reveal" href="#orgs">
+        <span class="faces" aria-hidden="true">
+          <img src="assets/logos-clean/ACM.webp" alt=""><img src="assets/logos-clean/IEEE.webp" alt=""><img src="assets/logos-clean/SWE.webp" alt=""><img src="assets/logos-clean/AIAA.webp" alt=""><img src="assets/logos-clean/BMES.webp" alt=""><img src="assets/logos-clean/TSE.webp" alt="">
+        </span>
+        <span>See all member organizations</span>
+      </a>
+    </div>
+    <div class="montage" id="montage">
+      <div class="mframe" data-depth=".35" id="mframe"></div>
+      <figure class="mposter mposter--a" data-depth="1.4"></figure>
+      <figure class="mposter mposter--b" data-depth="1.9"></figure>
+    </div>
+  </section>
+
+  <section class="mission" id="mission" aria-label="Mission">
+    <p class="statement" id="statement">The Triton Engineering Student Council (TESC) empowers <em>UC San Diego engineering students</em> by connecting them with impactful <mark>communities</mark>, <mark>projects</mark>, and <mark>career building opportunities</mark>.</p>
+    <a class="board" id="board" href="https://tescatucsd.org/about-us">
+      <span class="fan" id="fan" aria-hidden="true"><span class="fan-cap" id="fanCap"></span></span>
+      <span class="board-copy">
+        <span>
+          <h2>Meet the board</h2>
+          <p>The co-presidents, vice presidents, and committee leads who run TESC.</p>
+        </span>
+        <span class="board-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+      </span>
+    </a>
+  </section>
+
+  <!-- sample content: the React version fills these from the events portal (upcoming first, then the latest past events) -->
+  <section class="events" id="events" aria-labelledby="events-h">
+    <div class="sec-head">
+      <div>
+        <h2 class="h2" id="events-h">Recent events</h2>
+        <p class="sub" style="margin-top:12px">Upcoming TESC events first, then the most recent past ones.</p>
+        <p class="ph">Sample content. In code these load live from the events portal.</p>
+      </div>
+    </div>
+    <div class="tickets desk-only">
+      <article class="ticket ticket--next">
+        <div class="ticket-img"><span class="tbd">[Poster from the portal]</span></div>
+        <div class="ticket-info">
+          <span class="stamp">Upcoming</span>
+          <h3 class="tbd">[Next upcoming event]</h3>
+          <p class="tbd">[Date and location from the portal]</p>
+          <a class="btn btn--blue" href="https://portal.tescatucsd.org">View on the portal</a>
+        </div>
+        <div class="ticket-stub"><small class="tbd">[Mon]</small><b class="tbd">[Day]</b></div>
+      </article>
+      <article class="ticket">
+        <div class="ticket-img"><img src="assets/poster-eotg-winter2026.webp" alt="Engineers on the Green Winter 2026 poster" loading="lazy"></div>
+        <div class="ticket-info">
+          <h3>Engineers on the Green</h3>
+          <p>Warren Mall</p>
+          <a class="btn btn--blue" href="https://portal.tescatucsd.org">View on the portal</a>
+        </div>
+        <div class="ticket-stub"><small>Jan</small><b>8</b></div>
+      </article>
+      <article class="ticket">
+        <div class="ticket-img"><img src="assets/poster-decaf-event-wi26.webp" alt="DECaF Winter 2026 poster" loading="lazy"></div>
+        <div class="ticket-info">
+          <h3>DECaF Career Fair</h3>
+          <p>Price Center West Ballroom A</p>
+          <a class="btn btn--blue" href="https://portal.tescatucsd.org">View on the portal</a>
+        </div>
+        <div class="ticket-stub"><small>Jan</small><b>20</b></div>
+      </article>
+      <article class="ticket">
+        <div class="ticket-img"><img src="assets/poster-Fall-2025-EOTG.webp" alt="Engineers on the Green Fall 2025 poster" loading="lazy"></div>
+        <div class="ticket-info">
+          <h3>Engineers on the Green</h3>
+          <p>Warren Mall</p>
+          <a class="btn btn--blue" href="https://portal.tescatucsd.org">View on the portal</a>
+        </div>
+        <div class="ticket-stub"><small>Sep</small><b>30</b></div>
+      </article>
+    </div>
+    <div class="phone-only">
+      <article class="feat">
+        <img src="assets/poster-eotg-winter2026.webp" alt="Engineers on the Green Winter 2026 poster" loading="lazy">
+        <div class="feat-info">
+          <h3>Engineers on the Green</h3>
+          <p class="meta"><svg><use href="#i-cal"/></svg>January 8, 2026</p>
+          <p class="meta"><svg><use href="#i-pin"/></svg>Warren Mall</p>
+          <a class="btn btn--blue" href="https://portal.tescatucsd.org">View on the portal</a>
+        </div>
+      </article>
+      <h3 class="ev-sub">Earlier events</h3>
+      <ul class="ev-list">
+        <li><a href="https://portal.tescatucsd.org"><img src="assets/poster-decaf-event-wi26.webp" alt="" loading="lazy"><span><b>DECaF Career Fair</b><small>January 20, 2026</small></span><svg><use href="#i-chev-r"/></svg></a></li>
+        <li><a href="https://portal.tescatucsd.org"><img src="assets/poster-Fall-2025-EOTG.webp" alt="" loading="lazy"><span><b>Engineers on the Green</b><small>September 30, 2025</small></span><svg><use href="#i-chev-r"/></svg></a></li>
+        <li><a href="https://portal.tescatucsd.org"><img src="assets/poster-DECaF_FA25.webp" alt="" loading="lazy"><span><b>DECaF Career Fair</b><small>[Date from portal]</small></span><svg><use href="#i-chev-r"/></svg></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="archive on-dark" id="archive" aria-labelledby="archive-h">
+    <div class="sec-head">
+      <div>
+        <h2 class="h2" id="archive-h">Event archive</h2>
+        <p class="sub" style="margin-top:12px">Posters from past TESC events.<span class="desk-only"> <b>Drag them around.</b></span></p>
+      </div>
+      <a class="btn btn--line-white desk-only" href="https://tescatucsd.org/events">View all events</a>
+    </div>
+    <div class="rail" id="rail">
+      <figure class="poster" style="--x:1%;--y:14%;--r:-4deg"><time>Fall 2025</time><img src="assets/poster-Fall-2025-EOTG.webp" alt="Engineers on the Green Fall 2025 poster" loading="lazy"><h3>Engineers on the Green</h3></figure>
+      <figure class="poster" style="--x:17%;--y:2%;--r:3deg"><time>Fall 2025</time><img src="assets/poster-DECaF_FA25.webp" alt="DECaF Fall 2025 poster" loading="lazy"><h3>DECaF Career Fair</h3></figure>
+      <figure class="poster" style="--x:37%;--y:16%;--r:2deg;--w:clamp(190px,17.5vw,262px)"><time>Winter 2026</time><img src="assets/poster-eotg-winter2026.webp" alt="Engineers on the Green Winter 2026 poster" loading="lazy"><h3>Engineers on the Green</h3></figure>
+      <figure class="poster" style="--x:21%;--y:52%;--r:-3deg"><time>Winter 2026</time><img src="assets/poster-decaf-event-wi26.webp" alt="DECaF Winter 2026 poster" loading="lazy"><h3>DECaF Career Fair</h3></figure>
+      <figure class="poster" style="--x:58%;--y:3%;--r:-5deg"><time>Spring 2025</time><img src="assets/poster-asml-tech-talk.webp" alt="ASML tech talk poster" loading="lazy"><h3>ASML Tech Talk</h3></figure>
+      <figure class="poster" style="--x:61%;--y:52%;--r:4deg"><img src="assets/montage/poster-Engineering_Prom_1.webp" alt="Engineer's Formal poster" loading="lazy"><h3>Engineer's Formal</h3></figure>
+      <figure class="poster" style="--x:79%;--y:17%;--r:5deg"><img src="assets/montage/poster-BoardGameNightPostWLogos.webp" alt="Board Game Night poster" loading="lazy"><h3>Board Game Night</h3></figure>
+    </div>
+    <div class="pager phone-only"><span class="dots" id="dots" aria-hidden="true"></span><a href="https://tescatucsd.org/events">View all events <svg><use href="#i-arrow"/></svg></a></div>
+  </section>
+
+  <section class="orgs" id="orgs" aria-labelledby="orgs-h">
+    <div class="sec-head">
+      <div>
+        <h2 class="h2" id="orgs-h">Member organizations</h2>
+        <p class="sub" style="margin-top:14px">The council includes 50+ engineering student organizations. Filter by department or search by name.</p>
+      </div>
+      <label class="search"><svg><use href="#i-search"/></svg><input id="q" type="search" placeholder="Search organizations" aria-label="Search organizations"></label>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Filter by department"></div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <button class="btn btn--blue browse" id="browse">Browse all organizations <svg><use href="#i-arrow"/></svg></button>
+  </section>
+
+  <section class="fund on-dark" id="funding" aria-labelledby="fund-h">
+    <div class="fund-copy">
+      <h2 class="h2" id="fund-h">Student Travel Fund</h2>
+      <p class="lede">The Student Travel Fund supports Jacobs School of Engineering undergraduates who attend conferences and competitions. It covers travel expenses such as transportation and hotel costs, as well as conference or registration fees. This year, TESC manages the application process and reviews applications.</p>
+      <div class="btns">
+        <a class="btn btn--white" href="https://forms.gle/g6GC2MjhuTgNiB9k7">Apply for funding <svg class="desk-only"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--line-white" href="https://tescatucsd.org/funding">Read the guidelines <svg class="phone-only"><use href="#i-arrow"/></svg></a>
+      </div>
+      <p class="note"><svg><use href="#i-info"/></svg><span>This is a reimbursement program, so students pay their expenses first and then submit receipts. Typical reimbursements range from $300 to $500, depending on documented expenses and available funds. TESC does not screen applicants during the summer, so students traveling over the summer should apply before the end of the previous academic year.</span></p>
+    </div>
+    <div class="pass desk-only" id="pass">
+      <div class="pass-main">
+        <div class="pass-head">TESC Student Travel Fund<span>Boarding pass</span></div>
+        <div class="pass-route">UC San Diego<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="to"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>Your conference</div>
+        <ol>
+          <li><span class="pass-n">1</span><div><h3>Submit an application</h3><p>Google Form + travel certification link</p></div><span class="stamp">Submitted</span></li>
+          <li><span class="pass-n">2</span><div><h3>Application review</h3><p>Rolling, three to four weeks</p></div><span class="stamp">Reviewed</span></li>
+          <li><span class="pass-n">3</span><div><h3>Acceptance notification</h3><p>Email with the Post-Travel Form</p></div><span class="stamp">Accepted</span></li>
+          <li><span class="pass-n">4</span><div><h3>Post-travel reimbursement</h3><p>Receipts within two weeks of travel</p></div><span class="stamp">Sent</span></li>
+        </ol>
+      </div>
+      <div class="pass-stub"><small>Final stamp</small><span class="final">Reimbursed</span></div>
+    </div>
+    <div class="steps phone-only" id="steps">
+      <h3 class="how phone-only">How it works</h3>
+      <ol>
+      <li class="step is-open"><span class="dot">1</span><div><h3><button class="step-btn" aria-expanded="true">Submit an application<svg><use href="#i-chev-d"/></svg></button></h3><p>Complete the Google Form linked on the funding page. Include a public Google Drive link to your completed Student Certification for Business Travel form.</p></div></li>
+      <li class="step"><span class="dot">2</span><div><h3><button class="step-btn" aria-expanded="false">Application review<svg><use href="#i-chev-d"/></svg></button></h3><p>TESC reviews applications on a rolling basis, which takes three to four weeks. Leave at least four weeks before your travel. If you do not receive an email within three weeks, follow up with the board by email.</p></div></li>
+      <li class="step"><span class="dot">3</span><div><h3><button class="step-btn" aria-expanded="false">Acceptance notification<svg><use href="#i-chev-d"/></svg></button></h3><p>Approved applicants receive an email with a link to the Post-Travel Form.</p></div></li>
+      <li class="step"><span class="dot">4</span><div><h3><button class="step-btn" aria-expanded="false">Post-travel reimbursement<svg><use href="#i-chev-d"/></svg></button></h3><p>Submit the Post-Travel Form within two weeks of travel, with itemized receipts and proof of payment for every expense. TESC does not process requests received after this deadline, and the award is forfeited.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sponsors" id="sponsors" aria-labelledby="sp-h">
+    <div class="sec-head">
+      <div>
+        <h2 class="h2" id="sp-h">Sponsors</h2>
+        <p class="sub" style="margin-top:14px">10+ companies support TESC events and programs.</p>
+      </div>
+      <a class="btn btn--line-dark" href="mailto:contact@tescatucsd.org">Contact TESC</a>
+    </div>
+    <ul class="logos">
+      <li><img src="assets/sponsors/sp-Logo-RTX.webp" alt="RTX" loading="lazy"></li>
+      <li><img src="assets/sponsors/sp-kla-logo.webp" alt="KLA" loading="lazy"></li>
+      <li><img src="assets/sponsors/sp-F5_Networks_logo.webp" alt="F5" loading="lazy"></li>
+      <li><img src="assets/sponsors/sp-Veeva_Systems_Logo.webp" alt="Veeva" loading="lazy"></li>
+      <li><img src="assets/sponsors/sp-Epic.webp" alt="Epic" loading="lazy"></li>
+      <li><img src="assets/sponsors/sp-Salesforce-logo.webp" alt="Salesforce" loading="lazy"></li>
+      <li><img src="assets/sponsors/sp-Logo-pillsbury.webp" alt="Pillsbury" loading="lazy"></li>
+      <li><img src="assets/sponsors/sp-Logo-SonyPS.webp" alt="Sony PlayStation" loading="lazy"></li>
+      <li><img src="assets/sponsors/sp-Acciona_logo.webp" alt="Acciona" loading="lazy"></li>
+      <li><img src="assets/sponsors/sp-Everpure_Logo.webp" alt="Everpure" loading="lazy"></li>
+      <li><img src="assets/sponsors/sp-Viasat_2018_Gradient_Web.webp" alt="Viasat" loading="lazy"></li>
+      <li><img src="assets/sponsors/sp-Thermo_Fisher_Scientific_logo.webp" alt="Thermo Fisher Scientific" loading="lazy"></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="foot on-dark" id="footer">
+  <div class="foot-top">
+    <div class="foot-cta">
+      <h2>Connect with TESC</h2>
+      <ul class="social">
+        <li><a href="https://tescatucsd.org/discord" aria-label="TESC on Discord"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg></a></li>
+        <li><a href="https://www.instagram.com/tesc.at.ucsd" aria-label="TESC on Instagram"><svg aria-hidden="true"><use href="#i-ig"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/company/ucsdtesc" aria-label="TESC on LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a></li>
+        <li><a href="https://x.com/UCSDTESC/" aria-label="TESC on X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a></li>
+      </ul>
+    </div>
+    <div class="cols">
+      <div><h3>Explore</h3><ul><li><a href="#events">Events</a></li><li><a href="#orgs">Organizations</a></li><li><a href="#funding">Funding</a></li><li><a href="https://tescatucsd.org/accomplishments">Accomplishments</a></li></ul></div>
+      <div><h3>Council</h3><ul><li><a href="https://tescatucsd.org/about-us">About us</a></li><li><a href="https://tescatucsd.org/about-us">Board members</a></li><li><a href="#sponsors">Sponsors</a></li></ul></div>
+      <div class="col-contact"><h3>Contact</h3><ul><li><a href="mailto:contact@tescatucsd.org">contact@tescatucsd.org</a></li></ul></div>
+    </div>
+  </div>
+  <div class="legal"><small>© 2026 Triton Engineering Student Council at UC San Diego</small><a class="top-link" href="#top">Back to top <svg aria-hidden="true"><use href="#i-up"/></svg></a></div>
+</footer>
+
+<script src="orgs.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+/* ---------- org directory ---------- */
+(() => {
+  const CATS = ["All","Bioengineering","Chemical/Nano","Structural","Computer","Electrical","Mechanical","Robotics","Interdisciplinary/General"];
+  const FEATURED = ["ACM","IEEE","SWE","AIAA","BMES","Triton Racing","Yonder Deep","RPL","NSBE","SHPE","TSE","Triton AI"];
+  const DARK_LOGOS = ["Triton Racing"]; // white logos that need a dark backdrop
+  const orgs = window.ORGS || [];
+  const chips = document.getElementById("chips");
+  const grid = document.getElementById("grid");
+  const q = document.getElementById("q");
+  const browse = document.getElementById("browse");
+  let cat = "All", showAll = false;
+
+  const count = c => c === "All" ? orgs.length : orgs.filter(o => o.c.includes(c)).length;
+  chips.innerHTML = CATS.map(c => `<button class="chip" aria-pressed="${c === cat}" data-cat="${c}">${c}${c === "All" ? "" : `<span>${count(c)}</span>`}</button>`).join("");
+
+  // featured cards first, in the order shown in the design
+  const featuredRank = o => {
+    const i = FEATURED.indexOf(o.a);
+    return i < 0 ? 99 : i;
+  };
+  const sorted = [...orgs].sort((a, b) => featuredRank(a) - featuredRank(b));
+
+  const card = o => {
+    const ig = o.l.find(l => l.includes("instagram"));
+    const site = o.l.find(l => !l.includes("instagram"));
+    return `<article class="org">
+      <div class="logo${DARK_LOGOS.includes(o.a) ? " logo--dark" : ""}"><img src="assets/logos-clean/${o.i.replace(/\.\w+$/, ".webp")}" alt="${o.a} logo" loading="lazy"></div>
+      <div><h3>${o.a}</h3><p>${o.n}</p></div>
+      <div class="links">
+        ${site ? `<a href="${site}" aria-label="${o.a} website"><svg><use href="#i-globe"/></svg></a>` : ""}
+        ${ig ? `<a href="${ig}" aria-label="${o.a} Instagram"><svg><use href="#i-ig"/></svg></a>` : ""}
+      </div></article>`;
+  };
+
+  grid.innerHTML = sorted.map(card).join("") + `<p class="empty" hidden></p>`;
+  const cards = [...grid.querySelectorAll(".org")];
+  const empty = grid.querySelector(".empty");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.gsap && window.Flip && gsap.registerPlugin(Flip);
+
+  // filtering: cards that no longer match fade out, and the matches slide into place
+  function render(animate) {
+    const term = q.value.trim().toLowerCase();
+    const limited = cat === "All" && !term && !showAll;
+    const max = matchMedia("(max-width: 760px)").matches ? 5 : 12;
+    const state = animate && window.Flip && !reduce ? Flip.getState(cards) : null;
+    let shown = 0;
+    sorted.forEach((o, i) => {
+      const ok = (cat === "All" || o.c.includes(cat)) && (!term || (o.a + " " + o.n).toLowerCase().includes(term)) && (!limited || shown < max);
+      if (ok) shown++;
+      cards[i].hidden = !ok;
+    });
+    browse.hidden = !limited;
+    empty.hidden = shown > 0;
+    empty.textContent = `No organizations match "${q.value}".`;
+    if (state) Flip.from(state, { duration: .7, ease: "power3.inOut", stagger: .012, absolute: true, nested: true,
+      onEnter: els => gsap.fromTo(els, { autoAlpha: 0, scale: .85 }, { autoAlpha: 1, scale: 1, duration: .5, delay: .3, ease: "power2.out" }),
+      onLeave: els => gsap.to(els, { autoAlpha: 0, scale: .85, duration: .3, ease: "power2.in" }) });
+    window.ScrollTrigger && ScrollTrigger.refresh();
+  }
+
+  chips.addEventListener("click", e => {
+    const b = e.target.closest(".chip"); if (!b) return;
+    cat = b.dataset.cat;
+    chips.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c === b));
+    render(true);
+  });
+  q.addEventListener("input", () => render(true));
+  browse.addEventListener("click", () => { showAll = true; render(true); });
+  render(false);
+})();
+
+/* ---------- hero montage ---------- */
+const M = "assets/montage/";
+// photos and posters that are not used anywhere else on the page
+const PHOTOS = ["photo-slideshow_5", "photo-slideshow_1", "photo-events-page-image", "photo-slideshow_7"].map(n => M + n + ".webp");
+const POSTERS = ["TESC_Intro_Night", "BoardGameNightPostWLogos", "field_day_2", "Engineering_Prom_1", "SandcastleBonfire", "headshotamixer",
+  "Sunset__Smores_Bonfire", "eotg-event-fa24", "Tapioca", "decaf-event-fa24", "tapex_fundraiser", "stempad-talk-wi25"].map(n => M + "poster-" + n + ".webp");
+(() => {
+  const fill = (el, list, alt) => list.forEach((src, i) => {
+    const img = new Image(); img.src = src; img.alt = alt; img.decoding = "async";
+    if (i === 0) img.className = "is-on";
+    el.appendChild(img);
+  });
+  fill(document.getElementById("mframe"), PHOTOS, "TESC students at a council event");
+  const [a, b] = document.querySelectorAll(".mposter");
+  fill(a, POSTERS.filter((_, i) => i % 2 === 0), "TESC event poster");
+  fill(b, POSTERS.filter((_, i) => i % 2 === 1), "TESC event poster");
+})();
+
+/* ---------- meet the board ---------- */
+(() => {
+  // from src/pages/AboutUs/member-info.tsx: presidents and VPs, then committee leads
+  const BOARD = [["Julia Nguyen", "Finance Lead"], ["Eric Aguilar", "VP Events"], ["Jonathan Ty", "Design Lead"], ["Aksh Malik", "VP Internal"],
+    ["Hieu Nguyen", "Co-President"], ["Nicole Fong", "Co-President"], ["Timothy Bang", "VP Finance"], ["Kevin Nava", "Council Lead"],
+    ["Elizabeth Dam", "Social Lead"], ["Alexis Gonzalez", "Sponsorship Lead"]];
+  const fan = document.getElementById("fan"), cap = document.getElementById("fanCap"), board = document.getElementById("board");
+  const cards = BOARD.map(([name, role]) => {
+    const c = document.createElement("span");
+    c.className = "fan-card"; c.dataset.label = `${name}, ${role}`;
+    c.innerHTML = `<img src="assets/board/${name.replace(/ /g, "-")}.webp" alt="" loading="lazy">`;
+    fan.insertBefore(c, cap); return c;
+  });
+  // the co-presidents in the middle sit on top of the hand
+  const mid = (cards.length - 1) / 2;
+  cards.forEach((c, i) => { c.style.zIndex = 10 - Math.round(Math.abs(i - mid) * 2); });
+  const small = () => innerWidth <= 900;
+  // where each card sits: open = fanned wide on hover, rest = a tight hand
+  const pose = (i, open) => {
+    const t = i / (cards.length - 1) - .5;
+    // on phones the hand narrows with the screen so the outer cards never spill past the edge
+    const spread = small() ? (open ? 100 : 82) * Math.min(1, innerWidth / 390) : (open ? 205 : 170);
+    return { x: t * spread * 2, y: t * t * (open ? 70 : 50), rotation: t * (open ? 36 : 26) };
+  };
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const place = (open, dur) => cards.forEach((c, i) => window.gsap && !reduce
+    ? gsap.to(c, { ...pose(i, open), duration: dur, ease: "expo.out", overwrite: "auto" })
+    : (c.style.transform = `translate(${pose(i, open).x}px, ${pose(i, open).y}px) rotate(${pose(i, open).rotation}deg)`));
+  place(false, 0);
+  addEventListener("resize", () => place(false, 0));
+  if (!window.gsap || reduce) return;
+
+  // the hand is dealt from a single stack the first time it scrolls into view
+  gsap.set(cards, { x: 0, y: 60, rotation: 0, autoAlpha: 0 });
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.create({ trigger: board, start: "top 85%", once: true, onEnter: () => {
+    gsap.to(cards, { autoAlpha: 1, y: 0, duration: .5, stagger: .04, ease: "power2.out" });
+    cards.forEach((c, i) => gsap.to(c, { ...pose(i, false), duration: 1.2, delay: .35 + i * .03, ease: "expo.out" }));
+  } });
+  board.addEventListener("pointerenter", () => { board.classList.add("is-hover"); place(true, .9); });
+  board.addEventListener("pointerleave", () => { board.classList.remove("is-hover"); place(false, .9); cap.textContent = ""; });
+  cards.forEach((c, i) => {
+    c.addEventListener("pointerenter", () => {
+      cap.textContent = c.dataset.label;
+      gsap.to(c, { y: pose(i, true).y - 34, scale: 1.08, zIndex: 20, duration: .45, ease: "expo.out" });
+    });
+    c.addEventListener("pointerleave", () => gsap.to(c, { y: pose(i, board.classList.contains("is-hover")).y, scale: 1, zIndex: 10 - Math.round(Math.abs(i - mid) * 2), duration: .45, ease: "expo.out" }));
+  });
+})();
+
+/* ---------- navigation: pinned bar and phone menu ---------- */
+(() => {
+  const nav = document.getElementById("nav"), hero = document.querySelector(".hero");
+  const narrow = () => matchMedia("(max-width: 900px)").matches;
+  const stick = () => nav.classList.toggle("past-hero", scrollY > hero.offsetHeight - 120);
+  addEventListener("scroll", stick, { passive: true }); stick();
+
+  const sheet = document.getElementById("sheet"), menuBtn = document.getElementById("menuBtn");
+  const setMenu = open => {
+    sheet.hidden = !open; menuBtn.setAttribute("aria-expanded", open);
+    const l = window.tescLenis; l && (open ? l.stop() : l.start());
+    document.body.style.overflow = open ? "hidden" : "";
+    (open ? document.getElementById("sheetClose") : menuBtn).focus();
+  };
+  menuBtn.addEventListener("click", () => setMenu(true));
+  document.getElementById("sheetClose").addEventListener("click", () => setMenu(false));
+  addEventListener("keydown", e => { if (e.key === "Escape" && !sheet.hidden) setMenu(false); });
+
+  // in-page links scroll smoothly and land below the pinned bar
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener("click", e => {
+    const t = document.querySelector(a.getAttribute("href"));
+    if (!t) return;
+    e.preventDefault();
+    if (!sheet.hidden) setMenu(false);
+    const offset = narrow() ? -84 : -76;
+    const l = window.tescLenis;
+    l ? l.scrollTo(t, { offset }) : scrollTo({ top: t.getBoundingClientRect().top + scrollY + offset });
+  }));
+
+  // the menu marks the section in the middle of the screen
+  const links = [...sheet.querySelectorAll("li a")];
+  const owner = { mission: "#mission", events: "#events", archive: "#events", orgs: "#orgs", funding: "#funding", sponsors: "#sponsors", footer: "#sponsors" };
+  const io = new IntersectionObserver(entries => entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    links.forEach(l => l.getAttribute("href") === owner[en.target.id] ? l.setAttribute("aria-current", "true") : l.removeAttribute("aria-current"));
+  }), { rootMargin: "-45% 0px -50% 0px" });
+  Object.keys(owner).forEach(id => io.observe(document.getElementById(id)));
+  io.observe(hero); // back at the top, nothing is marked
+})();
+
+/* ---------- phone-only helpers: archive dots, travel fund steps ---------- */
+(() => {
+  const rail = document.getElementById("rail"), dots = document.getElementById("dots");
+  const posters = [...rail.querySelectorAll(".poster")];
+  dots.innerHTML = posters.map((_, i) => `<i class="${i ? "" : "on"}"></i>`).join("");
+  rail.addEventListener("scroll", () => {
+    const step = posters[1].offsetLeft - posters[0].offsetLeft;
+    const i = Math.round(rail.scrollLeft / step);
+    [...dots.children].forEach((d, k) => d.classList.toggle("on", k === i));
+  }, { passive: true });
+
+  // travel fund steps open one at a time
+  const steps = [...document.querySelectorAll(".step")];
+  steps.forEach(s => s.querySelector(".step-btn").addEventListener("click", () => {
+    const open = !s.classList.contains("is-open");
+    steps.forEach(o => { const on = o === s && open; o.classList.toggle("is-open", on); o.querySelector(".step-btn").setAttribute("aria-expanded", on); });
+    window.ScrollTrigger && ScrollTrigger.refresh();
+  }));
+})();
+
+/* ---------- boarding pass and corkboard ---------- */
+(() => {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // boarding pass: stamps land one by one as the pass scrolls up the screen
+  const pass = document.getElementById("pass"), rows = [...pass.querySelectorAll("li")];
+  const stampTo = n => {
+    rows.forEach((r, i) => r.classList.toggle("is-stamped", i < n));
+    pass.classList.toggle("is-done", n > rows.length);
+  };
+  if (reduce || !window.ScrollTrigger) stampTo(rows.length + 1);
+  else {
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.create({ trigger: pass, start: "top 80%", end: "bottom 45%", onUpdate: s => stampTo(Math.floor(s.progress * (rows.length + 1.01))) });
+  }
+
+  // corkboard: posters can be dragged anywhere on the board; the one you grab comes to the front
+  if (!window.Draggable) return;
+  gsap.registerPlugin(Draggable);
+  let top = 10;
+  gsap.matchMedia().add("(min-width: 761px)", () => {
+    const rail = document.getElementById("rail");
+    const drags = Draggable.create(rail.querySelectorAll(".poster"), {
+      bounds: rail, zIndexBoost: false,
+      onPress() { this.target.style.zIndex = ++top; this.target.classList.add("is-dragging"); gsap.to(this.target, { scale: 1.04, duration: .2 }); },
+      onRelease() { this.target.classList.remove("is-dragging"); gsap.to(this.target, { scale: 1, duration: .3, ease: "back.out(2)" }); },
+    });
+    if (!reduce) gsap.from(rail.querySelectorAll(".poster"), { y: -40, autoAlpha: 0, duration: .7, ease: "back.out(1.6)", stagger: .07,
+      scrollTrigger: { trigger: rail, start: "top 75%" } });
+    return () => { drags.forEach(d => d.kill()); gsap.set(rail.querySelectorAll(".poster"), { clearProps: "transform,zIndex" }); };
+  });
+})();
+
+/* ---------- motion ---------- */
+(() => {
+  if (!window.gsap) return;
+  gsap.registerPlugin(ScrollTrigger);
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const nav = document.getElementById("nav");
+
+  const hero = document.querySelector(".hero");
+  /* nav matches the dark and blue sections while it sits over them */
+  const watchDark = () => [["#archive", "is-dark"], ["#funding", "is-blue"], [".foot", "is-blue"]].forEach(([sel, cls]) =>
+    ScrollTrigger.create({ trigger: sel, start: "top 40px", end: "bottom 40px", onToggle: s => nav.classList.toggle(cls, s.isActive) }));
+
+  let lenis;
+  if (!reduce && window.Lenis) {
+    lenis = new Lenis({ lerp: 0.09 });
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+    window.tescLenis = lenis;
+  }
+
+  /* the montage keeps cutting between photos and swapping posters */
+  const cycle = (el, every, swap) => {
+    const imgs = [...el.querySelectorAll("img")]; let i = 0;
+    return () => setInterval(() => {
+      const next = (i + 1) % imgs.length;
+      swap(() => { imgs[i].classList.remove("is-on"); imgs[next].classList.add("is-on"); i = next; }, imgs[next]);
+    }, every);
+  };
+  const frame = document.getElementById("mframe");
+  const [posterA, posterB] = document.querySelectorAll(".mposter");
+  // slow crossfade with a barely-there drift, so the photo never jumps
+  const startMontage = cycle(frame, 7000, (go, img) => {
+    const prev = frame.querySelector("img.is-on");
+    if (!reduce) gsap.set(prev, { opacity: 1, zIndex: 1 }); // hold the old photo while the new one fades over it
+    go();
+    if (reduce) return;
+    gsap.set(img, { zIndex: 2 });
+    gsap.fromTo(img, { opacity: 0, scale: 1.03 }, { opacity: 1, duration: 1.8, ease: "sine.inOut" });
+    gsap.to(img, { scale: 1, duration: 8, ease: "none" });
+    gsap.to(prev, { opacity: 0, duration: 1.8, delay: .3, ease: "sine.inOut", clearProps: "zIndex" });
+  });
+  const flip = card => cycle(card, 9000, go => gsap.timeline()
+    .to(card, { rotationY: 90, duration: .28, ease: "power2.in" }).add(go)
+    .to(card, { rotationY: 0, duration: .45, ease: "back.out(1.6)" }));
+
+  if (reduce) { startMontage(); flip(posterA)(); setTimeout(flip(posterB), 4500); return; }
+
+  /* hero: the frame and posters follow the pointer by depth, and the whole collage tilts */
+  const montage = document.getElementById("montage");
+  gsap.set([montage, posterA, posterB], { transformPerspective: 1200 });
+  const layers = [...montage.querySelectorAll("[data-depth]")].map(el => ({
+    d: +el.dataset.depth,
+    x: gsap.quickTo(el, "x", { duration: 1.1, ease: "power3.out" }),
+    y: gsap.quickTo(el, "y", { duration: 1.1, ease: "power3.out" }),
+  }));
+  const rx = gsap.quickTo(montage, "rotationX", { duration: 1.2, ease: "power3.out" });
+  const ry = gsap.quickTo(montage, "rotationY", { duration: 1.2, ease: "power3.out" });
+  hero.addEventListener("pointermove", e => {
+    const r = montage.getBoundingClientRect();
+    const nx = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (r.width / 2)));
+    const ny = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (r.height / 2)));
+    layers.forEach(l => { l.x(nx * l.d * 6); l.y(ny * l.d * 4); });
+    ry(nx * 1.2); rx(-ny * .8);
+  });
+  hero.addEventListener("pointerleave", () => { layers.forEach(l => { l.x(0); l.y(0); }); rx(0); ry(0); });
+
+  /* on scroll the posters drift ahead of the photo (desktop only; on phones the hero is stacked and they would cover the copy) */
+  gsap.matchMedia().add("(min-width: 901px)", () => {
+    gsap.timeline({ scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } })
+      .to(frame, { yPercent: 6, ease: "none" }, 0)
+      .to(posterA, { yPercent: -40, ease: "none" }, 0)
+      .to(posterB, { yPercent: -70, ease: "none" }, 0)
+      .to(".acro", { yPercent: -12, ease: "none" }, 0);
+  });
+
+  /* hero reveal, played as the intro hands off */
+  const heroIn = gsap.timeline({ paused: true, defaults: { ease: "expo.out" } })
+    .from(".letter", { yPercent: 105, duration: 1.2, stagger: .08 })
+    .from(".word", { opacity: 0, y: 8, duration: .8, stagger: .06 }, "-=.9")
+    .from(".hero .reveal", { y: 20, opacity: 0, duration: .9, stagger: .1 }, "-=1")
+    .from([posterA, posterB], { scale: .4, autoAlpha: 0, duration: 1, stagger: .12, ease: "back.out(1.5)" }, "<.1")
+    .fromTo(nav, { y: -20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: .8, clearProps: "opacity,visibility" }, "-=1");
+  const go = () => { heroIn.play(); startMontage(); flip(posterA)(); setTimeout(flip(posterB), 4500); };
+
+  /* intro: rapid cuts through TESC photos and posters, then the window grows into the hero frame */
+  const loader = document.getElementById("loader");
+  if (!document.documentElement.classList.contains("js-intro")) go();
+  else {
+    history.scrollRestoration = "manual"; scrollTo(0, 0);
+    lenis && lenis.stop();
+    const win = document.getElementById("introWin");
+    const SEQ = [POSTERS[0], PHOTOS[3], POSTERS[3], PHOTOS[1], POSTERS[5], POSTERS[1], PHOTOS[2], POSTERS[8],
+      POSTERS[4], PHOTOS[3], POSTERS[10], POSTERS[2], PHOTOS[1], POSTERS[7], POSTERS[11], PHOTOS[0]];
+    const imgs = SEQ.map(src => { const im = new Image(); im.src = src; im.alt = ""; win.appendChild(im); return im; });
+    const SHAPES = [[300, 375], [260, 260], [340, 255], [240, 320], [300, 300], [360, 240]];
+    const ready = Promise.race([Promise.all(imgs.map(im => im.decode().catch(() => {}))), new Promise(r => setTimeout(r, 1800))]);
+    const rand = (a, b) => a + Math.random() * (b - a);
+    const finish = () => {
+      loader.remove(); document.documentElement.classList.remove("js-intro"); lenis && lenis.start(); ScrollTrigger.refresh();
+      try { localStorage.setItem("tesc-intro-seen", "1"); } catch (e) {}
+    };
+    ready.then(() => {
+      const cuts = gsap.timeline();
+      imgs.forEach((im, k) => cuts.call(() => {
+        imgs.forEach(o => o.classList.toggle("is-on", o === im));
+        const [w, h] = k === imgs.length - 1 ? [300, 375] : SHAPES[k % SHAPES.length];
+        gsap.set(win, { width: w, height: h, x: k === imgs.length - 1 ? 0 : rand(-24, 24), y: k === imgs.length - 1 ? 0 : rand(-18, 18), rotation: k === imgs.length - 1 ? 0 : rand(-3, 3) });
+        gsap.set("#introBar", { scaleX: (k + 1) / imgs.length });
+      }, null, k * .1));
+      cuts.call(() => {
+        const r = frame.getBoundingClientRect();
+        gsap.timeline({ onComplete: finish })
+          .to(win, { left: r.left + r.width / 2, top: r.top + r.height / 2, width: r.width, height: r.height, borderRadius: 0, duration: 1.15, ease: "expo.inOut" })
+          .to(".intro-mark, .intro-bar", { autoAlpha: 0, duration: .4 }, 0)
+          .to(loader, { backgroundColor: "rgba(12,49,82,0)", duration: .7, ease: "power2.inOut" }, .45)
+          .call(go, null, .7);
+      }, null, imgs.length * .1 + .3);
+    });
+  }
+
+  /* magnetic buttons */
+  document.querySelectorAll(".magnet").forEach(b => {
+    const mx = gsap.quickTo(b, "x", { duration: .5, ease: "power3.out" });
+    const my = gsap.quickTo(b, "y", { duration: .5, ease: "power3.out" });
+    b.addEventListener("pointermove", e => { const r = b.getBoundingClientRect(); mx((e.clientX - r.left - r.width / 2) * .25); my((e.clientY - r.top - r.height / 2) * .35); });
+    b.addEventListener("pointerleave", () => { mx(0); my(0); });
+  });
+
+  /* mission: words fill in as you read */
+  const st = document.getElementById("statement");
+  // wrap each word in place so the <em> and <mark> emphasis survives
+  const walker = document.createTreeWalker(st, NodeFilter.SHOW_TEXT);
+  const texts = []; while (walker.nextNode()) texts.push(walker.currentNode);
+  texts.forEach(t => {
+    const frag = document.createDocumentFragment();
+    t.textContent.split(/(\s+)/).forEach(part => {
+      if (!part) return;
+      if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+      const w = document.createElement("span"); w.className = "w"; w.textContent = part; frag.appendChild(w);
+    });
+    t.replaceWith(frag);
+  });
+  // words fill in as you read; each emphasis draws in right after its own words fill
+  const words = [...st.querySelectorAll(".w")];
+  const fillTl = gsap.timeline({ scrollTrigger: { trigger: st, start: "top 80%", end: "bottom 40%", scrub: true } });
+  words.forEach((w, i) => fillTl.to(w, { opacity: 1, duration: 1, ease: "none" }, i * .5));
+  st.querySelectorAll("em, mark").forEach(el => {
+    const last = [...el.querySelectorAll(".w")].pop();
+    const at = words.indexOf(last) * .5 + .6;
+    fillTl.to(el, el.tagName === "EM" ? { "--ul": "100%", duration: 2.4, ease: "power2.out" } : { "--hl": "100%", duration: 2, ease: "power2.out" }, at);
+  });
+
+  /* tickets: rise in one after another */
+  gsap.from(".ticket", { y: 50, opacity: 0, duration: 1, ease: "expo.out", stagger: .08, scrollTrigger: { trigger: ".tickets", start: "top 85%" } });
+
+  /* section heads */
+  gsap.utils.toArray(".sec-head").forEach(h => gsap.from(h.children, { y: 30, opacity: 0, duration: 1, ease: "expo.out", stagger: .08, scrollTrigger: { trigger: h, start: "top 85%" } }));
+
+  watchDark();
+
+  /* org cards: they flip down like a departures board, rippling diagonally across the grid */
+  window.flapIn = (els, speed = 1) => gsap.fromTo(els,
+    { rotationX: -88, autoAlpha: 0, transformOrigin: "50% 0%", transformPerspective: 1000 },
+    { rotationX: 0, autoAlpha: 1, duration: 1.1 * speed, ease: "expo.out", overwrite: true, clearProps: "transform",
+      stagger: { grid: "auto", from: "start", amount: .55 * speed } });
+  const orgGrid = document.getElementById("grid");
+  gsap.set(orgGrid.querySelectorAll(".org:not([hidden])"), { autoAlpha: 0 });
+  ScrollTrigger.create({ trigger: orgGrid, start: "top 82%", once: true, onEnter: () => flapIn(orgGrid.querySelectorAll(".org:not([hidden])")) });
+
+  addEventListener("load", () => ScrollTrigger.refresh());
+
+  /* sponsors */
+  gsap.from(".logos li", { y: 24, opacity: 0, duration: .8, ease: "expo.out", stagger: .04, scrollTrigger: { trigger: ".logos", start: "top 85%" } });
+
+})();
+</script>
+</body>
+</html>
