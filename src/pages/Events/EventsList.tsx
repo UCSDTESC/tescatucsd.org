@@ -15,6 +15,8 @@ export interface Event {
 export function useSplitEvents() {
   const [upcomingEvents, setUpcomingEvents] = useState<Event[]>([]);
   const [pastEvents, setPastEvents] = useState<Event[]>([]);
+  // true until the first answer (or error) comes back from the portal
+  const [loading, setLoading] = useState(true);
   const StartOfLink = "https://portal.tescatucsd.org/bulletin/";
 
   useEffect(() => {
@@ -55,6 +57,7 @@ export function useSplitEvents() {
       } else {
         console.error("Supabase error:", error);
       }
+      setLoading(false);
     };
     fetchEvents();
   }, []);
@@ -62,5 +65,6 @@ export function useSplitEvents() {
   return {
     upcomingEvents: upcomingEvents.filter((e) => e.orgs == "TESC"),
     pastEvents: pastEvents.filter((e) => e.orgs == "TESC"),
+    loading,
   };
 }

@@ -12,16 +12,20 @@ import Accomplishments from "./pages/Accomplishments";
 import Page from "./components/Page";
 import Main from "./pages/MainPage/Main";
 import RedirectComponent from "./components/RedirectComponent";
+import ScrollToTop from "./components/ScrollToTop";
 import ProfiledComponent from "./util/ProfiledComponent";
 
 function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <Routes>
+          {/* The homepage draws its own nav bar and footer */}
+          <Route path="/" element={<Main />} />
+
           <Route element={<Page />}>
             {/* Routes with the NavBar */}
-            <Route path="/" element={<Main />} />
             <Route path="/events" element={<Events />} />
             <Route path="/council-members" element={<CouncilMembers />} />
             <Route path="/about-us" element={<AboutUs />} />
